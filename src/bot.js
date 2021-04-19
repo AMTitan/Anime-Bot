@@ -44,6 +44,8 @@ client.on('message', (message) => {
 		fields: [
 			{ name: `${Prefix}whatis {link to a img of a anime}`, value: "tries to find what anime it was in" },
 			{ name: `${Prefix}quote`, value: "shows a random anime quote" },
+			{ name: `${Prefix}neko`, value: "shows a random neko img" },
+			{ name: `${Prefix}random`, value: "shows a random anime img" },
 		],
 		image: {
 			url: ""
@@ -131,6 +133,70 @@ client.on('message', (message) => {
 	  	} 
   	})
   }
+  if (commandName === 'neko') {
+  	request(`https://neko-love.xyz/api/v1/neko`, function (error, response, body) {
+	  	if (!error && response.statusCode == 200) {
+	  		var jsonParsed = JSON.parse(body);
+	    	const Embed = {
+				color: '#00ff00',
+				title: `Neko`,
+				url: "",
+				author: {
+					Name: 'AnimeBot',
+					icon_url: "",
+					url: '',
+				},
+				description: ``,
+				thumbnail: "",
+				fields: [
+				],
+				image: {
+					url: jsonParsed.url
+				},
+				fimestamp: new Date(),
+				footer: {
+					test: '',
+					icon_url: "",
+				},
+			}
+
+			message.channel.send({ embed: Embed });
+	  	} 
+  	})
+  }
+  	if (commandName === 'random') {
+  	  	let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
+  	  	var item = array[Math.floor(Math.random() * array.length)];
+	  	request(`https://neko-love.xyz/api/v1/${item}`, function (error, response, body) {
+		  	if (!error && response.statusCode == 200) {
+		  		var jsonParsed = JSON.parse(body);
+		    	const Embed = {
+					color: '#00ff00',
+					title: `Random Anime Img`,
+					url: "",
+					author: {
+						Name: 'AnimeBot',
+						icon_url: "",
+						url: '',
+					},
+					description: ``,
+					thumbnail: "",
+					fields: [
+					],
+					image: {
+						url: jsonParsed.url
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: '',
+						icon_url: "",
+					},
+				}
+
+				message.channel.send({ embed: Embed });
+		  	} 
+	  	})
+  	}
 });
 
 client.login(process.env.Token);
