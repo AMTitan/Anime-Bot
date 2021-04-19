@@ -31,7 +31,7 @@ client.on('message', (message) => {
 		.split(/\s+/);
   if (commandName === `help`) {
     const Embed = {
-		color: '#0099ff',
+		color: '#00ff00',
 		title: `Help`,
 		url: "",
 		author: {
@@ -67,7 +67,7 @@ client.on('message', (message) => {
 	  		}
 	    	console.log(jsonParsed.docs[0]);
 	    	const Embed = {
-				color: '#0099ff',
+				color: '#00ff00',
 				title: jsonParsed.docs[0].anime,
 				url: args[0],
 				author: {
@@ -80,7 +80,7 @@ client.on('message', (message) => {
 				fields: [
 					{ name: 'Season', value: jsonParsed.docs[0].season, inline: true },
 					{ name: 'Episode', value: jsonParsed.docs[0].episode, inline: true },
-					{ name: 'is an adult film', value: jsonParsed.docs[0].is_adult, inline: true },
+					{ name: 'hentai', value: jsonParsed.docs[0].is_adult, inline: true },
 					{ name: 'Image shown', value: `${Math.round(jsonParsed.docs[0].from)} secs in`, inline: true },
 				],
 				image: {
@@ -102,7 +102,7 @@ client.on('message', (message) => {
 	  	if (!error && response.statusCode == 200) {
 	  		var jsonParsed = JSON.parse(body);
 	    	const Embed = {
-				color: '#0099ff',
+				color: '#00ff00',
 				title: `Random Quote`,
 				url: "",
 				author: {
