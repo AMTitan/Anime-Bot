@@ -7,12 +7,14 @@ fs = require('fs');
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
+/*
 request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
   	if (!error && response.statusCode == 200) {
   		var jsonParsed = JSON.parse(body);
   		console.log(jsonParsed);
   	}
 });
+*/
 client.on('ready', () => {
   console.log(`${client.user.tag} bot is on`);
    client.user.setActivity(`${Prefix}help`, { type: 'WATCHING' })
@@ -28,7 +30,32 @@ client.on('message', (message) => {
 		.substring(Prefix.length)
 		.split(/\s+/);
   if (commandName === `help`) {
-    message.channel.send(`${Prefix}whatis (link to a img of a anime) - tries to find what anime it was in \n${Prefix}quote - shows a random anime quote`);
+    const Embed = {
+		color: '#0099ff',
+		title: `Help`,
+		url: "",
+		author: {
+			Name: 'AnimeBot',
+			icon_url: "",
+			url: '',
+		},
+		description: ``,
+		thumbnail: "",
+		fields: [
+			{ name: `${Prefix}whatis {link to a img of a anime}`, value: "tries to find what anime it was in" },
+			{ name: `${Prefix}quote`, value: "shows a random anime quote" },
+		],
+		image: {
+			url: ""
+		},
+		fimestamp: new Date(),
+		footer: {
+			test: '',
+			icon_url: "",
+		},
+	}
+
+	message.channel.send({ embed: Embed });
   }
   if (commandName === `whatis`) {
   	if (!args[0]) {message.channel.send('add a img to the end of the cmd'); return};
