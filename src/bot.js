@@ -2,8 +2,6 @@ var request = require('request');
 require("dotenv").config();
 const { Client } = require('discord.js');
 const client = new Client();
-const jikanjs  = require('jikanjs');
-jikanjs.settings.version = 3;
 const Prefix = "A!";
 fs = require('fs');
 client.on('ready', () => {
