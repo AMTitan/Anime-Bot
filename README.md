@@ -1,4 +1,4 @@
-# Bad-Apple-Discord-Bot
+# Anime-Bot
 <h3>Dependency</h3>
 
 - `Git`
