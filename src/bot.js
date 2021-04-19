@@ -2,6 +2,8 @@ var request = require('request');
 require("dotenv").config();
 const { Client } = require('discord.js');
 const client = new Client();
+const jikanjs  = require('jikanjs');
+jikanjs.settings.version = 3;
 const Prefix = "!A";
 fs = require('fs');
 client.on('ready', () => {
@@ -46,6 +48,8 @@ client.on('message', (message) => {
 			{ name: `${Prefix}quote`, value: "shows a random anime quote" },
 			{ name: `${Prefix}neko`, value: "shows a random neko img" },
 			{ name: `${Prefix}random`, value: "shows a random anime img" },
+			{ name: `${Prefix}wallpaper`, value: "shows a random anime wallpaper (just a random form the first 25 hot on the subreddit)" },
+			{ name: `${Prefix}nsfw`, value: "shows random nsfw anime img" },
 		],
 		image: {
 			url: ""
@@ -196,6 +200,74 @@ client.on('message', (message) => {
 				message.channel.send({ embed: Embed });
 		  	} 
 	  	})
+  	}
+  	if (commandName === 'wallpaper') {
+  		var aRandomNum = Math.floor((Math.random() * 24) + 2);
+  	  	request('http://www.reddit.com/r/Animewallpaper.json?json', function (error, response, body) {
+		  	if (!error && response.statusCode == 200) {
+		  		var jsonParsed = JSON.parse(body);
+		    	const Embed = {
+					color: '#00ff00',
+					title: jsonParsed.data.children[aRandomNum].data.title,
+					url: "",
+					author: {
+						Name: 'AnimeBot',
+						icon_url: "",
+						url: '',
+					},
+					description: ``,
+					thumbnail: "",
+					fields: [
+					],
+					image: {
+						url: jsonParsed.data.children[aRandomNum].data.url_overridden_by_dest
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: '',
+						icon_url: "",
+					},
+				}
+
+				message.channel.send({ embed: Embed });
+		  	} 
+	  	})
+  	}
+  	if (commandName === 'nsfw') {
+  		if (message.channel.nsfw === true) {
+	  	  	request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function (error, response, body) {
+			  	if (!error && response.statusCode == 200) {
+			  		var jsonParsed = JSON.parse(body);
+			    	const Embed = {
+						color: '#00ff00',
+						title: "NSFW",
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: '',
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [
+						],
+						image: {
+							url: jsonParsed.url
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+
+					message.channel.send({ embed: Embed });
+			  	} 
+	  		})
+  	  	}
+  	  	else {
+  	  		message.channel.send("sorry but the channel is not marked as nsfw");
+  	  	}
   	}
 });
 
