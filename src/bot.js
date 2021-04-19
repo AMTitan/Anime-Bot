@@ -48,8 +48,8 @@ client.on('message', (message) => {
 			{ name: `${Prefix}quote`, value: "shows a random anime quote" },
 			{ name: `${Prefix}neko`, value: "shows a random neko img" },
 			{ name: `${Prefix}random`, value: "shows a random anime img" },
-			{ name: `${Prefix}wallpaper`, value: "shows a random anime wallpaper (just a random form the first 25 hot on the subreddit)" },
-			{ name: `${Prefix}nsfw`, value: "shows random nsfw anime img" },
+			{ name: `${Prefix}wallpaper`, value: "shows a random anime wallpaper (just a random one from the first 25 hot on the subreddit)" },
+			{ name: `${Prefix}nsfw`, value: "shows random nsfw anime img (only in nsfw marked channels)" },
 		],
 		image: {
 			url: ""
@@ -71,7 +71,6 @@ client.on('message', (message) => {
 	  		if (jsonParsed.docs[0].season === '') {
 	  			jsonParsed.docs[0].season = '0';
 	  		}
-	    	console.log(jsonParsed.docs[0]);
 	    	const Embed = {
 				color: '#00ff00',
 				title: jsonParsed.docs[0].anime,
@@ -234,7 +233,7 @@ client.on('message', (message) => {
 	  	})
   	}
   	if (commandName === 'nsfw') {
-  		if (message.channel.nsfw === true) {
+  		if (message.channel.nsfw === true || message.guild === null) {
 	  	  	request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function (error, response, body) {
 			  	if (!error && response.statusCode == 200) {
 			  		var jsonParsed = JSON.parse(body);
