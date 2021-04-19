@@ -26,7 +26,6 @@ client.on('ready', () => {
 client.on('message', (message) => {
   if (message.author.bot === true) return;
   if (!message.content.startsWith(Prefix)) return;
-	console.log(`[${message.author.tag}]: ${message.content}`);
 	const [commandName, ...args] = message.content
 		.trim()
 		.substring(Prefix.length)
@@ -75,7 +74,7 @@ client.on('message', (message) => {
 	    	const Embed = {
 				color: '#00ff00',
 				title: jsonParsed.docs[0].anime,
-				url: `https://duckduckgo.com/?q=${jsonParsed.docs[0].anime}`,
+				url: `https://duckduckgo.com/?q=${jsonParsed.docs[0].anime.replaceAll(" ", "+")}`,
 				author: {
 					Name: 'AnimeBot',
 					icon_url: args[0],
@@ -102,8 +101,7 @@ client.on('message', (message) => {
 			message.channel.send({ embed: Embed });
 	  	} 
   	})
-  }
-  if (commandName === 'quote') {
+  }else if (commandName === 'quote') {
   	request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
 	  	if (!error && response.statusCode == 200) {
 	  		var jsonParsed = JSON.parse(body);
@@ -136,15 +134,14 @@ client.on('message', (message) => {
 			message.channel.send({ embed: Embed });
 	  	} 
   	})
-  }
-  if (commandName === 'neko') {
+  }else if (commandName === 'neko') {
   	request(`https://neko-love.xyz/api/v1/neko`, function (error, response, body) {
 	  	if (!error && response.statusCode == 200) {
 	  		var jsonParsed = JSON.parse(body);
 	    	const Embed = {
 				color: '#00ff00',
 				title: `Neko`,
-				url: jsonParsed.url,
+				url: jsonParsed.url.replaceAll(" ", "+"),
 				author: {
 					Name: 'AnimeBot',
 					icon_url: "",
@@ -167,8 +164,7 @@ client.on('message', (message) => {
 			message.channel.send({ embed: Embed });
 	  	} 
   	})
-  }
-  	if (commandName === 'random') {
+  }else if (commandName === 'random') {
   	  	let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
   	  	var item = array[Math.floor(Math.random() * array.length)];
 	  	request(`https://neko-love.xyz/api/v1/${item}`, function (error, response, body) {
@@ -177,7 +173,7 @@ client.on('message', (message) => {
 		    	const Embed = {
 					color: '#00ff00',
 					title: `Random Anime Img`,
-					url: jsonParsed.url,
+					url: jsonParsed.url.replaceAll(" ", "+"),
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
@@ -200,8 +196,7 @@ client.on('message', (message) => {
 				message.channel.send({ embed: Embed });
 		  	} 
 	  	})
-  	}
-  	if (commandName === 'wallpaper') {
+  	}else if (commandName === 'wallpaper') {
   		var aRandomNum = Math.floor((Math.random() * 24) + 2);
   	  	request('http://www.reddit.com/r/Animewallpaper.json?json', function (error, response, body) {
 		  	if (!error && response.statusCode == 200) {
@@ -210,7 +205,7 @@ client.on('message', (message) => {
 		    	const Embed = {
 					color: '#00ff00',
 					title: jsonParsed.data.children[aRandomNum].data.title,
-					url: jsonParsed.data.children[aRandomNum].data.url,
+					url: jsonParsed.data.children[aRandomNum].data.url.replaceAll(" ", "+"),
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
@@ -233,8 +228,7 @@ client.on('message', (message) => {
 				message.channel.send({ embed: Embed });
 		  	} 
 	  	})
-  	}
-  	if (commandName === 'nsfw') {
+  	}else if (commandName === 'nsfw') {
   		if (message.channel.nsfw === true || message.guild === null) {
 	  	  	request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function (error, response, body) {
 			  	if (!error && response.statusCode == 200) {
@@ -242,7 +236,7 @@ client.on('message', (message) => {
 			    	const Embed = {
 						color: '#00ff00',
 						title: "NSFW",
-						url: "jsonParsed.url",
+						url: jsonParsed.url,
 						author: {
 							Name: 'AnimeBot',
 							icon_url: "",
@@ -269,8 +263,7 @@ client.on('message', (message) => {
   	  	else {
   	  		message.channel.send("sorry but the channel is not marked as nsfw");
   	  	}
-  	}
-  	if (commandName === 'whatisnsfw') {
+  	}else if (commandName === 'whatisnsfw') {
   		if (message.channel.nsfw === true || message.guild === null) {
 		    request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function (error, response, body) {
 			  	if (!error && response.statusCode == 200) {
