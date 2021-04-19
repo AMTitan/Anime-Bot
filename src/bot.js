@@ -4,7 +4,7 @@ const { Client } = require('discord.js');
 const client = new Client();
 const jikanjs  = require('jikanjs');
 jikanjs.settings.version = 3;
-const Prefix = "!A";
+const Prefix = "A!";
 fs = require('fs');
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -50,6 +50,7 @@ client.on('message', (message) => {
 			{ name: `${Prefix}wallpaper`, value: "shows a random anime wallpaper (just a random one from the first 25 hot on the subreddit)" },
 			{ name: `${Prefix}nsfw`, value: "shows random nsfw anime img (only in nsfw marked channels)" },
 			{ name: `${Prefix}whatisnsfw`, value: "runs nsfw then dose a whatis on it (gets a random hentai)" },
+			{ name: `${Prefix}quotequestions`, value: "guess who said a quote" },
 		],
 		image: {
 			url: ""
@@ -62,8 +63,7 @@ client.on('message', (message) => {
 	}
 
 	message.channel.send({ embed: Embed });
-  }
-  if (commandName === `whatis`) {
+  }else if (commandName === `whatis`) {
   	if (!args[0]) {message.channel.send('add a img to the end of the cmd'); return};
     request(`https://trace.moe/api/search?url=${args[0]}`, function (error, response, body) {
 	  	if (!error && response.statusCode == 200) {
@@ -310,6 +310,121 @@ client.on('message', (message) => {
 		else {
   	  		message.channel.send("sorry but the channel is not marked as nsfw");
   	  	}
+  	}else if (commandName === 'quotequestions') {
+  		var jsonParsed;
+  		const filter = (n) => n.author.id === message.author.id;
+  		request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
+	  	if (!error && response.statusCode == 200) {
+	  		jsonParsed = JSON.parse(body);
+	    	const Embed = {
+				color: '#00ff00',
+				title: `Guess Who Said This`,
+				url: "",
+				author: {
+					Name: 'AnimeBot',
+					icon_url: "",
+					url: '',
+				},
+				description: ``,
+				thumbnail: "",
+				fields: [
+					{ name: 'Anime', value: jsonParsed.anime, inline: true },
+					{ name: 'Quote', value: jsonParsed.quote},
+				],
+				image: {
+					url: ""
+				},
+				fimestamp: new Date(),
+				footer: {
+					test: '',
+					icon_url: "",
+				},
+			}
+
+			message.channel.send({ embed: Embed });
+	  	}
+	  	console.log(jsonParsed.character);
+	  	message.channel.awaitMessages(filter, { max: 1, time: 60000, errors: ['Line']})
+			.then((collected) => {
+				const msg = collected.first().content;
+				if (msg.toLowerCase() === jsonParsed.character.toLowerCase()) {
+					const Embed = {
+						color: '#00ff00',
+						title: `You are right`,
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: '',
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [
+						],
+						image: {
+							url: ""
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+
+					message.channel.send({ embed: Embed });
+				}
+				else {
+					const Embed = {
+						color: '#00ff00',
+						title: `That is not right it was `+ jsonParsed.character,
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: '',
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [
+						],
+						image: {
+							url: ""
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+					message.channel.send({ embed: Embed });
+				}
+			})
+
+  		})
+  	}else {
+  		const Embed = {
+			color: '#00ff00',
+			title: `Sorry I dont know that cmd`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [
+			],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+		message.channel.send({ embed: Embed });
   	}
 });
 
