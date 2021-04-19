@@ -74,11 +74,11 @@ client.on('message', (message) => {
 	    	const Embed = {
 				color: '#00ff00',
 				title: jsonParsed.docs[0].anime,
-				url: args[0],
+				url: `https://duckduckgo.com/?q=${jsonParsed.docs[0].anime}`,
 				author: {
 					Name: 'AnimeBot',
 					icon_url: args[0],
-					url: 'https://discord.js.org',
+					url: '',
 				},
 				description: `${Math.round((jsonParsed.docs[0].similarity) * 100)}% confident`,
 				thumbnail: args[0],
@@ -143,11 +143,11 @@ client.on('message', (message) => {
 	    	const Embed = {
 				color: '#00ff00',
 				title: `Neko`,
-				url: "",
+				url: jsonParsed.url,
 				author: {
 					Name: 'AnimeBot',
 					icon_url: "",
-					url: '',
+					url: "",
 				},
 				description: ``,
 				thumbnail: "",
@@ -176,11 +176,11 @@ client.on('message', (message) => {
 		    	const Embed = {
 					color: '#00ff00',
 					title: `Random Anime Img`,
-					url: "",
+					url: jsonParsed.url,
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
-						url: '',
+						url: "",
 					},
 					description: ``,
 					thumbnail: "",
@@ -205,14 +205,15 @@ client.on('message', (message) => {
   	  	request('http://www.reddit.com/r/Animewallpaper.json?json', function (error, response, body) {
 		  	if (!error && response.statusCode == 200) {
 		  		var jsonParsed = JSON.parse(body);
+		  		console.log(jsonParsed.data.children[aRandomNum].data);
 		    	const Embed = {
 					color: '#00ff00',
 					title: jsonParsed.data.children[aRandomNum].data.title,
-					url: "",
+					url: jsonParsed.data.children[aRandomNum].data.url,
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
-						url: '',
+						url: "",
 					},
 					description: ``,
 					thumbnail: "",
@@ -240,7 +241,7 @@ client.on('message', (message) => {
 			    	const Embed = {
 						color: '#00ff00',
 						title: "NSFW",
-						url: "",
+						url: "jsonParsed.url",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: "",
