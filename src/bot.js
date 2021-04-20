@@ -841,6 +841,258 @@ client.on('message', (message) => {
 		} else {
 			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
+	} else if (commandName.toLowerCase() === 'blowjob') {
+		if (message.channel.nsfw === true || message.guild === null) {
+			request(`https://waifu.pics/api/nsfw/blowjob`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: 'Blowjob nsfw',
+						url: jsonParsed.url,
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		} else {
+			message.channel.send("sorry but the channel is not marked as nsfw");
+		}
+	} else if (commandName.toLowerCase() === 'poke') {
+		request(`https://waifu.pics/api/sfw/poke`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Poke',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	} else if (commandName.toLowerCase() === 'pat') {
+		request(`https://waifu.pics/api/sfw/pat`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Pat',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	} else if (commandName.toLowerCase() === 'cuddle') {
+		request(`https://waifu.pics/api/sfw/cuddle`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Cuddle',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	}else if (commandName.toLowerCase() === 'hug') {
+		request(`https://waifu.pics/api/sfw/hug`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Hug',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	}else if (commandName.toLowerCase() === 'kiss') {
+		request(`https://waifu.pics/api/sfw/kiss`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Kiss',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	}else if (commandName.toLowerCase() === 'blush') {
+		request(`https://waifu.pics/api/sfw/blush`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Blush',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	}else if (commandName.toLowerCase() === 'awoo') {
+		request(`https://waifu.pics/api/sfw/awoo`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Awoo',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
 	} else {
 		const Embed = {
 			color: '#00ff00',
