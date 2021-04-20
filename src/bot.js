@@ -64,7 +64,7 @@ client.on('message', (message) => {
 				name: `${Prefix}random`,
 				value: "shows a random anime img"
 			}, {
-				name: `${Prefix}waifu`,
+				name: `${Prefix}waifu [optional nsfw]`,
 				value: "gets you a waifu"
 			}, {
 				name: `${Prefix}wallpaper`,
@@ -76,7 +76,7 @@ client.on('message', (message) => {
 				name: `${Prefix}whatisnsfw`,
 				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
 			}, {
-				name: `${Prefix}whatiswaifu`,
+				name: `${Prefix}waifuquestion`,
 				value: "guess the waifu you get"
 			}, {
 				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
@@ -510,7 +510,7 @@ client.on('message', (message) => {
 				});
 
 		})
-	} else if (commandName.toLowerCase() === `whatiswaifu`) {
+	} else if (commandName.toLowerCase() === `waifuquestion`) {
 		const options = {
 			method: 'GET',
 			url: 'https://animu.p.rapidapi.com/waifus',
@@ -648,36 +648,73 @@ client.on('message', (message) => {
 
 		})
 	} else if (commandName.toLowerCase() === 'waifu') {
-		request(`https://api.slushie.gg/neko/waifu`, function(error, response, body) {
-			if (!error && response.statusCode == 200) {
-				var jsonParsed = JSON.parse(body);
-				const Embed = {
-					color: '#00ff00',
-					title: 'Waifu',
-					url: jsonParsed.url,
-					author: {
-						Name: 'AnimeBot',
-						icon_url: jsonParsed.url,
-						url: '',
-					},
-					description: ``,
-					thumbnail: jsonParsed.url,
-					fields: [],
-					image: {
-						url: jsonParsed.url,
-					},
-					fimestamp: new Date(),
-					footer: {
-						test: 'Some footer text here',
-						icon_url: jsonParsed.url,
-					},
-				}
+		if (args[0] && args[0].toLowerCase() === "nsfw") {
+			if (message.channel.nsfw === true || message.guild === null) {
+				request(`https://waifu.pics/api/nsfw/waifu`, function(error, response, body) {
+					if (!error && response.statusCode == 200) {
+						var jsonParsed = JSON.parse(body);
+						const Embed = {
+							color: '#00ff00',
+							title: 'Waifu',
+							url: jsonParsed.url,
+							author: {
+								Name: 'AnimeBot',
+								icon_url: jsonParsed.url,
+								url: '',
+							},
+							description: ``,
+							thumbnail: jsonParsed.url,
+							fields: [],
+							image: {
+								url: jsonParsed.url,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: jsonParsed.url,
+							},
+						}
 
-				message.channel.send({
-					embed: Embed
-				});
+						message.channel.send({
+							embed: Embed
+						});
+					}
+				})
+			} else {
+				message.channel.send("sorry but the channel is not marked as nsfw");
 			}
-		})
+		}else {
+			request(`https://waifu.pics/api/sfw/waifu`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: 'Waifu',
+						url: jsonParsed.url,
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		}
 	} else if (commandName.toLowerCase() === 'fact') {
 		const options = {
 			method: 'GET',
@@ -724,7 +761,7 @@ client.on('message', (message) => {
 			});
 		});
 	} else if (commandName.toLowerCase() === 'autonsfw') {
-		if (!args[0]) args[0] = 10;
+		if (!args[0]) args[0] = 3;
 		if (!args[1]) args[1] = 5;
 		if (message.channel.nsfw === true || message.guild === null) {
 			var n = 0;
