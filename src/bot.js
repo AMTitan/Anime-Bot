@@ -50,6 +50,7 @@ client.on('message', (message) => {
 			{ name: `${Prefix}nsfw`, value: "shows random nsfw anime img (only in nsfw marked channels)" },
 			{ name: `${Prefix}whatisnsfw`, value: "runs nsfw then dose a whatis on it (gets a random hentai)" },
 			{ name: `${Prefix}quotequestions`, value: "guess who said a quote" },
+			{ name: `${Prefix}waifu`, value: "gets you a waifu" },
 		],
 		image: {
 			url: ""
@@ -62,7 +63,7 @@ client.on('message', (message) => {
 	}
 
 	message.channel.send({ embed: Embed });
-  }else if (commandName === `whatis`) {
+  }else if (commandName.toLowerCase() === `whatis`) {
   	if (!args[0]) {message.channel.send('add a img to the end of the cmd'); return};
     request(`https://trace.moe/api/search?url=${args[0]}`, function (error, response, body) {
 	  	if (!error && response.statusCode == 200) {
@@ -100,7 +101,7 @@ client.on('message', (message) => {
 			message.channel.send({ embed: Embed });
 	  	} 
   	})
-  }else if (commandName === 'quote') {
+  }else if (commandName.toLowerCase() === 'quote') {
   	request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
 	  	if (!error && response.statusCode == 200) {
 	  		var jsonParsed = JSON.parse(body);
@@ -133,7 +134,7 @@ client.on('message', (message) => {
 			message.channel.send({ embed: Embed });
 	  	} 
   	})
-  }else if (commandName === 'neko') {
+  }else if (commandName.toLowerCase() === 'neko') {
   	request(`https://neko-love.xyz/api/v1/neko`, function (error, response, body) {
 	  	if (!error && response.statusCode == 200) {
 	  		var jsonParsed = JSON.parse(body);
@@ -163,7 +164,7 @@ client.on('message', (message) => {
 			message.channel.send({ embed: Embed });
 	  	} 
   	})
-  }else if (commandName === 'random') {
+  }else if (commandName.toLowerCase() === 'random') {
   	  	let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
   	  	var item = array[Math.floor(Math.random() * array.length)];
 	  	request(`https://neko-love.xyz/api/v1/${item}`, function (error, response, body) {
@@ -195,7 +196,7 @@ client.on('message', (message) => {
 				message.channel.send({ embed: Embed });
 		  	} 
 	  	})
-  	}else if (commandName === 'wallpaper') {
+  	}else if (commandName.toLowerCase() === 'wallpaper') {
   		var aRandomNum = Math.floor((Math.random() * 24) + 2);
   	  	request('http://www.reddit.com/r/Animewallpaper.json?json', function (error, response, body) {
 		  	if (!error && response.statusCode == 200) {
@@ -227,7 +228,7 @@ client.on('message', (message) => {
 				message.channel.send({ embed: Embed });
 		  	} 
 	  	})
-  	}else if (commandName === 'nsfw') {
+  	}else if (commandName.toLowerCase() === 'nsfw') {
   		if (message.channel.nsfw === true || message.guild === null) {
 	  	  	request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function (error, response, body) {
 			  	if (!error && response.statusCode == 200) {
@@ -262,7 +263,7 @@ client.on('message', (message) => {
   	  	else {
   	  		message.channel.send("sorry but the channel is not marked as nsfw");
   	  	}
-  	}else if (commandName === 'whatisnsfw') {
+  	}else if (commandName.toLowerCase() === 'whatisnsfw') {
   		if (message.channel.nsfw === true || message.guild === null) {
 		    request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function (error, response, body) {
 			  	if (!error && response.statusCode == 200) {
@@ -309,7 +310,7 @@ client.on('message', (message) => {
 		else {
   	  		message.channel.send("sorry but the channel is not marked as nsfw");
   	  	}
-  	}else if (commandName === 'quotequestions') {
+  	}else if (commandName.toLowerCase() === 'quotequestions') {
   		var jsonParsed;
   		const filter = (n) => n.author.id === message.author.id;
   		request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
@@ -425,6 +426,36 @@ client.on('message', (message) => {
 				});
 
   		})
+  	}else if (commandName.toLowerCase() === 'waifu') {
+  		request(`https://api.slushie.gg/neko/waifu`, function (error, response, body) {
+		  	if (!error && response.statusCode == 200) {
+		  		var jsonParsed = JSON.parse(body);
+		    	const Embed = {
+					color: '#00ff00',
+					title: 'Waifu',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [
+					],
+					image: {
+						url: jsonParsed.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({ embed: Embed });
+		  	} 
+	  	})
   	}else {
   		const Embed = {
 			color: '#00ff00',
