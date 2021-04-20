@@ -397,6 +397,31 @@ client.on('message', (message) => {
 					message.channel.send({ embed: Embed });
 				}
 			})
+				.catch((err) =>  { 
+					const Embed = {
+						color: '#00ff00',
+						title: `You know you have to respond right? Welp it was `+ jsonParsed.character,
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: '',
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [
+						],
+						image: {
+							url: ""
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+					message.channel.send({ embed: Embed });
+				});
 
   		})
   	}else {
