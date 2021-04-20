@@ -3,6 +3,7 @@ require("dotenv").config();
 const { Client } = require('discord.js');
 const client = new Client();
 const Prefix = "A!";
+var mongo = require('mongodb');
 fs = require('fs');
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -24,6 +25,7 @@ client.on('ready', () => {
 client.on('message', (message) => {
   if (message.author.bot === true) return;
   if (!message.content.startsWith(Prefix)) return;
+  console.log(`[${message.author.tag}]: ${message.content}`);
 	const [commandName, ...args] = message.content
 		.trim()
 		.substring(Prefix.length)
