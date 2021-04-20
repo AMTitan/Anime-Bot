@@ -12,7 +12,7 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0",
-    "mongodb": "^3.6.6",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.7",
     "request": "^2.88.2"
   }
