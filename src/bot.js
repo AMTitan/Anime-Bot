@@ -2,7 +2,7 @@ var request = require('request');
 require("dotenv").config();
 const { Client } = require('discord.js');
 const client = new Client();
-const Prefix = "A!";
+const Prefix = "a!";
 fs = require('fs');
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
