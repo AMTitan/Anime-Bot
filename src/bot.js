@@ -81,6 +81,30 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 				value: "dose nsfw a set number of times"
+			},{
+				name: `${Prefix}blowjob`,
+				value: "gets you a blowjob gif"
+			},{
+				name: `${Prefix}poke`,
+				value: "gets you a poke gif"
+			},{
+				name: `${Prefix}pat`,
+				value: "gets you a pat gif or img"
+			},{
+				name: `${Prefix}cuddle`,
+				value: "gets you a cuddle gif or img"
+			},{
+				name: `${Prefix}hug`,
+				value: "gets you a hug gif or img"
+			},{
+				name: `${Prefix}kiss`,
+				value: "gets you a kiss gif or img"
+			},{
+				name: `${Prefix}blush`,
+				value: "gets you a blush gif or img"
+			},{
+				name: `${Prefix}awoo`,
+				value: "gets you a awoo gif or img"
 			}, ],
 			image: {
 				url: ""
