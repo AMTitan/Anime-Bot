@@ -78,6 +78,9 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}whatiswaifu`,
 				value: "guess the waifu you get"
+			}, {
+				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose nsfw a set number of times"
 			}, ],
 			image: {
 				url: ""
@@ -720,6 +723,50 @@ client.on('message', (message) => {
 				embed: Embed
 			});
 		});
+	} else if (commandName.toLowerCase() === 'autonsfw') {
+		if (!args[0]) args[0] = 10;
+		if (!args[1]) args[1] = 5;
+		if (message.channel.nsfw === true || message.guild === null) {
+			var n = 0;
+			for (i = 0; i < args[0]; i++) {
+				setTimeout(function(){
+					n++;
+					request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function(error, response, body) {
+						if (!error && response.statusCode == 200) {
+							var jsonParsed = JSON.parse(body);
+							const Embed = {
+								color: '#00ff00',
+								title: `NSFW - ${n}/${args[0]}`,
+								url: jsonParsed.url,
+								author: {
+									Name: 'AnimeBot',
+									icon_url: "",
+									url: '',
+								},
+								description: ``,
+								thumbnail: "",
+								fields: [],
+								image: {
+									url: jsonParsed.url
+								},
+								fimestamp: new Date(),
+								footer: {
+									test: '',
+									icon_url: "",
+								},
+							}
+
+							message.channel.send({
+								embed: Embed
+							});
+						}
+					})
+					
+				}, args[1] * i * 1000);
+			}
+		} else {
+			message.channel.send("sorry but the channel is not marked as nsfw");
+		}
 	} else {
 		const Embed = {
 			color: '#00ff00',
