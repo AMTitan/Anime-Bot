@@ -23,7 +23,7 @@ client.on('ready', () => {
 })
 client.on('message', (message) => {
   if (message.author.bot === true) return;
-  if (!message.content.startsWith(Prefix)) return;
+  if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
   console.log(`[${message.author.tag}]: ${message.content}`);
 	const [commandName, ...args] = message.content
 		.trim()
