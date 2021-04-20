@@ -49,7 +49,7 @@ client.on('message', (message) => {
 				name: `${Prefix}fact`,
 				value: "gets you a anime fact"
 			}, {
-				name: `${Prefix}neko`,
+				name: `${Prefix}neko [optinal nsfw]`,
 				value: "shows a random neko img"
 			}, {
 				name: `${Prefix}nsfw`,
@@ -192,36 +192,73 @@ client.on('message', (message) => {
 			}
 		})
 	} else if (commandName.toLowerCase() === 'neko') {
-		request(`https://neko-love.xyz/api/v1/neko`, function(error, response, body) {
-			if (!error && response.statusCode == 200) {
-				var jsonParsed = JSON.parse(body);
-				const Embed = {
-					color: '#00ff00',
-					title: `Neko`,
-					url: jsonParsed.url.replaceAll(" ", "+"),
-					author: {
-						Name: 'AnimeBot',
-						icon_url: "",
-						url: "",
-					},
-					description: ``,
-					thumbnail: "",
-					fields: [],
-					image: {
-						url: jsonParsed.url
-					},
-					fimestamp: new Date(),
-					footer: {
-						test: '',
-						icon_url: "",
-					},
-				}
+		if (args[0] && args[0].toLowerCase() === "nsfw") {
+			if (message.channel.nsfw === true || message.guild === null) {
+				request(`https://waifu.pics/api/nsfw/neko`, function(error, response, body) {
+					if (!error && response.statusCode == 200) {
+						var jsonParsed = JSON.parse(body);
+						const Embed = {
+							color: '#00ff00',
+							title: 'Waifu',
+							url: jsonParsed.url,
+							author: {
+								Name: 'AnimeBot',
+								icon_url: jsonParsed.url,
+								url: '',
+							},
+							description: ``,
+							thumbnail: jsonParsed.url,
+							fields: [],
+							image: {
+								url: jsonParsed.url,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: jsonParsed.url,
+							},
+						}
 
-				message.channel.send({
-					embed: Embed
-				});
+						message.channel.send({
+							embed: Embed
+						});
+					}
+				})
+			} else {
+				message.channel.send("sorry but the channel is not marked as nsfw");
 			}
-		})
+		}else {
+			request(`https://waifu.pics/api/sfw/neko`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: 'Waifu',
+						url: jsonParsed.url,
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		}
 	} else if (commandName.toLowerCase() === 'random') {
 		let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
 		var item = array[Math.floor(Math.random() * array.length)];
