@@ -510,7 +510,7 @@ client.on('message', (message) => {
 				});
 
 		})
-	} else if (commandName.toLowerCase() === `waifuquestion`) {
+	} else if (commandName.toLowerCase() === `waifuquestions`) {
 		const options = {
 			method: 'GET',
 			url: 'https://animu.p.rapidapi.com/waifus',
