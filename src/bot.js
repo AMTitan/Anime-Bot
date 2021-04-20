@@ -28,7 +28,7 @@ client.on('ready', () => {
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
-	console.log(`[${message.author.tag}]: ${message.content}`);
+	console.log(`[${new Date}]: ${message.content}`);
 	const [commandName, ...args] = message.content
 		.trim()
 		.substring(Prefix.length)
@@ -46,14 +46,41 @@ client.on('message', (message) => {
 			description: ``,
 			thumbnail: "",
 			fields: [{
+				name: `${Prefix}awoo`,
+				value: "gets you a awoo gif or img"
+			},  {
+				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose nsfw a set number of times"
+			},  {
+				name: `${Prefix}blowjob`,
+				value: "gets you a blowjob gif"
+			}, {
+				name: `${Prefix}blush`,
+				value: "gets you a blush gif or img"
+			}, {
+				name: `${Prefix}cuddle`,
+				value: "gets you a cuddle gif or img"
+			}, {
 				name: `${Prefix}fact`,
 				value: "gets you a anime fact"
+			}, {
+				name: `${Prefix}hug`,
+				value: "gets you a hug gif or img"
+			}, {
+				name: `${Prefix}kiss`,
+				value: "gets you a kiss gif or img"
 			}, {
 				name: `${Prefix}neko [optinal nsfw]`,
 				value: "shows a random neko img"
 			}, {
 				name: `${Prefix}nsfw`,
 				value: "shows random nsfw anime img (only in nsfw marked channels)"
+			},  {
+				name: `${Prefix}pat`,
+				value: "gets you a pat gif or img"
+			}, {
+				name: `${Prefix}poke`,
+				value: "gets you a poke gif"
 			}, {
 				name: `${Prefix}quote`,
 				value: "shows a random anime quote"
@@ -76,36 +103,9 @@ client.on('message', (message) => {
 				name: `${Prefix}whatisnsfw`,
 				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
 			}, {
-				name: `${Prefix}waifuquestion`,
+				name: `${Prefix}waifuquestions`,
 				value: "guess the waifu you get"
-			}, {
-				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose nsfw a set number of times"
-			},{
-				name: `${Prefix}blowjob`,
-				value: "gets you a blowjob gif"
-			},{
-				name: `${Prefix}poke`,
-				value: "gets you a poke gif"
-			},{
-				name: `${Prefix}pat`,
-				value: "gets you a pat gif or img"
-			},{
-				name: `${Prefix}cuddle`,
-				value: "gets you a cuddle gif or img"
-			},{
-				name: `${Prefix}hug`,
-				value: "gets you a hug gif or img"
-			},{
-				name: `${Prefix}kiss`,
-				value: "gets you a kiss gif or img"
-			},{
-				name: `${Prefix}blush`,
-				value: "gets you a blush gif or img"
-			},{
-				name: `${Prefix}awoo`,
-				value: "gets you a awoo gif or img"
-			}, ],
+			},],
 			image: {
 				url: ""
 			},
@@ -130,10 +130,12 @@ client.on('message', (message) => {
 				if (jsonParsed.docs[0].season === '') {
 					jsonParsed.docs[0].season = '0';
 				}
+				var name = jsonParsed.docs[0].title_english;
+				if (!jsonParsed.docs[0].title_english) name = jsonParsed.docs[0].title_native;
 				const Embed = {
 					color: '#00ff00',
-					title: jsonParsed.docs[0].anime,
-					url: `https://duckduckgo.com/?q=${jsonParsed.docs[0].anime.replaceAll(" ", "+")}`,
+					title: name,
+					url: `https://duckduckgo.com/?q=${name.replaceAll(" ", "+")}`,
 					author: {
 						Name: 'AnimeBot',
 						icon_url: args[0],
@@ -321,7 +323,6 @@ client.on('message', (message) => {
 		request('http://www.reddit.com/r/Animewallpaper.json?json', function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
-				console.log(jsonParsed.data.children[aRandomNum].data);
 				const Embed = {
 					color: '#00ff00',
 					title: jsonParsed.data.children[aRandomNum].data.title,
@@ -482,7 +483,6 @@ client.on('message', (message) => {
 					embed: Embed
 				});
 			}
-			console.log(jsonParsed.character);
 			message.channel.awaitMessages(filter, {
 					max: 1,
 					time: 60000,
