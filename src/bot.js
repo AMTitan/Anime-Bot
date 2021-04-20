@@ -199,7 +199,7 @@ client.on('message', (message) => {
 						var jsonParsed = JSON.parse(body);
 						const Embed = {
 							color: '#00ff00',
-							title: 'Neko',
+							title: 'Neko nsfw',
 							url: jsonParsed.url,
 							author: {
 								Name: 'AnimeBot',
@@ -233,7 +233,7 @@ client.on('message', (message) => {
 					var jsonParsed = JSON.parse(body);
 					const Embed = {
 						color: '#00ff00',
-						title: 'Neko nsfw',
+						title: 'Neko',
 						url: jsonParsed.url,
 						author: {
 							Name: 'AnimeBot',
