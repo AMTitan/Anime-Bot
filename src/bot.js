@@ -140,7 +140,7 @@ client.on('message', (message) => {
 		message.channel.send({
 			embed: Embed
 		});
-		console.log("test");
+		
 	} else if (commandName.toLowerCase() === `whatis`) {
 		if (!args[0]) {
 			message.channel.send('add a img to the end of the cmd');
