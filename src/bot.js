@@ -960,6 +960,8 @@ client.on('message', (message) => {
 							embed: Embed
 						});
 
+						//test
+
 						client.on('message', (message1) => {
 							if ((filter === message1.author.id || message.member1.hasPermission("MANAGE_MESSAGES")) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 								run = false;
