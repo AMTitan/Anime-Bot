@@ -104,7 +104,7 @@ client.on('message', (message) => {
 				value: "shows a random anime img"
 			}, {
 				name: `${Prefix}show`,
-				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
+				value: "gets you a random "
 			}, {
 				name: `${Prefix}waifu [optional nsfw]`,
 				value: "gets you a waifu"
@@ -1397,4 +1397,8 @@ client.on('message', (message) => {
 	}
 });
 
-client.login(process.env.Token);
+if (!process.env.Token) {
+	client.login(secrets.Token);
+} else {
+	client.login(process.env.Token);
+}
