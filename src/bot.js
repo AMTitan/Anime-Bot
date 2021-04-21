@@ -140,6 +140,7 @@ client.on('message', (message) => {
 		message.channel.send({
 			embed: Embed
 		});
+		console.log("test");
 	} else if (commandName.toLowerCase() === `whatis`) {
 		if (!args[0]) {
 			message.channel.send('add a img to the end of the cmd');
@@ -959,8 +960,6 @@ client.on('message', (message) => {
 						message.channel.send({
 							embed: Embed
 						});
-
-						//test
 
 						client.on('message', (message1) => {
 							if ((filter === message1.author.id || message.member1.hasPermission("MANAGE_MESSAGES")) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
