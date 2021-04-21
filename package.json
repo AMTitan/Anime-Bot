@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/bot.js",
-    "runforever": "forever src/bot.js"
+    "dev": "nodemon src/bot.js"
   },
   "author": "",
   "license": "ISC",
