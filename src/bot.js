@@ -1398,7 +1398,7 @@ client.on('message', (message) => {
 });
 
 if (!process.env.Token) {
-	client.login(secrets.Token);
+	client.login(process.env.GITHUB);
 } else {
 	client.login(process.env.Token);
 }
