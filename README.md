@@ -24,4 +24,4 @@ npm run dev
 
 <h3>Usage</h3>
 
-- !Ahelp
+- a!help
