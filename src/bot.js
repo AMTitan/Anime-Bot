@@ -49,12 +49,21 @@ client.on('message', (message) => {
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
 			},  {
+				name: `${Prefix}autoawoo (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose awoo a set number of times"
+			},  {
 				name: `${Prefix}autonekonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 				value: "dose neko nsfw a set number of times"
 			},  {
 				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 				value: "dose nsfw a set number of times"
 			},  {
+				name: `${Prefix}autowaifu (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose waifu a set number of times"
+			},  {
+				name: `${Prefix}autowaifunsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose waifu nsfw a set number of times"
+			}, {
 				name: `${Prefix}blowjob`,
 				value: "gets you a blowjob gif"
 			}, {
@@ -93,6 +102,9 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}random`,
 				value: "shows a random anime img"
+			}, {
+				name: `${Prefix}show`,
+				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
 			}, {
 				name: `${Prefix}waifu [optional nsfw]`,
 				value: "gets you a waifu"
@@ -912,6 +924,130 @@ client.on('message', (message) => {
 		} else {
 			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
+	} else if (commandName.toLowerCase() === 'autoawoo') {
+		if (!args[0]) args[0] = 3;
+		if (!args[1]) args[1] = 5;
+		var n = 0;
+		for (i = 0; i < args[0]; i++) {
+			setTimeout(function(){
+				n++;
+				request(`https://waifu.pics/api/sfw/awoo`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: `Awoo ${n}/${args[0]}`,
+						url: jsonParsed.url,
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+				
+			}, args[1] * i * 1000);
+		}
+	} else if (commandName.toLowerCase() === 'autowaifu') {
+		if (!args[0]) args[0] = 3;
+		if (!args[1]) args[1] = 5;
+		var n = 0;
+		for (i = 0; i < args[0]; i++) {
+			setTimeout(function(){
+				n++;
+				request(`https://waifu.pics/api/sfw/waifu`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: `Waifu ${n}/${args[0]}`,
+						url: jsonParsed.url,
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+				
+			}, args[1] * i * 1000);
+		}
+	} else if (commandName.toLowerCase() === 'autowaifunsfw') {
+		if (!args[0]) args[0] = 3;
+		if (!args[1]) args[1] = 5;
+		if (message.channel.nsfw === true || message.guild === null) {
+			var n = 0;
+			for (i = 0; i < args[0]; i++) {
+				setTimeout(function(){
+					n++;
+					request(`https://waifu.pics/api/nsfw/waifu`, function(error, response, body) {
+					if (!error && response.statusCode == 200) {
+						var jsonParsed = JSON.parse(body);
+						const Embed = {
+							color: '#00ff00',
+							title: `Waifu nsfw ${n}/${args[0]}`,
+							url: jsonParsed.url,
+							author: {
+								Name: 'AnimeBot',
+								icon_url: jsonParsed.url,
+								url: '',
+							},
+							description: ``,
+							thumbnail: jsonParsed.url,
+							fields: [],
+							image: {
+								url: jsonParsed.url,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: jsonParsed.url,
+							},
+						}
+
+						message.channel.send({
+							embed: Embed
+						});
+					}
+				})
+					
+				}, args[1] * i * 1000);
+			}
+		} else {
+			message.channel.send("sorry but the channel is not marked as nsfw");
+		}
 	} else if (commandName.toLowerCase() === 'blowjob') {
 		if (message.channel.nsfw === true || message.guild === null) {
 			request(`https://waifu.pics/api/nsfw/blowjob`, function(error, response, body) {
@@ -1156,6 +1292,75 @@ client.on('message', (message) => {
 					footer: {
 						test: 'Some footer text here',
 						icon_url: jsonParsed.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
+	}else if (commandName.toLowerCase() === 'show') {
+		var shownum = Math.round(Math.random() * 16292);
+		request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: `${jsonParsed.data[0].type} - ${jsonParsed.data[0].attributes.canonicalTitle}`,
+					url: jsonParsed.data[0].links.self,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.data[0].attributes.posterImage.original,
+						url: '',
+					},
+					description: jsonParsed.data[0].attributes.description,
+					thumbnail: jsonParsed.data[0].attributes.posterImage.original,
+					fields: [
+				 	{
+						name: `Age Rating`,
+						value: jsonParsed.data[0].attributes.ageRating,
+						inline: true
+					}, {
+						name: `Popularty Count`,
+						value: `${jsonParsed.data[0].attributes.popularityRank}/16292`,
+						inline: true
+					}, {
+						name: `Status`,
+						value: `${jsonParsed.data[0].attributes.status}`,
+						inline: true
+					}, {
+						name: `Hentai`,
+						value: `${jsonParsed.data[0].attributes.nsfw}`,
+						inline: true
+					}, {
+						name: `Episode Count`,
+						value: `${jsonParsed.data[0].attributes.episodeCount}`,
+						inline: true
+					}, {
+						name: `Total Length`,
+						value: `${jsonParsed.data[0].attributes.totalLength}mins`,
+						inline: true
+					}, {
+						name: `Subtype`,
+						value: `${jsonParsed.data[0].attributes.subtype}`,
+						inline: true
+					}, {
+						name: `Favorites Count`,
+						value: `${jsonParsed.data[0].attributes.favoritesCount}`,
+						inline: true
+					}, {
+						name: `Age Rating Guide`,
+						value: `${jsonParsed.data[0].attributes.ageRatingGuide}`,
+						inline: true
+					},],
+					image: {
+						url: jsonParsed.data[0].attributes.posterImage.original,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.data[0].attributes.posterImage.original,
 					},
 				}
 
