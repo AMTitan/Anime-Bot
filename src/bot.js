@@ -49,6 +49,9 @@ client.on('message', (message) => {
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
 			},  {
+				name: `${Prefix}autonekonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose neko nsfw a set number of times"
+			},  {
 				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 				value: "dose nsfw a set number of times"
 			},  {
@@ -94,6 +97,9 @@ client.on('message', (message) => {
 				name: `${Prefix}waifu [optional nsfw]`,
 				value: "gets you a waifu"
 			}, {
+				name: `${Prefix}waifuquestions`,
+				value: "guess the waifu you get"
+			}, {
 				name: `${Prefix}wallpaper`,
 				value: "shows a random anime wallpaper (just a random one from the first 25 hot on the subreddit)"
 			}, {
@@ -102,9 +108,6 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}whatisnsfw`,
 				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
-			}, {
-				name: `${Prefix}waifuquestions`,
-				value: "guess the waifu you get"
 			},],
 			image: {
 				url: ""
@@ -859,6 +862,50 @@ client.on('message', (message) => {
 							});
 						}
 					})
+					
+				}, args[1] * i * 1000);
+			}
+		} else {
+			message.channel.send("sorry but the channel is not marked as nsfw");
+		}
+	} else if (commandName.toLowerCase() === 'autonekonsfw') {
+		if (!args[0]) args[0] = 3;
+		if (!args[1]) args[1] = 5;
+		if (message.channel.nsfw === true || message.guild === null) {
+			var n = 0;
+			for (i = 0; i < args[0]; i++) {
+				setTimeout(function(){
+					n++;
+					request(`https://waifu.pics/api/nsfw/neko`, function(error, response, body) {
+					if (!error && response.statusCode == 200) {
+						var jsonParsed = JSON.parse(body);
+						const Embed = {
+							color: '#00ff00',
+							title: `Neko nsfw ${n}/${args[0]}`,
+							url: jsonParsed.url,
+							author: {
+								Name: 'AnimeBot',
+								icon_url: jsonParsed.url,
+								url: '',
+							},
+							description: ``,
+							thumbnail: jsonParsed.url,
+							fields: [],
+							image: {
+								url: jsonParsed.url,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: jsonParsed.url,
+							},
+						}
+
+						message.channel.send({
+							embed: Embed
+						});
+					}
+				})
 					
 				}, args[1] * i * 1000);
 			}
