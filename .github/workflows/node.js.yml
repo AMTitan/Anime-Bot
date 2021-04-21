@@ -3,6 +3,9 @@
 
 name: run bot
 
+on:
+  workflow_dispatch
+
 env:
   GITHUB: ${{ secrets.Token }}
 jobs:
