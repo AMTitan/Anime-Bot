@@ -1,4 +1,4 @@
-# Anime-Bot
+# ![](https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png) <img src="https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png" alt="icon" width="50px"/> Anime-Bot
 <h3>Dependency</h3>
 
 - `Git`
