@@ -148,6 +148,8 @@ client.on('message', (message) => {
 			embed: Embed
 		});
 
+		console.log("it upadeted");
+
 	} else if (commandName.toLowerCase() === `whatis`) {
 		if (!args[0]) {
 			message.channel.send('add a img to the end of the cmd');
