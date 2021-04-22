@@ -83,6 +83,9 @@ client.on('message', (message) => {
 				name: `${Prefix}hug`,
 				value: "gets you a hug gif or img"
 			}, {
+				name: `${Prefix}invite`,
+				value: "gets you the invite to invite the bot to your server"
+			}, {
 				name: `${Prefix}kiss`,
 				value: "gets you a kiss gif or img"
 			}, {
@@ -106,6 +109,9 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}random`,
 				value: "shows a random anime img"
+			}, {
+				name: `${Prefix}server`,
+				value: "gets you the main anime bot server"
 			}, {
 				name: `${Prefix}show`,
 				value: "gets you a random "
@@ -1621,6 +1627,58 @@ client.on('message', (message) => {
 				});
 			}
 		})
+	}else if (commandName.toLowerCase() === 'invite') {
+		const Embed = {
+			color: '#00ff00',
+			title: 'Invite link (click me)',
+			url: "https://discord.com/api/oauth2/authorize?client_id=833682899202080818&permissions=0&scope=bot",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: "",
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: 'Some footer text here',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
+	}else if (commandName.toLowerCase() === 'server') {
+		const Embed = {
+			color: '#00ff00',
+			title: 'Server link (click me)',
+			url: "https://discord.gg/sJnVmPZB7Y",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: "",
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: 'Some footer text here',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
 	}else if(commandName.toLowerCase() === "stop") {
 
 	} else {
