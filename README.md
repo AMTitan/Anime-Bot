@@ -7,7 +7,7 @@
 <h3>Install</h3>
 
 ```
-git clone https://github.com/AMTitan/Aniem-Bot.git
+git clone https://github.com/AMTitan/Anime-Bot.git
 cd Bad-Apple-Discord-Bot
 npm i
 ```
