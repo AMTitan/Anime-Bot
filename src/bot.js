@@ -28,7 +28,7 @@ client.on('ready', () => {
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
-	if (!message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
+	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	console.log(`[${new Date}]: ${message.content}`);
 	const [commandName, ...args] = message.content
 		.trim()
