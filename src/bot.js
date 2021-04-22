@@ -17,6 +17,8 @@ request(`https://animechan.vercel.app/api/random`, function (error, response, bo
   	}
 });
 */
+
+//test
 client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
 	client.user.setActivity(`${Prefix}help`, {
