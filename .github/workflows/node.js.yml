@@ -4,7 +4,8 @@
 name: run bot
 
 on:
-  workflow_dispatch
+  schedule:
+    - cron: '0 1/6 * * *'
 
 env:
   GITHUB: ${{ secrets.Token }}
