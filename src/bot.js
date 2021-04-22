@@ -28,6 +28,7 @@ client.on('ready', () => {
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
+	if (!message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	console.log(`[${new Date}]: ${message.content}`);
 	const [commandName, ...args] = message.content
 		.trim()
@@ -140,7 +141,7 @@ client.on('message', (message) => {
 		message.channel.send({
 			embed: Embed
 		});
-		
+
 	} else if (commandName.toLowerCase() === `whatis`) {
 		if (!args[0]) {
 			message.channel.send('add a img to the end of the cmd');
