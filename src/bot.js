@@ -36,7 +36,6 @@ client.on('message', (message) => {
 		.substring(Prefix.length)
 		.split(/\s+/);
 	if (commandName === `help`) {
-		console.log("hopefully one more test");
 		const Embed = {
 			color: '#00ff00',
 			title: `Help`,
