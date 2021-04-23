@@ -121,7 +121,7 @@ client.on('message', (message) => {
 				value: "gets you a random "
 			}, {
 				name: `${Prefix}stop`,
-				value: "stops a auto anything but you have to be the msg author or a admin"
+				value: "stops a auto anything but you have to be the msg author or able to delete msges"
 			}, {
 				name: `${Prefix}waifu [optional nsfw]`,
 				value: "gets you a waifu"
