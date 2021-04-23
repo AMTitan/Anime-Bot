@@ -1681,6 +1681,8 @@ client.on('message', (message) => {
 		message.channel.send({
 			embed: Embed
 		});
+
+		message.channel.send("this is working");
 	}else if(commandName.toLowerCase() === "stop") {
 
 	} else {
