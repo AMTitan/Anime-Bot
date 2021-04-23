@@ -895,7 +895,7 @@ client.on('message', (message) => {
 							});
 
 							client.on('message', (message1) => {
-								if ((filter === message1.author.id || (message.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+								if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 									run = false;
 								}else if(message1.author.Bot === false) {
 									const Embed = {
@@ -973,7 +973,7 @@ client.on('message', (message) => {
 						});
 
 						client.on('message', (message1) => {
-							if ((filter === message1.author.id || (message.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+							if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 								run = false;
 							}else if(message1.author.Bot === false) {
 								const Embed = {
@@ -1051,7 +1051,7 @@ client.on('message', (message) => {
 							});
 
 						client.on('message', (message1) => {
-							if ((filter === message1.author.id || (message.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+							if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 								run = false;
 							}else if(message1.author.Bot === false) {
 								const Embed = {
@@ -1202,7 +1202,7 @@ client.on('message', (message) => {
 					});
 
 					client.on('message', (message1) => {
-						if ((filter === message1.author.id || (message.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+						if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 							run = false;
 						}else if(message1.author.Bot === false) {
 							const Embed = {
@@ -1276,7 +1276,7 @@ client.on('message', (message) => {
 					});
 
 					client.on('message', (message1) => {
-						if ((filter === message1.author.id || (message.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+						if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 							run = false;
 						}else if(message1.author.Bot === false) {
 							const Embed = {
@@ -1351,7 +1351,7 @@ client.on('message', (message) => {
 						});
 
 						client.on('message', (message1) => {
-							if ((filter === message1.author.id || (message.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+							if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 								
 								run = false;
 							}else if(message1.author.Bot === false) {
