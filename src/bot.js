@@ -1053,6 +1053,7 @@ client.on('message', (message) => {
 						client.on('message', (message1) => {
 							if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 								run = false;
+								return;
 							}else if(message1.author.Bot === false) {
 								const Embed = {
 									color: '#00ff00',
@@ -1128,8 +1129,9 @@ client.on('message', (message) => {
 					});
 
 					client.on('message', (message1) => {
-						if ((filter === message1.author.id || (message.guild && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+						if ((filter === message1.author.id || (message1.guild && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 							run = false;
+							return;
 						}else if(message1.author.Bot === false) {
 							const Embed = {
 								color: '#00ff00',
@@ -1204,6 +1206,7 @@ client.on('message', (message) => {
 					client.on('message', (message1) => {
 						if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 							run = false;
+							return;
 						}else if(message1.author.Bot === false) {
 							const Embed = {
 								color: '#00ff00',
@@ -1278,6 +1281,7 @@ client.on('message', (message) => {
 					client.on('message', (message1) => {
 						if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 							run = false;
+							return;
 						}else if(message1.author.Bot === false) {
 							const Embed = {
 								color: '#00ff00',
@@ -1352,8 +1356,8 @@ client.on('message', (message) => {
 
 						client.on('message', (message1) => {
 							if ((filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
-								
 								run = false;
+								return;
 							}else if(message1.author.Bot === false) {
 								const Embed = {
 									color: '#00ff00',
