@@ -1658,7 +1658,7 @@ client.on('message', (message) => {
 	}else if (commandName.toLowerCase() === 'server') {
 		const Embed = {
 			color: '#00ff00',
-			title: 'Server link (click me) (this worked)',
+			title: 'Server link (click me)',
 			url: "https://discord.gg/sJnVmPZB7Y",
 			author: {
 				Name: 'AnimeBot',
