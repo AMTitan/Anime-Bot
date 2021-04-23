@@ -327,7 +327,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: `Random Anime Img`,
-					url: jsonParsed.url.replaceAll(" ", "+"),
+					url: jsonParsed.url,
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
