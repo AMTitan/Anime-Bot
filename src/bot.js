@@ -1658,7 +1658,7 @@ client.on('message', (message) => {
 	}else if (commandName.toLowerCase() === 'server') {
 		const Embed = {
 			color: '#00ff00',
-			title: 'Server link (click me)',
+			title: 'Server link (click me) (this worked)',
 			url: "https://discord.gg/sJnVmPZB7Y",
 			author: {
 				Name: 'AnimeBot',
@@ -1682,7 +1682,6 @@ client.on('message', (message) => {
 			embed: Embed
 		});
 
-		message.channel.send("this is working");
 	}else if(commandName.toLowerCase() === "stop") {
 
 	} else {
