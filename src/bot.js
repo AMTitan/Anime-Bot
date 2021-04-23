@@ -1129,7 +1129,7 @@ client.on('message', (message) => {
 					});
 
 					client.on('message', (message1) => {
-						if (run === true && (filter === message1.author.id || (message1.guild && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+						if (run === true && (filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
 							run = false;
 							return;
 						}else if(message1.author.Bot === false) {
