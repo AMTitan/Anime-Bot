@@ -190,7 +190,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: name,
-					url: `https://duckduckgo.com/?q=${name.replaceAll(" ", "+")}`,
+					url: `https://duckduckgo.com/?q=${name.split(" ").join("+")}`,
 					author: {
 						Name: 'AnimeBot',
 						icon_url: args[0],
@@ -454,7 +454,7 @@ client.on('message', (message) => {
 							const Embed = {
 								color: '#00ff00',
 								title: jsonParsed.docs[0].anime,
-								url: `https://duckduckgo.com/?q=${jsonParsed.docs[0].anime.replaceAll(" ", "+")}`,
+								url: `https://duckduckgo.com/?q=${jsonParsed.docs[0].anime.split(" ").join("+")}`,
 								author: {
 									Name: 'AnimeBot',
 									icon_url: jsonParsed1.url,
