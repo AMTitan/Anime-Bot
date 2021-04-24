@@ -381,7 +381,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: jsonParsed.data.children[aRandomNum].data.title,
-					url: jsonParsed.data.children[aRandomNum].data.url.replaceAll(" ", "+"),
+					url: jsonParsed.data.children[aRandomNum].data.url,
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
