@@ -38,7 +38,7 @@ client.on('message', (message) => {
 	if (commandName === `help`) {
 		const Embed = {
 			color: '#00ff00',
-			title: `Help`,
+			title: `Help - Normal`,
 			url: "",
 			author: {
 				Name: 'AnimeBot',
@@ -50,27 +50,6 @@ client.on('message', (message) => {
 			fields: [{
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
-			},  {
-				name: `${Prefix}autoawoo (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose awoo a set number of times"
-			},  {
-				name: `${Prefix}autoblowjob (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose awoo a set number of times"
-			},  {
-				name: `${Prefix}autoneko (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose neko a set number of times"
-			},   {
-				name: `${Prefix}autonekonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose neko nsfw a set number of times"
-			},  {
-				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose nsfw a set number of times"
-			},  {
-				name: `${Prefix}autowaifu (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose waifu a set number of times"
-			},  {
-				name: `${Prefix}autowaifunsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
-				value: "dose waifu nsfw a set number of times"
 			}, {
 				name: `${Prefix}blowjob`,
 				value: "gets you a blowjob gif"
@@ -123,7 +102,7 @@ client.on('message', (message) => {
 				name: `${Prefix}stop`,
 				value: "stops a auto anything but you have to be the msg author or able to delete msges"
 			}, {
-				name: `${Prefix}waifu [optional nsfw]`,
+				name: `${Prefix}waifu`,
 				value: "gets you a waifu"
 			}, {
 				name: `${Prefix}waifuquestions`,
@@ -148,6 +127,49 @@ client.on('message', (message) => {
 			},
 		}
 
+		const Embedtwo = {
+			color: '#00ff00',
+			title: `Help - Auto`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [{
+				name: `${Prefix}autoawoo (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose awoo a set number of times"
+			},  {
+				name: `${Prefix}autoblowjob (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose awoo a set number of times"
+			},  {
+				name: `${Prefix}autoneko (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose neko a set number of times"
+			},   {
+				name: `${Prefix}autonekonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose neko nsfw a set number of times"
+			},  {
+				name: `${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose nsfw a set number of times"
+			},  {
+				name: `${Prefix}autowaifu (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+				value: "dose waifu a set number of times"
+			},],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embedtwo
+		});
 		message.channel.send({
 			embed: Embed
 		});
@@ -384,34 +406,8 @@ client.on('message', (message) => {
 			}
 		})
 	} else if (commandName.toLowerCase() === 'nsfw') {
-		const Embed = {
-			color: '#00ff00',
-			title: "Sorry This Cmd is broken right now",
-			url: "",
-			author: {
-				Name: 'AnimeBot',
-				icon_url: "",
-				url: '',
-			},
-			description: ``,
-			thumbnail: "",
-			fields: [],
-			image: {
-				url: ""
-			},
-			fimestamp: new Date(),
-			footer: {
-				test: '',
-				icon_url: "",
-			},
-		}
-
-		message.channel.send({
-			embed: Embed
-		});
-		return;
 		if (message.channel.nsfw === true || message.guild === null) {
-			request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function(error, response, body) {
+			request('https://waifu.pics/api/nsfw/waifu', function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed = JSON.parse(body);
 					const Embed = {
@@ -445,34 +441,8 @@ client.on('message', (message) => {
 			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
 	} else if (commandName.toLowerCase() === 'whatisnsfw') {
-		const Embed = {
-			color: '#00ff00',
-			title: "Sorry This Cmd is broken right now",
-			url: "",
-			author: {
-				Name: 'AnimeBot',
-				icon_url: "",
-				url: '',
-			},
-			description: ``,
-			thumbnail: "",
-			fields: [],
-			image: {
-				url: ""
-			},
-			fimestamp: new Date(),
-			footer: {
-				test: '',
-				icon_url: "",
-			},
-		}
-
-		message.channel.send({
-			embed: Embed
-		});
-		return;
 		if (message.channel.nsfw === true || message.guild === null) {
-			request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function(error, response, body) {
+			request('https://waifu.pics/api/nsfw/waifu', function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed1 = JSON.parse(body);
 					request(`https://trace.moe/api/search?url=${jsonParsed1.url}`, function(error, response, body) {
@@ -794,73 +764,36 @@ client.on('message', (message) => {
 
 		})
 	} else if (commandName.toLowerCase() === 'waifu') {
-		if (args[0] && args[0].toLowerCase() === "nsfw") {
-			if (message.channel.nsfw === true || message.guild === null) {
-				request(`https://waifu.pics/api/nsfw/waifu`, function(error, response, body) {
-					if (!error && response.statusCode == 200) {
-						var jsonParsed = JSON.parse(body);
-						const Embed = {
-							color: '#00ff00',
-							title: 'Waifu nsfw',
-							url: jsonParsed.url,
-							author: {
-								Name: 'AnimeBot',
-								icon_url: jsonParsed.url,
-								url: '',
-							},
-							description: ``,
-							thumbnail: jsonParsed.url,
-							fields: [],
-							image: {
-								url: jsonParsed.url,
-							},
-							fimestamp: new Date(),
-							footer: {
-								test: 'Some footer text here',
-								icon_url: jsonParsed.url,
-							},
-						}
-
-						message.channel.send({
-							embed: Embed
-						});
-					}
-				})
-			} else {
-				message.channel.send("sorry but the channel is not marked as nsfw");
-			}
-		}else {
-			request(`https://waifu.pics/api/sfw/waifu`, function(error, response, body) {
-				if (!error && response.statusCode == 200) {
-					var jsonParsed = JSON.parse(body);
-					const Embed = {
-						color: '#00ff00',
-						title: 'Waifu',
+		request(`https://waifu.pics/api/sfw/waifu`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				const Embed = {
+					color: '#00ff00',
+					title: 'Waifu',
+					url: jsonParsed.url,
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.url,
+					fields: [],
+					image: {
 						url: jsonParsed.url,
-						author: {
-							Name: 'AnimeBot',
-							icon_url: jsonParsed.url,
-							url: '',
-						},
-						description: ``,
-						thumbnail: jsonParsed.url,
-						fields: [],
-						image: {
-							url: jsonParsed.url,
-						},
-						fimestamp: new Date(),
-						footer: {
-							test: 'Some footer text here',
-							icon_url: jsonParsed.url,
-						},
-					}
-
-					message.channel.send({
-						embed: Embed
-					});
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.url,
+					},
 				}
-			})
-		}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
 	} else if (commandName.toLowerCase() === 'fact') {
 		const options = {
 			method: 'GET',
@@ -907,32 +840,6 @@ client.on('message', (message) => {
 			});
 		});
 	} else if (commandName.toLowerCase() === 'autonsfw') {
-		const Embed = {
-			color: '#00ff00',
-			title: "Sorry This Cmd is broken right now",
-			url: "",
-			author: {
-				Name: 'AnimeBot',
-				icon_url: "",
-				url: '',
-			},
-			description: ``,
-			thumbnail: "",
-			fields: [],
-			image: {
-				url: ""
-			},
-			fimestamp: new Date(),
-			footer: {
-				test: '',
-				icon_url: "",
-			},
-		}
-
-		message.channel.send({
-			embed: Embed
-		});
-		return;
 		if (!args[0]) args[0] = 3;
 		if (!args[1]) args[1] = 5;
 		if (message.channel.nsfw === true || message.guild === null) {
@@ -943,7 +850,7 @@ client.on('message', (message) => {
 				setTimeout(function(){
 					if (run === false) return;
 					n++;
-					request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function(error, response, body) {
+					request('https://waifu.pics/api/nsfw/waifu', function(error, response, body) {
 						if (!error && response.statusCode == 200) {
 							var jsonParsed = JSON.parse(body);
 							const Embed = {
@@ -1392,85 +1299,6 @@ client.on('message', (message) => {
 			})
 				
 			}, args[1] * i * 1000);
-		}
-	} else if (commandName.toLowerCase() === 'autowaifunsfw') {
-		if (!args[0]) args[0] = 3;
-		if (!args[1]) args[1] = 5;
-		if (message.channel.nsfw === true || message.guild === null) {
-			var n = 0;
-			var run = true;
-			const filter = message.author.id;
-			for (i = 0; i < args[0]; i++) {
-				setTimeout(function(){
-					if (run === false) return;
-					n++;
-					request(`https://waifu.pics/api/nsfw/waifu`, function(error, response, body) {
-					if (!error && response.statusCode == 200) {
-						var jsonParsed = JSON.parse(body);
-						const Embed = {
-							color: '#00ff00',
-							title: `Waifu nsfw ${n}/${args[0]}`,
-							url: jsonParsed.url,
-							author: {
-								Name: 'AnimeBot',
-								icon_url: jsonParsed.url,
-								url: '',
-							},
-							description: ``,
-							thumbnail: jsonParsed.url,
-							fields: [],
-							image: {
-								url: jsonParsed.url,
-							},
-							fimestamp: new Date(),
-							footer: {
-								test: 'Some footer text here',
-								icon_url: jsonParsed.url,
-							},
-						}
-
-						message.channel.send({
-							embed: Embed
-						});
-
-						client.on('message', (message1) => {
-							if (run === true && (filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
-								run = false;
-								return;
-							}else if(message1.author.Bot === false) {
-								const Embed = {
-									color: '#00ff00',
-									title: `Sorry you have to be the message author or the an admin`,
-									url: "",
-									author: {
-										Name: 'AnimeBot',
-										icon_url: "",
-										url: '',
-									},
-									description: ``,
-									thumbnail: "",
-									fields: [],
-									image: {
-										url: ""
-									},
-									fimestamp: new Date(),
-									footer: {
-										test: '',
-										icon_url: "",
-									},
-								}
-								message.channel.send({
-									embed: Embed
-								});
-							}
-						})
-					}
-				})
-					
-				}, args[1] * i * 1000);
-			}
-		} else {
-			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
 	} else if (commandName.toLowerCase() === 'blowjob') {
 		if (message.channel.nsfw === true || message.guild === null) {
