@@ -384,6 +384,32 @@ client.on('message', (message) => {
 			}
 		})
 	} else if (commandName.toLowerCase() === 'nsfw') {
+		const Embed = {
+			color: '#00ff00',
+			title: "Sorry This Cmd is broken right now",
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
+		return;
 		if (message.channel.nsfw === true || message.guild === null) {
 			request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function(error, response, body) {
 				if (!error && response.statusCode == 200) {
@@ -419,6 +445,32 @@ client.on('message', (message) => {
 			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
 	} else if (commandName.toLowerCase() === 'whatisnsfw') {
+		const Embed = {
+			color: '#00ff00',
+			title: "Sorry This Cmd is broken right now",
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
+		return;
 		if (message.channel.nsfw === true || message.guild === null) {
 			request('https://crunchy-bot.live/api/nsfw/hentai?tag={}', function(error, response, body) {
 				if (!error && response.statusCode == 200) {
@@ -855,6 +907,32 @@ client.on('message', (message) => {
 			});
 		});
 	} else if (commandName.toLowerCase() === 'autonsfw') {
+		const Embed = {
+			color: '#00ff00',
+			title: "Sorry This Cmd is broken right now",
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
+		return;
 		if (!args[0]) args[0] = 3;
 		if (!args[1]) args[1] = 5;
 		if (message.channel.nsfw === true || message.guild === null) {
