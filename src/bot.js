@@ -21,20 +21,9 @@ const poster = new dbots.Poster({
 
 poster.startInterval();
 
-function updateActivity() {
-    if (client.user) {
-	    client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
-			type: 'WATCHING'
-		})
-		.catch(console.error);
-	}
-}
-updateActivity();
-setInterval(updateActivity, 60*60*1000);
-
 client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
-	client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
+	client.user.setActivity(`${Prefix}help`, {
 		type: 'WATCHING'
 	})
 	.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
@@ -2491,25 +2480,34 @@ client.on('message', (message) => {
 			}
 		})
 	}else if (commandName.toLowerCase() === 'stats') {
+		console.log(osu.cpu.usage());
 		const Embed = {
 			color: '#00ff00',
 			title: 'Stats',
 			url: "",
 			author: {
 				Name: 'AnimeBot',
-				icon_url: jsonParsed.url,
+				icon_url: "",
 				url: '',
 			},
 			description: ``,
-			thumbnail: jsonParsed.url,
-			fields: [],
+			thumbnail: "",
+			fields: [{
+						name: 'Server Count',
+						value: client.guilds.cache.size,
+						inline: true
+					}, {
+						name: 'User Count',
+						value: message.client.guilds.cache.map((g) => g.memberCount).reduce((a, c) => a + c),
+						inline: true
+					},],
 			image: {
-				url: jsonParsed.url,
+				url: "",
 			},
 			fimestamp: new Date(),
 			footer: {
 				test: 'Some footer text here',
-				icon_url: jsonParsed.url,
+				icon_url: "",
 			},
 		}
 
