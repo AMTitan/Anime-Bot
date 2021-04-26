@@ -65,6 +65,9 @@ client.on('message', (message) => {
 			description: ``,
 			thumbnail: "",
 			fields: [{
+				name: `EXAMPLE`,
+				value: `${Prefix}neko nsfw`
+			}, {
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
 			}, {
@@ -147,6 +150,9 @@ client.on('message', (message) => {
 			description: ``,
 			thumbnail: "",
 			fields: [{
+				name: `EXAMPLE`,
+				value: `${Prefix}autonekonsfw`
+			},  {
 				name: `${Prefix}autoawoo (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 				value: "dose awoo a set number of times"
 			},  {
@@ -187,6 +193,9 @@ client.on('message', (message) => {
 			description: ``,
 			thumbnail: "",
 			fields: [ {
+				name: `EXAMPLE`,
+				value: `${Prefix}cumslut`
+			},  {
 				name: `${Prefix}bdsm`,
 				value: "gets you a bdsm (you like it or you dont) gif"
 			}, {
