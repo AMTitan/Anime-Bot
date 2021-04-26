@@ -246,10 +246,10 @@ client.on('message', (message) => {
 		}
 
 		message.channel.send({
-			embed: Embedtwo
+			embed: Embed
 		});
 		message.channel.send({
-			embed: Embed
+			embed: Embedtwo
 		});
 		message.channel.send({
 			embed: Embedthree
