@@ -256,7 +256,7 @@ client.on('message', (message) => {
 				name: `${Prefix}whatisnsfw`,
 				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
 			}, {
-				name: `${Prefix}yury`,
+				name: `${Prefix}yuri`,
 				value: "gets you a girl on girl"
 			},],
 			image: {
