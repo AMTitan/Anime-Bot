@@ -10,14 +10,16 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-/*
-request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
-  	if (!error && response.statusCode == 200) {
-  		var jsonParsed = JSON.parse(body);
-  		console.log(jsonParsed);
-  	}
+const dbots = require('dbots');
+const poster = new dbots.Poster({
+    client,
+    apiKeys: {
+        topgg: process.env.top
+    },
+    clientLibrary: 'discord.js'
 });
-*/
+
+poster.startInterval();
 
 client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
