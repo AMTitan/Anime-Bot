@@ -199,6 +199,9 @@ client.on('message', (message) => {
 				name: `EXAMPLE`,
 				value: `${Prefix}cumslut`
 			},  {
+				name: `${Prefix}ass`,
+				value: "gets you a ass img"
+			},  {
 				name: `${Prefix}bdsm`,
 				value: "gets you a bdsm (you like it or you dont) gif"
 			}, {
@@ -211,11 +214,17 @@ client.on('message', (message) => {
 				name: `${Prefix}feet`,
 				value: "gets you a feet img"
 			}, {
+				name: `${Prefix}femom`,
+				value: "gets you a female dominance img"
+			}, {
 				name: `${Prefix}gif`,
 				value: "gets you a nsfw gif!"
 			}, {
 				name: `${Prefix}glasses`,
 				value: "gets you a glasses img"
+			}, {
+				name: `${Prefix}maid`,
+				value: "gets you a maid img"
 			}, {
 				name: `${Prefix}masturbation`,
 				value: "gets you a masturbation img"
@@ -225,6 +234,9 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}orgy`,
 				value: "gets you a orgy (group) img"
+			}, {
+				name: `${Prefix}panties`,
+				value: "gets you a panties img"
 			}, {
 				name: `${Prefix}pussy`,
 				value: "gets you a pussy img"
