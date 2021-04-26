@@ -282,7 +282,7 @@ client.on('message', (message) => {
 						const Embed = {
 							color: '#00ff00',
 							title: 'Neko nsfw',
-							url: jsonParsed.url,
+							url: "",
 							author: {
 								Name: 'AnimeBot',
 								icon_url: jsonParsed.url,
@@ -316,7 +316,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'Neko',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -350,7 +350,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: `Random Anime Img`,
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: "",
@@ -414,7 +414,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: "NSFW",
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: "",
@@ -628,6 +628,31 @@ client.on('message', (message) => {
 
 		})
 	} else if (commandName.toLowerCase() === `waifuquestions`) {
+		const Embed = {
+			color: '#00ff00',
+			title: `I am so sorry this command is not working at this time`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+		message.channel.send({
+			embed: Embed
+		});
+		return;
 		const options = {
 			method: 'GET',
 			url: 'https://animu.p.rapidapi.com/waifus',
@@ -641,6 +666,7 @@ client.on('message', (message) => {
 		request(options, function(error, response, body) {
 			if (error) throw new Error(error);
 			var jsonParsed = JSON.parse(body);
+			console.log(jsonParsed);
 			const Embed = {
 				color: '#00ff00',
 				title: `Guess the waifu`,
@@ -1561,7 +1587,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: `${jsonParsed.data[0].type} - ${jsonParsed.data[0].attributes.canonicalTitle}`,
-					url: jsonParsed.data[0].links.self,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.data[0].attributes.posterImage.original,
