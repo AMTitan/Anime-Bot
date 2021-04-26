@@ -177,7 +177,7 @@ client.on('message', (message) => {
 
 		const Embedthree = {
 			color: '#00ff00',
-			title: `Help - Nsfw`,
+			title: `Help - Nsfw (channel has to be marked nsfw)`,
 			url: "",
 			author: {
 				Name: 'AnimeBot',
@@ -209,7 +209,7 @@ client.on('message', (message) => {
 				value: "gets you a masturbation img"
 			}, {
 				name: `${Prefix}nsfw`,
-				value: "shows random nsfw anime img (only in nsfw marked channels)"
+				value: "shows random nsfw anime img"
 			}, {
 				name: `${Prefix}orgy`,
 				value: "gets you a orgy (group) img"
