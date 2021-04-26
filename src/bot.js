@@ -48,7 +48,7 @@ client.on('message', (message) => {
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
 	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	console.log(`[${new Date}]: ${message.content}`);
-	const [commandName, ...args] = message.content
+	const [commandName, ...args] = message.content.toLowerCase()
 		.trim()
 		.substring(Prefix.length)
 		.split(/\s+/);
