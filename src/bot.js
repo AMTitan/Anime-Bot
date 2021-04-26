@@ -2483,7 +2483,6 @@ client.on('message', (message) => {
 			}
 		})
 	}else if (commandName.toLowerCase() === 'stats') {
-		console.log(osu.cpu.usage());
 		const Embed = {
 			color: '#00ff00',
 			title: 'Stats',
