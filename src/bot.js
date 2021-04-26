@@ -55,7 +55,7 @@ client.on('message', (message) => {
 	if (commandName === `help`) {
 		const Embed = {
 			color: '#00ff00',
-			title: `Help - Normal`,
+			title: `Help - Other`,
 			url: "",
 			author: {
 				Name: 'AnimeBot',
@@ -67,9 +67,6 @@ client.on('message', (message) => {
 			fields: [{
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
-			}, {
-				name: `${Prefix}blowjob`,
-				value: "gets you a blowjob gif"
 			}, {
 				name: `${Prefix}blush`,
 				value: "gets you a blush gif or img"
@@ -92,9 +89,6 @@ client.on('message', (message) => {
 				name: `${Prefix}neko [optinal nsfw]`,
 				value: "shows a random neko img"
 			}, {
-				name: `${Prefix}nsfw`,
-				value: "shows random nsfw anime img (only in nsfw marked channels)"
-			},  {
 				name: `${Prefix}pat`,
 				value: "gets you a pat gif or img"
 			}, {
@@ -130,9 +124,6 @@ client.on('message', (message) => {
 			}, {
 				name: `${Prefix}whatis {link to a img of a anime}`,
 				value: "tries to find what anime it was in"
-			}, {
-				name: `${Prefix}whatisnsfw`,
-				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
 			},],
 			image: {
 				url: ""
@@ -184,11 +175,84 @@ client.on('message', (message) => {
 			},
 		}
 
+		const Embedthree = {
+			color: '#00ff00',
+			title: `Help - Nsfw`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [ {
+				name: `${Prefix}bdsm`,
+				value: "gets you a bdsm (you like it or you dont) gif"
+			}, {
+				name: `${Prefix}blowjob`,
+				value: "gets you a blowjob gif"
+			}, {
+				name: `${Prefix}cumslut`,
+				value: "gets you a cumslut gif"
+			}, {
+				name: `${Prefix}feet`,
+				value: "gets you a feet img"
+			}, {
+				name: `${Prefix}gif`,
+				value: "gets you a nsfw gif!"
+			}, {
+				name: `${Prefix}glasses`,
+				value: "gets you a glasses img"
+			}, {
+				name: `${Prefix}masturbation`,
+				value: "gets you a masturbation img"
+			}, {
+				name: `${Prefix}nsfw`,
+				value: "shows random nsfw anime img (only in nsfw marked channels)"
+			}, {
+				name: `${Prefix}orgy`,
+				value: "gets you a orgy (group) img"
+			}, {
+				name: `${Prefix}pussy`,
+				value: "gets you a pussy img"
+			}, {
+				name: `${Prefix}school`,
+				value: "gets you a school girl img"
+			}, {
+				name: `${Prefix}tentacle`,
+				value: "gets you a tentacle img"
+			}, {
+				name: `${Prefix}thighs`,
+				value: "gets you a thighs img"
+			}, {
+				name: `${Prefix}uniform`,
+				value: "gets you a uniform img"
+			}, {
+				name: `${Prefix}whatisnsfw`,
+				value: "runs nsfw then dose a whatis on it (gets a random hentai)"
+			}, {
+				name: `${Prefix}yury`,
+				value: "gets you a girl on girl"
+			},],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+
 		message.channel.send({
 			embed: Embedtwo
 		});
 		message.channel.send({
 			embed: Embed
+		});
+		message.channel.send({
+			embed: Embedthree
 		});
 
 	} else if (commandName.toLowerCase() === `whatis`) {
