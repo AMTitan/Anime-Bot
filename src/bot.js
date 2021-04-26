@@ -102,6 +102,9 @@ client.on('message', (message) => {
 				name: `${Prefix}show`,
 				value: "gets you a random "
 			}, {
+				name: `${Prefix}stats`,
+				value: "gets you the bot stats"
+			}, {
 				name: `${Prefix}stop`,
 				value: "stops a auto anything but you have to be the msg author or able to delete msges"
 			}, {
