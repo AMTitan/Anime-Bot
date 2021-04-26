@@ -21,19 +21,16 @@ const poster = new dbots.Poster({
 
 poster.startInterval();
 
-client.on('guildCreate', () => {
-	client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
-		type: 'WATCHING'
-	})
-	.catch(console.error);
-})
-
-client.on('guildDelete', () => {
-	client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
-		type: 'WATCHING'
-	})
-	.catch(console.error);
-})
+function updateActivity() {
+    if (client.user) {
+	    client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
+			type: 'WATCHING'
+		})
+		.catch(console.error);
+	}
+}
+updateActivity();
+setInterval(updateActivity, 30*60*1000);
 
 client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
@@ -2382,6 +2379,32 @@ client.on('message', (message) => {
 				});
 			}
 		})
+	}else if (commandName.toLowerCase() === 'stats') {
+		const Embed = {
+			color: '#00ff00',
+			title: 'Stats',
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: jsonParsed.url,
+				url: '',
+			},
+			description: ``,
+			thumbnail: jsonParsed.url,
+			fields: [],
+			image: {
+				url: jsonParsed.url,
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: 'Some footer text here',
+				icon_url: jsonParsed.url,
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
 	}else if (commandName.toLowerCase() === 'show') {
 		var shownum = Math.round(Math.random() * 16292);
 		request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`, function(error, response, body) {
@@ -2516,9 +2539,12 @@ client.on('message', (message) => {
 				icon_url: "",
 				url: '',
 			},
-			description: `if you think this should be a command do ${Prefix}server join then go to rules and make a issue on github so I can add it!`,
+			description: ``,
 			thumbnail: "",
-			fields: [],
+			fields: [{
+				name: `Server Count`,
+				value: `${client.guilds.cache.size}`
+			},],
 			image: {
 				url: ""
 			},
