@@ -63,7 +63,7 @@ client.on('message', (message) => {
 			thumbnail: "",
 			fields: [{
 				name: `EXAMPLE`,
-				value: `${Prefix}neko nsfw`
+				value: `${Prefix}neko [optinal nsfw or gif]`
 			}, {
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
@@ -90,7 +90,7 @@ client.on('message', (message) => {
 				value: "gets you a kiss gif or img"
 			}, {
 				name: `${Prefix}neko [optinal nsfw]`,
-				value: "shows a random neko img"
+				value: "shows a random neko img or gif"
 			}, {
 				name: `${Prefix}pat`,
 				value: "gets you a pat gif or img"
@@ -104,7 +104,7 @@ client.on('message', (message) => {
 				name: `${Prefix}quotequestions`,
 				value: "guess who said a quote"
 			}, {
-				name: `${Prefix}random`,
+				name: `${Prefix}random [optinal gif]`,
 				value: "shows a random anime img"
 			}, {
 				name: `${Prefix}server`,
@@ -195,6 +195,9 @@ client.on('message', (message) => {
 			fields: [ {
 				name: `EXAMPLE`,
 				value: `${Prefix}cumslut`
+			},{
+				name: `${Prefix}anal`,
+				value: `gets you a anal gif`
 			},  {
 				name: `${Prefix}ass`,
 				value: "gets you a ass img"
@@ -211,7 +214,7 @@ client.on('message', (message) => {
 				name: `${Prefix}feet`,
 				value: "gets you a feet img"
 			}, {
-				name: `${Prefix}femom`,
+				name: `${Prefix}femdom`,
 				value: "gets you a female dominance img"
 			}, {
 				name: `${Prefix}gif`,
@@ -235,11 +238,14 @@ client.on('message', (message) => {
 				name: `${Prefix}panties`,
 				value: "gets you a panties img"
 			}, {
-				name: `${Prefix}pussy`,
+				name: `${Prefix}pussy [optinal gif]`,
 				value: "gets you a pussy img"
 			}, {
 				name: `${Prefix}school`,
 				value: "gets you a school girl img"
+			}, {
+				name: `${Prefix}solo [optinal gif]`,
+				value: "gets you a solo img"
 			}, {
 				name: `${Prefix}tentacle`,
 				value: "gets you a tentacle img"
@@ -511,38 +517,71 @@ client.on('message', (message) => {
 			})
 		}
 	} else if (commandName.toLowerCase() === 'random') {
-		let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
-		var item = array[Math.floor(Math.random() * array.length)];
-		request(`https://neko-love.xyz/api/v1/${item}`, function(error, response, body) {
-			if (!error && response.statusCode == 200) {
-				var jsonParsed = JSON.parse(body);
-				const Embed = {
-					color: '#00ff00',
-					title: `Random Anime Img`,
-					url: "",
-					author: {
-						Name: 'AnimeBot',
-						icon_url: "",
+		if (args[0] === "gif") {
+			request(`https://nekos.life/api/v2/img/classic`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: 'fox',
 						url: "",
-					},
-					description: ``,
-					thumbnail: "",
-					fields: [],
-					image: {
-						url: jsonParsed.url
-					},
-					fimestamp: new Date(),
-					footer: {
-						test: '',
-						icon_url: "",
-					},
-				}
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
 
-				message.channel.send({
-					embed: Embed
-				});
-			}
-		})
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		}else {
+			let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
+			var item = array[Math.floor(Math.random() * array.length)];
+			request(`https://neko-love.xyz/api/v1/${item}`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: `Random Anime Img`,
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: "",
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [],
+						image: {
+							url: jsonParsed.url
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		}
 	} else if (commandName.toLowerCase() === 'wallpaper') {
 		if (args[0] && args[0].toLowerCase() === "nsfw") {
 			if (message.channel.nsfw === true || message.guild === null) {
@@ -1849,36 +1888,69 @@ client.on('message', (message) => {
 		}
 	} else if (commandName.toLowerCase() === 'pussy') {
 		if (message.channel.nsfw === true || message.guild === null) {
-			request(`https://akaneko-api.herokuapp.com/api/pussy`, function(error, response, body) {
-				if (!error && response.statusCode == 200) {
-					var jsonParsed = JSON.parse(body);
-					const Embed = {
-						color: '#00ff00',
-						title: 'pussy nsfw',
-						url: "",
-						author: {
-							Name: 'AnimeBot',
-							icon_url: jsonParsed.url,
-							url: '',
-						},
-						description: ``,
-						thumbnail: jsonParsed.url,
-						fields: [],
-						image: {
-							url: jsonParsed.url,
-						},
-						fimestamp: new Date(),
-						footer: {
-							test: 'Some footer text here',
-							icon_url: jsonParsed.url,
-						},
-					}
+			if (args[0] === "gif") {
+				request(`https://nekos.life/api/v2/img/pussy`, function(error, response, body) {
+					if (!error && response.statusCode == 200) {
+						var jsonParsed = JSON.parse(body);
+						const Embed = {
+							color: '#00ff00',
+							title: 'pussy nsfw',
+							url: "",
+							author: {
+								Name: 'AnimeBot',
+								icon_url: jsonParsed.url,
+								url: '',
+							},
+							description: ``,
+							thumbnail: jsonParsed.url,
+							fields: [],
+							image: {
+								url: jsonParsed.url,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: jsonParsed.url,
+							},
+						}
 
-					message.channel.send({
-						embed: Embed
-					});
-				}
-			})
+						message.channel.send({
+							embed: Embed
+						});
+					}
+				})
+			}else {
+				request(`https://akaneko-api.herokuapp.com/api/pussy`, function(error, response, body) {
+					if (!error && response.statusCode == 200) {
+						var jsonParsed = JSON.parse(body);
+						const Embed = {
+							color: '#00ff00',
+							title: 'pussy nsfw',
+							url: "",
+							author: {
+								Name: 'AnimeBot',
+								icon_url: jsonParsed.url,
+								url: '',
+							},
+							description: ``,
+							thumbnail: jsonParsed.url,
+							fields: [],
+							image: {
+								url: jsonParsed.url,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: jsonParsed.url,
+							},
+						}
+
+						message.channel.send({
+							embed: Embed
+						});
+					}
+				})
+			}
 		} else {
 			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
@@ -2135,6 +2207,41 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'yuri nsfw',
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: jsonParsed.url,
+							url: '',
+						},
+						description: ``,
+						thumbnail: jsonParsed.url,
+						fields: [],
+						image: {
+							url: jsonParsed.url,
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: 'Some footer text here',
+							icon_url: jsonParsed.url,
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		} else {
+			message.channel.send("sorry but the channel is not marked as nsfw");
+		}
+	} else if (commandName.toLowerCase() === 'anal') {
+		if (message.channel.nsfw === true || message.guild === null) {
+			request(`https://nekos.life/api/v2/img/anal`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: 'anal nsfw',
 						url: "",
 						author: {
 							Name: 'AnimeBot',
