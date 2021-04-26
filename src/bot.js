@@ -9,6 +9,7 @@ fs = require('fs');
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
+
 /*
 request(`https://animechan.vercel.app/api/random`, function (error, response, body) {
   	if (!error && response.statusCode == 200) {
@@ -1686,7 +1687,7 @@ client.on('message', (message) => {
 				icon_url: "",
 				url: '',
 			},
-			description: ``,
+			description: `if you think this should be a command do ${Prefix}server join then go to rules and make a issue on github so I can add it!`,
 			thumbnail: "",
 			fields: [],
 			image: {
