@@ -21,13 +21,27 @@ const poster = new dbots.Poster({
 
 poster.startInterval();
 
+client.on('guildCreate', () => {
+	client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
+		type: 'WATCHING'
+	})
+	.catch(console.error);
+})
+
+client.on('guildDelete', () => {
+	client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
+		type: 'WATCHING'
+	})
+	.catch(console.error);
+})
+
 client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
-	client.user.setActivity(`${Prefix}help`, {
-			type: 'WATCHING'
-		})
-		.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
-		.catch(console.error);
+	client.user.setActivity(`${Prefix}help | ${client.guilds.cache.size} servers`, {
+		type: 'WATCHING'
+	})
+	.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+	.catch(console.error);
 })
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
