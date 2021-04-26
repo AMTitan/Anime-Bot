@@ -30,7 +30,7 @@ function updateActivity() {
 	}
 }
 updateActivity();
-setInterval(updateActivity, 30*60*1000);
+setInterval(updateActivity, 60*60*1000);
 
 client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
