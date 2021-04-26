@@ -877,7 +877,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Waifu',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -963,7 +963,7 @@ client.on('message', (message) => {
 							const Embed = {
 								color: '#00ff00',
 								title: `NSFW - ${n}/${args[0]}`,
-								url: jsonParsed.url,
+								url: "",
 								author: {
 									Name: 'AnimeBot',
 									icon_url: "",
@@ -1041,7 +1041,7 @@ client.on('message', (message) => {
 						const Embed = {
 							color: '#00ff00',
 							title: `Neko nsfw ${n}/${args[0]}`,
-							url: jsonParsed.url,
+							url: "",
 							author: {
 								Name: 'AnimeBot',
 								icon_url: jsonParsed.url,
@@ -1119,7 +1119,7 @@ client.on('message', (message) => {
 							const Embed = {
 								color: '#00ff00',
 								title: `Blowjob nsfw ${n}/${args[0]}`,
-								url: jsonParsed.url,
+								url: "",
 								author: {
 									Name: 'AnimeBot',
 									icon_url: jsonParsed.url,
@@ -1197,7 +1197,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: `Neko ${n}/${args[0]}`,
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1272,7 +1272,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: `Awoo ${n}/${args[0]}`,
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1347,7 +1347,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: `Waifu ${n}/${args[0]}`,
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1415,7 +1415,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'Blowjob nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1450,7 +1450,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'gif nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1485,7 +1485,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'uniform nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1520,7 +1520,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'school nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1555,7 +1555,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'cumslut nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1590,7 +1590,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'pussy nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1625,7 +1625,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'bdms nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1660,7 +1660,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'orgy nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1695,7 +1695,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'feet nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1730,7 +1730,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'glasses nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1765,7 +1765,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'thighs nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1800,7 +1800,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'tentacle nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1835,7 +1835,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'masturbation nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1870,7 +1870,7 @@ client.on('message', (message) => {
 					const Embed = {
 						color: '#00ff00',
 						title: 'yuri nsfw',
-						url: jsonParsed.url,
+						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: jsonParsed.url,
@@ -1904,7 +1904,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Poke',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -1935,7 +1935,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Pat',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -1966,7 +1966,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Cuddle',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -1997,7 +1997,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Hug',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -2028,7 +2028,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Kiss',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -2059,7 +2059,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Blush',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
@@ -2090,7 +2090,7 @@ client.on('message', (message) => {
 				const Embed = {
 					color: '#00ff00',
 					title: 'Awoo',
-					url: jsonParsed.url,
+					url: "",
 					author: {
 						Name: 'AnimeBot',
 						icon_url: jsonParsed.url,
