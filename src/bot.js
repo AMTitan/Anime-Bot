@@ -269,7 +269,7 @@ client.on('message', (message) => {
 				name: `${Prefix}school`,
 				value: "gets you a school girl img"
 			}, {
-				name: `${Prefix}search [tag]`,
+				name: `${Prefix}search [tags (you can do more than one) example : "${Prefix}search nsfw school_girl"]`,
 				value: "gets you a custom image img"
 			}, {
 				name: `${Prefix}tentacle`,
@@ -2350,7 +2350,7 @@ client.on('message', (message) => {
 		}
 	} else if (commandName.toLowerCase() === 'search') {
 		if (message.channel.nsfw === true || message.guild === null) {
-			request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${args[0]}&json=1`, function(error, response, body) {
+			request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${args.join(" ")}&json=1`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					if (!body) return;
 					var jsonParsed = JSON.parse(body);
@@ -2358,7 +2358,7 @@ client.on('message', (message) => {
 					if (!jsonParsed.file_url) return;
 					const Embed = {
 						color: '#00ff00',
-						title: `${args[0]} img`,
+						title: `${args.join(", ")} img`,
 						url: "",
 						author: {
 							Name: 'AnimeBot',
