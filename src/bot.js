@@ -90,10 +90,10 @@ client.on('message', (message) => {
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
 			}, {
-				name: `${Prefix}blush`,
+				name: `${Prefix}blush [optinal @ person]`,
 				value: "gets you a blush gif or img"
 			}, {
-				name: `${Prefix}cuddle`,
+				name: `${Prefix}cuddle [optinal @ person]`,
 				value: "gets you a cuddle gif or img"
 			}, {
 				name: `${Prefix}fact`,
@@ -102,22 +102,22 @@ client.on('message', (message) => {
 				name: `${Prefix}fox [optinal nsfw]`,
 				value: "shows a random foxgirl img"
 			}, {
-				name: `${Prefix}hug`,
+				name: `${Prefix}hug [optinal @ person]`,
 				value: "gets you a hug gif or img"
 			}, {
 				name: `${Prefix}invite`,
 				value: "gets you the invite to invite the bot to your server"
 			}, {
-				name: `${Prefix}kiss`,
+				name: `${Prefix}kiss [optinal @ person]`,
 				value: "gets you a kiss gif or img"
 			}, {
 				name: `${Prefix}neko [optinal nsfw]`,
 				value: "shows a random neko img or gif"
 			}, {
-				name: `${Prefix}pat`,
+				name: `${Prefix}pat [optinal @ person]`,
 				value: "gets you a pat gif or img"
 			}, {
-				name: `${Prefix}poke`,
+				name: `${Prefix}poke [optinal @ person]`,
 				value: "gets you a poke gif"
 			}, {
 				name: `${Prefix}quote`,
@@ -2390,9 +2390,11 @@ client.on('message', (message) => {
 		request(`https://waifu.pics/api/sfw/poke`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
+				var title = "poke";
+				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} pokes ${message.mentions.users.first().username}`;
 				const Embed = {
 					color: '#00ff00',
-					title: 'Poke',
+					title: title,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
@@ -2421,9 +2423,11 @@ client.on('message', (message) => {
 		request(`https://waifu.pics/api/sfw/pat`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
+				var title = "pat";
+				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} pats ${message.mentions.users.first().username}`;
 				const Embed = {
 					color: '#00ff00',
-					title: 'Pat',
+					title: title,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
@@ -2451,10 +2455,11 @@ client.on('message', (message) => {
 	} else if (commandName.toLowerCase() === 'cuddle') {
 		request(`https://waifu.pics/api/sfw/cuddle`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
-				var jsonParsed = JSON.parse(body);
+				var title = "cuddle";
+				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} cuddles ${message.mentions.users.first().username}`;
 				const Embed = {
 					color: '#00ff00',
-					title: 'Cuddle',
+					title: title,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
@@ -2483,9 +2488,11 @@ client.on('message', (message) => {
 		request(`https://waifu.pics/api/sfw/hug`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
+				var title = "hug";
+				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} hugs ${message.mentions.users.first().username}`;
 				const Embed = {
 					color: '#00ff00',
-					title: 'Hug',
+					title: title,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
@@ -2547,9 +2554,11 @@ client.on('message', (message) => {
 		request(`https://waifu.pics/api/sfw/blush`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
+				var title = "Blush";
+				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} blushes at ${message.mentions.users.first().username}`;
 				const Embed = {
 					color: '#00ff00',
-					title: 'Blush',
+					title: title,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
