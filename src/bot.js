@@ -297,13 +297,39 @@ client.on('message', (message) => {
 			},
 		}
 
+		const Embedfour = {
+			color: '#00ff00',
+			title: `I have dm you the help!`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: ""
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: '',
+				icon_url: "",
+			},
+		}
+
 		message.channel.send({
+			embed: Embedfour
+		});
+
+		message.author.send({
 			embed: Embed
 		});
-		message.channel.send({
+		message.author.send({
 			embed: Embedtwo
 		});
-		message.channel.send({
+		message.author.send({
 			embed: Embedthree
 		});
 
