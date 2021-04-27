@@ -2352,13 +2352,13 @@ client.on('message', (message) => {
 		if (message.channel.nsfw === true || message.guild === null) {
 			request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${args[0]}&json=1`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
+					if (!body) return;
 					var jsonParsed = JSON.parse(body);
-					if (!jsonParsed) return;
 					jsonParsed = jsonParsed[Math.round(Math.random() * jsonParsed.length)];
 					if (!jsonParsed.file_url) return;
 					const Embed = {
 						color: '#00ff00',
-						title: `${args[0]}`,
+						title: `${args[0]} img`,
 						url: "",
 						author: {
 							Name: 'AnimeBot',
