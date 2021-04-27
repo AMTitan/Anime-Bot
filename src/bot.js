@@ -53,7 +53,7 @@ client.on('message', (message) => {
 			thumbnail: "",
 			fields: [{
 				name: `EXAMPLE`,
-				value: `${Prefix}neko [optinal nsfw or gif]`
+				value: `${Prefix}neko [optinal nsfw]`
 			}, {
 				name: `${Prefix}awoo`,
 				value: "gets you a awoo gif or img"
@@ -187,7 +187,7 @@ client.on('message', (message) => {
 			thumbnail: "",
 			fields: [ {
 				name: `EXAMPLE`,
-				value: `${Prefix}cumslut`
+				value: `${Prefix}panties nsfw`
 			},{
 				name: `${Prefix}anal`,
 				value: `gets you a anal gif`
