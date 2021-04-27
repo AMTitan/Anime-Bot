@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	const Embed = {
 		color: '#00ff00',
 		title: `Sorry I dont know that cmd`,

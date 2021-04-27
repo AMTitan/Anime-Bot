@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (args[0] === "gif") {
 		if (args[0] && args[0].toLowerCase() === "nsfw") {
 			request(`https://nekos.life/api/v2/img/classic`, function(error, response, body) {

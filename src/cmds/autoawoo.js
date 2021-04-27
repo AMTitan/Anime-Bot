@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (!args[0]) args[0] = 3;
 	if (!args[1]) args[1] = 5;
 	var n = 0;

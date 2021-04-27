@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (args[0] && args[0].toLowerCase() === "nsfw") {
 		if (message.channel.nsfw === true || message.guild === null) {
 			request(`https://waifu.pics/api/nsfw/neko`, function(error, response, body) {

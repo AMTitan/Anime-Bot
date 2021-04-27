@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (args[0] && args[0].toLowerCase() === "nsfw") {
 		if (message.channel.nsfw === true || message.guild === null) {
 			request(`https://akaneko-api.herokuapp.com/api/nsfwwallpapers`, function(error, response, body) {

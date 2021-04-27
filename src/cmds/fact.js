@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	const options = {
 		method: 'GET',
 		url: 'https://animu.p.rapidapi.com/fact',

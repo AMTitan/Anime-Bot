@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	var jsonParsed;
 	const filter = (n) => n.author.id === message.author.id;
 	request(`https://animechan.vercel.app/api/random`, function(error, response, body) {

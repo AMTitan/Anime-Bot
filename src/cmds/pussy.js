@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (message.channel.nsfw === true || message.guild === null) {
 		if (args[0] === "gif") {
 			request(`https://nekos.life/api/v2/img/pussy`, function(error, response, body) {

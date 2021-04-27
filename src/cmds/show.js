@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, CommandName, args, request) {
+module.exports = function(Prefix, message, commandName, args, request, client) {
 	var shownum = Math.round(Math.random() * 16292);
 	request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`, function(error, response, body) {
 		if (!error && response.statusCode == 200) {
