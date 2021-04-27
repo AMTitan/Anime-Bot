@@ -2353,7 +2353,8 @@ client.on('message', (message) => {
 			request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${args[0]}&json=1`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed = JSON.parse(body);
-					jsonParsed = jsonParsed[Math.round(Math.random() * 100)];
+					if (!jsonParsed) return;
+					jsonParsed = jsonParsed[Math.round(Math.random() * jsonParsed.length)];
 					if (!jsonParsed.file_url) return;
 					const Embed = {
 						color: '#00ff00',
