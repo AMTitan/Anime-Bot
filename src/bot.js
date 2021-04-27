@@ -39,6 +39,12 @@ client.on('message', (message) => {
 		.trim()
 		.substring(Prefix.length)
 		.split(/\s+/);
+	if (!commandName || commandName === "" || commandName === "") {
+		var [commandName, ...args] = message.content.toLowerCase()
+		.trim()
+		.substring(Prefix.length + 1)
+		.split(/\s+/);
+	}
 	if (commandName === `help`) {
 		const Embed = {
 			color: '#00ff00',
