@@ -10,6 +10,15 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
+client.on('ready', () => {
+	console.log(`${client.user.tag} bot is on`);
+	client.user.setActivity(`${Prefix}help`, {
+		type: 'WATCHING'
+	})
+	.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+	.catch(console.error);
+})
+
 const dbots = require('dbots');
 const poster = new dbots.Poster({
     client,
@@ -21,14 +30,6 @@ const poster = new dbots.Poster({
 
 poster.startInterval();
 
-client.on('ready', () => {
-	console.log(`${client.user.tag} bot is on`);
-	client.user.setActivity(`${Prefix}help`, {
-		type: 'WATCHING'
-	})
-	.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
-	.catch(console.error);
-})
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
@@ -2652,10 +2653,7 @@ client.on('message', (message) => {
 			},
 			description: ``,
 			thumbnail: "",
-			fields: [{
-				name: `Server Count`,
-				value: `${client.guilds.cache.size}`
-			},],
+			fields: [],
 			image: {
 				url: ""
 			},
