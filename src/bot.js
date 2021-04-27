@@ -2514,9 +2514,11 @@ client.on('message', (message) => {
 		request(`https://waifu.pics/api/sfw/kiss`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
+				var title = "Kiss";
+				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} kisses ${message.mentions.users.first().username}`;
 				const Embed = {
 					color: '#00ff00',
-					title: 'Kiss',
+					title: title,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
