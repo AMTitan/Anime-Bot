@@ -237,9 +237,6 @@ client.on('message', (message) => {
 				name: `${Prefix}school`,
 				value: "gets you a school girl img"
 			}, {
-				name: `${Prefix}solo [optinal gif]`,
-				value: "gets you a solo img"
-			}, {
 				name: `${Prefix}tentacle`,
 				value: "gets you a tentacle img"
 			}, {
