@@ -2538,6 +2538,7 @@ client.on('message', (message) => {
 	} else if (commandName.toLowerCase() === 'cuddle') {
 		request(`https://waifu.pics/api/sfw/cuddle`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
 				var title = "cuddle";
 				if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} cuddles ${message.mentions.users.first().username}`;
 				const Embed = {
