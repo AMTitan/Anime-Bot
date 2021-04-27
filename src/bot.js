@@ -35,7 +35,7 @@ client.on('message', (message) => {
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
 	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	console.log(`[${new Date}]: ${message.content}`);
-	const [commandName, ...args] = message.content.toLowerCase()
+	var [commandName, ...args] = message.content.toLowerCase()
 		.trim()
 		.substring(Prefix.length)
 		.split(/\s+/);
@@ -2651,7 +2651,7 @@ client.on('message', (message) => {
 				icon_url: "",
 				url: '',
 			},
-			description: ``,
+			description: `maybe do ${Prefix}help ? But if you think this was a mistake then do ${Prefix}server then join it then in rules make a issue.`,
 			thumbnail: "",
 			fields: [],
 			image: {
