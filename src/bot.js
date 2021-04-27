@@ -2354,7 +2354,7 @@ client.on('message', (message) => {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed = JSON.parse(body);
 					jsonParsed = jsonParsed[Math.round(Math.random() * 100)];
-					console.log(jsonParsed.file_url);
+					if (!sonParsed.file_url) return;
 					const Embed = {
 						color: '#00ff00',
 						title: `${args[0]}`,
