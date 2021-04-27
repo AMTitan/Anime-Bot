@@ -297,6 +297,7 @@ client.on('message', (message) => {
 		message.channel.send({
 			embed: Embed
 		});
+		return;
 		if (!args[0]) {
 			message.channel.send('add a img to the end of the cmd');
 			return
