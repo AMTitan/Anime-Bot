@@ -18,6 +18,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					name: 'User Count',
 					value: message.client.guilds.cache.map((g) => g.memberCount).reduce((a, c) => a + c),
 					inline: true
+				}, {
+					name: 'Average Server Size',
+					value: (Math.round((message.client.guilds.cache.map((g) => g.memberCount).reduce((a, c) => a + c)/client.guilds.cache.size) * 100))/100,
+					inline: true
 				},],
 		image: {
 			url: "",
