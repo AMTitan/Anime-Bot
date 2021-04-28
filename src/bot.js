@@ -1,5 +1,6 @@
 var request = require('request');
 require("dotenv").config();
+const owner = "585604715128291328";
 const {
 	Client
 } = require('discord.js');
@@ -123,6 +124,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'invite') require("./cmds/invite.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'server') require("./cmds/server.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'automaid') require("./cmds/automaid.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'issue' || commandName.toLowerCase() === 'improve') require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
 	else if(commandName.toLowerCase() === "stop") return;
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });

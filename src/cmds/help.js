@@ -14,6 +14,12 @@ module.exports = function(Prefix, message) {
 			name: `EXAMPLE`,
 			value: `${Prefix}neko [optinal nsfw]`
 		}, {
+			name: `${Prefix}issue (the issue)`,
+			value: "if you find a issue"
+		}, {
+			name: `${Prefix}improve (the improvement)`,
+			value: "if you want something to be improved"
+		}, {
 			name: `${Prefix}awoo`,
 			value: "gets you a awoo gif or img"
 		}, {
