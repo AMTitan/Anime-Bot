@@ -123,10 +123,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 		}
 	}else if (args[0] === "gif") {
 		args.shift();
-		request(`https://g.tenor.com/v1/search?q=${args.join("+")}&key=LIVDSRZULELA&limit=8`, function(error, response, body) {
+		request(`https://g.tenor.com/v1/search?q=${args.join("+")}&key=LIVDSRZULELA&limit=50`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
-				jsonParsed = jsonParsed.results[Math.round(Math.random() * jsonParsed.results.length)]
+				jsonParsed = jsonParsed.results[Math.round(Math.random() * jsonParsed.results.length) - 1]
 				if (!jsonParsed) return;
 				if (!jsonParsed.url) jsonParsed = jsonParsed.media.gif;
 				const Embed = {
