@@ -90,7 +90,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					}
 					if (shouldIReturn) return;
 					jsonParsed = jsonParsed[Math.round(Math.random() * jsonParsed.length)];
-					if (!jsonParsed.file_url) {
+					if (!jsonParsed || !jsonParsed.file_url) {
 						const Embed = {
 							color: '#00ff00',
 							title: `Sorry but I could not find a img with that tag`,
