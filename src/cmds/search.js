@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-	if (message.channel.nsfw === true || message.guild === null) {
-		if (args[0] === "img") {
+	if (args[0] === "img") {
+		if (message.channel.nsfw === true || message.guild === null) {
 			args.shift();
 			request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${args.join(" ")}&json=1`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
@@ -118,43 +118,43 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					});
 				}
 			})
-		}else if (args[0] === "gif") {
-			args.shift();
-			request(`https://g.tenor.com/v1/search?q=${args.join("+")}&key=LIVDSRZULELA&limit=8`, function(error, response, body) {
-				if (!error && response.statusCode == 200) {
-					var jsonParsed = JSON.parse(body);
-					jsonParsed = jsonParsed.results[Math.round(Math.random() * jsonParsed.results.length)]
-					if (!jsonParsed) return;
-					if (!jsonParsed.url) jsonParsed = jsonParsed.media.gif;
-					const Embed = {
-						color: '#00ff00',
-						title: `${args.join(" ")} img`,
-						url: "",
-						author: {
-							Name: 'AnimeBot',
-							icon_url: jsonParsed.media[0].gif.url,
-							url: '',
-						},
-						description: ``,
-						thumbnail: jsonParsed.media[0].gif.url,
-						fields: [],
-						image: {
-							url: jsonParsed.media[0].gif.url,
-						},
-						fimestamp: new Date(),
-						footer: {
-							test: 'Some footer text here',
-							icon_url: jsonParsed.media[0].gif.url,
-						},
-					}
-
-					message.channel.send({
-						embed: Embed
-					});
-				}
-			})
+		} else {
+			message.channel.send("sorry but the channel is not marked as nsfw");
 		}
-	} else {
-		message.channel.send("sorry but the channel is not marked as nsfw");
+	}else if (args[0] === "gif") {
+		args.shift();
+		request(`https://g.tenor.com/v1/search?q=${args.join("+")}&key=LIVDSRZULELA&limit=8`, function(error, response, body) {
+			if (!error && response.statusCode == 200) {
+				var jsonParsed = JSON.parse(body);
+				jsonParsed = jsonParsed.results[Math.round(Math.random() * jsonParsed.results.length)]
+				if (!jsonParsed) return;
+				if (!jsonParsed.url) jsonParsed = jsonParsed.media.gif;
+				const Embed = {
+					color: '#00ff00',
+					title: `${args.join(" ")} img`,
+					url: "",
+					author: {
+						Name: 'AnimeBot',
+						icon_url: jsonParsed.media[0].gif.url,
+						url: '',
+					},
+					description: ``,
+					thumbnail: jsonParsed.media[0].gif.url,
+					fields: [],
+					image: {
+						url: jsonParsed.media[0].gif.url,
+					},
+					fimestamp: new Date(),
+					footer: {
+						test: 'Some footer text here',
+						icon_url: jsonParsed.media[0].gif.url,
+					},
+				}
+
+				message.channel.send({
+					embed: Embed
+				});
+			}
+		})
 	}
 }

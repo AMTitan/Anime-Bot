@@ -56,6 +56,9 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}random [optinal gif]`,
 			value: "shows a random anime img"
 		}, {
+			name: `${Prefix}search gif [tags (you can do more than one) example : "${Prefix}search gif zero two"]`,
+			value: "gets you a custom gif"
+		}, {
 			name: `${Prefix}server`,
 			value: "gets you the main anime bot server"
 		}, {
@@ -196,8 +199,8 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}school`,
 			value: "gets you a school girl img"
 		}, {
-			name: `${Prefix}search ["img" or "gif"] [tags (you can do more than one) example : "${Prefix}search gif zero two"]`,
-			value: "gets you a custom image or gif (BEST IF YOU SEARCH A PERSON)"
+			name: `${Prefix}search img [tags (you can do more than one) example : "${Prefix}search img school_girl"]`,
+			value: "gets you a custom image"
 		}, {
 			name: `${Prefix}tentacle`,
 			value: "gets you a tentacle img"
