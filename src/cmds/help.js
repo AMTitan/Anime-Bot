@@ -254,15 +254,26 @@ module.exports = function(Prefix, message) {
 
 	message.channel.send({
 		embed: Embedfour
-	});
+	})
 
 	message.author.send({
 		embed: Embed
+	})
+	.catch(() => message.channel.send({
+		embed: Embed
 	});
+
 	message.author.send({
 		embed: Embedtwo
+	})
+	.catch(() => message.channel.send({
+		embed: Embedtwo
 	});
+
 	message.author.send({
+		embed: Embedthree
+	})
+	.catch(() => message.channel.send({
 		embed: Embedthree
 	});
 }
