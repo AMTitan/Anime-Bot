@@ -31,31 +31,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			}
 		})
 	} else {
-		const Embed = {
-			color: '#00ff00',
-			title: 'sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on)',
-			url: "",
-			author: {
-				Name: 'AnimeBot',
-				icon_url: "",
-				url: '',
-			},
-			description: ``,
-			thumbnail: "",
-			fields: [],
-			image: {
-				url: "",
-			},
-			fimestamp: new Date(),
-			footer: {
-				test: 'Some footer text here',
-				icon_url: "",
-			},
-		}
-
-		message.channel.send({
-			embed: Embed
-		});
+		
 		const Embed = {
 			color: '#00ff00',
 			title: 'sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on)',
