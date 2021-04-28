@@ -34,10 +34,37 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					}
 					if (shouldIReturn) return;
 					var jsonParsed = JSON.parse(body);
-					if (!jsonParsed) {
+					if (!jsonParsed ) {
 						const Embed = {
 							color: '#00ff00',
 							title: `Sorry but I could not find a img with that tag`,
+							url: "",
+							author: {
+								Name: 'AnimeBot',
+								icon_url: "",
+								url: '',
+							},
+							description: ``,
+							thumbnail: "",
+							fields: [],
+							image: {
+								url: ""
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: '',
+								icon_url: "",
+							},
+						}
+						message.channel.send({
+							embed: Embed
+						});
+						var shouldIReturn = true;
+					}
+					if (jsonParsed === undefined) {
+						const Embed = {
+							color: '#00ff00',
+							title: `Sorry but could you just try that again?`,
 							url: "",
 							author: {
 								Name: 'AnimeBot',
