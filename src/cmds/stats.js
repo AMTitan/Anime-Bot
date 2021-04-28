@@ -24,11 +24,11 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					inline: true
 				}, {
 					name: 'Bot Creation Date',
-					value: Math.round(client.user.createdAt.getTime()/86400000),
+					value: Math.round((new Date().getTime() - client.user.createdAt.getTime())/86400000) + " days ago",
 					inline: true
 				}, {
 					name: 'Average Servers Per Day',
-					value: (client.guilds.cache.size)/(Math.round(client.user.createdAt.getTime()/86400000)),
+					value: Math.round((client.guilds.cache.size)/(Math.round((new Date().getTime() - client.user.createdAt.getTime())/86400000))),
 					inline: true
 				},],
 		image: {
