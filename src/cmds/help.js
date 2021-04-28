@@ -196,8 +196,8 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}school`,
 			value: "gets you a school girl img"
 		}, {
-			name: `${Prefix}search ["img" or "gif"] [tags (you can do more than one) example : "${Prefix}search gif nsfw school_girl"]`,
-			value: "gets you a custom image img"
+			name: `${Prefix}search ["img" or "gif"] [tags (you can do more than one) example : "${Prefix}search gif zero two"]`,
+			value: "gets you a custom image or gif (BEST IF YOU SEARCH A PERSON)"
 		}, {
 			name: `${Prefix}tentacle`,
 			value: "gets you a tentacle img"
