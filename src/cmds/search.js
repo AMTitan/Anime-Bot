@@ -183,8 +183,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				});
 			}
 		})
-	}
-	else {
+	}else {
 		const Embed = {
 			color: '#00ff00',
 			title: `Sorry you have to put "gif" or "img" after the search (gif is only sfw tho)`,

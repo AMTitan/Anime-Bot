@@ -22,6 +22,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					name: 'Average Server Size',
 					value: (Math.round((message.client.guilds.cache.map((g) => g.memberCount).reduce((a, c) => a + c)/client.guilds.cache.size) * 100))/100,
 					inline: true
+				}, {
+					name: 'Bot Creation Date',
+					value: client.user.createdAt,
+					inline: true
 				},],
 		image: {
 			url: "",
