@@ -61,7 +61,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						});
 						var shouldIReturn = true;
 					}
-					if (jsonParsed === undefined) {
+					if (jsonParsed === "undefined") {
 						const Embed = {
 							color: '#00ff00',
 							title: `Sorry but could you just try that again?`,
