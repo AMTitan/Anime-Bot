@@ -121,6 +121,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'show') require("./cmds/show.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'invite') require("./cmds/invite.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'server') require("./cmds/server.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'automaid') require("./cmds/automaid.js")(Prefix, message, commandName, args, request, client);
 	else if(commandName.toLowerCase() === "stop") return;
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });

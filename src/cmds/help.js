@@ -114,6 +114,9 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}autoblowjob (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 			value: "dose awoo a set number of times"
 		},  {
+			name: `${Prefix}automaid (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
+			value: "dose maid a set number of times"
+		},  {
 			name: `${Prefix}autoneko (number of times to run nsfw - default 10) (delay in secs - defualt 5)`,
 			value: "dose neko a set number of times"
 		},   {
