@@ -158,7 +158,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				if (!jsonParsed.url) jsonParsed = jsonParsed.media.gif;
 				const Embed = {
 					color: '#00ff00',
-					title: `${args.join(" ")} img`,
+					title: `${args.join(" ")} gif`,
 					url: "",
 					author: {
 						Name: 'AnimeBot',
