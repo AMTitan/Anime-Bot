@@ -157,4 +157,31 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			}
 		})
 	}
+	else {
+		const Embed = {
+			color: '#00ff00',
+			title: `Sorry you have to put "gif" or "img" after the search (gif is only sfw tho)`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: jsonParsed.media[0].gif.url,
+				url: '',
+			},
+			description: ``,
+			thumbnail: jsonParsed.media[0].gif.url,
+			fields: [],
+			image: {
+				url: jsonParsed.media[0].gif.url,
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: 'Some footer text here',
+				icon_url: jsonParsed.media[0].gif.url,
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		});
+	}
 }
