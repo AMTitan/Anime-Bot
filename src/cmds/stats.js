@@ -28,7 +28,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					inline: true
 				}, {
 					name: 'Average Servers Per Day',
-					value: Math.round((client.guilds.cache.size)/(Math.round((new Date().getTime() - client.user.createdAt.getTime())/86400000))),
+					value: Math.round((client.guilds.cache.size)/(Math.round((new Date().getTime() - client.user.createdAt.getTime())/86400000)) * 100)/100,
 					inline: true
 				},],
 		image: {
