@@ -34,7 +34,7 @@ poster.startInterval();
 
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
-	if (message.content.toLowerCase().startsWith("<@!833682899202080818>")) {
+	if (message.mentions.users && message.mentions.users.first().id === '833682899202080818') {
 		const Embed = {
 			color: '#00ff00',
 			title: `My help cmd is ${Prefix}help`,
