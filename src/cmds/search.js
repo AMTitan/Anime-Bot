@@ -190,19 +190,19 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			url: "",
 			author: {
 				Name: 'AnimeBot',
-				icon_url: jsonParsed.media[0].gif.url,
+				icon_url: "",
 				url: '',
 			},
 			description: ``,
-			thumbnail: jsonParsed.media[0].gif.url,
+			thumbnail: "",
 			fields: [],
 			image: {
-				url: jsonParsed.media[0].gif.url,
+				url: "",
 			},
 			fimestamp: new Date(),
 			footer: {
 				test: 'Some footer text here',
-				icon_url: jsonParsed.media[0].gif.url,
+				icon_url: "",
 			},
 		}
 
