@@ -127,7 +127,9 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'server') require("./cmds/server.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'automaid') require("./cmds/automaid.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'issue' || commandName.toLowerCase() === 'improve') require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
-	else if(commandName.toLowerCase() === "stop") return;
+	else if (commandName.toLowerCase() === "stop") return;
+	else if (commandName.toLowerCase() === 'boobs') require("./cmds/boobs.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'spank') require("./cmds/spank.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 

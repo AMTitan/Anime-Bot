@@ -172,6 +172,9 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}blowjob`,
 			value: "gets you a blowjob gif"
 		}, {
+			name: `${Prefix}boobs`,
+			value: "gets you a boobs gif"
+		}, {
 			name: `${Prefix}cumslut`,
 			value: "gets you a cumslut gif"
 		}, {
