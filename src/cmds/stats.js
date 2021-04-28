@@ -24,7 +24,11 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					inline: true
 				}, {
 					name: 'Bot Creation Date',
-					value: client.user.createdAt,
+					value: Math.round(client.user.createdAt.getTime()/86400000),
+					inline: true
+				}, {
+					name: 'Average Servers Per Day',
+					value: (client.guilds.cache.size)/(Math.round(client.user.createdAt.getTime()/86400000)),
 					inline: true
 				},],
 		image: {
