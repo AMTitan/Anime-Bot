@@ -34,31 +34,33 @@ poster.startInterval();
 
 client.on('message', (message) => {
 	if (message.author.bot === true) return;
-	if (message.mentions.users && message.mentions.users.first().id === '833682899202080818') {
-		const Embed = {
-			color: '#00ff00',
-			title: `My help cmd is ${Prefix}help`,
-			url: "",
-			author: {
-				Name: 'AnimeBot',
-				icon_url: "",
-				url: '',
-			},
-			description: ``,
-			thumbnail: "",
-			fields: [],
-			image: {
-				url: ""
-			},
-			fimestamp: new Date(),
-			footer: {
-				test: '',
-				icon_url: "",
-			},
+	if (message.mentions.users && message.mentions.users.first()) {
+		if (message.mentions.users.first().id === '833682899202080818') {
+			const Embed = {
+				color: '#00ff00',
+				title: `My help cmd is ${Prefix}help`,
+				url: "",
+				author: {
+					Name: 'AnimeBot',
+					icon_url: "",
+					url: '',
+				},
+				description: ``,
+				thumbnail: "",
+				fields: [],
+				image: {
+					url: ""
+				},
+				fimestamp: new Date(),
+				footer: {
+					test: '',
+					icon_url: "",
+				},
+			}
+			message.channel.send({
+				embed: Embed
+			});
 		}
-		message.channel.send({
-			embed: Embed
-		});
 	}
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
 	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
