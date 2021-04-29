@@ -58,7 +58,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			embed: Embed
 		});
 		}
-	}if (args[0] && args[0].toLowerCase() === "gif") {
+	}else if (args[0] && args[0].toLowerCase() === "gif") {
 		if (message.channel.nsfw === true || message.guild === null) {
 			request(`https://nekos.life/api/v2/img/nsfw_neko_gif`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
