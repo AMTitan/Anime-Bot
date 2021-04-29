@@ -216,7 +216,10 @@ module.exports = function(Prefix, message) {
 		}, {
 			name: `${Prefix}search img [tags (you can do more than one) example : "${Prefix}search img school_girl"]`,
 			value: "gets you a custom image"
-		}, {
+		},  {
+			name: `${Prefix}solo [optinal gif]`,
+			value: "gets you a solo gif or img"
+		},  {
 			name: `${Prefix}spank`,
 			value: "gets you a spank gif"
 		},  {
