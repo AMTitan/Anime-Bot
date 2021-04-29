@@ -9,17 +9,13 @@ const Prefix = "a!";
 fs = require('fs');
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
-});
-
-client.on('ready', () => {
 	console.log(`${client.user.tag} bot is on`);
 	client.user.setActivity(`${Prefix}help`, {
 		type: 'WATCHING'
 	})
 	.then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
 	.catch(console.error);
-})
-
+});
 const dbots = require('dbots');
 const poster = new dbots.Poster({
     client,

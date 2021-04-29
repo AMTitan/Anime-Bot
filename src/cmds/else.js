@@ -8,7 +8,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			icon_url: "",
 			url: '',
 		},
-		description: `maybe do ` + "`" + `${Prefix}help` + "`" +` or you can do ` + "`" +`${Prefix}search ${commandName}` + "`" +`? But if you think this was a mistake then do ${Prefix}server then join it then in rules make a issue.`,
+		description: `maybe do ` + "`" + `${Prefix}help` + "`" +` or you can do ` + "`" +`${Prefix}search ${commandName}` + "`" +`? But if you really want this command you can ${Prefix}improve ${commandName}`,
 		thumbnail: "",
 		fields: [],
 		image: {
