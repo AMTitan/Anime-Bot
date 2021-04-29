@@ -131,6 +131,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'boobs') require("./cmds/boobs.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'spank') require("./cmds/spank.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'solo') require("./cmds/solo.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'baka') require("./cmds/baka.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
