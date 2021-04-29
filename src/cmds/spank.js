@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (message.channel.nsfw === true || message.guild === null) {
-		request(`https://waifu.pics/api/spank`, function(error, response, body) {
+		request(`https://nekos.life/api/v2/img/spank`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
 				const Embed = {
