@@ -23,6 +23,9 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}awoo`,
 			value: "gets you a awoo gif or img"
 		}, {
+			name: `${Prefix}baka [optinal @ person]`,
+			value: "gets you a baka gif"
+		},  {
 			name: `${Prefix}blush [optinal @ person]`,
 			value: "gets you a blush gif or img"
 		}, {
@@ -44,7 +47,7 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}kiss [optinal @ person]`,
 			value: "gets you a kiss gif or img"
 		}, {
-			name: `${Prefix}neko [optinal nsfw]`,
+			name: `${Prefix}neko [optinal nsfw or gif]`,
 			value: "shows a random neko img or gif"
 		}, {
 			name: `${Prefix}pat [optinal @ person]`,
@@ -214,6 +217,9 @@ module.exports = function(Prefix, message) {
 			name: `${Prefix}search img [tags (you can do more than one) example : "${Prefix}search img school_girl"]`,
 			value: "gets you a custom image"
 		}, {
+			name: `${Prefix}spank`,
+			value: "gets you a spank gif"
+		},  {
 			name: `${Prefix}tentacle`,
 			value: "gets you a tentacle img"
 		}, {
