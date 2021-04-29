@@ -29,7 +29,11 @@ const poster = new dbots.Poster({
 poster.startInterval();
 
 client.on('message', (message) => {
+	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	if (message.author.bot === true) return;
+	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) {
+		message.channel.send("Sorry I cant send embeds");
+	}
 	if (message.mentions.users && message.mentions.users.first()) {
 		if (message.mentions.users.first().id === '833682899202080818') {
 			const Embed = {
@@ -59,7 +63,6 @@ client.on('message', (message) => {
 		}
 	}
 	if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
-	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	console.log(`[${new Date}]: ${message.content}`);
 	var [commandName, ...args] = message.content.toLowerCase()
 		.trim()
