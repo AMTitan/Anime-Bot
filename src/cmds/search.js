@@ -89,7 +89,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						var shouldIReturn = true;
 					}
 					if (shouldIReturn) return;
-					jsonParsed = jsonParsed[Math.round(Math.random() * jsonParsed.length)];
+					jsonParsed = jsonParsed[Math.round(Math.random() * (jsonParsed.length-1))];
 					if (!jsonParsed || !jsonParsed.file_url) {
 						const Embed = {
 							color: '#00ff00',
