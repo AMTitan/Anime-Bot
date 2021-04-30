@@ -48,6 +48,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 									name: 'Lines of Code',
 									value: lines,
 									inline: true
+								}, {
+									name: 'Times Used',
+									value: parseInt(fs.readFileSync('data.txt', 'utf8')),
+									inline: true
 								},],
 						image: {
 							url: "",
