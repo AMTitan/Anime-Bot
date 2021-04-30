@@ -1,6 +1,7 @@
 var request = require('request');
 require("dotenv").config();
 const owner = "585604715128291328";
+const fs = require("fs");
 const {
 	Client
 } = require('discord.js');
