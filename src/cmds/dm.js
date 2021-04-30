@@ -21,6 +21,28 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 		},
 	}
 
+	const Embedthree = {
+		color: '#00ff00',
+		title: "I am so sorry but it did not send maybe try again?",
+		url: "",
+		author: {
+			Name: 'AnimeBot',
+			icon_url: "",
+			url: '',
+		},
+		description: args.join(" "),
+		thumbnail: "",
+		fields: [],
+		image: {
+			url: "",
+		},
+		fimestamp: new Date(),
+		footer: {
+			test: 'Some footer text here',
+			icon_url: "",
+		},
+	}
+
 	const Embedtwo = {
 		color: '#00ff00',
 		title: "I have sent it thank you!",
@@ -43,11 +65,23 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 		},
 	}
 
+	var sent = false;
+
+	try {
+		client.users.cache.get(owner).send({
+			embed: Embed
+		});
+		sent = true;
+	}
+	catch(err) {
+		sent = false;
+		message.channel.send({
+			embed: Embedthree
+		})
+	}
+	if (!sent) return;
+
 	message.channel.send({
 		embed: Embedtwo
 	})
-
-	client.users.cache.get(owner).send({
-		embed: Embed
-	});
 }
