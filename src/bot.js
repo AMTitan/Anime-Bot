@@ -6,18 +6,6 @@ const {
 } = require('discord.js');
 const client = new Client();
 const Prefix = "a!";
-fs = require('fs');
-try {
-    if(fs.existsSync('data.txt')) {
-        console.log("The file exists.");
-    } else {
-        fs.writeFile('data.txt', '0', function (err) {
-			if (err) return console.log(err);
-		});
-    }
-} catch (err) {
-    console.error(err);
-}
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	console.log(`${client.user.tag} bot is on`);
@@ -86,12 +74,6 @@ client.on('message', (message) => {
 		.substring(Prefix.length + 1)
 		.split(/\s+/);
 	}
-	num = parseInt(fs.readFileSync('data.txt', 'utf8')) + 1;
-	fs.writeFile('data.txt', num.toString(), 'utf8', (err) => {
-	    if (err) {
-	        console.log(`Error writing file: ${err}`);
-	    }
-	});
 	if (commandName === `help`) require("./cmds/help.js")(Prefix, message);
 	else if (commandName.toLowerCase() === `whatis`) require("./cmds/whatis.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'quote') require("./cmds/quote.js")(Prefix, message, commandName, args, request, client);
