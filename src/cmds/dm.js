@@ -1,7 +1,7 @@
 module.exports = function(Prefix, message, commandName, args, request, client, owner) {
 	const Embed = {
 		color: '#00ff00',
-		title: commandName + " - " + message.author.tag,
+		title: commandName + " - " + message.author.tag + " ("+message.author.id+")",
 		url: "",
 		author: {
 			Name: 'AnimeBot',
@@ -52,7 +52,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 			icon_url: "",
 			url: '',
 		},
-		description: "",
+		description: "and if you get a friend request from a accound right after you send it that is prob me going to ask you what you mean.",
 		thumbnail: "",
 		fields: [],
 		image: {
