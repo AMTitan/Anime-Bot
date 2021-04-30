@@ -127,7 +127,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 							icon_url: jsonParsed.file_url,
 							url: '',
 						},
-						description: ``,
+						description: `(I need to fix this but if you get no img do do this again)`,
 						thumbnail: jsonParsed.file_url,
 						fields: [],
 						image: {
