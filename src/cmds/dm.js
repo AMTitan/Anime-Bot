@@ -67,21 +67,49 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 
 	var sent = false;
 
-	try {
-		client.users.cache.get(owner).send({
-			embed: Embed
-		});
-		sent = true;
-	}
-	catch(err) {
-		sent = false;
+	if (args[0] === "" || !args[0] || args[0] === " ") {
+		const Embedfour = {
+			color: '#00ff00',
+			title: `can you please write something after the ${commandName}`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: args.join(" "),
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: "",
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: 'Some footer text here',
+				icon_url: "",
+			},
+		}
 		message.channel.send({
-			embed: Embedthree
+			embed: Embedfour
+		})
+	}else {
+		try {
+			client.users.cache.get(owner).send({
+				embed: Embed
+			});
+			sent = true;
+		}
+		catch(err) {
+			sent = false;
+			message.channel.send({
+				embed: Embedthree
+			})
+		}
+		if (!sent) return;
+
+		message.channel.send({
+			embed: Embedtwo
 		})
 	}
-	if (!sent) return;
 
-	message.channel.send({
-		embed: Embedtwo
-	})
 }
