@@ -1,5 +1,4 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-	console.log(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${commandName + " " + args.join(" ")}&json=1`);
 	if (message.channel.nsfw === true || message.guild === null) {
 		request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
@@ -7,14 +6,14 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				if (!body) {
 					const Embed = {
 						color: '#00ff00',
-						title: `Sorry but I could not find a img with that tag`,
+						title: `Sorry I could not find any img of this you can try doing `+"`"+`a!improve ${commandName} ${args.join(" ")}`+"`",
 						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: "",
 							url: '',
 						},
-						description: `maybe do ` + "`" + `${Prefix}help` + "`" +` or you can do ` + "`" +`${Prefix}search img ${commandName} ${args.join(" ")}` + "`" +`? But if you really want this command you can ` + "`" +`${Prefix}improve ${commandName}` + "`",
+						description: ``,
 						thumbnail: "",
 						fields: [],
 						image: {
@@ -36,14 +35,14 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				if (!jsonParsed ) {
 					const Embed = {
 						color: '#00ff00',
-						title: `Sorry but I could not find a img with that tag`,
+						title: `Sorry I could not find any img of this you can try doing `+"`"+`a!improve ${commandName} ${args.join(" ")}`+"`",
 						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: "",
 							url: '',
 						},
-						description: `maybe do ` + "`" + `${Prefix}help` + "`" +` or you can do ` + "`" +`${Prefix}search img ${commandName} ${args.join(" ")}` + "`" +`? But if you really want this command you can ` + "`" +`${Prefix}improve ${commandName}` + "`",
+						description: ``,
 						thumbnail: "",
 						fields: [],
 						image: {
@@ -92,14 +91,14 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				if (!jsonParsed || !jsonParsed.file_url) {
 					const Embed = {
 						color: '#00ff00',
-						title: `Sorry but I could not find a img with that tag`,
+						title: `Sorry I could not find any img of this you can try doing `+"`"+`a!improve ${commandName} ${args.join(" ")}`+"`",
 						url: "",
 						author: {
 							Name: 'AnimeBot',
 							icon_url: "",
 							url: '',
 						},
-						description: `maybe do ` + "`" + `${Prefix}help` + "`" +` or you can do ` + "`" +`${Prefix}search img ${commandName} ${args.join(" ")}` + "`" +`? But if you really want this command you can ` + "`" +`${Prefix}improve ${commandName}` + "`",
+						description: ``,
 						thumbnail: "",
 						fields: [],
 						image: {
