@@ -1,29 +1,4 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-	const Embed = {
-		color: '#00ff00',
-		title: `I am so sorry this command is not working at this time`,
-		url: "",
-		author: {
-			Name: 'AnimeBot',
-			icon_url: "",
-			url: '',
-		},
-		description: ``,
-		thumbnail: "",
-		fields: [],
-		image: {
-			url: ""
-		},
-		fimestamp: new Date(),
-		footer: {
-			test: '',
-			icon_url: "",
-		},
-	}
-	message.channel.send({
-		embed: Embed
-	});
-	return;
 	if (message.channel.nsfw === true || message.guild === null) {
 		request('https://waifu.pics/api/nsfw/waifu', function(error, response, body) {
 			if (!error && response.statusCode == 200) {
