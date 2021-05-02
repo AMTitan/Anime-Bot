@@ -4,7 +4,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 		args.shift();
 		const Embed = {
 			color: '#00ff00',
-			title: args.join(" "),
+			title: "Bot Owner: " + args.join(" "),
 			url: "",
 			author: {
 				Name: 'AnimeBot',
