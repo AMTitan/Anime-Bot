@@ -11,7 +11,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 				icon_url: "",
 				url: '',
 			},
-			description: "",
+			description: `if you want to respond you can do so with ${Prefix}issue (reply)`,
 			thumbnail: "",
 			fields: [],
 			image: {
