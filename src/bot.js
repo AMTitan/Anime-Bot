@@ -124,7 +124,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'blowjob') require("./cmds/blowjob.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'gif') require("./cmds/gif.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'uniform') require("./cmds/uniform.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'school') require("./cmds/school.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'school' || commandName.toLowerCase() === 'schoolgirl') require("./cmds/school.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'femdom') require("./cmds/femdom.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'panties') require("./cmds/panties.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'maid') require("./cmds/maid.js")(Prefix, message, commandName, args, request, client);
