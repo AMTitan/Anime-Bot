@@ -143,6 +143,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					message.channel.send({
 						embed: Embed
 					});
+
+					if (!jsonParsed.file_url.endsWith(".jpg") && !jsonParsed.file_url.endsWith(".jpeg") && !jsonParsed.file_url.endsWith(".JPG") && !jsonParsed.file_url.endsWith(".JPEG") && !jsonParsed.file_url.endsWith(".png") && !jsonParsed.file_url.endsWith(".PNG") && !jsonParsed.file_url.endsWith(".gif") && !jsonParsed.file_url.endsWith(".gifv")) {
+						message.channel.send(jsonParsed.file_url);
+					}
 				}
 			})
 		} else {
