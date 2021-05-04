@@ -143,7 +143,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'search') require("./cmds/search.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'poke') require("./cmds/poke.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'pat') require("./cmds/pat.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'cuddle') require("./cmds/cuddle.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'cuddle' && commandName.toLowerCase() === 'cuddles') require("./cmds/cuddle.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'hug') require("./cmds/hug.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'kiss') require("./cmds/kiss.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'blush') require("./cmds/blush.js")(Prefix, message, commandName, args, request, client);
