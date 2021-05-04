@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="A fun Discord bot called Anime" name="description">
+    <meta content="Anime Bot" name="author">
+    <meta content="Git,GitHub,Bot,Discrod,DiscordBot,Anime,AnimeBot" name="keywords">
+
+    <title>Anime Bot</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet"><!-- JavaScript and dependencies -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript">
+    </script><!-- Favicons -->
+    <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="manifest.json" rel="manifest">
+    <link href="favicon.ico" rel="icon">
+    <meta content="#f8f9fa" name="theme-color">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <style>
+              .bd-placeholder-img {
+                  font-size: 1.125rem;
+                  text-anchor: middle;
+                  -webkit-user-select: none;
+                  -moz-user-select: none;
+                  user-select: none;
+              }
+
+              @media (min-width: 768px) {
+                  .bd-placeholder-img-lg {
+                      font-size: 3.5rem;
+                  }
+              }
+    </style><!-- Google Tag Manager -->
+
+    <script>
+       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WC94XGV');
+    </script><!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WC94XGV" style="display:none;visibility:hidden" width="0"></iframe></noscript> <!-- End Google Tag Manager (noscript) -->
+
+
+    <main>
+        <div class="position-relative p-3 p-md-5 m-md-3 text-center bg-light">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 fw-normal">Anime Bot</h1>
+
+
+                <p class="lead fw-normal">A fun discord bot called Anime</p>
+                <a class="btn btn-outline-secondary" href="https://github.com/AMTitan/Anime-Bot">GitHub</a>
+            </div>
+        </div>
+
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        </div>
+
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        </div>
+
+
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">SFW</h2>
+                </div>
+
+
+                <div class="bg-white shadow-sm mx-auto" style="width: 80%; min-height:500px; max-height:1000px; border-radius: 21px 21px 0 0; overflow: auto;">
+                    <center>
+                        <div id="SFW">
+                            <script type="text/javascript">
+                                $.getJSON('src/cmds.json', function(data) {
+                                    $.each(data.sfw, function(i, f) {
+                                        document.getElementById("SFW").innerText = document.getElementById("SFW").innerText + f.name + "\n" + f.value + "\n\n";
+                                        document.getElementById("SFW").innerText = document.getElementById("SFW").innerText.replaceAll("${Prefix}", "a!");
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">NSFW</h2>
+                </div>
+
+
+                <div class="bg-white shadow-sm mx-auto" style="width: 80%; min-height:500px; max-height:1000px; border-radius: 21px 21px 0 0; overflow: auto;">
+                    <center>
+                        <div id="NSFW">
+                            <script type="text/javascript">
+                                $.getJSON('src/cmds.json', function(data) {
+                                    $.each(data.nsfw, function(i, f) {
+                                        document.getElementById("NSFW").innerText = document.getElementById("NSFW").innerText + f.name + "\n" + f.value + "\n\n";
+                                        document.getElementById("NSFW").innerText = document.getElementById("NSFW").innerText.replaceAll("${Prefix}", "a!");
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">AUTO</h2>
+                </div>
+
+
+                <div class="bg-white shadow-sm mx-auto" style="width: 80%; min-height:500px; max-height:1000px; border-radius: 21px 21px 0 0; overflow: auto;">
+                    <center>
+                        <div id="AUTO">
+                            <script type="text/javascript">
+                                $.getJSON('src/cmds.json', function(data) {
+                                    $.each(data.auto, function(i, f) {
+                                        document.getElementById("AUTO").innerText = document.getElementById("AUTO").innerText + f.name + "\n" + f.value + "\n\n";
+                                        document.getElementById("AUTO").innerText = document.getElementById("AUTO").innerText.replaceAll("${Prefix}", "a!");
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">OTHER</h2>
+                </div>
+
+
+                <div class="bg-white shadow-sm mx-auto" style="width: 80%; min-height:500px; max-height:1000px; border-radius: 21px 21px 0 0; overflow: auto;">
+                    <center>
+                        <div id="OTHER">
+                            <script type="text/javascript">
+                                $.getJSON('src/cmds.json', function(data) {
+                                    $.each(data.other, function(i, f) {
+                                        document.getElementById("OTHER").innerText = document.getElementById("OTHER").innerText + f.name + "\n" + f.value + "\n\n";
+                                        document.getElementById("OTHER").innerText = document.getElementById("OTHER").innerText.replaceAll("${Prefix}", "a!");
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="container py-1">
+            <div class="row">
+                <div class="col-3 col-md">
+                </div>
+
+
+                <div class="col-6 col-md">
+                    <div style="text-align: center;">
+                        <small class="d-block mb-3 text-muted">© 
+                        <script language="javascript" type="text/javascript">
+                            var today = new Date(); var year = today.getFullYear(); document.write(year); 
+                        </script> All Rights Reserved</small>
+                    </div>
+                </div>
+
+
+                <div class="col-3 col-md">
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
