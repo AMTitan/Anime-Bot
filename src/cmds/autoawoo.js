@@ -8,7 +8,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 		setTimeout(function(){
 			if (run === false) return;
 			n++;
-			request(`https://waifu.pics/api/sfw/awoo`, function(error, response, body) {
+			request(`https://api.waifu.pics/sfw/awoo`, function(error, response, body) {
 			if (!error && response.statusCode == 200) {
 				var jsonParsed = JSON.parse(body);
 				const Embed = {

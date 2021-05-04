@@ -82,6 +82,9 @@
 			"name": "${Prefix}glasses",
 			"value": "gets you a glasses img"
 		}, {
+			"name": "${Prefix}kill [optinal @ person]",
+			"value": "gets you a killing gif or img"
+		}, {
 			"name": "${Prefix}maid",
 			"value": "gets you a maid img"
 		}, {
