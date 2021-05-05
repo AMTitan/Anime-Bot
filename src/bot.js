@@ -69,13 +69,13 @@ client.on('message', (message) => {
 		.trim()
 		.substring(Prefix.length)
 		.split(/\s+/);
-	if (!commandName || commandName === "" || commandName === "") {
+	if (!commandName) {
 		var [commandName, ...args] = message.content.toLowerCase()
 		.trim()
 		.substring(Prefix.length + 1)
 		.split(/\s+/);
 	}
-	if (!commandName || commandName === "" || commandName === "") {
+	if (!commandName) {
 		const Embed = {
 			color: '#00ff00',
 			title: `My help cmd is ${Prefix}help`,
@@ -101,7 +101,7 @@ client.on('message', (message) => {
 			embed: Embed
 		});
 	}
-	if (!commandName || commandName === "" || commandName === "") return;
+	if (!commandName) return;
 	if (commandName === `help`) require("./cmds/help.js")(Prefix, message);
 	else if (commandName.toLowerCase() === `whatis`) require("./cmds/whatis.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'quote') require("./cmds/quote.js")(Prefix, message, commandName, args, request, client);

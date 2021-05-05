@@ -4,7 +4,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 	var n = 0;
 	var run = true;
 	const filter = message.author.id;
-	for (i = 0; i < args[0]; i++) {
+	for (var i = 0; i < args[0]; i++) {
 		setTimeout(function(){
 			if (run === false) return;
 			n++;

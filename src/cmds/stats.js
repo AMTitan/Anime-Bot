@@ -6,12 +6,11 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 		files.forEach(function(item) {
 			if (item.endsWith(".js")) fs.createReadStream(item)
 			  	.on('data', function(chunk) {
-			    	for (i=0; i < chunk.length; ++i)
+			    	for (var i = 0; i < chunk.length; i++)
 			      		if (chunk[i] == 10) lines++;
 		  	})
 		  	.on('end', function() {
 	    		if (files[files.length - 1] === item) {
-	    			let i;
 				    let count = 0;
 					const Embed = {
 						color: '#00ff00',

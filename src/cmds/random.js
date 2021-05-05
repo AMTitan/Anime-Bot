@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
 	if (args[0] === "gif") {
-		if (args[0] && args[0].toLowerCase() === "nsfw") {
+		if (message.channel.nsfw === true || message.guild === null) {
 			request(`https://nekos.life/api/v2/img/classic`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed = JSON.parse(body);
