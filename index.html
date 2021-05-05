@@ -49,11 +49,19 @@
 
         gtag('config', 'G-FE9LBDWSYW');
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            new Darkmode().showWidget();
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+
 </head>
 
 <body>
     <main>
-        <div class="position-relative p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="p-3 p-md-5 m-md-3 text-center bg-light">
             <div class="col-md-5 p-lg-5 mx-auto my-5">
                 <h1 class="display-4 fw-normal">Anime Bot</h1>
 
