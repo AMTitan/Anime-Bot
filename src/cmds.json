@@ -169,6 +169,9 @@
 			"name": "EXAMPLE",
 			"value": "${Prefix}show"
 		}, {
+			"name": "${Prefix}donate",
+			"value": "sgets you the donate link"
+		}, {
 			"name": "${Prefix}issue (the issue)",
 			"value": "if you find a issue"
 		}, {
