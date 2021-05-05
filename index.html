@@ -51,8 +51,13 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
+        const options = {
+            label: "🌓",
+        }
         function addDarkmodeWidget() {
-            new Darkmode().showWidget();
+            const darkmode = new Darkmode(options);
+            //darkmode.toggle();
+            darkmode.showWidget();
         }
         window.addEventListener('load', addDarkmodeWidget);
     </script>
@@ -83,8 +88,8 @@
         </div>
 
 
-        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 row">
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col"  style="min-width: 350px">
                 <div class="my-3 p-3">
                     <h2 class="display-5">SFW</h2>
                 </div>
@@ -107,7 +112,7 @@
             </div>
 
 
-            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col"  style="min-width: 350px">
                 <div class="my-3 p-3">
                     <h2 class="display-5">NSFW</h2>
                 </div>
@@ -130,7 +135,7 @@
             </div>
 
 
-            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col"  style="min-width: 350px">
                 <div class="my-3 p-3">
                     <h2 class="display-5">AUTO</h2>
                 </div>
@@ -153,7 +158,7 @@
             </div>
 
 
-            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col-3">
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col"  style="min-width: 350px">
                 <div class="my-3 py-3">
                     <h2 class="display-5">OTHER</h2>
                 </div>
@@ -179,7 +184,7 @@
 
         <footer class="container py-1">
             <div class="row">
-                <div class="col-3 col-md">
+                <div class="col col-md">
                 </div>
 
 
@@ -193,7 +198,7 @@
                 </div>
 
 
-                <div class="col-3 col-md">
+                <div class="col col-md">
                 </div>
             </div>
         </footer>
