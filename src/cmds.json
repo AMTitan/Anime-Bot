@@ -25,6 +25,9 @@
 			"name": "${Prefix}kiss [optinal @ person]",
 			"value": "gets you a kiss gif or img"
 		}, {
+			"name": "${Prefix}meme",
+			"value": "gets you a random meme"
+		}, {
 			"name": "${Prefix}neko",
 			"value": "shows a random neko img or gif"
 		}, {
