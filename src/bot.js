@@ -162,6 +162,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'baka') require("./cmds/baka.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'yaoi') require("./cmds/yaoi.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'donate') require("./cmds/donate.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'meme' || commandName.toLowerCase() === 'memes') require("./cmds/meme.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'dm' && message.author.id === owner) require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
