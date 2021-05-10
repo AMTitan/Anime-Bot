@@ -40,8 +40,8 @@
 			"name": "${Prefix}random [optinal gif]",
 			"value": "shows a random anime img"
 		}, {
-			"name": "${Prefix}search gif [tags (you can do more than one) example : ${Prefix}search gif zero two]",
-			"value": "gets you a custom gif"
+			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search gif zero two]",
+			"value": "gets you something custom"
 		}, {
 			"name": "${Prefix}waifu",
 			"value": "gets you a waifu"
@@ -112,8 +112,8 @@
 			"name": "${Prefix}school",
 			"value": "gets you a school girl img"
 		}, {
-			"name": "${Prefix}search img [tags (you can do more than one) example : ${Prefix}search img school_girl]",
-			"value": "gets you a custom image"
+			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search img school_girl]",
+			"value": "gets you something custom"
 		},  {
 			"name": "${Prefix}solo [optinal gif]",
 			"value": "gets you a solo gif or img"
@@ -209,7 +209,7 @@
 			"value": "guess the waifu you get"
 		}, {
 			"name": "${Prefix}wallpaper [optinal nsfw]",
-			"value": "shows a random anime wallpaper (just a random one from the first 25 hot on the subreddit)"
+			"value": "shows a random anime wallpaper"
 		}, {
 			"name": "${Prefix}whatis {link to a img of a anime}",
 			"value": "tries to find what anime it was in"
