@@ -1,4 +1,7 @@
 # <img src="https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png" alt="icon" width="50px"/> Anime-Bot
+
+I have spent [![wakatime](https://wakatime.com/badge/github/AMTitan/Anime-Bot.svg)](https://wakatime.com/badge/github/AMTitan/Anime-Bot) coding this so a donation would be nice! 😄 thank you!
+
 <h3>Links</h3>
 
 - [Dependency](https://github.com/AMTitan/Anime-Bot#dependency)
