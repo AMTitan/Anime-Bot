@@ -24,6 +24,9 @@
 		}, {
 			"name": "${Prefix}kiss [optinal @ person]",
 			"value": "gets you a kiss gif or img"
+		},  {
+			"name": "${Prefix}lick [optinal @ person]",
+			"value": "gets you a lick gif or img"
 		}, {
 			"name": "${Prefix}meme",
 			"value": "gets you a random meme"
