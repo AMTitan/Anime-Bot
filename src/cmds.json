@@ -13,6 +13,9 @@
 			"name": "${Prefix}blush [optinal @ person]",
 			"value": "gets you a blush gif or img"
 		}, {
+			"name": "${Prefix}cry [optinal @ person]",
+			"value": "gets you a cry gif or img"
+		}, {
 			"name": "${Prefix}cuddle [optinal @ person]",
 			"value": "gets you a cuddle gif or img"
 		}, {

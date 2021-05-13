@@ -166,6 +166,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'meme' || commandName.toLowerCase() === 'memes') require("./cmds/meme.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'dm' && message.author.id === owner) require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
 	else if (commandName.toLowerCase() === 'dance') require("./cmds/dance.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'cry') require("./cmds/cry.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
