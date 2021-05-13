@@ -16,6 +16,9 @@
 			"name": "${Prefix}cuddle [optinal @ person]",
 			"value": "gets you a cuddle gif or img"
 		}, {
+			"name": "${Prefix}dance [optinal @ person]",
+			"value": "gets you a dance gif or img"
+		}, {
 			"name": "${Prefix}fox",
 			"value": "shows a random foxgirl img"
 		}, {
