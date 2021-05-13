@@ -25,6 +25,9 @@
 			"name": "${Prefix}fox",
 			"value": "shows a random foxgirl img"
 		}, {
+			"name": "${Prefix}highfive [optinal @ person]",
+			"value": "gets you a highfive gif or img"
+		}, {
 			"name": "${Prefix}hug [optinal @ person]",
 			"value": "gets you a hug gif or img"
 		}, {
