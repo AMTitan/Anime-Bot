@@ -52,6 +52,9 @@
 			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search gif zero two]",
 			"value": "gets you something custom"
 		}, {
+			"name": "${Prefix}smile [optinal @ person]",
+			"value": "shows a random smile img"
+		}, {
 			"name": "${Prefix}waifu",
 			"value": "gets you a waifu"
 		}
