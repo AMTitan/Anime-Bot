@@ -4,6 +4,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 	var n = 0;
 	var run = true;
 	const filter = message.author.id;
+	var msgSent = 0;
 	for (var i = 0; i < args[0]; i++) {
 		setTimeout(function(){
 			if (run === false) return;
@@ -33,9 +34,18 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					},
 				}
 
-				message.channel.send({
-					embed: Embed
-				});
+				if (n === 1) {
+					message.channel.send({
+						embed: Embed
+					}).then(id => {
+						msgSent = id;
+					});
+				}
+				else {
+					msgSent.edit({
+						embed: Embed
+					});
+				}
 
 				client.on('message', (message1) => {
 					if (run === true && (filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
