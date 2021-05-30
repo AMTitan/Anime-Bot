@@ -1,5 +1,5 @@
 module.exports = function(Prefix, message, commandName, args, request, client, owner) {
-	if (message.author.id === owner) {
+	if (message.author.id === owner && commandName === "dm") {
 		var person = args[0];
 		args.shift();
 		const Embed = {
