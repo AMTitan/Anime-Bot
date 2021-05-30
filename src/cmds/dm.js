@@ -57,7 +57,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 
 		const Embedthree = {
 			color: '#00ff00',
-			title: "I am so sorry but it did not send maybe try again?",
+			title: "I am so sorry but it did not send maybe try again? If this keeps happening try in one day or so",
 			url: "",
 			author: {
 				Name: 'AnimeBot',
@@ -134,6 +134,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 				sent = true;
 			}
 			catch(err) {
+				console.log(err);
 				sent = false;
 				message.channel.send({
 					embed: Embedthree
