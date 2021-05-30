@@ -86,7 +86,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 				icon_url: "",
 				url: '',
 			},
-			description: "and if you get a friend request from a accound right after you send it that is prob me going to ask you what you mean.",
+			description: "and if you get a friend request from a account right after you send it that is prob me going to ask you what you mean.",
 			thumbnail: "",
 			fields: [],
 			image: {
