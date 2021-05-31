@@ -69,7 +69,10 @@
 		{
 			"name": "EXAMPLE",
 			"value": "${Prefix}panties"
-		},{
+		}, {
+			"name": "${Prefix}ahegaoAvatar",
+			"value": "gets you a ahegao avatar"
+		}, {
 			"name": "${Prefix}anal",
 			"value": "gets you a anal gif"
 		},  {
