@@ -112,6 +112,9 @@
 			"name": "${Prefix}fox nsfw",
 			"value": "shows a random foxgirl img"
 		}, {
+			"name": "${Prefix}futanari",
+			"value": "shows a random futanari img"
+		}, {
 			"name": "${Prefix}gif",
 			"value": "gets you a nsfw gif!"
 		}, {
@@ -139,7 +142,7 @@
 			"name": "${Prefix}maid",
 			"value": "gets you a maid img"
 		}, {
-			"name": "${Prefix}masturbation",
+			"name": "${Prefix}masturbation [optinal gif]",
 			"value": "gets you a masturbation img"
 		}, {
 			"name": "${Prefix}neko [nsfw or gif]",
