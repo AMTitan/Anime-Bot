@@ -204,6 +204,9 @@
 		}, {
 			"name": "${Prefix}yaoi",
 			"value": "gets you a guy on guy"
+		}, {
+			"name": "${Prefix}yiff",
+			"value": "gets you furry gif"
 		}
 	],
 	"auto": [
