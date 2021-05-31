@@ -192,6 +192,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'cosplay') require("./cmds/cosplay.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'pantyhose') require("./cmds/pantyhose.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'eropantyhose') require("./cmds/eropantyhose.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'smallboobs') require("./cmds/smallboobs.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 

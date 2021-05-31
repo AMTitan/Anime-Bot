@@ -184,6 +184,9 @@
 			"name": "${Prefix}school",
 			"value": "gets you a school girl img"
 		}, {
+			"name": "${Prefix}smallBoobs",
+			"value": "gets you a small boobs img"
+		}, {
 			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search img school_girl]",
 			"value": "gets you something custom"
 		},  {
