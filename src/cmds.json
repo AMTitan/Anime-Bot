@@ -22,6 +22,9 @@
 			"name": "${Prefix}dance [optinal @ person]",
 			"value": "gets you a dance gif or img"
 		}, {
+			"name": "${Prefix}feed",
+			"value": "shows a feeding gif"
+		}, {
 			"name": "${Prefix}fox",
 			"value": "shows a random foxgirl img"
 		}, {
