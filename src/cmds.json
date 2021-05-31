@@ -128,7 +128,7 @@
 			"value": "gets you a killing gif or img"
 		}, {
 			"name": "${Prefix}kuni",
-			"value": "gets you a kuni img"
+			"value": "gets you a kuni gif"
 		}, {
 			"name": "${Prefix}maid",
 			"value": "gets you a maid img"
@@ -165,6 +165,9 @@
 		},  {
 			"name": "${Prefix}tentacle",
 			"value": "gets you a tentacle img"
+		},  {
+			"name": "${Prefix}tits",
+			"value": "gets you a tits img"
 		}, {
 			"name": "${Prefix}thighs",
 			"value": "gets you a thighs img"
