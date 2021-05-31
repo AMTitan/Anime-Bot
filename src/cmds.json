@@ -124,6 +124,9 @@
 			"name": "${Prefix}keta",
 			"value": "gets you a keta img"
 		}, {
+			"name": "${Prefix}kemonomimi",
+			"value": "gets you a kemonomimi img"
+		}, {
 			"name": "${Prefix}kill [optinal @ person]",
 			"value": "gets you a killing gif or img"
 		}, {
