@@ -6,9 +6,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 		files.forEach(function(item) {
 			if (item.endsWith(".js")) fs.createReadStream(item)
 			  	.on('data', function(chunk) {
-			    	for (var i = 0; i < chunk.length; i++)
+			    	for (var i = 0; i < chunk.length; i++) {
 			      		if (chunk[i] == 10) lines++;
-		  	})
+					}
+		  		})
 		  	.on('end', function() {
 	    		if (files[files.length - 1] === item) {
 				    let count = 0;
@@ -72,6 +73,18 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 								}, {
 									name: 'OS',
 									value: os,
+									inline: true
+								}, {
+									name: 'Total Latency',
+									value: `${Date.now() - message.createdTimestamp}ms`,
+									inline: true
+								}, {
+									name: 'API Latency',
+									value: `${Math.round(client.ws.ping)}ms`,
+									inline: true
+								}, {
+									name: 'My Latency',
+									value: `${Math.round((Date.now() - message.createdTimestamp)-(client.ws.ping))}ms`,
 									inline: true
 								},],
 						image: {
