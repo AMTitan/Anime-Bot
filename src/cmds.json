@@ -130,6 +130,9 @@
 			"name": "${Prefix}kuni",
 			"value": "gets you a kuni gif"
 		}, {
+			"name": "${Prefix}lewdkemo",
+			"value": "gets you a lewdkemo img"
+		}, {
 			"name": "${Prefix}maid",
 			"value": "gets you a maid img"
 		}, {
