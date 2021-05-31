@@ -172,6 +172,9 @@
 			"name": "${Prefix}panties",
 			"value": "gets you a panties img"
 		}, {
+			"name": "${Prefix}pantyhose",
+			"value": "gets you a pantyhose img"
+		}, {
 			"name": "${Prefix}pussy [optinal gif]",
 			"value": "gets you a pussy img"
 		}, {

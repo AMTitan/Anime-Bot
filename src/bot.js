@@ -190,6 +190,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'feed') require("./cmds/feed.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'ahegaoavatar') require("./cmds/ahegao_avatar.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'cosplay') require("./cmds/cosplay.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'pantyhose') require("./cmds/pantyhose.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
