@@ -109,9 +109,6 @@
 			"name": "${Prefix}erok",
 			"value": "gets you a ero kitsune img"
 		}, {
-			"name": "${Prefix}erokemo",
-			"value": "gets you a erokemo img"
-		}, {
 			"name": "${Prefix}eron",
 			"value": "gets you a ero neko img"
 		}, {
