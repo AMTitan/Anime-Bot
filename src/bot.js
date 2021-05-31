@@ -170,6 +170,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'smile') require("./cmds/smile.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'highfive') require("./cmds/highfive.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'cum') require("./cmds/cum.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'ero') require("./cmds/ero.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
