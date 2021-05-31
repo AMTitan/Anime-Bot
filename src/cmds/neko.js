@@ -60,7 +60,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 		}
 	}else if (args[0] && args[0].toLowerCase() === "gif") {
 		if (message.channel.nsfw === true || message.guild === null) {
-			request(`https://nekos.life/api/v2/img/nsfw_neko_gif`, function(error, response, body) {
+			request(`https://api.nekos.dev/api/v3/images/nsfw/gif/neko/`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed = JSON.parse(body);
 					const Embed = {
@@ -69,19 +69,19 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						url: "",
 						author: {
 							Name: 'AnimeBot',
-							icon_url: jsonParsed.url,
+							icon_url: jsonParsed.data.response.url,
 							url: '',
 						},
 						description: ``,
-						thumbnail: jsonParsed.url,
+						thumbnail: jsonParsed.data.response.url,
 						fields: [],
 						image: {
-							url: jsonParsed.url,
+							url: jsonParsed.data.response.url,
 						},
 						fimestamp: new Date(),
 						footer: {
 							test: 'Some footer text here',
-							icon_url: jsonParsed.url,
+							icon_url: jsonParsed.data.response.url,
 						},
 					}
 
