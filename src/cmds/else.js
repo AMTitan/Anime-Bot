@@ -44,7 +44,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			}
 			if (nsfw == true) {
 				if (message.channel.nsfw === true || message.guild === null) {
-					request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli ${types[3]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
+					request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian ${types[3]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
 						if (!error && response.statusCode == 200) {
 							var shouldIReturn = false;
 							if (!body) {
@@ -220,7 +220,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				}
 			}else if (questinable == true) {
 				if (message.channel.nsfw === true || message.guild === null) {
-					request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli ${types[3]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
+					request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian ${types[3]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
 						if (!error && response.statusCode == 200) {
 							var shouldIReturn = false;
 							if (!body) {
@@ -395,7 +395,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					});
 				}
 			}else if (sfw == true) {
-				request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli ${types[1]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
+				request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian ${types[1]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
 					if (!error && response.statusCode == 200) {
 						var shouldIReturn = false;
 						if (!body) {
@@ -544,7 +544,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				})
 			}else {
 				if (message.channel.nsfw === true || message.guild === null) {
-					request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
+					request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
 						if (!error && response.statusCode == 200) {
 							var shouldIReturn = false;
 							if (!body) {
