@@ -97,6 +97,9 @@
 			"name": "${Prefix}erok",
 			"value": "gets you a erok img"
 		}, {
+			"name": "${Prefix}erokemo",
+			"value": "gets you a erokemo img"
+		}, {
 			"name": "${Prefix}eron",
 			"value": "gets you a eron img"
 		}, {
