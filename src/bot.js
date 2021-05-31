@@ -184,6 +184,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'trap') require("./cmds/trap.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'holoero') require("./cmds/holoero.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'futanari') require("./cmds/futanari.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'eron') require("./cmds/eron.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
