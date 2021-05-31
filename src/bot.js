@@ -174,6 +174,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'erofeet') require("./cmds/erofeet.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'erok') require("./cmds/erok.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'hololewd') require("./cmds/hololewd.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'keta') require("./cmds/keta.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
