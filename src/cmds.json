@@ -88,6 +88,9 @@
 			"name": "${Prefix}boobs",
 			"value": "gets you a boobs gif"
 		}, {
+			"name": "${Prefix}cosplay",
+			"value": "gets you a cospaly img (irl)"
+		}, {
 			"name": "${Prefix}cum",
 			"value": "gets you a cum gif"
 		}, {
