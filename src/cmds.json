@@ -127,6 +127,9 @@
 			"name": "${Prefix}kill [optinal @ person]",
 			"value": "gets you a killing gif or img"
 		}, {
+			"name": "${Prefix}kuni",
+			"value": "gets you a kuni img"
+		}, {
 			"name": "${Prefix}maid",
 			"value": "gets you a maid img"
 		}, {
