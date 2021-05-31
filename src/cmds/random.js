@@ -1,7 +1,7 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-	if (args[0] === "gif") {
-		if (message.channel.nsfw === true || message.guild === null) {
-			request(`https://nekos.life/api/v2/img/classic`, function(error, response, body) {
+	if (message.channel.nsfw === true || message.guild === null) {
+		if (args[0] === "gif") {
+			request(`https://api.nekos.dev/api/v3/images/nsfw/gif/all_tags`, function(error, response, body) {
 				if (!error && response.statusCode == 200) {
 					var jsonParsed = JSON.parse(body);
 					const Embed = {
@@ -10,19 +10,19 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						url: "",
 						author: {
 							Name: 'AnimeBot',
-							icon_url: jsonParsed.url,
+							icon_url: jsonParsed.data.response.url,
 							url: '',
 						},
 						description: ``,
-						thumbnail: jsonParsed.url,
+						thumbnail: jsonParsed.data.response.url,
 						fields: [],
 						image: {
-							url: jsonParsed.url,
+							url: jsonParsed.data.response.url,
 						},
 						fimestamp: new Date(),
 						footer: {
 							test: 'Some footer text here',
-							icon_url: jsonParsed.url,
+							icon_url: jsonParsed.data.response.url,
 						},
 					}
 
@@ -31,8 +31,40 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					});
 				}
 			})
-		} else {
-			const Embed = {
+		}else {
+			request(`https://api.nekos.dev/api/v3/images/nsfw/img/all_tags_lewd`, function(error, response, body) {
+				if (!error && response.statusCode == 200) {
+					var jsonParsed = JSON.parse(body);
+					const Embed = {
+						color: '#00ff00',
+						title: `Random Anime Img`,
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: "",
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [],
+						image: {
+							url: jsonParsed.data.response.url
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+
+					message.channel.send({
+						embed: Embed
+					});
+				}
+			})
+		}
+	} else {
+		const Embed = {
 			color: '#00ff00',
 			title: 'sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on)',
 			url: "",
@@ -57,39 +89,5 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 		message.channel.send({
 			embed: Embed
 		});
-		}
-	}else {
-		let array = ["pat", "hug", "waifu", "cry", "kiss", "slap", "smug", "punch"];
-		var item = array[Math.floor(Math.random() * array.length)];
-		request(`https://neko-love.xyz/api/v1/${item}`, function(error, response, body) {
-			if (!error && response.statusCode == 200) {
-				var jsonParsed = JSON.parse(body);
-				const Embed = {
-					color: '#00ff00',
-					title: `Random Anime Img`,
-					url: "",
-					author: {
-						Name: 'AnimeBot',
-						icon_url: "",
-						url: "",
-					},
-					description: ``,
-					thumbnail: "",
-					fields: [],
-					image: {
-						url: jsonParsed.url
-					},
-					fimestamp: new Date(),
-					footer: {
-						test: '',
-						icon_url: "",
-					},
-				}
-
-				message.channel.send({
-					embed: Embed
-				});
-			}
-		})
 	}
 }
