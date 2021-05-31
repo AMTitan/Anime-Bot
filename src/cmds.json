@@ -52,9 +52,6 @@
 			"name": "${Prefix}poke [optinal @ person]",
 			"value": "gets you a poke gif"
 		}, {
-			"name": "${Prefix}random [optinal gif]",
-			"value": "shows a random anime img"
-		}, {
 			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search gif zero two]",
 			"value": "gets you something custom"
 		}, {
@@ -142,6 +139,9 @@
 			"name": "${Prefix}glasses",
 			"value": "gets you a glasses img"
 		}, {
+			"name": "${Prefix}holoero",
+			"value": "gets you a holoero img"
+		}, {
 			"name": "${Prefix}hololewd",
 			"value": "gets you a hololewd img"
 		}, {
@@ -190,6 +190,9 @@
 			"name": "${Prefix}pussy [optinal gif]",
 			"value": "gets you a pussy img"
 		}, {
+			"name": "${Prefix}random [optinal gif]",
+			"value": "shows a random anime img"
+		}, {
 			"name": "${Prefix}school",
 			"value": "gets you a school girl img"
 		}, {
@@ -210,9 +213,6 @@
 		},  {
 			"name": "${Prefix}tits",
 			"value": "gets you a tits img"
-		}, {
-			"name": "${Prefix}holoero",
-			"value": "gets you a holoero img"
 		}, {
 			"name": "${Prefix}thighs",
 			"value": "gets you a thighs img"
