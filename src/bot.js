@@ -195,6 +195,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'smallboobs') require("./cmds/smallboobs.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'peeing') require("./cmds/peeing.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'eropiersing') require("./cmds/eropiersing.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'piersing') require("./cmds/piersing.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
