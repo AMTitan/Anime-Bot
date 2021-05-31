@@ -178,6 +178,9 @@
 			"name": "${Prefix}thighs",
 			"value": "gets you a thighs img"
 		}, {
+			"name": "${Prefix}trap",
+			"value": "gets you a trap img"
+		}, {
 			"name": "${Prefix}uniform",
 			"value": "gets you a uniform img"
 		}, {
