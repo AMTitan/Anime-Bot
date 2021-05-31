@@ -94,6 +94,9 @@
 			"name": "${Prefix}erofeet",
 			"value": "gets you a ero feet img"
 		}, {
+			"name": "${Prefix}eroyuri",
+			"value": "gets you a ero yuri img"
+		}, {
 			"name": "${Prefix}erok",
 			"value": "gets you a erok img"
 		}, {

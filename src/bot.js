@@ -176,6 +176,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'hololewd') require("./cmds/hololewd.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'keta') require("./cmds/keta.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'feetjob') require("./cmds/feetjob.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'eroyuri') require("./cmds/eroyuri.js")(Prefix, message, commandName, args, request, client);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
