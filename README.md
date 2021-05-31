@@ -1,4 +1,4 @@
-# <img src="https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png" alt="icon" width="50px"/> Anime-Bot
+# <img src="https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png" alt="icon" width="50px"/> Anime-Bot by AMTitan#4994
 
 I have spent [![wakatime](https://wakatime.com/badge/github/AMTitan/Anime-Bot.svg)](https://wakatime.com/badge/github/AMTitan/Anime-Bot) coding this so a donation would be nice! 😄 thank you!
 
