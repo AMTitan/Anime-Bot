@@ -33,7 +33,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 	} else {
 		const Embed = {
 			color: '#00ff00',
-			title: 'sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on)',
+			title: 'sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on) or you can always use the bot in dms!',
 			url: "",
 			author: {
 				Name: 'AnimeBot',
