@@ -6,7 +6,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					var jsonParsed = JSON.parse(body);
 					const Embed = {
 						color: '#00ff00',
-						title: 'fox',
+						title: 'Random gif',
 						url: "",
 						author: {
 							Name: 'AnimeBot',
