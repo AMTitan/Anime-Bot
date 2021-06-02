@@ -1,4 +1,32 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
+	if (parseInt(args[0]) > 86400) {
+		const Embed = {
+			color: '#00ff00',
+			title: `I am so sorry but they bot can only do up to 86400 (24hrs)`,
+			url: "",
+			author: {
+				Name: 'AnimeBot',
+				icon_url: "",
+				url: '',
+			},
+			description: ``,
+			thumbnail: "",
+			fields: [],
+			image: {
+				url: "",
+			},
+			fimestamp: new Date(),
+			footer: {
+				test: 'Some footer text here',
+				icon_url: "",
+			},
+		}
+
+		message.channel.send({
+			embed: Embed
+		})
+	}
+	if (parseInt(args[0]) > 86400) return;
 	if (!args[0]) args[0] = 3;
 	if (!args[1]) args[1] = 5;
 	var n = 0;
