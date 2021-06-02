@@ -77,7 +77,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						}
 
 						client.on('message', (message1) => {
-							if (run === true && (filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop`) {
+							if (run === true && (filter === message1.author.id || (message1.member && message1.member.hasPermission("MANAGE_MESSAGES"))) && message1.content.toLowerCase() === `${Prefix.toLowerCase()}stop` && message1.channel.id === message.channel.id) {
 								run = false;
 							}else if(message1.author.Bot === false) {
 								const Embed = {
