@@ -8,7 +8,7 @@ module.exports = function(Prefix, message) {
 			icon_url: "",
 			url: '',
 		},
-		description: ``,
+		description: `➤[Invite](https://discord.com/api/oauth2/authorize?client_id=833682899202080818&permissions=0&scope=bot) ➤[Server](https://discord.gg/sJnVmPZB7Y) ➤[Donate](https://www.patreon.com/AMTItan_Github)`,
 		thumbnail: "",
 		fields: [],
 		image: {
