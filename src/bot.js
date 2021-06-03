@@ -30,6 +30,8 @@ const poster = new dbots.Poster({
 
 poster.startInterval();
 
+console.log(client.guilds.cache)
+
 client.on('message', (message) => {
 	if (message.guild && !message.author.bot) {
 		Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length/10) + 1).then((hasLeveledUp) =>  {
@@ -226,6 +228,7 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'nhentai') require("./cmds/nhentai.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'rank') require("./cmds/rank.js")(Prefix, message, commandName, args, request, client, Levels);
 	else if (commandName.toLowerCase() === 'leaderboard' || commandName.toLowerCase() === 'lb' ) require("./cmds/leaderboard.js")(Prefix, message, commandName, args, request, client, Levels);
+	else if (commandName.toLowerCase() === 'guild' && message.author.id === owner) require("./cmds/guild.js")(Prefix, message, commandName, args, request, client, Levels);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 

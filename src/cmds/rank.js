@@ -1,5 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client, Levels) {
     const Canvas = require("canvas");
+    const Discord = require("discord.js");
     var id;
     if (!message.mentions.users.first()) {
         id = message.author;
@@ -7,63 +8,54 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
         id = message.mentions.users.first();
         
     }
-    Levels.fetch(id.id, message.guild.id).then((user) => {
+    Levels.fetch(id.id, message.guild.id, true).then((user) => {
         if (user.xp) {
-            var xp;
+            const canvacord = require("canvacord");
+            var xp = [0, 0];
             if (user.level > 0) {
-                xp = user.xp - Levels.xpFor(parseInt(user.level));
-            } else {
-                xp = user.xp;
+                xp[0] = user.xp - Levels.xpFor(parseInt(user.level))
+                xp[1] = Levels.xpFor(parseInt(user.level) + 1) - Levels.xpFor(parseInt(user.level));
             }
-            const Embed = {
-                color: '#00ff00',
-                title: `${id.username} is level ${user.level} and ${xp} xp`,
-                url: "",
-                author: {
-                    Name: 'AnimeBot',
-                    icon_url: "",
-                    url: '',
-                },
-                description: ``,
-                thumbnail: "",
-                fields: [],
-                image: {
-                    url: ""
-                },
-                fimestamp: new Date(),
-                footer: {
-                    test: '',
-                    icon_url: "",
-                },
+            else {
+                xp[0] = user.xp;
+                xp[1] = Levels.xpFor(parseInt(user.level) + 1);
             }
-            message.channel.send({
-                embed: Embed
-            });
+            const rank = new canvacord.Rank()
+                .setAvatar(id.displayAvatarURL({ dynamic: false, format: "png"}))
+                .setCurrentXP(xp[0])
+                .setRequiredXP(xp[1])
+                .setStatus(id.presence.status)
+                .setProgressBar("#00ff00", "COLOR")
+                .setUsername(id.username)
+                .setDiscriminator(id.discriminator)
+                .setLevel(user.level)
+                .setBackground("IMAGE", "https://img3.gelbooru.com//images/21/0b/210b549e22972e0fb9c76c6e061b709d.jpg")
+                .setRank(0, "", false);
+
+            rank.build()
+                .then(data => {
+                    const attachment = new Discord.MessageAttachment(data, "RankCard.png");
+                    message.channel.send(attachment);
+                });
         } else {
-            const Embed = {
-                color: '#00ff00',
-                title: `Sorry but this person does not have any xp`,
-                url: "",
-                author: {
-                    Name: 'AnimeBot',
-                    icon_url: "",
-                    url: '',
-                },
-                description: ``,
-                thumbnail: "",
-                fields: [],
-                image: {
-                    url: ""
-                },
-                fimestamp: new Date(),
-                footer: {
-                    test: '',
-                    icon_url: "",
-                },
-            }
-            message.channel.send({
-                embed: Embed
-            });
+            const canvacord = require("canvacord");
+            const rank = new canvacord.Rank()
+                .setAvatar(id.displayAvatarURL({ dynamic: false, format: "png"}))
+                .setCurrentXP(0)
+                .setRequiredXP(Levels.xpFor(1))
+                .setStatus(id.presence.status)
+                .setProgressBar("#00ff00", "COLOR")
+                .setUsername(id.username)
+                .setDiscriminator(id.discriminator, "")
+                .setLevel(0)
+                .setBackground("https://img3.gelbooru.com//images/21/0b/210b549e22972e0fb9c76c6e061b709d.jpg", "IMAGE")
+                .setRank(0, "", false);
+
+            rank.build()
+                .then(data => {
+                    const attachment = new Discord.MessageAttachment(data, "RankCard.png");
+                    message.channel.send(attachment);
+                });
         }
     })
 }
