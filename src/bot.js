@@ -115,12 +115,6 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === `waifuquestions`) require("./cmds/waifuquestions.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'waifu') require("./cmds/waifu.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'fact') require("./cmds/fact.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'autonsfw') require("./cmds/autonsfw.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'autonekonsfw') require("./cmds/autonekonsfw.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'autoblowjob') require("./cmds/autoblowjob.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'autoneko') require("./cmds/autoneko.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'autoawoo') require("./cmds/autoawoo.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'autowaifu') require("./cmds/autowaifu.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'blowjob') require("./cmds/blowjob.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'gif') require("./cmds/gif.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'uniform') require("./cmds/uniform.js")(Prefix, message, commandName, args, request, client);
@@ -154,7 +148,6 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'show') require("./cmds/show.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'invite') require("./cmds/invite.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'server') require("./cmds/server.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'automaid') require("./cmds/automaid.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'issue' || commandName.toLowerCase() === 'improve') require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
 	else if (commandName.toLowerCase() === "stop") return;
 	else if (commandName.toLowerCase() === 'boobs') require("./cmds/boobs.js")(Prefix, message, commandName, args, request, client);
