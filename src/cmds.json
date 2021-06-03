@@ -247,23 +247,29 @@
 			"name": "${Prefix}donate",
 			"value": "sgets you the donate link"
 		}, {
+			"name": "${Prefix}fact",
+			"value": "gets you a anime fact"
+		}, {
 			"name": "${Prefix}issue (the issue)",
 			"value": "if you find a issue"
 		}, {
 			"name": "${Prefix}improve (the improvement)",
 			"value": "if you want something to be improved"
 		}, {
-			"name": "${Prefix}fact",
-			"value": "gets you a anime fact"
-		}, {
 			"name": "${Prefix}invite",
 			"value": "gets you the invite to invite the bot to your server"
+		}, {
+			"name": "${Prefix}leaderboard",
+			"value": "gets you the leaderboard"
 		}, {
 			"name": "${Prefix}quote",
 			"value": "shows a random anime quote"
 		}, {
 			"name": "${Prefix}quotequestions",
 			"value": "guess who said a quote"
+		}, {
+			"name": "${Prefix}rank",
+			"value": "gets you your rank"
 		}, {
 			"name": "${Prefix}server",
 			"value": "gets you the main anime bot server"
