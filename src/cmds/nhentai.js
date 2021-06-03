@@ -16,10 +16,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						setTimeout(function(){
 							n++;
 							var img;
-							if (info.images.pages[n].t === "j") {
+							if (info.images.pages[n-1].t === "j") {
 								img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.jpg`;
 							}
-							else if (info.images.pages[n].t === "p") {
+							else if (info.images.pages[n-1].t === "p") {
 								img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.png`;
 							}
 							const Embed = {
@@ -72,11 +72,10 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 					setTimeout(function(){
 						n++;
 						var img;
-						console.log(info);
-						if (info.images.pages[n].t === "j") {
+						if (info.images.pages[n-1].t === "j") {
 							img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.jpg`;
 						}
-						else if (info.images.pages[n].t === "p") {
+						else if (info.images.pages[n-1].t === "p") {
 							img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.png`;
 						}
 						const Embed = {
