@@ -37,7 +37,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
                     icon_url: "",
                     url: '',
                 },
-                description: `${lb.join("\n\n")}}`,
+                description: `${lb.join("\n\n")}`,
                 thumbnail: "",
                 fields: [],
                 image: {
