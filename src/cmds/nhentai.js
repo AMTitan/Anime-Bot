@@ -12,7 +12,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				.then(() => {
 					var n = 0;
 					var msgSent = 0;
-					for (var i = 0; i < info.images.pages.length; i++) {
+					for (var i = 0; i < info["num_pages"]; i++) {
 						setTimeout(function(){
 							n++;
 							var img;
@@ -24,7 +24,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 							}
 							const Embed = {
 								color: '#00ff00',
-								title: `${info.title.pretty} ${n}/${info.images.pages.length + 1}`,
+								title: `${info.title.pretty} ${n}/${info["num_pages"]}`,
 								url: "",
 								author: {
 									Name: 'AnimeBot',
@@ -68,10 +68,11 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 			}).then(() => {
 				var n = 0;
 				var msgSent = 0;
-				for (var i = 0; i < info.images.pages.length; i++) {
+				for (var i = 0; i < info["num_pages"]; i++) {
 					setTimeout(function(){
 						n++;
 						var img;
+						console.log(info);
 						if (info.images.pages[n].t === "j") {
 							img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.jpg`;
 						}
@@ -80,7 +81,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 						}
 						const Embed = {
 							color: '#00ff00',
-							title: `${info.title.pretty} ${n}/${info.images.pages.length + 1}`,
+							title: `${info.title.pretty} ${n}/${info["num_pages"]}`,
 							url: "",
 							author: {
 								Name: 'AnimeBot',
