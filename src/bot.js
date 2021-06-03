@@ -224,6 +224,8 @@ client.on('message', (message) => {
 	else if (commandName.toLowerCase() === 'piersing') require("./cmds/piersing.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'slap') require("./cmds/slap.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'nhentai') require("./cmds/nhentai.js")(Prefix, message, commandName, args, request, client);
+	else if (commandName.toLowerCase() === 'rank') require("./cmds/rank.js")(Prefix, message, commandName, args, request, client, Levels);
+	else if (commandName.toLowerCase() === 'leaderboard' || commandName.toLowerCase() === 'lb' ) require("./cmds/leaderboard.js")(Prefix, message, commandName, args, request, client, Levels);
 	else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });
 
