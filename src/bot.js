@@ -2,8 +2,8 @@ var request = require('request');
 require("dotenv").config();
 const owner = "585604715128291328";
 const fs = require("fs");
-const mongoose = require("mongoose");
-mongoose.connect(process.env.mongodb, { useNewUrlParser: true, useUnifiedTopology: true});
+const Levels = require("discord-xp");
+Levels.setURL(process.env.mongodb);
 const {
 	Client
 } = require('discord.js');
@@ -31,6 +31,38 @@ const poster = new dbots.Poster({
 poster.startInterval();
 
 client.on('message', (message) => {
+	if (message.guild && !message.author.bot) {
+		Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length/10) + 1).then((hasLeveledUp) =>  {
+			if (hasLeveledUp) {
+				Levels.fetch(message.author.id, message.guild.id).then((user) => {
+					const Embed = {
+						color: '#00ff00',
+						title: `Hey you leveled up you are now level ${user.level}`,
+						url: "",
+						author: {
+							Name: 'AnimeBot',
+							icon_url: "",
+							url: '',
+						},
+						description: ``,
+						thumbnail: "",
+						fields: [],
+						image: {
+							url: ""
+						},
+						fimestamp: new Date(),
+						footer: {
+							test: '',
+							icon_url: "",
+						},
+					}
+					message.channel.send({
+						embed: Embed
+					});
+				})
+			}
+		})
+	}
 	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
 	if (message.author.bot === true) return;
 	if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) {

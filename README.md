@@ -14,6 +14,7 @@ I have spent [![wakatime](https://wakatime.com/badge/github/AMTitan/Anime-Bot.sv
 
 - `Git`
 - `Node.js`
+- and just watch this https://www.youtube.com/watch?v=4X2qsZudLNY
 
 <h3>Linux</h3>
 
@@ -28,6 +29,7 @@ Make a file called `.env` and inside put
 Token=(discord bot token)
 top=(top.gg token)
 botlist=(discordbotlist token)
+mongodb=(something like mongodb+srv://<username>:<password>@<stuff>)
 ```
 
 Finally
@@ -54,6 +56,7 @@ npm i
 ```
 top=(top.gg token)
 botlist=(discordbotlist token)
+mongodb=(something like mongodb+srv://<username>:<password>@<stuff>)
 ```
 
 - Then restart the computer
@@ -76,6 +79,7 @@ Then
 export Token=(discord bot token)
 export top=(top.gg token)
 export botlist=(discordbotlist token)
+mongodb=(something like mongodb+srv://<username>:<password>@<stuff>)
 ```
 
 Finally
