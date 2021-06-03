@@ -169,6 +169,9 @@
 			"name": "${Prefix}neko [nsfw or gif]",
 			"value": "shows a random neko img or gif"
 		}, {
+			"name": "${Prefix}nhentai [popular]",
+			"value": "shows a random nhentai"
+		}, {
 			"name": "${Prefix}nsfw",
 			"value": "shows random nsfw anime img"
 		}, {
@@ -234,33 +237,6 @@
 		}, {
 			"name": "${Prefix}yiff",
 			"value": "gets you furry gif"
-		}
-	],
-	"auto": [
-		{
-			"name": "EXAMPLE",
-			"value": "${Prefix}autonekonsfw"
-		},  {
-			"name": "${Prefix}autoawoo (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose awoo a set number of times"
-		},  {
-			"name": "${Prefix}autoblowjob (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose awoo a set number of times"
-		},  {
-			"name": "${Prefix}automaid (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose maid a set number of times"
-		},  {
-			"name": "${Prefix}autoneko (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose neko a set number of times"
-		},   {
-			"name": "${Prefix}autonekonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose neko nsfw a set number of times"
-		},  {
-			"name": "${Prefix}autonsfw (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose nsfw a set number of times"
-		},  {
-			"name": "${Prefix}autowaifu (number of times to run nsfw - default 10) (delay in secs - defualt 5)",
-			"value": "dose waifu a set number of times"
 		}
 	],
 	"other": [
