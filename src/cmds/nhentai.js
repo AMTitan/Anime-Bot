@@ -62,6 +62,61 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				})
 			})
 		}
+		else if (!isNaN(args[0])) {
+			nana.g(args[0]).then((g) => {
+				info = g;
+			}).then(() => {
+				var n = 0;
+				var msgSent = 0;
+				for (var i = 0; i < info["num_pages"]; i++) {
+					setTimeout(function(){
+						n++;
+						var img;
+						if (info.images.pages[n-1].t === "j") {
+							img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.jpg`;
+						}
+						else if (info.images.pages[n-1].t === "p") {
+							img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.png`;
+						}
+						const Embed = {
+							color: '#00ff00',
+							title: `${info.title.pretty} ${n}/${info["num_pages"]}`,
+							url: "",
+							author: {
+								Name: 'AnimeBot',
+								icon_url: img,
+								url: '',
+							},
+							description: ``,
+							thumbnail: img,
+							fields: [],
+							image: {
+								url: img,
+							},
+							fimestamp: new Date(),
+							footer: {
+								test: 'Some footer text here',
+								icon_url: img,
+							},
+						}
+	
+						if (n === 1) {
+							message.channel.send({
+								embed: Embed
+							}).then(id => {
+								msgSent = id;
+							});
+						}
+						else {
+							msgSent.edit({
+								embed: Embed
+							});
+						}
+						
+					}, 10 * i * 1000);
+				}
+			});
+		}
 		else {
 			nana.random().then((g) => {
 				info = g;

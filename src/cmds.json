@@ -169,7 +169,7 @@
 			"name": "${Prefix}neko [nsfw or gif]",
 			"value": "shows a random neko img or gif"
 		}, {
-			"name": "${Prefix}nhentai [popular]",
+			"name": "${Prefix}nhentai [popular or id]",
 			"value": "shows a random nhentai"
 		}, {
 			"name": "${Prefix}nsfw",
