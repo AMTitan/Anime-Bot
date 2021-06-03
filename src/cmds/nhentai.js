@@ -71,7 +71,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 				for (var i = 0; i < info.images.pages.length; i++) {
 					setTimeout(function(){
 						n++;
-						console.log(info.images.pages[n].t);
 						var img;
 						if (info.images.pages[n].t === "j") {
 							img = `https://i.nhentai.net/galleries/${info["media_id"]}/${n}.jpg`;
