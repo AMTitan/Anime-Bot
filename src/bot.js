@@ -102,7 +102,7 @@ client.on('message', (message) => {
 		});
 	}
 	if (!commandName) return;
-	if (commandName === `help`) require("./cmds/help.js")(Prefix, message);
+	if (commandName === `help` || commandName === "commands") require("./cmds/help.js")(Prefix, message);
 	else if (commandName.toLowerCase() === `whatis`) require("./cmds/whatis.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'quote') require("./cmds/quote.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'neko') require("./cmds/neko.js")(Prefix, message, commandName, args, request, client);
