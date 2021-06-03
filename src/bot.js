@@ -2,6 +2,8 @@ var request = require('request');
 require("dotenv").config();
 const owner = "585604715128291328";
 const fs = require("fs");
+const mongoose = require("mongoose");
+mongoose.connect(process.env.mongodb, { useNewUrlParser: true, useUnifiedTopology: true});
 const {
 	Client
 } = require('discord.js');
