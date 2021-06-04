@@ -11,19 +11,10 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
     Levels.fetch(id.id, message.guild.id, true).then((user) => {
         if (user.xp) {
             const canvacord = require("canvacord");
-            var xp = [0, 0];
-            if (user.level > 0) {
-                xp[0] = user.xp - Levels.xpFor(parseInt(user.level))
-                xp[1] = Levels.xpFor(parseInt(user.level) + 1) - Levels.xpFor(parseInt(user.level));
-            }
-            else {
-                xp[0] = user.xp;
-                xp[1] = Levels.xpFor(parseInt(user.level) + 1);
-            }
             const rank = new canvacord.Rank()
                 .setAvatar(id.displayAvatarURL({ dynamic: false, format: "png"}))
-                .setCurrentXP(xp[0])
-                .setRequiredXP(xp[1])
+                .setCurrentXP(user.cleanXp)
+                .setRequiredXP(user.cleanNextLevelXp)
                 .setStatus(id.presence.status)
                 .setProgressBar("#00ff00", "COLOR")
                 .setUsername(id.username)
