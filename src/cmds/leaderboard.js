@@ -27,7 +27,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
             });
         }
         Levels.computeLeaderboard(client, rawLeaderboard, true).then((leaderboard) => {
-            const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp.toLocaleString()}`);
+            const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp- Levels.xpFor(e.level)}`);
             const Embed = {
                 color: '#00ff00',
                 title: `Leaderboard`,
