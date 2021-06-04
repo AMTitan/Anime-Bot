@@ -225,9 +225,6 @@
 		}, {
 			"name": "${Prefix}uniform",
 			"value": "gets you a uniform img"
-		}, {
-			"name": "${Prefix}whatisnsfw",
-			"value": "runs nsfw then dose a whatis on it (gets a random hentai)"
 		},{
 			"name": "${Prefix}yuri",
 			"value": "gets you a girl on girl"
@@ -283,14 +280,8 @@
 			"name": "${Prefix}stop",
 			"value": "stops a auto anything but you have to be the msg author or able to delete msges"
 		}, {
-			"name": "${Prefix}waifuquestions",
-			"value": "guess the waifu you get"
-		}, {
 			"name": "${Prefix}wallpaper [optinal nsfw]",
 			"value": "shows a random anime wallpaper"
-		}, {
-			"name": "${Prefix}whatis {link to a img of a anime}",
-			"value": "tries to find what anime it was in"
 		}
 	]
 }

@@ -139,16 +139,13 @@ client.on('message', (message) => {
 	}
 	if (!commandName) return;
 	if (commandName === `help` || commandName === "commands") require("./cmds/help.js")(Prefix, message);
-	else if (commandName.toLowerCase() === `whatis`) require("./cmds/whatis.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'quote') require("./cmds/quote.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'neko') require("./cmds/neko.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'fox') require("./cmds/fox.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'random') require("./cmds/random.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'wallpaper') require("./cmds/wallpaper.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'nsfw') require("./cmds/nsfw.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === 'whatisnsfw') require("./cmds/whatisnsfw.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'quotequestions') require("./cmds/quotequestions.js")(Prefix, message, commandName, args, request, client);
-	else if (commandName.toLowerCase() === `waifuquestions`) require("./cmds/waifuquestions.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'waifu') require("./cmds/waifu.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'fact') require("./cmds/fact.js")(Prefix, message, commandName, args, request, client);
 	else if (commandName.toLowerCase() === 'blowjob') require("./cmds/blowjob.js")(Prefix, message, commandName, args, request, client);
