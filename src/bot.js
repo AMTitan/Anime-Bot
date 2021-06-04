@@ -33,6 +33,8 @@ poster.startInterval();
 client.on('message', (message) => {
 	if (message.guild && !message.author.bot) {
 		Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length/10) + 1).then((hasLeveledUp) =>  {
+			if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
+			if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
 			if (hasLeveledUp) {
 				Levels.fetch(message.author.id, message.guild.id).then((user) => {
 					const Embed = {
