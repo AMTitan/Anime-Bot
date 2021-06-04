@@ -39,7 +39,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
                 .setUsername(id.username)
                 .setDiscriminator(id.discriminator, "")
                 .setLevel(0)
-                .setBackground("./Images/Rank/1.jpg", "IMAGE")
+                .setBackground("IMAGE", "./Images/Rank/1.jpg")
                 .setRank(0, "", false);
 
             rank.build()
