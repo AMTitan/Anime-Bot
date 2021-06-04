@@ -20,7 +20,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
                 .setUsername(id.username)
                 .setDiscriminator(id.discriminator)
                 .setLevel(user.level)
-                .setBackground("IMAGE", "https://img3.gelbooru.com//images/21/0b/210b549e22972e0fb9c76c6e061b709d.jpg")
+                .setBackground("IMAGE", "./Images/Rank/1.jpg")
                 .setRank(user.position);
 
             rank.build()
@@ -39,7 +39,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
                 .setUsername(id.username)
                 .setDiscriminator(id.discriminator, "")
                 .setLevel(0)
-                .setBackground("https://img3.gelbooru.com//images/21/0b/210b549e22972e0fb9c76c6e061b709d.jpg", "IMAGE")
+                .setBackground("./Images/Rank/1.jpg", "IMAGE")
                 .setRank(0, "", false);
 
             rank.build()
