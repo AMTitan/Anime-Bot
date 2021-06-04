@@ -268,7 +268,7 @@
 			"name": "${Prefix}quotequestions",
 			"value": "guess who said a quote"
 		}, {
-			"name": "${Prefix}rank",
+			"name": "${Prefix}rank [@ someone to see their rank]",
 			"value": "gets you your rank"
 		}, {
 			"name": "${Prefix}server",
