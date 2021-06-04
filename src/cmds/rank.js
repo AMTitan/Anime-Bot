@@ -21,7 +21,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
                 .setDiscriminator(id.discriminator)
                 .setLevel(user.level)
                 .setBackground("IMAGE", "https://img3.gelbooru.com//images/21/0b/210b549e22972e0fb9c76c6e061b709d.jpg")
-                .setRank(0, "", false);
+                .setRank(user.position);
 
             rank.build()
                 .then(data => {
