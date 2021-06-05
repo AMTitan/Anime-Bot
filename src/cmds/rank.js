@@ -4,15 +4,18 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
     var id;
     if (!message.mentions.users.first()) {
         id = message.author;
-    }else {
+    } else {
         id = message.mentions.users.first();
-        
+
     }
     Levels.fetch(id.id, message.guild.id, true).then((user) => {
         if (user.xp) {
             const canvacord = require("canvacord");
             const rank = new canvacord.Rank()
-                .setAvatar(id.displayAvatarURL({ dynamic: false, format: "png"}))
+                .setAvatar(id.displayAvatarURL({
+                    dynamic: false,
+                    format: "png"
+                }))
                 .setCurrentXP(user.cleanXp)
                 .setRequiredXP(user.cleanNextLevelXp)
                 .setStatus(id.presence.status)
@@ -31,7 +34,10 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
         } else {
             const canvacord = require("canvacord");
             const rank = new canvacord.Rank()
-                .setAvatar(id.displayAvatarURL({ dynamic: false, format: "png"}))
+                .setAvatar(id.displayAvatarURL({
+                    dynamic: false,
+                    format: "png"
+                }))
                 .setCurrentXP(0)
                 .setRequiredXP(Levels.xpFor(1))
                 .setStatus(id.presence.status)

@@ -1,5 +1,5 @@
 module.exports = function(Prefix, message, commandName, args, request, client, Levels) {
-	Levels.fetchLeaderboard(message.guild.id, 10).then((rawLeaderboard) => {
+    Levels.fetchLeaderboard(message.guild.id, 10).then((rawLeaderboard) => {
         if (rawLeaderboard.length < 1) {
             const Embed = {
                 color: '#00ff00',
