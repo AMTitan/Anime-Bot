@@ -224,7 +224,7 @@ client.on('message', (message) => {
     else if (commandName.toLowerCase() === 'slap') require("./cmds/slap.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'nhentai') require("./cmds/nhentai.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'rank') require("./cmds/rank.js")(Prefix, message, commandName, args, request, client, Levels);
-    else if (commandName.toLowerCase() === 'set' && message.author.id === owner) require("./cmds/rank.js")(Prefix, message, commandName, args, request, client, Levels);
+    else if (commandName.toLowerCase() === 'set' && message.author.id === owner) require("./cmds/set.js")(Prefix, message, commandName, args, request, client, Levels);
     else if (commandName.toLowerCase() === 'leaderboard' || commandName.toLowerCase() === 'lb') require("./cmds/leaderboard.js")(Prefix, message, commandName, args, request, client, Levels);
     else if (commandName.toLowerCase() === 'guild' && message.author.id === owner) require("./cmds/guild.js")(Prefix, message, commandName, args, request, client);
     else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
