@@ -10,19 +10,19 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         url: "",
                         author: {
                             Name: 'AnimeBot',
-                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
                             url: '',
                         },
                         description: ``,
-                        thumbnail: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        thumbnail: jsonParsed.data.response.url.split(" ").join("%20"),
                         fields: [],
                         image: {
-                            url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            url: jsonParsed.data.response.url.split(" ").join("%20"),
                         },
                         fimestamp: new Date(),
                         footer: {
                             test: 'Some footer text here',
-                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
                         },
                     }
 
@@ -41,19 +41,19 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         url: "",
                         author: {
                             Name: 'AnimeBot',
-                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
                             url: '',
                         },
                         description: ``,
-                        thumbnail: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        thumbnail: jsonParsed.data.response.url.split(" ").join("%20"),
                         fields: [],
                         image: {
-                            url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            url: jsonParsed.data.response.url.split(" ").join("%20"),
                         },
                         fimestamp: new Date(),
                         footer: {
                             test: 'Some footer text here',
-                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
                         },
                     }
 
