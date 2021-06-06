@@ -1,35 +1,69 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        request(`https://api.nekos.dev/api/v3/images/nsfw/img/yuri_lewd/`, function(error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var jsonParsed = JSON.parse(body);
-                const Embed = {
-                    color: '#00ff00',
-                    title: 'yuri nsfw',
-                    url: "",
-                    author: {
-                        Name: 'AnimeBot',
-                        icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
-                        url: '',
-                    },
-                    description: ``,
-                    thumbnail: jsonParsed.data.response.url.replaceAll(" ", "%20"),
-                    fields: [],
-                    image: {
-                        url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
-                    },
-                    fimestamp: new Date(),
-                    footer: {
-                        test: 'Some footer text here',
-                        icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
-                    },
-                }
+        if (args[0] === "gif") {
+            request(`https://api.nekos.dev/api/v3/images/nsfw/gif/yuri/`, function(error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var jsonParsed = JSON.parse(body);
+                    const Embed = {
+                        color: '#00ff00',
+                        title: 'yuri nsfw',
+                        url: "",
+                        author: {
+                            Name: 'AnimeBot',
+                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            url: '',
+                        },
+                        description: ``,
+                        thumbnail: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        fields: [],
+                        image: {
+                            url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        },
+                        fimestamp: new Date(),
+                        footer: {
+                            test: 'Some footer text here',
+                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        },
+                    }
 
-                message.channel.send({
-                    embed: Embed
-                });
-            }
-        })
+                    message.channel.send({
+                        embed: Embed
+                    });
+                }
+            })
+        }
+        else {
+            request(`https://api.nekos.dev/api/v3/images/nsfw/img/yuri_lewd/`, function(error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var jsonParsed = JSON.parse(body);
+                    const Embed = {
+                        color: '#00ff00',
+                        title: 'yuri nsfw',
+                        url: "",
+                        author: {
+                            Name: 'AnimeBot',
+                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                            url: '',
+                        },
+                        description: ``,
+                        thumbnail: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        fields: [],
+                        image: {
+                            url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        },
+                        fimestamp: new Date(),
+                        footer: {
+                            test: 'Some footer text here',
+                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
+                        },
+                    }
+
+                    message.channel.send({
+                        embed: Embed
+                    });
+                }
+            })
+        }
     } else {
         const Embed = {
             color: '#00ff00',
