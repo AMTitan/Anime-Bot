@@ -69,19 +69,19 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         url: "",
                         author: {
                             Name: 'AnimeBot',
-                            icon_url: jsonParsed.data.response.url,
+                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
                             url: '',
                         },
                         description: ``,
-                        thumbnail: jsonParsed.data.response.url,
+                        thumbnail: jsonParsed.data.response.url.replaceAll(" ", "%20"),
                         fields: [],
                         image: {
-                            url: jsonParsed.data.response.url,
+                            url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
                         },
                         fimestamp: new Date(),
                         footer: {
                             test: 'Some footer text here',
-                            icon_url: jsonParsed.data.response.url,
+                            icon_url: jsonParsed.data.response.url.replaceAll(" ", "%20"),
                         },
                     }
 
