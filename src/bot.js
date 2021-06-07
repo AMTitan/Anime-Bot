@@ -4,6 +4,20 @@ const owner = "585604715128291328";
 const fs = require("fs");
 const Levels = require("discord-xp");
 Levels.setURL(process.env.mongodb);
+const mongoose = require("mongoose");
+
+const UsageSchema = new mongoose.Schema({
+  userID: { type: String },
+  times: { type: Number, default: 0 },
+  lastUpdated: { type: Date, default: new Date() }
+});
+
+const Usage = mongoose.model('Usage', UsageSchema);
+mongoose.connect(process.env.mongodb, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  });
 const {
     Client
 } = require('discord.js');
@@ -138,6 +152,22 @@ client.on('message', (message) => {
         });
     }
     if (!commandName) return;
+    Usage.findOne({ userID: message.author.id }).then((user) => {
+        if (!user) {
+            const newUser = new Usage({
+              userID: message.author.id,
+              times: 1,
+            });
+      
+            newUser.save().then(() => {
+                user.times += 1;
+                user.save().catch(e => console.log(`Failed to append xp: ${e}`) );
+            }).catch(e => console.log(`Failed to save new user.`));
+          } else {
+            user.times += 1;
+            user.save().catch(e => console.log(`Failed to append xp: ${e}`) );
+          };
+    });
     if (commandName === `help` || commandName === "commands") require("./cmds/help.js")(Prefix, message);
     else if (commandName.toLowerCase() === 'quote') require("./cmds/quote.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'neko') require("./cmds/neko.js")(Prefix, message, commandName, args, request, client);
