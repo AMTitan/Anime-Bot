@@ -44,6 +44,12 @@ const poster = new dbots.Poster({
 
 poster.startInterval();
 
+setInterval(function() {
+    client.user.setActivity(`${Prefix}help`, {
+        type: 'WATCHING'
+    }).catch(console.error);
+}, 1 * 6e5);
+
 client.on('message', (message) => {
     if (message.guild && !message.author.bot) {
         Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length / 10) + 1).then((hasLeveledUp) => {
