@@ -161,11 +161,11 @@ client.on('message', (message) => {
       
             newUser.save().then(() => {
                 user.times += 1;
-                user.save().catch(e => console.log(`Failed to append xp: ${e}`) );
-            }).catch(e => console.log(`Failed to save new user.`));
+                user.save().catch(e => console.log(`Failed to set times: ${e}`) );
+                }).catch(e => {return});
           } else {
             user.times += 1;
-            user.save().catch(e => console.log(`Failed to append xp: ${e}`) );
+            user.save().catch(e => console.log(`Failed to set times: ${e}`) );
           };
     });
     if (commandName === `help` || commandName === "commands") require("./cmds/help.js")(Prefix, message);
