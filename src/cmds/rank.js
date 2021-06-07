@@ -1,5 +1,4 @@
 module.exports = function(Prefix, message, commandName, args, request, client, Levels) {
-    const Canvas = require("canvas");
     const Discord = require("discord.js");
     var id;
     if (!message.mentions.users.first()) {
