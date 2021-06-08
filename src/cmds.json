@@ -73,8 +73,8 @@
 			"name": "${Prefix}ahegaoAvatar",
 			"value": "gets you a ahegao avatar"
 		}, {
-			"name": "${Prefix}anal",
-			"value": "gets you a anal gif"
+			"name": "${Prefix}anal [optinal gif]",
+			"value": "gets you anal"
 		},  {
 			"name": "${Prefix}ass",
 			"value": "gets you a ass img"
