@@ -89,15 +89,15 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 inline: true
                             }, {
                                 name: 'Total Latency',
-                                value: `${Math.abs(now - message.createdTimestamp)}ms`,
+                                value: `${now - message.createdTimestamp}ms`,
                                 inline: true
                             }, {
                                 name: 'API Latency',
-                                value: `${Math.abs(Math.round(client.ws.ping))}ms`,
+                                value: `${Math.round(client.ws.ping)}ms`,
                                 inline: true
                             }, {
                                 name: 'My Latency',
-                                value: `${Math.abs(Math.round((now - message.createdTimestamp)-(client.ws.ping)))}ms`,
+                                value: `${Math.round((now - message.createdTimestamp)-(client.ws.ping))}ms`,
                                 inline: true
                             }, ],
                             image: {
