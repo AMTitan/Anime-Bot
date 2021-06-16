@@ -201,7 +201,6 @@ client.on('message', (message) => {
     else if (commandName.toLowerCase() === 'nsfw') require("./cmds/nsfw.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'quotequestions') require("./cmds/quotequestions.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'waifu') require("./cmds/waifu.js")(Prefix, message, commandName, args, request, client);
-    else if (commandName.toLowerCase() === 'fact') require("./cmds/fact.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'blowjob') require("./cmds/blowjob.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'gif') require("./cmds/gif.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'uniform') require("./cmds/uniform.js")(Prefix, message, commandName, args, request, client);

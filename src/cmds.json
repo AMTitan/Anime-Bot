@@ -239,9 +239,6 @@
         "name": "${Prefix}donate",
         "value": "sgets you the donate link"
     }, {
-        "name": "${Prefix}fact",
-        "value": "gets you a anime fact"
-    }, {
         "name": "${Prefix}issue (the issue)",
         "value": "if you find a issue"
     }, {
