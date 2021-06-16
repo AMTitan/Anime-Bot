@@ -1,5 +1,5 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-    const now = new Date.now();
+    const now = new Date;
     const fs = require("fs")
     const glob = require("glob");
     glob(`./src` + '/**/*', function(er, files) {
