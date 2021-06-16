@@ -31,8 +31,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     });
                 }
             })
-        }
-        else {
+        } else {
             request(`https://api.nekos.dev/api/v3/images/nsfw/img/yuri_lewd/`, function(error, response, body) {
                 if (!error && response.statusCode == 200) {
                     var jsonParsed = JSON.parse(body);

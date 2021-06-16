@@ -1,287 +1,281 @@
 {
-	"sfw": [
-		{
-			"name": "EXAMPLE",
-			"value": "${Prefix}blush @Anime"
-		}, {
-			"name": "${Prefix}awoo",
-			"value": "gets you a awoo gif or img"
-		}, {
-			"name": "${Prefix}baka [optinal @ person]",
-			"value": "gets you a baka gif"
-		},  {
-			"name": "${Prefix}blush [optinal @ person]",
-			"value": "gets you a blush gif or img"
-		}, {
-			"name": "${Prefix}cry [optinal @ person]",
-			"value": "gets you a cry gif or img"
-		}, {
-			"name": "${Prefix}cuddle [optinal @ person]",
-			"value": "gets you a cuddle gif or img"
-		}, {
-			"name": "${Prefix}dance [optinal @ person]",
-			"value": "gets you a dance gif or img"
-		}, {
-			"name": "${Prefix}feed",
-			"value": "shows a feeding gif"
-		}, {
-			"name": "${Prefix}fox",
-			"value": "shows a random foxgirl img"
-		}, {
-			"name": "${Prefix}highfive [optinal @ person]",
-			"value": "gets you a highfive gif or img"
-		}, {
-			"name": "${Prefix}hug [optinal @ person]",
-			"value": "gets you a hug gif or img"
-		}, {
-			"name": "${Prefix}kiss [optinal @ person]",
-			"value": "gets you a kiss gif or img"
-		},  {
-			"name": "${Prefix}lick [optinal @ person]",
-			"value": "gets you a lick gif or img"
-		}, {
-			"name": "${Prefix}meme",
-			"value": "gets you a random meme"
-		}, {
-			"name": "${Prefix}neko",
-			"value": "shows a random neko img or gif"
-		}, {
-			"name": "${Prefix}pat [optinal @ person]",
-			"value": "gets you a pat gif or img"
-		}, {
-			"name": "${Prefix}poke [optinal @ person]",
-			"value": "gets you a poke gif"
-		}, {
-			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search gif zero two]",
-			"value": "gets you something custom"
-		}, {
-			"name": "${Prefix}slap [optinal @ person]",
-			"value": "shows a random slap gif"
-		}, {
-			"name": "${Prefix}smile [optinal @ person]",
-			"value": "shows a random smile img"
-		}, {
-			"name": "${Prefix}waifu",
-			"value": "gets you a waifu"
-		}
-	],
-	"nsfw": [
-		{
-			"name": "EXAMPLE",
-			"value": "${Prefix}panties"
-		}, {
-			"name": "${Prefix}ahegaoAvatar",
-			"value": "gets you a ahegao avatar"
-		}, {
-			"name": "${Prefix}anal [optinal gif]",
-			"value": "gets you anal"
-		},  {
-			"name": "${Prefix}ass",
-			"value": "gets you a ass img"
-		},  {
-			"name": "${Prefix}bdsm",
-			"value": "gets you a bdsm (you like it or you dont) gif"
-		}, {
-			"name": "${Prefix}blowjob",
-			"value": "gets you a blowjob gif"
-		}, {
-			"name": "${Prefix}boobs",
-			"value": "gets you a boobs gif"
-		}, {
-			"name": "${Prefix}cosplay",
-			"value": "gets you a cospaly img (irl)"
-		}, {
-			"name": "${Prefix}cum",
-			"value": "gets you a cum gif"
-		}, {
-			"name": "${Prefix}cumslut",
-			"value": "gets you a cumslut gif"
-		}, {
-			"name": "${Prefix}ero",
-			"value": "gets you a ero img"
-		}, {
-			"name": "${Prefix}erofeet",
-			"value": "gets you a ero feet img"
-		}, {
-			"name": "${Prefix}erok",
-			"value": "gets you a ero kitsune img"
-		}, {
-			"name": "${Prefix}eron",
-			"value": "gets you a ero neko img"
-		}, {
-			"name": "${Prefix}eropantyhose",
-			"value": "gets you a ero pantyhose img"
-		}, {
-			"name": "${Prefix}eropiersing",
-			"value": "gets you a ero piersing img"
-		}, {
-			"name": "${Prefix}eroyuri",
-			"value": "gets you a ero yuri img"
-		}, {
-			"name": "${Prefix}feet",
-			"value": "gets you a feet img"
-		}, {
-			"name": "${Prefix}femdom",
-			"value": "gets you a female dominance img"
-		}, {
-			"name": "${Prefix}feetjob",
-			"value": "gets you a feetjob gif"
-		}, {
-			"name": "${Prefix}fox nsfw",
-			"value": "shows a random foxgirl img"
-		}, {
-			"name": "${Prefix}futanari",
-			"value": "shows a random futanari img"
-		}, {
-			"name": "${Prefix}gif",
-			"value": "gets you a nsfw gif!"
-		}, {
-			"name": "${Prefix}glasses",
-			"value": "gets you a glasses img"
-		}, {
-			"name": "${Prefix}holoero",
-			"value": "gets you a holoero img"
-		}, {
-			"name": "${Prefix}hololewd",
-			"value": "gets you a hololewd img"
-		}, {
-			"name": "${Prefix}keta",
-			"value": "gets you a keta img"
-		}, {
-			"name": "${Prefix}kemonomimi",
-			"value": "gets you a kemonomimi img"
-		}, {
-			"name": "${Prefix}kill [optinal @ person]",
-			"value": "gets you a killing gif or img"
-		}, {
-			"name": "${Prefix}kuni",
-			"value": "gets you a kuni gif"
-		}, {
-			"name": "${Prefix}lewdkemo",
-			"value": "gets you a lewdkemo img"
-		}, {
-			"name": "${Prefix}maid",
-			"value": "gets you a maid img"
-		}, {
-			"name": "${Prefix}masturbation [optinal gif]",
-			"value": "gets you a masturbation img"
-		}, {
-			"name": "${Prefix}neko [nsfw or gif]",
-			"value": "shows a random neko img or gif"
-		}, {
-			"name": "${Prefix}nhentai [popular or id]",
-			"value": "shows a random nhentai"
-		}, {
-			"name": "${Prefix}nsfw",
-			"value": "shows random nsfw anime img"
-		}, {
-			"name": "${Prefix}orgy",
-			"value": "gets you a orgy (group) img"
-		}, {
-			"name": "${Prefix}panties",
-			"value": "gets you a panties img"
-		}, {
-			"name": "${Prefix}pantyhose",
-			"value": "gets you a pantyhose img"
-		}, {
-			"name": "${Prefix}peeing",
-			"value": "gets you a peeing img"
-		}, {
-			"name": "${Prefix}piersing",
-			"value": "gets you a piersing img"
-		}, {
-			"name": "${Prefix}pussy [optinal gif]",
-			"value": "gets you a pussy img"
-		}, {
-			"name": "${Prefix}random [optinal gif]",
-			"value": "shows a random anime img"
-		}, {
-			"name": "${Prefix}school",
-			"value": "gets you a school girl img"
-		}, {
-			"name": "${Prefix}smallBoobs",
-			"value": "gets you a small boobs img"
-		}, {
-			"name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search img school_girl]",
-			"value": "gets you something custom"
-		},  {
-			"name": "${Prefix}solo [optinal gif]",
-			"value": "gets you a solo gif or img"
-		},  {
-			"name": "${Prefix}spank",
-			"value": "gets you a spank gif"
-		},  {
-			"name": "${Prefix}tentacle",
-			"value": "gets you a tentacle img"
-		},  {
-			"name": "${Prefix}tits",
-			"value": "gets you a tits img"
-		}, {
-			"name": "${Prefix}thighs",
-			"value": "gets you a thighs img"
-		}, {
-			"name": "${Prefix}trap",
-			"value": "gets you a trap img"
-		}, {
-			"name": "${Prefix}uniform",
-			"value": "gets you a uniform img"
-		},{
-			"name": "${Prefix}yuri [gif]",
-			"value": "gets you a girl on girl"
-		}, {
-			"name": "${Prefix}yaoi",
-			"value": "gets you a guy on guy"
-		}, {
-			"name": "${Prefix}yiff",
-			"value": "gets you furry gif"
-		}
-	],
-	"other": [
-		{
-			"name": "EXAMPLE",
-			"value": "${Prefix}show"
-		}, {
-			"name": "${Prefix}donate",
-			"value": "sgets you the donate link"
-		}, {
-			"name": "${Prefix}fact",
-			"value": "gets you a anime fact"
-		}, {
-			"name": "${Prefix}issue (the issue)",
-			"value": "if you find a issue"
-		}, {
-			"name": "${Prefix}improve (the improvement)",
-			"value": "if you want something to be improved"
-		}, {
-			"name": "${Prefix}invite",
-			"value": "gets you the invite to invite the bot to your server"
-		}, {
-			"name": "${Prefix}leaderboard",
-			"value": "gets you the leaderboard"
-		}, {
-			"name": "${Prefix}quote",
-			"value": "shows a random anime quote"
-		}, {
-			"name": "${Prefix}quotequestions",
-			"value": "guess who said a quote"
-		}, {
-			"name": "${Prefix}rank [@ someone to see their rank]",
-			"value": "gets you your rank"
-		}, {
-			"name": "${Prefix}server",
-			"value": "gets you the main anime bot server"
-		}, {
-			"name": "${Prefix}show",
-			"value": "gets you a random "
-		}, {
-			"name": "${Prefix}stats",
-			"value": "gets you the bot stats"
-		}, {
-			"name": "${Prefix}stop",
-			"value": "stops a auto anything but you have to be the msg author or able to delete msges"
-		}, {
-			"name": "${Prefix}wallpaper [optinal nsfw]",
-			"value": "shows a random anime wallpaper"
-		}
-	]
+    "sfw": [{
+        "name": "EXAMPLE",
+        "value": "${Prefix}blush @Anime"
+    }, {
+        "name": "${Prefix}awoo",
+        "value": "gets you a awoo gif or img"
+    }, {
+        "name": "${Prefix}baka [optinal @ person]",
+        "value": "gets you a baka gif"
+    }, {
+        "name": "${Prefix}blush [optinal @ person]",
+        "value": "gets you a blush gif or img"
+    }, {
+        "name": "${Prefix}cry [optinal @ person]",
+        "value": "gets you a cry gif or img"
+    }, {
+        "name": "${Prefix}cuddle [optinal @ person]",
+        "value": "gets you a cuddle gif or img"
+    }, {
+        "name": "${Prefix}dance [optinal @ person]",
+        "value": "gets you a dance gif or img"
+    }, {
+        "name": "${Prefix}feed",
+        "value": "shows a feeding gif"
+    }, {
+        "name": "${Prefix}fox",
+        "value": "shows a random foxgirl img"
+    }, {
+        "name": "${Prefix}highfive [optinal @ person]",
+        "value": "gets you a highfive gif or img"
+    }, {
+        "name": "${Prefix}hug [optinal @ person]",
+        "value": "gets you a hug gif or img"
+    }, {
+        "name": "${Prefix}kiss [optinal @ person]",
+        "value": "gets you a kiss gif or img"
+    }, {
+        "name": "${Prefix}lick [optinal @ person]",
+        "value": "gets you a lick gif or img"
+    }, {
+        "name": "${Prefix}meme",
+        "value": "gets you a random meme"
+    }, {
+        "name": "${Prefix}neko",
+        "value": "shows a random neko img or gif"
+    }, {
+        "name": "${Prefix}pat [optinal @ person]",
+        "value": "gets you a pat gif or img"
+    }, {
+        "name": "${Prefix}poke [optinal @ person]",
+        "value": "gets you a poke gif"
+    }, {
+        "name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search gif zero two]",
+        "value": "gets you something custom"
+    }, {
+        "name": "${Prefix}slap [optinal @ person]",
+        "value": "shows a random slap gif"
+    }, {
+        "name": "${Prefix}smile [optinal @ person]",
+        "value": "shows a random smile img"
+    }, {
+        "name": "${Prefix}waifu",
+        "value": "gets you a waifu"
+    }],
+    "nsfw": [{
+        "name": "EXAMPLE",
+        "value": "${Prefix}panties"
+    }, {
+        "name": "${Prefix}ahegaoAvatar",
+        "value": "gets you a ahegao avatar"
+    }, {
+        "name": "${Prefix}anal [optinal gif]",
+        "value": "gets you anal"
+    }, {
+        "name": "${Prefix}ass",
+        "value": "gets you a ass img"
+    }, {
+        "name": "${Prefix}bdsm",
+        "value": "gets you a bdsm (you like it or you dont) gif"
+    }, {
+        "name": "${Prefix}blowjob",
+        "value": "gets you a blowjob gif"
+    }, {
+        "name": "${Prefix}boobs",
+        "value": "gets you a boobs gif"
+    }, {
+        "name": "${Prefix}cosplay",
+        "value": "gets you a cospaly img (irl)"
+    }, {
+        "name": "${Prefix}cum",
+        "value": "gets you a cum gif"
+    }, {
+        "name": "${Prefix}cumslut",
+        "value": "gets you a cumslut gif"
+    }, {
+        "name": "${Prefix}ero",
+        "value": "gets you a ero img"
+    }, {
+        "name": "${Prefix}erofeet",
+        "value": "gets you a ero feet img"
+    }, {
+        "name": "${Prefix}erok",
+        "value": "gets you a ero kitsune img"
+    }, {
+        "name": "${Prefix}eron",
+        "value": "gets you a ero neko img"
+    }, {
+        "name": "${Prefix}eropantyhose",
+        "value": "gets you a ero pantyhose img"
+    }, {
+        "name": "${Prefix}eropiersing",
+        "value": "gets you a ero piersing img"
+    }, {
+        "name": "${Prefix}eroyuri",
+        "value": "gets you a ero yuri img"
+    }, {
+        "name": "${Prefix}feet",
+        "value": "gets you a feet img"
+    }, {
+        "name": "${Prefix}femdom",
+        "value": "gets you a female dominance img"
+    }, {
+        "name": "${Prefix}feetjob",
+        "value": "gets you a feetjob gif"
+    }, {
+        "name": "${Prefix}fox nsfw",
+        "value": "shows a random foxgirl img"
+    }, {
+        "name": "${Prefix}futanari",
+        "value": "shows a random futanari img"
+    }, {
+        "name": "${Prefix}gif",
+        "value": "gets you a nsfw gif!"
+    }, {
+        "name": "${Prefix}glasses",
+        "value": "gets you a glasses img"
+    }, {
+        "name": "${Prefix}holoero",
+        "value": "gets you a holoero img"
+    }, {
+        "name": "${Prefix}hololewd",
+        "value": "gets you a hololewd img"
+    }, {
+        "name": "${Prefix}keta",
+        "value": "gets you a keta img"
+    }, {
+        "name": "${Prefix}kemonomimi",
+        "value": "gets you a kemonomimi img"
+    }, {
+        "name": "${Prefix}kill [optinal @ person]",
+        "value": "gets you a killing gif or img"
+    }, {
+        "name": "${Prefix}kuni",
+        "value": "gets you a kuni gif"
+    }, {
+        "name": "${Prefix}lewdkemo",
+        "value": "gets you a lewdkemo img"
+    }, {
+        "name": "${Prefix}maid",
+        "value": "gets you a maid img"
+    }, {
+        "name": "${Prefix}masturbation [optinal gif]",
+        "value": "gets you a masturbation img"
+    }, {
+        "name": "${Prefix}neko [nsfw or gif]",
+        "value": "shows a random neko img or gif"
+    }, {
+        "name": "${Prefix}nhentai [popular or id]",
+        "value": "shows a random nhentai"
+    }, {
+        "name": "${Prefix}nsfw",
+        "value": "shows random nsfw anime img"
+    }, {
+        "name": "${Prefix}orgy",
+        "value": "gets you a orgy (group) img"
+    }, {
+        "name": "${Prefix}panties",
+        "value": "gets you a panties img"
+    }, {
+        "name": "${Prefix}pantyhose",
+        "value": "gets you a pantyhose img"
+    }, {
+        "name": "${Prefix}peeing",
+        "value": "gets you a peeing img"
+    }, {
+        "name": "${Prefix}piersing",
+        "value": "gets you a piersing img"
+    }, {
+        "name": "${Prefix}pussy [optinal gif]",
+        "value": "gets you a pussy img"
+    }, {
+        "name": "${Prefix}random [optinal gif]",
+        "value": "shows a random anime img"
+    }, {
+        "name": "${Prefix}school",
+        "value": "gets you a school girl img"
+    }, {
+        "name": "${Prefix}smallBoobs",
+        "value": "gets you a small boobs img"
+    }, {
+        "name": "${Prefix}search [tags (you can do more than one) example : ${Prefix}search img school_girl]",
+        "value": "gets you something custom"
+    }, {
+        "name": "${Prefix}solo [optinal gif]",
+        "value": "gets you a solo gif or img"
+    }, {
+        "name": "${Prefix}spank",
+        "value": "gets you a spank gif"
+    }, {
+        "name": "${Prefix}tentacle",
+        "value": "gets you a tentacle img"
+    }, {
+        "name": "${Prefix}tits",
+        "value": "gets you a tits img"
+    }, {
+        "name": "${Prefix}thighs",
+        "value": "gets you a thighs img"
+    }, {
+        "name": "${Prefix}trap",
+        "value": "gets you a trap img"
+    }, {
+        "name": "${Prefix}uniform",
+        "value": "gets you a uniform img"
+    }, {
+        "name": "${Prefix}yuri [gif]",
+        "value": "gets you a girl on girl"
+    }, {
+        "name": "${Prefix}yaoi",
+        "value": "gets you a guy on guy"
+    }, {
+        "name": "${Prefix}yiff",
+        "value": "gets you furry gif"
+    }],
+    "other": [{
+        "name": "EXAMPLE",
+        "value": "${Prefix}show"
+    }, {
+        "name": "${Prefix}donate",
+        "value": "sgets you the donate link"
+    }, {
+        "name": "${Prefix}fact",
+        "value": "gets you a anime fact"
+    }, {
+        "name": "${Prefix}issue (the issue)",
+        "value": "if you find a issue"
+    }, {
+        "name": "${Prefix}improve (the improvement)",
+        "value": "if you want something to be improved"
+    }, {
+        "name": "${Prefix}invite",
+        "value": "gets you the invite to invite the bot to your server"
+    }, {
+        "name": "${Prefix}leaderboard",
+        "value": "gets you the leaderboard"
+    }, {
+        "name": "${Prefix}quote",
+        "value": "shows a random anime quote"
+    }, {
+        "name": "${Prefix}quotequestions",
+        "value": "guess who said a quote"
+    }, {
+        "name": "${Prefix}rank [@ someone to see their rank]",
+        "value": "gets you your rank"
+    }, {
+        "name": "${Prefix}server",
+        "value": "gets you the main anime bot server"
+    }, {
+        "name": "${Prefix}show",
+        "value": "gets you a random "
+    }, {
+        "name": "${Prefix}stats",
+        "value": "gets you the bot stats"
+    }, {
+        "name": "${Prefix}stop",
+        "value": "stops a auto anything but you have to be the msg author or able to delete msges"
+    }, {
+        "name": "${Prefix}wallpaper [optinal nsfw]",
+        "value": "shows a random anime wallpaper"
+    }]
 }
