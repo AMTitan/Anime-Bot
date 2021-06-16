@@ -181,12 +181,14 @@ client.on('message', (message) => {
 
             newUser.save().then(() => {
                 user.times += 1;
+                user.lastUpdated = new Date.now();
                 user.save().catch(e => console.log(`Failed to set times: ${e}`));
             }).catch(e => {
                 return
             });
         } else {
             user.times += 1;
+            user.lastUpdated = new Date.now();
             user.save().catch(e => console.log(`Failed to set times: ${e}`));
         };
     });
