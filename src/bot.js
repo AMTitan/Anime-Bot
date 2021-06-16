@@ -91,6 +91,10 @@ client.on('message', (message) => {
         message.channel.send("Sorry I cant send embeds");
     }
     if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
+    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) {
+        message.channel.send("Sorry I cant add reactions");
+    }
+    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) return;
     if (message.mentions.users && message.mentions.users.first()) {
         if (message.mentions.users.first().id === client.user.id) {
             const Embed = {
