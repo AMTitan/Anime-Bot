@@ -198,7 +198,7 @@ client.on('message', (message) => {
     else if (commandName.toLowerCase() === 'fox') require("./cmds/fox.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'random') require("./cmds/random.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'wallpaper') require("./cmds/wallpaper.js")(Prefix, message, commandName, args, request, client);
-    else if (commandName.toLowerCase() === 'nsfw') require("./cmds/nsfw.js")(Prefix, message, commandName, args, request, client);
+    else if (commandName.toLowerCase() === 'nsfw' || commandName.toLowerCase() === 'hentai') require("./cmds/nsfw.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'quotequestions') require("./cmds/quotequestions.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'waifu') require("./cmds/waifu.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'blowjob') require("./cmds/blowjob.js")(Prefix, message, commandName, args, request, client);
