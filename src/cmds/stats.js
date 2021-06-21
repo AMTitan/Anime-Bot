@@ -62,7 +62,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 case "freebst":
                                     var os = "FreeBSD";
                                     break;
-                            };
+                            }
                             const Embed = {
                                 color: '#00ff00',
                                 title: 'Stats',
@@ -136,7 +136,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             resultMessage.edit({
                                 embed: Embed
                             });
-                        };
+                        }
                     });
             })
         });

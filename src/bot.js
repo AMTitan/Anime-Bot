@@ -1,4 +1,4 @@
-var request = require('request');
+const request = require('request');
 require("dotenv").config();
 const owner = "585604715128291328";
 const fs = require("fs");
@@ -184,13 +184,13 @@ client.on('message', (message) => {
                 user.lastUpdated = new Date;
                 user.save().catch(e => console.log(`Failed to set times: ${e}`));
             }).catch(e => {
-                return
+                
             });
         } else {
             user.times += 1;
             user.lastUpdated = new Date;
             user.save().catch(e => console.log(`Failed to set times: ${e}`));
-        };
+        }
     });
     if (commandName === `help` || commandName === "commands") require("./cmds/help.js")(Prefix, message);
     else if (commandName.toLowerCase() === 'quote') require("./cmds/quote.js")(Prefix, message, commandName, args, request, client);
@@ -235,7 +235,7 @@ client.on('message', (message) => {
     else if (commandName.toLowerCase() === 'invite') require("./cmds/invite.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'server') require("./cmds/server.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'issue' || commandName.toLowerCase() === 'improve') require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
-    else if (commandName.toLowerCase() === "stop") return;
+    else if (commandName.toLowerCase() === "stop") 
     else if (commandName.toLowerCase() === 'boobs') require("./cmds/boobs.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'spank') require("./cmds/spank.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'solo') require("./cmds/solo.js")(Prefix, message, commandName, args, request, client);
@@ -280,6 +280,7 @@ client.on('message', (message) => {
     else if (commandName.toLowerCase() === 'set' && message.author.id === owner) require("./cmds/set.js")(Prefix, message, commandName, args, request, client, Levels);
     else if (commandName.toLowerCase() === 'leaderboard' || commandName.toLowerCase() === 'lb') require("./cmds/leaderboard.js")(Prefix, message, commandName, args, request, client, Levels);
     else if (commandName.toLowerCase() === 'guild' && message.author.id === owner) require("./cmds/guild.js")(Prefix, message, commandName, args, request, client);
+    else if (commandName.toLowerCase() === 'asktoleaveguild' && message.author.id === owner) require("./cmds/asktoleaveguild.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'announcement' && message.author.id === owner) require("./cmds/annouce.js")(Prefix, message, commandName, args, request, client, owner);
     else require("./cmds/else.js")(Prefix, message, commandName, args, request, client);
 });

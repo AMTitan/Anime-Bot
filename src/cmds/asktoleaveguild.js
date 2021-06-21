@@ -40,7 +40,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                     guild.channels.cache.map((channel) => {
                         if (channel.type === 'text' && channel.permissionsFor(guild.me).has(['VIEW_CHANNEL', 'SEND_MESSAGES', 'EMBED_LINKS'])) {
                             channels.push(channel);
-                        };
+                        }
                     });
                     if (channels.length > 0) {
                         channels = channels.sort((a, b) => {
