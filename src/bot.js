@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 // See if .env file exists
 try {
     if (fs.existsSync('.env')) {
@@ -21,7 +23,6 @@ try {
 const request = require('request');
 require("dotenv").config();
 const owner = "585604715128291328";
-const fs = require("fs");
 const Levels = require("discord-xp");
 Levels.setURL(process.env.mongodb);
 const mongoose = require("mongoose");
@@ -255,7 +256,7 @@ client.on('message', (message) => {
     else if (commandName.toLowerCase() === 'invite') require("./cmds/invite.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'server') require("./cmds/server.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'issue' || commandName.toLowerCase() === 'improve') require("./cmds/dm.js")(Prefix, message, commandName, args, request, client, owner);
-    else if (commandName.toLowerCase() === "stop") 
+    else if (commandName.toLowerCase() === "stop") return;
     else if (commandName.toLowerCase() === 'boobs') require("./cmds/boobs.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'spank') require("./cmds/spank.js")(Prefix, message, commandName, args, request, client);
     else if (commandName.toLowerCase() === 'solo') require("./cmds/solo.js")(Prefix, message, commandName, args, request, client);
