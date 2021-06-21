@@ -1,3 +1,23 @@
+// See if .env file exists
+try {
+    if (fs.existsSync('.env')) {
+        console.log("The file exists dont need to make it.");
+    } else {
+        console.log('The file does not exist so trying to make it.');
+        fs.writeFileSync('.env', "Token=(discord bot token)\ntop=(top.gg token)\nbotlist=(discordbotlist token)\nmongodb=(something like mongodb+srv://<username>:<password>@<stuff>)", function(err) {
+            if (err) {
+                console.error(err);
+                process.exit(1);
+            }
+        })
+        console.log(".env file made");
+        console.log("\nUse any file editor you want and edit the file called \".env\" and replace the brackets")
+        process.exit(1);
+    }
+} catch (err) {
+    console.error(err);
+}
+
 const request = require('request');
 require("dotenv").config();
 const owner = "585604715128291328";
