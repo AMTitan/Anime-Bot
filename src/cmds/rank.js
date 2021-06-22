@@ -15,7 +15,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: ""
             },
-            
             footer: {
                 test: '',
                 icon_url: "",

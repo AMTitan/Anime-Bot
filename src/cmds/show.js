@@ -54,7 +54,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: jsonParsed.data[0].attributes.posterImage.original,
                 },
-                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: jsonParsed.data[0].attributes.posterImage.original,

@@ -17,7 +17,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: jsonParsed.data.response.url.split(" ").join("%20"),
                 },
-                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: jsonParsed.data.response.url.split(" ").join("%20"),

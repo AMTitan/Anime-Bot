@@ -19,7 +19,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: jsonParsed.url_overridden_by_dest,
                 },
-                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -45,7 +44,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: "",
                 },
-                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -81,7 +79,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: jsonParsed.url_overridden_by_dest,
                                 },
-                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: "",
@@ -107,7 +104,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: "",
                                 },
-                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: "",

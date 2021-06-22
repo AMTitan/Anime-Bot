@@ -18,7 +18,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         image: {
             url: ""
         },
-        
         footer: {
             test: '',
             icon_url: "",
@@ -67,7 +66,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -96,7 +94,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -123,7 +120,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -152,7 +148,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -179,7 +174,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: jsonParsed.file_url,
                                     },
-                                    
                                     footer: {
                                         test: 'Some footer text here',
                                         icon_url: jsonParsed.file_url,
@@ -211,7 +205,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             image: {
                                 url: "",
                             },
-                            
                             footer: {
                                 test: 'Some footer text here',
                                 icon_url: "",
@@ -243,7 +236,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -272,7 +264,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -299,7 +290,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -328,7 +318,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -355,7 +344,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: jsonParsed.file_url,
                                     },
-                                    
                                     footer: {
                                         test: 'Some footer text here',
                                         icon_url: jsonParsed.file_url,
@@ -387,7 +375,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             image: {
                                 url: "",
                             },
-                            
                             footer: {
                                 test: 'Some footer text here',
                                 icon_url: "",
@@ -418,7 +405,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -447,7 +433,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -474,7 +459,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -503,7 +487,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -530,7 +513,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: jsonParsed.file_url,
                                 },
-                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: jsonParsed.file_url,
@@ -567,7 +549,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -596,7 +577,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -623,7 +603,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -652,7 +631,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -679,7 +657,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: jsonParsed.file_url,
                                     },
-                                    
                                     footer: {
                                         test: 'Some footer text here',
                                         icon_url: jsonParsed.file_url,
@@ -711,7 +688,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             image: {
                                 url: "",
                             },
-                            
                             footer: {
                                 test: 'Some footer text here',
                                 icon_url: "",
@@ -740,7 +716,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     image: {
                         url: ""
                     },
-                    
                     footer: {
                         test: '',
                         icon_url: "",
