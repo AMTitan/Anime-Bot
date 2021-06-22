@@ -1,4 +1,31 @@
 module.exports = function(Prefix, message, commandName, args, request, client, owner, Levels) {
+    if (!message.guild.id) {
+        const Embed = {
+            color: '#00ff00',
+            title: `I am sorry but your can only do this in a guild`,
+            url: "",
+            author: {
+                Name: 'AnimeBot',
+                icon_url: "",
+                url: '',
+            },
+            description: ``,
+            thumbnail: "",
+            fields: [],
+            image: {
+                url: ""
+            },
+            fimestamp: new Date(),
+            footer: {
+                test: '',
+                icon_url: "",
+            },
+        }
+        message.channel.send({
+            embed: Embed
+        });
+    }
+    if (!message.guild.id) return;
     Levels.fetchLeaderboard(message.guild.id, 10).then((rawLeaderboard) => {
         if (rawLeaderboard.length < 1) {
             const Embed = {
