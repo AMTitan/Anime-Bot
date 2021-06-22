@@ -13,7 +13,7 @@ module.exports = function(Prefix, message) {
         fields: [],
         image: {
             url: ""
-        }, {
+        }, footer: { test:
             '',
             icon_url: "",
         },

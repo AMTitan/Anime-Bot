@@ -13,7 +13,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         fields: [],
         image: {
             url: "",
-        }, {
+        }, footer: { test:
             'Some footer text here',
             icon_url: "",
         },

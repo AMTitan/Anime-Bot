@@ -189,8 +189,9 @@ client.on('message', (message) => {
         fields: [],
         image: {
             url: ""
-        }, {
-            '',
+        },
+        footer: {
+            test: '',
             icon_url: "",
         },
     }
