@@ -18,7 +18,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     image: {
                         url: jsonParsed.data.response.url.split(" ").join("%20"),
                     },
-                    fimestamp: new Date(),
+                    
                     footer: {
                         test: 'Some footer text here',
                         icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
@@ -46,7 +46,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -63,7 +63,6 @@ module.exports.config = {
     name: "eron",
     description: "Gives you a neko ero image",
     usage: `eron`,
-    accessableby: "",
     aliases: ["neko_ero", "nekoero"],
     type: "nsfw",
     optinal: ""

@@ -19,7 +19,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         image: {
                             url: jsonParsed.neko,
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: 'Some footer text here',
                             icon_url: jsonParsed.neko,
@@ -47,7 +47,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: "",
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -78,7 +78,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         image: {
                             url: jsonParsed.data.response.url.split(" ").join("%20"),
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: 'Some footer text here',
                             icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
@@ -106,7 +106,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: "",
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -136,7 +136,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     image: {
                         url: jsonParsed.neko,
                     },
-                    fimestamp: new Date(),
+                    
                     footer: {
                         test: 'Some footer text here',
                         icon_url: jsonParsed.neko,
@@ -155,7 +155,6 @@ module.exports.config = {
     name: "neko",
     description: "Gives you a neko gif or image",
     usage: `neko`,
-    accessableby: "",
     aliases: ["nekos"],
     type: "sfw",
     optinal: "(gif or nsfw)"

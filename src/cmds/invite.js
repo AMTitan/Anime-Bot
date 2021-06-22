@@ -14,7 +14,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         image: {
             url: "",
         },
-        fimestamp: new Date(),
+        
         footer: {
             test: 'Some footer text here',
             icon_url: "",
@@ -30,7 +30,6 @@ module.exports.config = {
     name: "invite",
     description: "Gives you the invite link",
     usage: `invite`,
-    accessableby: "",
     aliases: [],
     type: "other",
     optinal: ""

@@ -20,7 +20,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     image: {
                         url: jsonParsed.url,
                     },
-                    fimestamp: new Date(),
+                    
                     footer: {
                         test: 'Some footer text here',
                         icon_url: jsonParsed.url,
@@ -48,7 +48,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -65,7 +65,6 @@ module.exports.config = {
     name: "kill",
     description: "Gives you a kill gif",
     usage: `kill`,
-    accessableby: "",
     aliases: [],
     type: "nsfw",
     optinal: "(@someone)"

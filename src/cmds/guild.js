@@ -8,7 +8,6 @@ module.exports.config = {
     name: "guild",
     description: "Gives the guild",
     usage: `guild`,
-    accessableby: "",
     aliases: [],
     type: "owner",
     optinal: ""

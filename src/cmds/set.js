@@ -8,7 +8,6 @@ module.exports.config = {
     name: "set",
     description: "sets someones level",
     usage: `set`,
-    accessableby: "",
     aliases: [],
     type: "owner",
     optinal: "(@someone)"

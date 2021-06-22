@@ -17,7 +17,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -47,7 +47,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -69,7 +69,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -91,7 +91,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -116,7 +116,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 image: {
                     url: "",
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -151,7 +151,6 @@ module.exports.config = {
     name: "dm",
     description: "reports a issue or improvement",
     usage: `dm`,
-    accessableby: "",
     aliases: ["issue", "improve"],
     type: "other",
     optinal: "[what was the issues or problem]"

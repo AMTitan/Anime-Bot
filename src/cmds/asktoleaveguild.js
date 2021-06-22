@@ -16,7 +16,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 image: {
                     url: "",
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -65,7 +65,6 @@ module.exports.config = {
     name: "asktoleaveguild",
     description: "Asks everyone if they have the bot in 2 or more servers to kick it from one of them",
     usage: `asktoleaveguild`,
-    accessableby: "",
     aliases: [],
     type: "owner",
     optinal: ""

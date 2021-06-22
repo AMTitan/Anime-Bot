@@ -18,7 +18,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         image: {
             url: ""
         },
-        fimestamp: new Date(),
+        
         footer: {
             test: '',
             icon_url: "",
@@ -67,7 +67,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -96,7 +96,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -123,7 +123,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -152,7 +152,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -179,7 +179,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: jsonParsed.file_url,
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: 'Some footer text here',
                                         icon_url: jsonParsed.file_url,
@@ -211,7 +211,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             image: {
                                 url: "",
                             },
-                            fimestamp: new Date(),
+                            
                             footer: {
                                 test: 'Some footer text here',
                                 icon_url: "",
@@ -243,7 +243,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -272,7 +272,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -299,7 +299,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -328,7 +328,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -355,7 +355,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: jsonParsed.file_url,
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: 'Some footer text here',
                                         icon_url: jsonParsed.file_url,
@@ -387,7 +387,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             image: {
                                 url: "",
                             },
-                            fimestamp: new Date(),
+                            
                             footer: {
                                 test: 'Some footer text here',
                                 icon_url: "",
@@ -418,7 +418,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -447,7 +447,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -474,7 +474,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -503,7 +503,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: ""
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: '',
                                         icon_url: "",
@@ -530,7 +530,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: jsonParsed.file_url,
                                 },
-                                fimestamp: new Date(),
+                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: jsonParsed.file_url,
@@ -567,7 +567,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -596,7 +596,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -623,7 +623,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -652,7 +652,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         image: {
                                             url: ""
                                         },
-                                        fimestamp: new Date(),
+                                        
                                         footer: {
                                             test: '',
                                             icon_url: "",
@@ -679,7 +679,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     image: {
                                         url: jsonParsed.file_url,
                                     },
-                                    fimestamp: new Date(),
+                                    
                                     footer: {
                                         test: 'Some footer text here',
                                         icon_url: jsonParsed.file_url,
@@ -711,7 +711,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                             image: {
                                 url: "",
                             },
-                            fimestamp: new Date(),
+                            
                             footer: {
                                 test: 'Some footer text here',
                                 icon_url: "",
@@ -740,7 +740,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     image: {
                         url: ""
                     },
-                    fimestamp: new Date(),
+                    
                     footer: {
                         test: '',
                         icon_url: "",
@@ -761,7 +761,6 @@ module.exports.config = {
     name: "search",
     description: "Search for anything you want",
     usage: `search`,
-    accessableby: "",
     aliases: ["searchs"],
     type: "sfw",
     optinal: "(tags)"

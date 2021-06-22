@@ -19,7 +19,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         image: {
                             url: jsonParsed.data.response.url.split(" ").join("%20"),
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: 'Some footer text here',
                             icon_url: jsonParsed.data.response.url.split(" ").join("%20"),
@@ -50,7 +50,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         image: {
                             url: jsonParsed.data.response.url
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: '',
                             icon_url: "",
@@ -79,7 +79,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -96,7 +96,6 @@ module.exports.config = {
     name: "random",
     description: "Gives you a radom gif or image",
     usage: `random`,
-    accessableby: "",
     aliases: [],
     type: "nsfw",
     optinal: "(gif)"

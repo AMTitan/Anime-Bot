@@ -134,7 +134,7 @@ client.on('message', (message) => {
                         image: {
                             url: ""
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: '',
                             icon_url: "",
@@ -191,7 +191,7 @@ client.on('message', (message) => {
         image: {
             url: ""
         },
-        fimestamp: new Date(),
+        
         footer: {
             test: '',
             icon_url: "",

@@ -15,7 +15,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: "",
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: 'Some footer text here',
                 icon_url: "",
@@ -48,7 +48,6 @@ module.exports.config = {
     name: "annouce",
     description: "make an announcement",
     usage: `annouce`,
-    accessableby: "",
     aliases: [],
     type: "owner",
     optinal: ""

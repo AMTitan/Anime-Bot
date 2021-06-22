@@ -28,7 +28,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: ""
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: '',
                     icon_url: "",
@@ -46,7 +46,6 @@ module.exports.config = {
     name: "quote",
     description: "Gives you a quote",
     usage: `quote`,
-    accessableby: "",
     aliases: ["quotes"],
     type: "sfw",
     optinal: ""

@@ -19,7 +19,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: jsonParsed.url_overridden_by_dest,
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -45,7 +45,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: "",
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: "",
@@ -81,7 +81,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: jsonParsed.url_overridden_by_dest,
                                 },
-                                fimestamp: new Date(),
+                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: "",
@@ -107,7 +107,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: "",
                                 },
-                                fimestamp: new Date(),
+                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: "",
@@ -130,7 +130,6 @@ module.exports.config = {
     name: "meme",
     description: "Gives you a meme",
     usage: `meme`,
-    accessableby: "",
     aliases: ["memes"],
     type: "sfw",
     optinal: ""

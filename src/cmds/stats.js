@@ -14,7 +14,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         image: {
             url: ""
         },
-        fimestamp: new Date(),
+        
         footer: {
             test: '',
             icon_url: "",
@@ -126,7 +126,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 image: {
                                     url: "",
                                 },
-                                fimestamp: new Date(),
+                                
                                 footer: {
                                     test: 'Some footer text here',
                                     icon_url: "",
@@ -147,7 +147,6 @@ module.exports.config = {
     name: "stats",
     description: "Gives you the bots stats",
     usage: `stats`,
-    accessableby: "",
     aliases: ["stat"],
     type: "sfw",
     optinal: ""

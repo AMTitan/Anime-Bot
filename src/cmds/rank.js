@@ -15,7 +15,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: ""
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: '',
                 icon_url: "",
@@ -87,7 +87,6 @@ module.exports.config = {
     name: "rank",
     description: "Gives you your rank",
     usage: `rank`,
-    accessableby: "",
     aliases: ["level"],
     type: "other",
     optinal: "(@someone)"

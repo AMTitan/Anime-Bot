@@ -26,7 +26,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: ""
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: '',
                     icon_url: "",
@@ -60,7 +60,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         image: {
                             url: ""
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: '',
                             icon_url: "",
@@ -86,7 +86,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         image: {
                             url: ""
                         },
-                        fimestamp: new Date(),
+                        
                         footer: {
                             test: '',
                             icon_url: "",
@@ -113,7 +113,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     image: {
                         url: ""
                     },
-                    fimestamp: new Date(),
+                    
                     footer: {
                         test: '',
                         icon_url: "",
@@ -131,7 +131,6 @@ module.exports.config = {
     name: "quotequestions",
     description: "Gives you a quote and you have to guess who said it",
     usage: `quotequestions`,
-    accessableby: "",
     aliases: ["quotequestion", "quoteq", "qq"],
     type: "sfw",
     optinal: ""

@@ -14,7 +14,7 @@ module.exports = function(Prefix, message) {
         image: {
             url: ""
         },
-        fimestamp: new Date(),
+        
         footer: {
             test: '',
             icon_url: "",
@@ -30,7 +30,6 @@ module.exports.config = {
     name: "help",
     description: "Gives you the help",
     usage: `help`,
-    accessableby: "",
     aliases: [],
     type: "other",
     optinal: ""

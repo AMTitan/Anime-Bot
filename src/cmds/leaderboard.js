@@ -15,7 +15,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             image: {
                 url: ""
             },
-            fimestamp: new Date(),
+            
             footer: {
                 test: '',
                 icon_url: "",
@@ -43,7 +43,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 image: {
                     url: ""
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: '',
                     icon_url: "",
@@ -70,7 +70,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 image: {
                     url: ""
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: '',
                     icon_url: "",
@@ -87,7 +87,6 @@ module.exports.config = {
     name: "leaderboard",
     description: "Gives you there leaderboard",
     usage: `leaderboard`,
-    accessableby: "",
     aliases: ["lb"],
     type: "other",
     optinal: ""

@@ -54,7 +54,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 image: {
                     url: jsonParsed.data[0].attributes.posterImage.original,
                 },
-                fimestamp: new Date(),
+                
                 footer: {
                     test: 'Some footer text here',
                     icon_url: jsonParsed.data[0].attributes.posterImage.original,
@@ -72,7 +72,6 @@ module.exports.config = {
     name: "show",
     description: "Gives you a random show",
     usage: `show`,
-    accessableby: "",
     aliases: ["shows"],
     type: "nsfw",
     optinal: ""
