@@ -91,3 +91,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         })
     }
 }
+
+module.exports.config = {
+    name: "wallpaper",
+    description: "Gives you a wallpaper",
+    usage: `wallpaper`,
+    accessableby: "",
+    aliases: ["wallpapers"],
+    type: "other",
+    optinal: "(nsfw)"
+}

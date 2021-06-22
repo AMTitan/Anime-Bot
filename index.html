@@ -100,9 +100,12 @@
                         <div id="SFW">
                             <script type="text/javascript">
                                 $.getJSON('src/cmds.json', function(data) {
-                                    $.each(data.sfw, function(i, f) {
-                                        document.getElementById("SFW").innerText = document.getElementById("SFW").innerText + f.name + "\n" + f.value + "\n\n";
-                                        document.getElementById("SFW").innerText = document.getElementById("SFW").innerText.replaceAll("${Prefix}", "a!");
+                                    $.each(data, function(i, f) {
+                                        if (f.type === "sfw") {
+                                            var text = "";
+                                            if (f.aliases[0]) var text = `Aliases : ${f.aliases.toString()}\n`;
+                                            document.getElementById("SFW").innerText = document.getElementById("SFW").innerText + "a!" + f.usage + " " + f.optinal + "\n" + text + f.description + "\n\n";
+                                        }
                                     })
                                 });
                             </script>
@@ -123,9 +126,12 @@
                         <div id="NSFW">
                             <script type="text/javascript">
                                 $.getJSON('src/cmds.json', function(data) {
-                                    $.each(data.nsfw, function(i, f) {
-                                        document.getElementById("NSFW").innerText = document.getElementById("NSFW").innerText + f.name + "\n" + f.value + "\n\n";
-                                        document.getElementById("NSFW").innerText = document.getElementById("NSFW").innerText.replaceAll("${Prefix}", "a!");
+                                    $.each(data, function(i, f) {
+                                        if (f.type === "nsfw") {
+                                            var text = "";
+                                            if (f.aliases[0]) var text = `Aliases : ${f.aliases.toString()}\n`;
+                                            document.getElementById("NSFW").innerText = document.getElementById("NSFW").innerText + "a!" + f.usage + " " + f.optinal + "\n" + text + f.description + "\n\n";
+                                        }
                                     })
                                 });
                             </script>
@@ -146,9 +152,12 @@
                         <div id="OTHER">
                             <script type="text/javascript">
                                 $.getJSON('src/cmds.json', function(data) {
-                                    $.each(data.other, function(i, f) {
-                                        document.getElementById("OTHER").innerText = document.getElementById("OTHER").innerText + f.name + "\n" + f.value + "\n\n";
-                                        document.getElementById("OTHER").innerText = document.getElementById("OTHER").innerText.replaceAll("${Prefix}", "a!");
+                                    $.each(data, function(i, f) {
+                                        if (f.type === "other") {
+                                            var text = "";
+                                            if (f.aliases[0]) var text = `Aliases : ${f.aliases.toString()}\n`;
+                                            document.getElementById("OTHER").innerText = document.getElementById("OTHER").innerText + "a!" + f.usage + " " + f.optinal + "\n" + text + f.description + "\n\n";
+                                        }
                                     })
                                 });
                             </script>

@@ -32,3 +32,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         }
     })
 }
+
+module.exports.config = {
+    name: "blush",
+    description: "Gives you a blush gif",
+    usage: `blush`,
+    accessableby: "",
+    aliases: [],
+    type: "sfw",
+    optinal: "(@someone)"
+}

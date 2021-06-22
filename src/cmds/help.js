@@ -25,3 +25,13 @@ module.exports = function(Prefix, message) {
         embed: Embed
     })
 }
+
+module.exports.config = {
+    name: "help",
+    description: "Gives you the help",
+    usage: `help`,
+    accessableby: "",
+    aliases: [],
+    type: "other",
+    optinal: ""
+}

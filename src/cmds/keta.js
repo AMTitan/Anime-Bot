@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "keta",
+    description: "Gives you a keta image",
+    usage: `keta`,
+    accessableby: "",
+    aliases: ["keta_lewd", "keta_nsfw"],
+    type: "nsfw",
+    optinal: ""
+}

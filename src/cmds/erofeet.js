@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "erofeet",
+    description: "Gives you a ero feet image",
+    usage: `erofeet`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: ""
+}

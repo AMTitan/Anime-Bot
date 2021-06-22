@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client, Levels) {
+module.exports = function(Prefix, message, commandName, args, request, client, owner, Levels) {
     Levels.fetchLeaderboard(message.guild.id, 10).then((rawLeaderboard) => {
         if (rawLeaderboard.length < 1) {
             const Embed = {
@@ -54,4 +54,14 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
             });
         });
     })
+}
+
+module.exports.config = {
+    name: "leaderboard",
+    description: "Gives you there leaderboard",
+    usage: `leaderboard`,
+    accessableby: "",
+    aliases: ["lb"],
+    type: "other",
+    optinal: ""
 }

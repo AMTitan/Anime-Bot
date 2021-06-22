@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "maid",
+    description: "Gives you a maid image",
+    usage: `maid`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: ""
+}

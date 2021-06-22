@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "eroyuri",
+    description: "Gives you a yuri ero image",
+    usage: `eroyuri`,
+    accessableby: "",
+    aliases: ["yuri_ero", "yuriero"],
+    type: "nsfw",
+    optinal: ""
+}

@@ -32,3 +32,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         }
     })
 }
+
+module.exports.config = {
+    name: "lick",
+    description: "Gives you a lick gif",
+    usage: `lick`,
+    accessableby: "",
+    aliases: ["licking"],
+    type: "sfw",
+    optinal: "(@someone)"
+}

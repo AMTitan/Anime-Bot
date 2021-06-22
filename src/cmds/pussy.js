@@ -91,3 +91,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "pussy",
+    description: "Gives you a pussy image or gif",
+    usage: `pussy`,
+    accessableby: "",
+    aliases: [],
+    type: "sfw",
+    optinal: "(gif)"
+}

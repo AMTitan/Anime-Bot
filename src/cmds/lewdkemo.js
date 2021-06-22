@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "lewdkemo",
+    description: "Gives you a kemo image",
+    usage: `kemo`,
+    accessableby: "",
+    aliases: ["kemo_lewd", "kemo_nsfw"],
+    type: "nsfw",
+    optinal: ""
+}

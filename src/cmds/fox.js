@@ -91,3 +91,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         })
     }
 }
+
+module.exports.config = {
+    name: "fox",
+    description: "Gives you a fox girl image",
+    usage: `fox`,
+    accessableby: "",
+    aliases: ["foxgirl"],
+    type: "sfw",
+    optinal: "(nsfw)"
+}

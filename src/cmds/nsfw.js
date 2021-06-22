@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "nsfw",
+    description: "Gives you a meme",
+    usage: `nsfw`,
+    accessableby: "",
+    aliases: ["lewd", "hentai"],
+    type: "nsfw",
+    optinal: ""
+}

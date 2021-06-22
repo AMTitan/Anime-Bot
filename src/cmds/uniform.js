@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "uniform",
+    description: "Gives you a uniform image",
+    usage: `uniform`,
+    accessableby: "",
+    aliases: ["uniforms"],
+    type: "nsfw",
+    optinal: ""
+}

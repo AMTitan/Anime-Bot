@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "gif",
+    description: "Gives you a nsfw gif",
+    usage: `gif`,
+    accessableby: "",
+    aliases: ["gif_nsfw", "gif_lewd"],
+    type: "nsfw",
+    optinal: ""
+}

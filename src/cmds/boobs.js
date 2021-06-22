@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "boobs",
+    description: "Gives you a boob gif",
+    usage: `boobs`,
+    accessableby: "",
+    aliases: ["boob"],
+    type: "nsfw",
+    optinal: ""
+}

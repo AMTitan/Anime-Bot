@@ -91,3 +91,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "random",
+    description: "Gives you a radom gif or image",
+    usage: `random`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: "(gif)"
+}

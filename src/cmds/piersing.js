@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "piersing",
+    description: "Gives you a piersing image or gif",
+    usage: `piersing`,
+    accessableby: "",
+    aliases: ["pierce"],
+    type: "nsfw",
+    optinal: ""
+}

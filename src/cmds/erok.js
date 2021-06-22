@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "erok",
+    description: "Gives you a kemonomimi ero image",
+    usage: `erok`,
+    accessableby: "",
+    aliases: ["kemonomimi_ero", "kemonomimiero"],
+    type: "nsfw",
+    optinal: ""
+}

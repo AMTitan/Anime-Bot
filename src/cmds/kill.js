@@ -60,3 +60,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "kill",
+    description: "Gives you a kill gif",
+    usage: `kill`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: "(@someone)"
+}

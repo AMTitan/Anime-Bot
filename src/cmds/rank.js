@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client, Levels) {
+module.exports = function(Prefix, message, commandName, args, request, client, owner, Levels) {
     const Discord = require("discord.js");
     var id;
     if (!message.mentions.users.first()) {
@@ -54,4 +54,14 @@ module.exports = function(Prefix, message, commandName, args, request, client, L
                 });
         }
     })
+}
+
+module.exports.config = {
+    name: "rank",
+    description: "Gives you your rank",
+    usage: `rank`,
+    accessableby: "",
+    aliases: ["level"],
+    type: "other",
+    optinal: "(@someone)"
 }

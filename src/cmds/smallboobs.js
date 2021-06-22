@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "smallboobs",
+    description: "Gives you a smallboobs image",
+    usage: `smallboobs`,
+    accessableby: "",
+    aliases: ["small_boobs"],
+    type: "nsfw",
+    optinal: ""
+}

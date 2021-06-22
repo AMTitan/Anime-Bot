@@ -1,5 +1,5 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-    request(`https://api.waifu.pics/sfw/kiss`, function(error, response, body) {
+    request(`https://api.waifu.pics/sfw/smile`, function(error, response, body) {
         if (!error && response.statusCode == 200) {
             var jsonParsed = JSON.parse(body);
             var title = "Smile";
@@ -31,4 +31,14 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             });
         }
     })
+}
+
+module.exports.config = {
+    name: "smile",
+    description: "Gives you a smile gif",
+    usage: `smile`,
+    accessableby: "",
+    aliases: ["smiles"],
+    type: "sfw",
+    optinal: "(@someone)"
 }

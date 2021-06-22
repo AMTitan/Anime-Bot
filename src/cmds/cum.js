@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "cum",
+    description: "Gives you a cum gif",
+    usage: `cum`,
+    accessableby: "",
+    aliases: ["cuming"],
+    type: "nsfw",
+    optinal: ""
+}

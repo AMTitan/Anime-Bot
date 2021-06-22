@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "panties",
+    description: "Gives you a panties image or gif",
+    usage: `panties`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: ""
+}

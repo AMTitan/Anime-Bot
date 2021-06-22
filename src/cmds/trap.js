@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "trap",
+    description: "Gives you a trap image",
+    usage: `trap`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: ""
+}

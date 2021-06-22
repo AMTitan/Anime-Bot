@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "eropiersing",
+    description: "Gives you a piersing ero image",
+    usage: `eropiersing`,
+    accessableby: "",
+    aliases: ["pirersing_ero", "piersingero"],
+    type: "nsfw",
+    optinal: ""
+}

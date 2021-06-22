@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "feetjob",
+    description: "Gives you a footjob gif",
+    usage: `footjob`,
+    accessableby: "",
+    aliases: ["feetjob", "fj"],
+    type: "nsfw",
+    optinal: ""
+}

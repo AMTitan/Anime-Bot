@@ -59,3 +59,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "blowjob",
+    description: "Gives you a blowjob gif",
+    usage: `blowjob`,
+    accessableby: "",
+    aliases: ["bj"],
+    type: "nsfw",
+    optinal: ""
+}

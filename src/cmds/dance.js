@@ -32,3 +32,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         }
     })
 }
+
+module.exports.config = {
+    name: "dance",
+    description: "Gives you a dancing gif",
+    usage: `dance`,
+    accessableby: "",
+    aliases: ["dancing"],
+    type: "sfw",
+    optinal: ""
+}

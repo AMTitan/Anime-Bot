@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "eron",
+    description: "Gives you a neko ero image",
+    usage: `eron`,
+    accessableby: "",
+    aliases: ["neko_ero", "nekoero"],
+    type: "nsfw",
+    optinal: ""
+}

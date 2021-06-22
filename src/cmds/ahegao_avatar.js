@@ -57,4 +57,15 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             embed: Embed
         });
     }
+    
+}
+
+module.exports.config = {
+    name: "ahegao_avatar",
+    description: "Gives you a ahegao avatar",
+    usage: `ahegaoavatar`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: ""
 }

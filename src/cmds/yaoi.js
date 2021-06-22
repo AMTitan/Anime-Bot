@@ -59,3 +59,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "yaoi",
+    description: "Gives you a yaoi",
+    usage: `yaoi`,
+    accessableby: "",
+    aliases: ["gay"],
+    type: "nsfw",
+    optinal: ""
+}

@@ -32,3 +32,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         }
     })
 }
+
+module.exports.config = {
+    name: "cuddle",
+    description: "Gives you a cuddle image",
+    usage: `cuddle`,
+    accessableby: "",
+    aliases: [],
+    type: "sfw",
+    optinal: ""
+}

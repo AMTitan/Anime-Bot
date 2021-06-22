@@ -91,3 +91,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "anal",
+    description: "Gives you a anal gif or image",
+    usage: `anal`,
+    accessableby: "",
+    aliases: ["oral"],
+    type: "nsfw",
+    optinal: "(gif)"
+}

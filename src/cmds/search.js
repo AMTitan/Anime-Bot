@@ -756,3 +756,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             .then(() => messageSent.react("4️⃣"));
     });
 }
+
+module.exports.config = {
+    name: "search",
+    description: "Search for anything you want",
+    usage: `search`,
+    accessableby: "",
+    aliases: ["searchs"],
+    type: "sfw",
+    optinal: "(tags)"
+}

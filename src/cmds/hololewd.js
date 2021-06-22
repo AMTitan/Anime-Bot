@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "hololewd",
+    description: "Gives you a nsfw holo image",
+    usage: `hololewd`,
+    accessableby: "",
+    aliases: ["holonsfw"],
+    type: "nsfw",
+    optinal: ""
+}

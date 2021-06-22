@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "holoero",
+    description: "Gives you a holoero image",
+    usage: `holoero`,
+    accessableby: "",
+    aliases: ["holo_ero"],
+    type: "nsfw",
+    optinal: ""
+}

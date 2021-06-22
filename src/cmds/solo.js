@@ -91,3 +91,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "solo",
+    description: "Gives you a solo gif or image",
+    usage: `solo`,
+    accessableby: "",
+    aliases: ["solos"],
+    type: "nsfw",
+    optinal: "(gif)"
+}

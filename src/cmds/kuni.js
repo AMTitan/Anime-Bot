@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "kuni",
+    description: "Gives you a kuni gif",
+    usage: `kuni`,
+    accessableby: "",
+    aliases: [],
+    type: "nsfw",
+    optinal: ""
+}

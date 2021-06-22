@@ -25,3 +25,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         embed: Embed
     });
 }
+
+module.exports.config = {
+    name: "invite",
+    description: "Gives you the invite link",
+    usage: `invite`,
+    accessableby: "",
+    aliases: [],
+    type: "other",
+    optinal: ""
+}

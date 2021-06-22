@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "kemonomimi",
+    description: "Gives you a kemonomimi image",
+    usage: `kemonomimi`,
+    accessableby: "",
+    aliases: ["kemonomimi_lewd", "kemonomimi_nsfw"],
+    type: "nsfw",
+    optinal: ""
+}

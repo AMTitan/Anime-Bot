@@ -58,3 +58,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         });
     }
 }
+
+module.exports.config = {
+    name: "thighs",
+    description: "Gives you a thighs image",
+    usage: `thighs`,
+    accessableby: "",
+    aliases: ["thigh"],
+    type: "nsfw",
+    optinal: ""
+}
