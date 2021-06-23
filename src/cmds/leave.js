@@ -1,8 +1,9 @@
 module.exports = function(Prefix, message, commandName, args, request, client, owner) {
     try {
-        client.leaveVoiceChannel(message.member.voiceState.channelID);
+        message.member.voice.channel.leave();
     }
     catch (err) {
+        console.log(err);
         const Embed = {
             color: '#00ff00',
             title: 'I am not in your vc or you are not in a vc',
