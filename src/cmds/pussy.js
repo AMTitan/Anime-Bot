@@ -94,6 +94,6 @@ module.exports.config = {
     description: "Gives you a pussy image or gif",
     usage: `pussy`,
     aliases: [],
-    type: "sfw",
+    type: "nsfw",
     optinal: "(gif)"
 }
