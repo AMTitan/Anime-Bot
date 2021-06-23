@@ -175,11 +175,6 @@ client.on('message', (message) => {
             icon_url: "",
         },
     }
-    if (!commandName) {
-        message.channel.send({
-            embed: Embed
-        });
-    }
     if (message.mentions.users && message.mentions.users.first()) {
         if (message.mentions.users.first().id === client.user.id) {
             message.channel.send({
@@ -198,6 +193,11 @@ client.on('message', (message) => {
             .trim()
             .substring(Prefix.length + 1)
             .split(/\s+/);
+    }
+    if (!commandName) {
+        message.channel.send({
+            embed: Embed
+        });
     }
     if (!commandName) return;
     Usage.findOne({
