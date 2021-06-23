@@ -225,7 +225,7 @@ client.on('message', (message) => {
     });
     let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
     if (commandfile) require(`./cmds/${commandfile.config.name}.js`)(Prefix, message, commandName, args, request, client, owner,  Levels);
-    else require("./else.js")(Prefix, message, commandName, args, request, client, owner,  Levels);
+    else require("./else.js")(Prefix, message, commandName, args, request, client);
 });
 
 if (!process.env.Token) {
