@@ -156,25 +156,6 @@ client.on('message', (message) => {
         message.channel.send("Sorry I cant add reactions");
     }
     if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) return;
-    if (message.mentions.users && message.mentions.users.first()) {
-        if (message.mentions.users.first().id === client.user.id) {
-            message.channel.send({
-                embed: Embed
-            });
-        }
-    }
-    if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
-    console.log(`[${new Date}]: ${message.content}`);
-    var [commandName, ...args] = message.content.toLowerCase()
-        .trim()
-        .substring(Prefix.length)
-        .split(/\s+/);
-    if (!commandName) {
-        var [commandName, ...args] = message.content.toLowerCase()
-            .trim()
-            .substring(Prefix.length + 1)
-            .split(/\s+/);
-    }
     const Embed = {
         color: '#00ff00',
         title: `My help cmd is ${Prefix}help`,
@@ -199,6 +180,25 @@ client.on('message', (message) => {
         message.channel.send({
             embed: Embed
         });
+    }
+    if (message.mentions.users && message.mentions.users.first()) {
+        if (message.mentions.users.first().id === client.user.id) {
+            message.channel.send({
+                embed: Embed
+            });
+        }
+    }
+    if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
+    console.log(`[${new Date}]: ${message.content}`);
+    var [commandName, ...args] = message.content.toLowerCase()
+        .trim()
+        .substring(Prefix.length)
+        .split(/\s+/);
+    if (!commandName) {
+        var [commandName, ...args] = message.content.toLowerCase()
+            .trim()
+            .substring(Prefix.length + 1)
+            .split(/\s+/);
     }
     if (!commandName) return;
     Usage.findOne({
