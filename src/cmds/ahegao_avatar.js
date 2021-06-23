@@ -55,7 +55,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             embed: Embed
         });
     }
-    
+
 }
 
 module.exports.config = {

@@ -82,24 +82,23 @@ client.aliases = new Discord.Collection();
 
 fs.readdir(__dirname + `/cmds/`, (err, files) => {
 
-    if(err) console.log(err)
+    if (err) console.log(err)
 
     let jsfile = files.filter(f => f.split(".").pop() === "js")
-    if(jsfile.length <= 0) {
+    if (jsfile.length <= 0) {
         return console.log("[LOGS] Couldn't Find Commands!");
     }
 
-    fs.truncate('src/cmds.json', 0, function(){
+    fs.truncate('src/cmds.json', 0, function() {
         console.log('Reset cmds.json');
 
         jsfile.forEach((f, i) => {
-            let pull = require( __dirname + `/cmds/${f}`);
+            let pull = require(__dirname + `/cmds/${f}`);
             console.log(`Reading : ${__dirname}/cmds/${f}`);
             const jsonParsed = fs.readFileSync("src/cmds.json");
             if (jsonParsed.length === 0) {
                 fs.writeFileSync("src/cmds.json", `[${JSON.stringify(pull.config)}`);
-            }
-            else {
+            } else {
                 fs.writeFileSync("src/cmds.json", `${jsonParsed}, ${JSON.stringify(pull.config)}`);
             }
             client.commands.set(pull.config.name, pull);
@@ -215,7 +214,7 @@ client.on('message', (message) => {
                 user.lastUpdated = new Date;
                 user.save().catch(e => console.log(`Failed to set times: ${e}`));
             }).catch(e => {
-                
+
             });
         } else {
             user.times += 1;
@@ -224,7 +223,7 @@ client.on('message', (message) => {
         }
     });
     let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
-    if (commandfile) require(`./cmds/${commandfile.config.name}.js`)(Prefix, message, commandName, args, request, client, owner,  Levels);
+    if (commandfile) require(`./cmds/${commandfile.config.name}.js`)(Prefix, message, commandName, args, request, client, owner, Levels);
     else require("./else.js")(Prefix, message, commandName, args, request, client);
 });
 
