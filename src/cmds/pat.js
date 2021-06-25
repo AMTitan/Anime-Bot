@@ -35,7 +35,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 module.exports.config = {
     description: "Gives you a pat gif",
     usage: `pat`,
-    aliases: ["pats", "patting"],
+    aliases: ["pats", "patting", "headpat"],
     type: "sfw",
     optinal: ""
 }
