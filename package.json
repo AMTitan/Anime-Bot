@@ -18,6 +18,7 @@
         "discord-xp": "^1.1.14",
         "discord.js": "^12.5.3",
         "dotenv": "^8.2.0",
+        "ereshkigal": "^0.0.4",
         "forever": "^3.0.4",
         "glob": "^7.1.6",
         "mongoose": "^5.12.12",
