@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "kemonomimi",
     description: "Gives you a kemonomimi image",
     usage: `kemonomimi`,
     aliases: ["kemonomimi_lewd", "kemonomimi_nsfw"],

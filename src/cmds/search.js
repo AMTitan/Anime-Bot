@@ -733,7 +733,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "search",
     description: "Search for anything you want",
     usage: `search`,
     aliases: ["searchs"],

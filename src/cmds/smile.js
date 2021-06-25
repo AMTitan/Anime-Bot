@@ -33,7 +33,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "smile",
     description: "Gives you a smile gif",
     usage: `smile`,
     aliases: ["smiles"],

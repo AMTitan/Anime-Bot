@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "tentacle",
     description: "Gives you a tentacle image order gif",
     usage: `tentacle`,
     aliases: ["tentacles"],

@@ -124,7 +124,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "quotequestions",
     description: "Gives you a quote and you have to guess who said it",
     usage: `quotequestions`,
     aliases: ["quotequestion", "quoteq", "qq"],

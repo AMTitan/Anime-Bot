@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "futanari",
     description: "Gives you a futanari image",
     usage: `futanari`,
     aliases: ["futanari_lewd"],

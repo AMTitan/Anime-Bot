@@ -1,8 +1,7 @@
 module.exports = function(Prefix, message, commandName, args, request, client, owner) {
     try {
         message.member.voice.channel.leave();
-    }
-    catch (err) {
+    } catch (err) {
         console.log(err);
         const Embed = {
             color: '#00ff00',
@@ -32,7 +31,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "leave",
     description: "Leaves the vc",
     usage: `leave`,
     aliases: [],

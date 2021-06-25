@@ -68,7 +68,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "show",
     description: "Gives you a random show",
     usage: `show`,
     aliases: ["shows"],

@@ -53,7 +53,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "join",
     description: "Join the vc and moans",
     usage: `join`,
     aliases: [],

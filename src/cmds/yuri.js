@@ -90,7 +90,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "yuri",
     description: "Gives you a yuri gif or image",
     usage: `yuri`,
     aliases: ["lesbian"],

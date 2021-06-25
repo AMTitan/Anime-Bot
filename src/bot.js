@@ -94,6 +94,7 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
 
         jsfile.forEach((f, i) => {
             let pull = require(__dirname + `/cmds/${f}`);
+            pull.config.name = f;
             console.log(`Reading : ${__dirname}/cmds/${f}`);
             const jsonParsed = fs.readFileSync("src/cmds.json");
             if (jsonParsed.length === 0) {
@@ -223,7 +224,7 @@ client.on('message', (message) => {
         }
     });
     let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
-    if (commandfile) require(`./cmds/${commandfile.config.name}.js`)(Prefix, message, commandName, args, request, client, owner, Levels);
+    if (commandfile) require(`./cmds/${commandfile.config.name}`)(Prefix, message, commandName, args, request, client, owner, Levels);
     else require("./else.js")(Prefix, message, commandName, args, request, client);
 });
 

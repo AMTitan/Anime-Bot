@@ -143,7 +143,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "dm",
     description: "reports a issue or improvement",
     usage: `dm`,
     aliases: ["issue", "improve"],

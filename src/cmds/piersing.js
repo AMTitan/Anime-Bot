@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "piersing",
     description: "Gives you a piersing image or gif",
     usage: `piersing`,
     aliases: ["pierce"],

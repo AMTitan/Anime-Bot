@@ -190,7 +190,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "nhentai",
     description: "Gives you a nhentai book",
     usage: `nhentai`,
     aliases: [],

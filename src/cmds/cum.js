@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "cum",
     description: "Gives you a cum gif",
     usage: `cum`,
     aliases: ["cuming"],

@@ -83,7 +83,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "rank",
     description: "Gives you your rank",
     usage: `rank`,
     aliases: ["level"],

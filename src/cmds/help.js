@@ -26,7 +26,6 @@ module.exports = function(Prefix, message) {
 }
 
 module.exports.config = {
-    name: "help",
     description: "Gives you the help",
     usage: `help`,
     aliases: [],

@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "eroyuri",
     description: "Gives you a yuri ero image",
     usage: `eroyuri`,
     aliases: ["yuri_ero", "yuriero"],

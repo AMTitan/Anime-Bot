@@ -26,7 +26,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "invite",
     description: "Gives you the invite link",
     usage: `invite`,
     aliases: [],

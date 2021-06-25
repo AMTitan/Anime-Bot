@@ -81,7 +81,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "leaderboard",
     description: "Gives you there leaderboard",
     usage: `leaderboard`,
     aliases: ["lb"],

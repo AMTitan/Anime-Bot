@@ -59,7 +59,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "ahegao_avatar",
     description: "Gives you a ahegao avatar",
     usage: `ahegaoavatar`,
     aliases: ["ahegao_avatar"],

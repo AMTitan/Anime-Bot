@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "school",
     description: "Gives you a school girl image or gif",
     usage: `school`,
     aliases: ["schoolgirl", "schools"],

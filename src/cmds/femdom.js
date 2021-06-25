@@ -58,7 +58,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "femdom",
     description: "Gives you a female dominance image",
     usage: `femdom`,
     aliases: ["femaledominance", "femaledom", "femdominance"],

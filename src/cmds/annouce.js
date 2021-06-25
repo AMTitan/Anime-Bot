@@ -44,7 +44,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "annouce",
     description: "make an announcement",
     usage: `annouce`,
     aliases: [],

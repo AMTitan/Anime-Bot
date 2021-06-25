@@ -31,7 +31,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "feed",
     description: "Gives you a feeding gif",
     usage: `feed`,
     aliases: ["feeding"],

@@ -147,7 +147,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "neko",
     description: "Gives you a neko gif or image",
     usage: `neko`,
     aliases: ["nekos"],

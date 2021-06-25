@@ -61,7 +61,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "asktoleaveguild",
     description: "Asks everyone if they have the bot in 2 or more servers to kick it from one of them",
     usage: `asktoleaveguild`,
     aliases: [],

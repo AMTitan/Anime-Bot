@@ -26,7 +26,6 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
 }
 
 module.exports.config = {
-    name: "donate",
     description: "Gets you the donate page",
     usage: `donate`,
     aliases: [],

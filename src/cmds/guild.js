@@ -5,7 +5,6 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
 }
 
 module.exports.config = {
-    name: "guild",
     description: "Gives the guild",
     usage: `guild`,
     aliases: [],
