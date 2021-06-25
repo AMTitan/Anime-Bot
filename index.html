@@ -142,6 +142,32 @@
 
 
             <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col"  style="min-width: 350px">
+                <div class="my-3 p-3">
+                    <h2 class="display-5">GAMES</h2>
+                </div>
+
+
+                <div class="bg-white shadow-sm mx-auto" style="width: 80%; min-height:500px; max-height:1000px; border-radius: 21px 21px 0 0; overflow: auto;">
+                    <center>
+                        <div id="GAMES">
+                            <script type="text/javascript">
+                                $.getJSON('src/cmds.json', function(data) {
+                                    $.each(data, function(i, f) {
+                                        if (f.type === "games") {
+                                            var text = "";
+                                            if (f.aliases[0]) var text = `Aliases : ${f.aliases.toString()}\n`;
+                                            document.getElementById("GAMES").innerText = document.getElementById("GAMES").innerText + "a!" + f.usage + " " + f.optinal + "\n" + text + f.description + "\n\n";
+                                        }
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+
+            <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 text-center col"  style="min-width: 350px">
                 <div class="my-3 py-3">
                     <h2 class="display-5">OTHER</h2>
                 </div>
