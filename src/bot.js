@@ -41,6 +41,10 @@ const UsageSchema = new mongoose.Schema({
     }
 });
 
+request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`, function(error, response, body) {
+    client.banlist = "-"+body.split("\n").join("+-")+"+";
+})
+
 const Usage = mongoose.model('Usage', UsageSchema);
 mongoose.connect(process.env.mongodb, {
     useNewUrlParser: true,
@@ -111,6 +115,10 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
         fs.writeFileSync("src/cmds.json", `${jsonParsed}]`);
     })
 });
+
+request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`, function(error, response, body) {
+    client.banlist = "-"+body.split("\n").join("+-")+"+";
+})
 
 client.on('message', (message) => {
     if (message.guild && !message.author.bot) {

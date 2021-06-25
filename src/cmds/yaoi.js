@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=yaoi&json=1`, function(error, response, body) {
+        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${client.banlist}yaoi&json=1`, function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 var jsonParsed = JSON.parse(body);
                 jsonParsed = jsonParsed[Math.round(Math.random() * (jsonParsed.length - 1))];
