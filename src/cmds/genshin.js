@@ -34,8 +34,8 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 }
             }
         })
-        
-        
+
+
     } else {
         const Embed = {
             color: '#00ff00',

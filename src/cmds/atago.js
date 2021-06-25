@@ -1,7 +1,9 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
         const client = require('scathach-api');
-        const {nsfw} = new client();
+        const {
+            nsfw
+        } = new client();
 
         nsfw.atago().then(url => {
             const Embed = {
@@ -24,14 +26,13 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     icon_url: url.url,
                 },
             }
+            message.channel.send({
+                embed: Embed
+            });
 
             if (!url.url.endsWith(".jpg") && !url.url.endsWith(".jpeg") && !url.url.endsWith(".JPG") && !url.url.endsWith(".JPEG") && !url.url.endsWith(".png") && !url.url.endsWith(".PNG") && !url.url.endsWith(".gif") && !url.url.endsWith(".gifv")) {
                 message.channel.send(url.url);
             }
-
-            message.channel.send({
-                embed: Embed
-            });
         });
     } else {
         const Embed = {
