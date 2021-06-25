@@ -62,7 +62,7 @@ module.exports.config = {
     name: "ahegao_avatar",
     description: "Gives you a ahegao avatar",
     usage: `ahegaoavatar`,
-    aliases: [],
+    aliases: ["ahegao_avatar"],
     type: "nsfw",
     optinal: ""
 }

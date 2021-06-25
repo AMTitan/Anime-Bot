@@ -101,9 +101,9 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
             } else {
                 fs.writeFileSync("src/cmds.json", `${jsonParsed}, ${JSON.stringify(pull.config)}`);
             }
-            client.commands.set(pull.config.name, pull);
+            client.commands.set(pull.config.usage, pull);
             pull.config.aliases.forEach(alias => {
-                client.aliases.set(alias, pull.config.name)
+                client.aliases.set(alias, pull.config.usage)
             });
         });
         const jsonParsed = fs.readFileSync("src/cmds.json");
