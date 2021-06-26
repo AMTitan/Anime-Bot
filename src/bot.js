@@ -6,7 +6,7 @@ try {
         console.log("The file exists dont need to make it.");
     } else {
         console.log('The file does not exist so trying to make it.');
-        fs.writeFileSync('.env', "Token=(discord bot token)\ntop=(top.gg token)\nbotlist=(discordbotlist token)\nmongodb=(something like mongodb+srv://<username>:<password>@<stuff>)", function(err) {
+        fs.writeFileSync('.env', "Token=(discord bot token)\ntop=(top.gg token)\nbotlist=(discordbotlist token)\nmongodb=(something like mongodb+srv://<username>:<password>@<stuff>\n# If you dont want it to report delete the lines below\nGITHUB_REPO=(the repo)\nGITUB_USERNAME=(username)\nGITHUB_PERSONAL_ACCESS_TOKENS=(token)", function(err) {
             if (err) {
                 console.error(err);
                 process.exit(1);
@@ -26,6 +26,11 @@ const owner = "585604715128291328";
 const Levels = require("discord-xp");
 Levels.setURL(process.env.mongodb);
 const mongoose = require("mongoose");
+const { Octokit } = require("@octokit/core");
+
+var octokit;
+
+if (process.env.GITHUB_PERSONAL_ACCESS_TOKENS) octokit = new Octokit({ auth: process.env.GITHUB_PERSONAL_ACCESS_TOKENS });
 
 const UsageSchema = new mongoose.Schema({
     userID: {
@@ -120,120 +125,140 @@ request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt
     client.banlist = "-"+body.split("\n").join("+-")+"+";
 })
 
-client.on('message', (message) => {
-    if (message.guild && !message.author.bot) {
-        Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length / 10) + 1).then((hasLeveledUp) => {
-            if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
-            if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
-            if (hasLeveledUp) {
-                Levels.fetch(message.author.id, message.guild.id).then((user) => {
-                    const Embed = {
-                        color: '#00ff00',
-                        title: `Hey you leveled up you are now level ${user.level}`,
-                        url: "",
-                        author: {
-                            Name: 'AnimeBot',
-                            icon_url: "",
-                            url: '',
-                        },
-                        description: ``,
-                        thumbnail: "",
-                        fields: [],
-                        image: {
-                            url: ""
-                        },
-                        footer: {
-                            test: '',
-                            icon_url: "",
-                        },
-                    }
-                    message.channel.send({
-                        embed: Embed
-                    });
-                })
-            }
+client.error = function(err) {
+    if (process.env.GITHUB_PERSONAL_ACCESS_TOKENS) {
+        octokit.request('POST /repos/{owner}/{repo}/issues', {
+            owner: process.env.GITUB_USERNAME,
+            repo: process.env.GITHUB_REPO,
+            title: 'Auto',
+            body: JSON.stringify(err)
+            
         })
     }
-    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
-    if (message.author.bot === true) return;
-    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) {
-        message.channel.send("Sorry I cant send embeds");
+    else {
+        console.log(err);
     }
-    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
-    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) {
-        message.channel.send("Sorry I cant add reactions");
-    }
-    if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) return;
-    const Embed = {
-        color: '#00ff00',
-        title: `My help cmd is ${Prefix}help`,
-        url: "",
-        author: {
-            Name: 'AnimeBot',
-            icon_url: "",
-            url: '',
-        },
-        description: ``,
-        thumbnail: "",
-        fields: [],
-        image: {
-            url: ""
-        },
-        footer: {
-            test: '',
-            icon_url: "",
-        },
-    }
-    if (message.mentions.users && message.mentions.users.first()) {
-        if (message.mentions.users.first().id === client.user.id) {
+}
+
+client.on('message', (message) => {
+    try {
+        if (message.guild && !message.author.bot) {
+            Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length / 10) + 1).then((hasLeveledUp) => {
+                if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
+                if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
+                if (hasLeveledUp) {
+                    Levels.fetch(message.author.id, message.guild.id).then((user) => {
+                        const Embed = {
+                            color: '#00ff00',
+                            title: `Hey you leveled up you are now level ${user.level}`,
+                            url: "",
+                            author: {
+                                Name: 'AnimeBot',
+                                icon_url: "",
+                                url: '',
+                            },
+                            description: ``,
+                            thumbnail: "",
+                            fields: [],
+                            image: {
+                                url: ""
+                            },
+                            footer: {
+                                test: '',
+                                icon_url: "",
+                            },
+                        }
+                        message.channel.send({
+                            embed: Embed
+                        });
+                    })
+                }
+            })
+        }
+        if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
+        if (message.author.bot === true) return;
+        if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) {
+            message.channel.send("Sorry I cant send embeds");
+        }
+        if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
+        if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) {
+            message.channel.send("Sorry I cant add reactions");
+        }
+        if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) return;
+        const Embed = {
+            color: '#00ff00',
+            title: `My help cmd is ${Prefix}help`,
+            url: "",
+            author: {
+                Name: 'AnimeBot',
+                icon_url: "",
+                url: '',
+            },
+            description: ``,
+            thumbnail: "",
+            fields: [],
+            image: {
+                url: ""
+            },
+            footer: {
+                test: '',
+                icon_url: "",
+            },
+        }
+        if (message.mentions.users && message.mentions.users.first()) {
+            if (message.mentions.users.first().id === client.user.id) {
+                message.channel.send({
+                    embed: Embed
+                });
+            }
+        }
+        if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
+        console.log(`[${new Date}]: ${message.content}`);
+        var [commandName, ...args] = message.content.toLowerCase()
+            .trim()
+            .substring(Prefix.length)
+            .split(/\s+/);
+        if (!commandName) {
+            var [commandName, ...args] = message.content.toLowerCase()
+                .trim()
+                .substring(Prefix.length + 1)
+                .split(/\s+/);
+        }
+        if (!commandName) {
             message.channel.send({
                 embed: Embed
             });
         }
-    }
-    if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
-    console.log(`[${new Date}]: ${message.content}`);
-    var [commandName, ...args] = message.content.toLowerCase()
-        .trim()
-        .substring(Prefix.length)
-        .split(/\s+/);
-    if (!commandName) {
-        var [commandName, ...args] = message.content.toLowerCase()
-            .trim()
-            .substring(Prefix.length + 1)
-            .split(/\s+/);
-    }
-    if (!commandName) {
-        message.channel.send({
-            embed: Embed
-        });
-    }
-    if (!commandName) return;
-    Usage.findOne({
-        userID: message.author.id
-    }).then((user) => {
-        if (!user) {
-            const newUser = new Usage({
-                userID: message.author.id,
-                times: 1,
-            });
+        if (!commandName) return;
+        Usage.findOne({
+            userID: message.author.id
+        }).then((user) => {
+            if (!user) {
+                const newUser = new Usage({
+                    userID: message.author.id,
+                    times: 1,
+                });
 
-            newUser.save().then(() => {
+                newUser.save().then(() => {
+                    user.times += 1;
+                    user.lastUpdated = new Date;
+                    user.save().catch(e => console.log(`Failed to set times: ${e}`));
+                }).catch(e => {
+
+                });
+            } else {
                 user.times += 1;
                 user.lastUpdated = new Date;
                 user.save().catch(e => console.log(`Failed to set times: ${e}`));
-            }).catch(e => {
-
-            });
-        } else {
-            user.times += 1;
-            user.lastUpdated = new Date;
-            user.save().catch(e => console.log(`Failed to set times: ${e}`));
-        }
-    });
-    let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
-    if (commandfile) require(`./cmds/${commandfile.config.name}`)(Prefix, message, commandName, args, request, client, owner, Levels);
-    else require("./else.js")(Prefix, message, commandName, args, request, client);
+            }
+        });
+        let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
+        if (commandfile) require(`./cmds/${commandfile.config.name}`)(Prefix, message, commandName, args, request, client, owner, Levels);
+        else require("./else.js")(Prefix, message, commandName, args, request, client);
+    }
+    catch (e) {
+        client.error(e);
+    }
 });
 
 if (!process.env.Token) {

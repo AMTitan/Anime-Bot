@@ -49,7 +49,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             play(connection);
         });
 
-    }).catch(err => console.log(err));
+    }).catch(err => client.error(err));
 }
 
 module.exports.config = {

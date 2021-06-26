@@ -2,7 +2,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
     try {
         message.member.voice.channel.leave();
     } catch (err) {
-        console.log(err);
+        client.error(err);
         const Embed = {
             color: '#00ff00',
             title: 'I am not in your vc or you are not in a vc',

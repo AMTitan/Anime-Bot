@@ -34,11 +34,11 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                     });
                     channels[0].send({
                         embed: Embed
-                    }).catch(e => console.error(e));
+                    }).catch(e => client.error(e));
                 }
             });
         } catch (err) {
-            console.log(err);
+            client.error(err);
         }
     }
 }

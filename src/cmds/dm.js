@@ -127,7 +127,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 });
                 sent = true;
             } catch (err) {
-                console.log(err);
+                client.error(err);
                 sent = false;
                 message.channel.send({
                     embed: Embedthree
