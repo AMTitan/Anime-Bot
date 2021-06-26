@@ -55,9 +55,14 @@ npm i
 - Then click `Ok`
 - Do these same steps for the below environment variables
 ```
+Token=(discord bot token)
 top=(top.gg token)
 botlist=(discordbotlist token)
-mongodb=(something like mongodb+srv://<username>:<password>@<stuff>)
+mongodb=(something like mongodb+srv://<username>:<password>@<stuff>
+# If you dont want it to report dont do below
+GITHUB_REPO=(the repo)
+GITUB_USERNAME=(username)
+GITHUB_PERSONAL_ACCESS_TOKENS=(token)
 ```
 
 - Then restart the computer
@@ -80,7 +85,11 @@ Then
 export Token=(discord bot token)
 export top=(top.gg token)
 export botlist=(discordbotlist token)
-mongodb=(something like mongodb+srv://<username>:<password>@<stuff>)
+export mongodb=(something like mongodb+srv://<username>:<password>@<stuff>
+# If you dont want it to report dont do below
+export GITHUB_REPO=(the repo)
+export GITUB_USERNAME=(username)
+export GITHUB_PERSONAL_ACCESS_TOKENS=(token)
 ```
 
 Finally
