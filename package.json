@@ -27,6 +27,7 @@
         "nana-api": "^1.1.4",
         "nodemon": "^2.0.7",
         "request": "^2.88.2",
-        "scathach-api": "^0.0.8"
+        "scathach-api": "^0.0.8",
+        "snakecord": "^1.0.7"
     }
 }
