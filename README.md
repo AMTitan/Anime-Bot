@@ -25,17 +25,23 @@ cd Anime-Bot
 npm i
 ```
 
-Make a file called `.env` and inside put 
+Make a file called `Config.json` and inside put 
 ```
-Token=(discord bot token)
-top=(top.gg token)
-botlist=(discordbotlist token)
-mongodb=(something like mongodb+srv://<username>:<password>@<stuff>)
+{
+  "Token": "(discord bot token)",
+  "top": "(top.gg token)",
+  "botlist": "(discordbotlist token)",
+  "mongodb": "(something like mongodb+srv://<username>:<password>@<stuff>",
+  "# If you dont want it to report delete the lines below": "null",
+  "GITHUB_REPO": "(the repo)",
+  "GITUB_USERNAME": "(username)",
+  "GITHUB_PERSONAL_ACCESS_TOKENS": "(token)"
+}
 ```
 
 Finally
 ```
-npm run dev
+npm run start
 ```
 
 <h3>Windows</h3>
@@ -46,30 +52,25 @@ cd Anime-Bot
 npm i
 ```
 
-- Open control panel and search for `environment variables`
-- Click `edit the system environment variables`
-- Click `Environment Variables...`
-- Then on `System variables` click `New...`
-- In `Variable name` type `Token`
-- In `Variable Value` put your discord bot token
-- Then click `Ok`
-- Do these same steps for the below environment variables
+Make a file called `Config.json` and inside put
 ```
-Token=(discord bot token)
-top=(top.gg token)
-botlist=(discordbotlist token)
-mongodb=(something like mongodb+srv://<username>:<password>@<stuff>
-# If you dont want it to report dont do below
-GITHUB_REPO=(the repo)
-GITUB_USERNAME=(username)
-GITHUB_PERSONAL_ACCESS_TOKENS=(token)
+{
+  "Token": "(discord bot token)",
+  "top": "(top.gg token)",
+  "botlist": "(discordbotlist token)",
+  "mongodb": "(something like mongodb+srv://<username>:<password>@<stuff>",
+  "# If you dont want it to report delete the lines below": "null",
+  "GITHUB_REPO": "(the repo)",
+  "GITUB_USERNAME": "(username)",
+  "GITHUB_PERSONAL_ACCESS_TOKENS": "(token)"
+}
 ```
 
 - Then restart the computer
 
 Finally
 ```
-npm run dev
+npm run start
 ```
 
 <h3>Mac</h3>
@@ -80,21 +81,23 @@ cd Anime-Bot
 npm i
 ```
 
-Then
+Make a file called `Config.json` and inside put
 ```
-export Token=(discord bot token)
-export top=(top.gg token)
-export botlist=(discordbotlist token)
-export mongodb=(something like mongodb+srv://<username>:<password>@<stuff>
-# If you dont want it to report dont do below
-export GITHUB_REPO=(the repo)
-export GITUB_USERNAME=(username)
-export GITHUB_PERSONAL_ACCESS_TOKENS=(token)
+{
+  "Token": "(discord bot token)",
+  "top": "(top.gg token)",
+  "botlist": "(discordbotlist token)",
+  "mongodb": "(something like mongodb+srv://<username>:<password>@<stuff>",
+  "# If you dont want it to report delete the lines below": "null",
+  "GITHUB_REPO": "(the repo)",
+  "GITUB_USERNAME": "(username)",
+  "GITHUB_PERSONAL_ACCESS_TOKENS": "(token)"
+}
 ```
 
 Finally
 ```
-npm run dev
+npm run start
 ```
 
 <h3>Usage</h3>

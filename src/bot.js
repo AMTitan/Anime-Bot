@@ -1,19 +1,28 @@
 const fs = require("fs");
 
-// See if .env file exists
+// See if config file exists
 try {
-    if (fs.existsSync('.env')) {
+    if (fs.existsSync('Config.json')) {
         console.log("The file exists dont need to make it.");
     } else {
         console.log('The file does not exist so trying to make it.');
-        fs.writeFileSync('.env', "Token=(discord bot token)\ntop=(top.gg token)\nbotlist=(discordbotlist token)\nmongodb=(something like mongodb+srv://<username>:<password>@<stuff>\n# If you dont want it to report delete the lines below\nGITHUB_REPO=(the repo)\nGITUB_USERNAME=(username)\nGITHUB_PERSONAL_ACCESS_TOKENS=(token)", function(err) {
+        fs.writeFileSync('Config.json', "{\n" +
+            "  \"Token\": \"(discord bot token)\",\n" +
+            "  \"top\": \"(top.gg token)\",\n" +
+            "  \"botlist\": \"(discordbotlist token)\",\n" +
+            "  \"mongodb\": \"(something like mongodb+srv://<username>:<password>@<stuff>\",\n" +
+            "  \"# If you dont want it to report delete the lines below\": \"null\",\n" +
+            "  \"GITHUB_REPO\": \"(the repo)\",\n" +
+            "  \"GITUB_USERNAME\": \"(username)\",\n" +
+            "  \"GITHUB_PERSONAL_ACCESS_TOKENS\": \"(token)\"\n" +
+            "}", function(err) {
             if (err) {
                 console.error(err);
                 process.exit(1);
             }
         })
         console.log(".env file made");
-        console.log("\nUse any file editor you want and edit the file called \".env\" and replace the brackets")
+        console.log("\nUse any file editor you want and edit the file called \"Config.json\" and replace the brackets")
         process.exit(1);
     }
 } catch (err) {
@@ -21,16 +30,16 @@ try {
 }
 
 const request = require('request');
-require("dotenv").config();
+config = JSON.parse(fs.readFileSync("Config.json"));
 const owner = "585604715128291328";
 const Levels = require("discord-xp");
-Levels.setURL(process.env.mongodb);
+Levels.setURL(config.mongodb);
 const mongoose = require("mongoose");
 const { Octokit } = require("@octokit/core");
 
 var octokit;
 
-if (process.env.GITHUB_PERSONAL_ACCESS_TOKENS) octokit = new Octokit({ auth: process.env.GITHUB_PERSONAL_ACCESS_TOKENS });
+if (config.GITHUB_PERSONAL_ACCESS_TOKENS) octokit = new Octokit({ auth: config.GITHUB_PERSONAL_ACCESS_TOKENS });
 
 const UsageSchema = new mongoose.Schema({
     userID: {
@@ -51,7 +60,7 @@ request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt
 })
 
 const Usage = mongoose.model('Usage', UsageSchema);
-mongoose.connect(process.env.mongodb, {
+mongoose.connect(config.mongodb, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
@@ -72,8 +81,8 @@ const dbots = require('dbots');
 const poster = new dbots.Poster({
     client,
     apiKeys: {
-        topgg: process.env.top,
-        discordbotlist: process.env.botlist,
+        topgg: config.top,
+        discordbotlist: config.botlist,
     },
     clientLibrary: 'discord.js'
 })
@@ -126,10 +135,10 @@ request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt
 })
 
 client.error = function(err) {
-    if (process.env.GITHUB_PERSONAL_ACCESS_TOKENS) {
+    if (config.GITHUB_PERSONAL_ACCESS_TOKENS) {
         octokit.request('POST /repos/{owner}/{repo}/issues', {
-            owner: process.env.GITUB_USERNAME,
-            repo: process.env.GITHUB_REPO,
+            owner: config.GITUB_USERNAME,
+            repo: config.GITHUB_REPO,
             title: 'Auto',
             body: JSON.stringify(err)
             
@@ -261,8 +270,8 @@ client.on('message', (message) => {
     }
 });
 
-if (!process.env.Token) {
-    client.login(process.env.GITHUB);
+if (!config.Token) {
+    client.login(config.GITHUB);
 } else {
-    client.login(process.env.Token);
+    client.login(config.Token);
 }
