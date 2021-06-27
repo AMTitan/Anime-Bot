@@ -30,7 +30,7 @@ try {
 }
 
 const request = require('request');
-config = JSON.parse(fs.readFileSync("Config.json"));
+const config = JSON.parse(fs.readFileSync("Config.json"));
 const owner = "585604715128291328";
 const Levels = require("discord-xp");
 Levels.setURL(config.mongodb);

@@ -17,6 +17,7 @@
         "canvacord": "^5.2.1",
         "canvas": "^2.8.0",
         "dbots": "^9.0.0",
+        "discord-blackjack": "^2.0.4",
         "discord-xp": "^1.1.14",
         "discord.js": "^12.5.3",
         "discord.js-minesweeper": "^1.0.6",
@@ -29,6 +30,7 @@
         "nodemon": "^2.0.7",
         "request": "^2.88.2",
         "scathach-api": "^0.0.8",
+        "shuffle-array": "^1.0.1",
         "snakecord": "^1.0.7"
     }
 }
