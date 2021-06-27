@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of abigail (fate/grand order)",
     usage: `abigail`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

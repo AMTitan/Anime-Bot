@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of xuanzang (fate/grand order)",
     usage: `xuanzang`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

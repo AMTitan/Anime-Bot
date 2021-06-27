@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of kama (fate/grand order)",
     usage: `kama`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

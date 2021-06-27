@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of asuna (sword art online)",
     usage: `asuna`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

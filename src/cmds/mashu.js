@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of mashu (fate/grand order)",
     usage: `mashu`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

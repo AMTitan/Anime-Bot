@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of takao (azur_lane)",
     usage: `takao`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

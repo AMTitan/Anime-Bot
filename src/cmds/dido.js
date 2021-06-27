@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of dido (azur_lane)",
     usage: `dido`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

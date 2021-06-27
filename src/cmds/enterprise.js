@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of enterprise (azur_lane)",
     usage: `enterprise`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

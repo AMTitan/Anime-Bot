@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of belfast (azur_lane)",
     usage: `belfast`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

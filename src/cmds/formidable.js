@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of formidable (azur_lane)",
     usage: `formidable`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

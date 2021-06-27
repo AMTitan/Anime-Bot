@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of st_louis (azur_lane)",
     usage: `st_louis`,
     aliases: ["stlouis"],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

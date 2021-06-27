@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of beidou (genshin_impact)",
     usage: `beidou`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of tsuyu (My hero academia)",
     usage: `tsuyu`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

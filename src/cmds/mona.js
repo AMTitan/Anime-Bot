@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of mona (genshin_impact)",
     usage: `mona`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

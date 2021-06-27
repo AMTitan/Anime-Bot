@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of mordred (fate_all)",
     usage: `mordred`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

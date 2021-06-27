@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of shinobu (monogatari)",
     usage: `shinobu`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

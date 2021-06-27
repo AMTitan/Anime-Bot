@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of tohru (miss kobayashi's dragon maid)",
     usage: `tohru`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of ushiwakamaru (fate/grand order)",
     usage: `ushiwakamaru`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

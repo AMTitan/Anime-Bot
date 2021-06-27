@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of saint_martha (fate/grand order)",
     usage: `saint_martha`,
     aliases: ["saintmartha"],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

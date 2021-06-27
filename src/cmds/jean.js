@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of jean (genshin_impact)",
     usage: `jean`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

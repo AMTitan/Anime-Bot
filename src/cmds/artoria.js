@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of artoria (fate_all)",
     usage: `artoria`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

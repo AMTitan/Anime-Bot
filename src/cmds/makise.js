@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of makise (steins;gate)",
     usage: `makise`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of astolfo_(fate)",
     usage: `astolfo`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

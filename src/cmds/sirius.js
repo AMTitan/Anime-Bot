@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of sirius (azur_lane)",
     usage: `sirius`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

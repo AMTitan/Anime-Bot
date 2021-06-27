@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of keqing (genshin_impact)",
     usage: `keqing`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

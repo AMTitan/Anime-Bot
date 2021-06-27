@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of bremerton (azur_lane)",
     usage: `bremerton`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

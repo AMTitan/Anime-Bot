@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of nero (fate_all)",
     usage: `nero`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

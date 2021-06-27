@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of consort_yu (fate/grand order)",
     usage: `consort_yu`,
     aliases: ["consortyu"],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

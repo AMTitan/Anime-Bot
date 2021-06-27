@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of hood (azur_lane)",
     usage: `hood`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of lumine (genshin_impact)",
     usage: `lumine`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

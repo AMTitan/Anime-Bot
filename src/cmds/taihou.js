@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of taihou (azur_lane)",
     usage: `taihou`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

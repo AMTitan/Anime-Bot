@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of bb (fate_all)",
     usage: `bb`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

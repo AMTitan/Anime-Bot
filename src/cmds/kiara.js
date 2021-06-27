@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of kiara (fate/grand order)",
     usage: `kiara`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

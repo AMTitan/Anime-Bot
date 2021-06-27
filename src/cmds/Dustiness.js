@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of ochaco (My hero academia)",
     usage: `ochaco`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of Rin (fate/stay night)",
     usage: `rin`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

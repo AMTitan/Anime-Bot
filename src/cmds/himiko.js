@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of himiko (fate/grand order)",
     usage: `himiko`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

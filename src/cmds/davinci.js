@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of davinci (fate/grand order)",
     usage: `davinci`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

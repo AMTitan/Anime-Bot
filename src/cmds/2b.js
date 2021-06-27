@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of 2b (nier)",
     usage: `2b`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

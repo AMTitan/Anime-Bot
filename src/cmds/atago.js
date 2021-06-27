@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of atago (azur_lane)",
     usage: `atago`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

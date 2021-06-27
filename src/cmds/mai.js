@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of mai (rascal does not dream of bunny girl sempai)",
     usage: `mai`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of zero two (darling in the franxx)",
     usage: `zerotwo`,
     aliases: ["zero_two"],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

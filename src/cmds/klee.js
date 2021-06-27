@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of klee (genshin_impact)",
     usage: `klee`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

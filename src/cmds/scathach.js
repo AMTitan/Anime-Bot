@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of scathach (fate/grand order)",
     usage: `scathach`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

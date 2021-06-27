@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of emilia (re:zero)",
     usage: `emilia`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

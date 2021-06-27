@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of kanna (miss kobayashi's dragon maid)",
     usage: `kanna`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

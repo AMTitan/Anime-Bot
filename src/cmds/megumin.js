@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of megumin (Konosuba)",
     usage: `megumin`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

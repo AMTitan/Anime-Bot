@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of rem (re:zero)",
     usage: `rem`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

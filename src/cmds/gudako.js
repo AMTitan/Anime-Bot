@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of gudako (fate/grand order)",
     usage: `gudako`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

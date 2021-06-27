@@ -67,6 +67,6 @@ module.exports.config = {
     description: "Gives you a images of okita (fate_all)",
     usage: `okita`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of aqua (konosuba)",
     usage: `aqua`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }

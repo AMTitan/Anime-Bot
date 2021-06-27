@@ -65,6 +65,6 @@ module.exports.config = {
     description: "Gives you a images of hitagi (monogatari)",
     usage: `hitagi`,
     aliases: [],
-    type: "nsfw",
+    type: "person",
     optinal: ""
 }
