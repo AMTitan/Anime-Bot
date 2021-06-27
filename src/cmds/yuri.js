@@ -93,6 +93,6 @@ module.exports.config = {
     description: "Gives you a yuri gif or image",
     usage: `yuri`,
     aliases: ["lesbian"],
-    type: "sfw",
-    optinal: "(nsfw)"
+    type: "nsfw",
+    optinal: "(gif)"
 }

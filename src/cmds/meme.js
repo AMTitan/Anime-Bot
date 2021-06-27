@@ -58,7 +58,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             message.channel.awaitMessages(filter, {
                     max: 1,
                     time: 60000,
-                    errors: ['Line']
+                    errors: ['time']
                 })
                 .then((collected) => {
                     const msg = collected.first().content;
