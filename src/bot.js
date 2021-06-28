@@ -149,6 +149,13 @@ client.error = function(err) {
     }
 }
 
+const rp = require('request-promise');
+
+client.search = async function(term) {
+    var x = await rp(`https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1000&json=1&tags=${term}+${client.banlist}`)
+    return JSON.parse(x)[Math.round(Math.random() * (JSON.parse(x).length - 1))];
+}
+
 client.on('message', (message) => {
     try {
         if (message.guild && !message.author.bot) {

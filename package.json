@@ -28,6 +28,7 @@
         "nana-api": "^1.1.4",
         "nodemon": "^2.0.7",
         "request": "^2.88.2",
+        "request-promise": "^4.2.6",
         "scathach-api": "^0.0.8",
         "shuffle-array": "^1.0.1",
         "snakecord": "^1.0.7"

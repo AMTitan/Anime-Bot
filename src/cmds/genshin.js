@@ -1,7 +1,7 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
 
-        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) score:10 genshin_impact -rating:safe -loli&json=1`, function(error, response, body) {
+        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&limit=1000&tags=${client.banlist}-loli -asian -3d -photo_(medium) score:10 genshin_impact -rating:safe -loli&json=1`, function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 var jsonParsed = JSON.parse(body)[Math.round(Math.random() * (JSON.parse(body).length - 1))];
                 const Embed = {
