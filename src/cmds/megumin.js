@@ -1,36 +1,33 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        request(`https://scathach.redsplit.org/v3/nsfw/r34/?tags=megumin`, function(error, response, body) {
-            if (!error && response.statusCode == 200) {
-                var jsonParsed = JSON.parse(body);
-                const Embed = {
-                    color: '#00ff00',
-                    title: commandName,
-                    url: "",
-                    author: {
-                        Name: 'AnimeBot',
-                        icon_url: jsonParsed.url.split(" ").join("%20"),
-                        url: '',
-                    },
-                    description: ``,
-                    thumbnail: jsonParsed.url.split(" ").join("%20"),
-                    fields: [],
-                    image: {
-                        url: jsonParsed.url.split(" ").join("%20"),
-                    },
-                    footer: {
-                        test: 'Some footer text here',
-                        icon_url: jsonParsed.url.split(" ").join("%20"),
-                    },
-                }
+        client.search(`megumin`).then((jsonParsed) => {
+            const Embed = {
+                color: '#00ff00',
+                title: commandName,
+                url: "",
+                author: {
+                    Name: 'AnimeBot',
+                    icon_url: jsonParsed.file_url.split(" ").join("%20"),
+                    url: '',
+                },
+                description: ``,
+                thumbnail: jsonParsed.file_url.split(" ").join("%20"),
+                fields: [],
+                image: {
+                    url: jsonParsed.file_url.split(" ").join("%20"),
+                },
+                footer: {
+                    test: 'Some footer text here',
+                    icon_url: jsonParsed.file_url.split(" ").join("%20"),
+                },
+            }
 
-                message.channel.send({
-                    embed: Embed
-                });
+            message.channel.send({
+                embed: Embed
+            });
 
-                if (!jsonParsed.url.endsWith(".jpg") && !jsonParsed.url.endsWith(".jpeg") && !jsonParsed.url.endsWith(".JPG") && !jsonParsed.url.endsWith(".JPEG") && !jsonParsed.url.endsWith(".png") && !jsonParsed.url.endsWith(".PNG") && !jsonParsed.url.endsWith(".gif") && !jsonParsed.url.endsWith(".gifv")) {
-                    message.channel.send(url.url);
-                }
+            if (!jsonParsed.file_url.endsWith(".jpg") && !jsonParsed.file_url.endsWith(".jpeg") && !jsonParsed.file_url.endsWith(".JPG") && !jsonParsed.file_url.endsWith(".JPEG") && !jsonParsed.file_url.endsWith(".png") && !jsonParsed.file_url.endsWith(".PNG") && !jsonParsed.file_url.endsWith(".gif") && !jsonParsed.file_url.endsWith(".gifv")) {
+                message.channel.send(jsonParsed.file_url);
             }
         })
     } else {

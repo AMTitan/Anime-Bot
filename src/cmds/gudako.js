@@ -1,39 +1,35 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        const client = require('scathach-api');
-        const {
-            nsfw
-        } = new client();
-
-        nsfw.gudako().then(url => {
+        client.search("gudako").then((jsonParsed) => {
             const Embed = {
                 color: '#00ff00',
                 title: commandName,
                 url: "",
                 author: {
                     Name: 'AnimeBot',
-                    icon_url: url.url,
+                    icon_url: jsonParsed.file_url.split(" ").join("%20"),
                     url: '',
                 },
                 description: ``,
-                thumbnail: url.url,
+                thumbnail: jsonParsed.file_url.split(" ").join("%20"),
                 fields: [],
                 image: {
-                    url: url.url,
+                    url: jsonParsed.file_url.split(" ").join("%20"),
                 },
                 footer: {
                     test: 'Some footer text here',
-                    icon_url: url.url,
+                    icon_url: jsonParsed.file_url.split(" ").join("%20"),
                 },
             }
+
             message.channel.send({
                 embed: Embed
             });
 
-            if (!url.url.endsWith(".jpg") && !url.url.endsWith(".jpeg") && !url.url.endsWith(".JPG") && !url.url.endsWith(".JPEG") && !url.url.endsWith(".png") && !url.url.endsWith(".PNG") && !url.url.endsWith(".gif") && !url.url.endsWith(".gifv")) {
-                message.channel.send(url.url);
+            if (!jsonParsed.file_url.endsWith(".jpg") && !jsonParsed.file_url.endsWith(".jpeg") && !jsonParsed.file_url.endsWith(".JPG") && !jsonParsed.file_url.endsWith(".JPEG") && !jsonParsed.file_url.endsWith(".png") && !jsonParsed.file_url.endsWith(".PNG") && !jsonParsed.file_url.endsWith(".gif") && !jsonParsed.file_url.endsWith(".gifv")) {
+                message.channel.send(jsonParsed.file_url);
             }
-        });
+        })
     } else {
         const Embed = {
             color: '#00ff00',
