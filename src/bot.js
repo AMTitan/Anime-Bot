@@ -140,9 +140,10 @@ client.error = function(err) {
             owner: config.GITUB_USERNAME,
             repo: config.GITHUB_REPO,
             title: 'Auto',
-            body: JSON.stringify(err)
+            body: err.stack.toString(),
             
         })
+        console.log(err);
     }
     else {
         console.log(err);
