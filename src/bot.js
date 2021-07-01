@@ -254,6 +254,14 @@ client.search = async function(term) {
     return JSON.parse(x)[Math.round(Math.random() * (JSON.parse(x).length - 1))];
 }
 
+client.on(`GUILD_MEMBER_REMOVE`, (member) => {
+    Levels.deleteUser(member.id, member.guild.id);
+})
+
+client.on(`GUILD_DELETE`, (guild) => {
+    Levels.deleteGuild(guild.id);
+})
+
 client.on('message', (message) => {
     try {
         if (message.guild && !message.author.bot) {
