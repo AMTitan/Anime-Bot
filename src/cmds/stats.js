@@ -30,12 +30,11 @@ module.exports = function(message, commandName, args, client) {
                 if (item.endsWith(".js")) fs.createReadStream(item)
                     .on('data', function(chunk) {
                         for (var i = 0; i < chunk.length; i++) {
-                            if (chunk[i] == 10) lines++;
+                            if (chunk[i] === 10) lines++;
                         }
                     })
                     .on('end', function() {
                         if (files[files.length - 1] === item) {
-                            let count = 0;
                             var uptime = process.uptime();
                             var days = Math.floor((uptime % 31536000) / 86400);
                             var hours = Math.floor((uptime % 86400) / 3600);

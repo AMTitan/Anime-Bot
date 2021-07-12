@@ -94,7 +94,7 @@ setInterval(function() {
     client.user.setActivity(`${client.Prefix}help`, {
         type: 'WATCHING'
     }).catch(console.error);
-}, 1 * 6e5);
+}, 6e5);
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -339,7 +339,7 @@ client.on('message', (message) => {
             .substring(client.Prefix.length)
             .split(/\s+/);
         if (!commandName) {
-            var [commandName, ...args] = message.content.toLowerCase()
+            [commandName, ...args] = message.content.toLowerCase()
                 .trim()
                 .substring(client.Prefix.length + 1)
                 .split(/\s+/);
@@ -363,9 +363,7 @@ client.on('message', (message) => {
                     user.times += 1;
                     user.lastUpdated = new Date;
                     user.save().catch(e => console.log(`Failed to set times: ${e}`));
-                }).catch(e => {
-
-                });
+                })
             } else {
                 user.times += 1;
                 user.lastUpdated = new Date;

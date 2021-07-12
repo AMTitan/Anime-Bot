@@ -23,16 +23,16 @@ module.exports = function(message, commandName, args, client) {
      * client.on("message", async message => {
      *   if (message.author.bot || !message.content.startsWith("client.Prefix")) return
      * 
-     *   if (message.content == `${client.Prefix}blackjack` || message.content == `${client.Prefix}bj`) {
+     *   if (message.content === `${client.Prefix}blackjack` || message.content === `${client.Prefix}bj`) {
      *       let game = await blackjack(message, client)
      *       let result = game.result
-     *       if (result == "Win") {
+     *       if (result === "Win") {
      *           // do win stuff here
-     *       } else if (result == "Tie") {
+     *       } else if (result === "Tie") {
      *           // do tie stuff here
-     *       } else if (result == "Lose") {
+     *       } else if (result === "Lose") {
      *           // do lose stuff here
-     *       } else if (result == "Double Win") {
+     *       } else if (result === "Double Win") {
      *           // do double-down here
      *       }
      *   }
@@ -56,7 +56,7 @@ module.exports = function(message, commandName, args, client) {
         if (!options.normalEmbed && options.normalEmbed != false) options.normalEmbed = true
         if (!options.doubledown && options.doubledown != false) options.doubledown = true
         if (!options.split && options.split != false) options.split = true
-        if (options.normalEmbed == false) {
+        if (options.normalEmbed === false) {
             if (!options.normalEmbedContent) throw new Error("[DETAILS_NOT_PROVIDED]: The Embed object was not provided!")
             normalembed = options.normalEmbedContent
         }
@@ -134,24 +134,24 @@ module.exports = function(message, commandName, args, client) {
             // all the variables
             let addco = ""
             for (let a = 0; a < NEWDECKS.length; a++) {
-                if (NEWDECKS[a].rank == "A") {
+                if (NEWDECKS[a].rank === "A") {
                     NEWDECKS[a].value = 11
                 }
             }
 
-            if (NEWDECKS[0].rank == "A") {
+            if (NEWDECKS[0].rank === "A") {
                 addco = "Soft "
-                if (NEWDECKS[2].rank == "A") {
+                if (NEWDECKS[2].rank === "A") {
                     NEWDECKS[2].value = 1
                 }
             }
 
-            if (NEWDECKS[2].rank == "A") {
+            if (NEWDECKS[2].rank === "A") {
                 addco = "Soft "
             }
 
-            if (NEWDECKS[1].rank == "A") {
-                if (NEWDECKS[3].rank == "A") {
+            if (NEWDECKS[1].rank === "A") {
+                if (NEWDECKS[3].rank === "A") {
                     NEWDECKS[3].value = 1
                 }
             }
@@ -172,7 +172,7 @@ module.exports = function(message, commandName, args, client) {
             let usertag = message.author.tag
             let avatar = message.author.displayAvatarURL()
 
-            if (normalembed == false) {
+            if (normalembed === false) {
                 normalembed = new Discord.MessageEmbed()
                     .setAuthor(usertag, avatar)
                     .setColor("GREEN")
@@ -231,25 +231,25 @@ module.exports = function(message, commandName, args, client) {
             let answers3 = ["h", "hit", "hi", "e", "en", "end", "s", "stand", "st", "sta", "stan", "sp", "split", "spl", "spli"] // split
 
 
-            let filter1 = m => m.author.id == message.author.id && answers1.includes(m.content.toLowerCase()) // answers1
-            let filter2 = m => m.author.id == message.author.id && answers2.includes(m.content.toLowerCase()) // answers2
-            let filter3 = m => m.author.id == message.author.id && answers3.includes(m.content.toLowerCase()) // answers3
+            let filter1 = m => m.author.id === message.author.id && answers1.includes(m.content.toLowerCase()) // answers1
+            let filter2 = m => m.author.id === message.author.id && answers2.includes(m.content.toLowerCase()) // answers2
+            let filter3 = m => m.author.id === message.author.id && answers3.includes(m.content.toLowerCase()) // answers3
             let filter = filter1
 
             let doubledtrue = false
 
             let responsenow = "h"
 
-            if (value == 21) {
+            if (value === 21) {
                 responsenow = "s"
-                if (dvalue == 21) {
-                    if (options.resultEmbed == true) {
+                if (dvalue === 21) {
+                    if (options.resultEmbed === true) {
                         message.channel.send({ embed: tieembed })
                     }
                     method = "Tie"
                     RESULTS = "Tie"
                 } else {
-                    if (options.resultEmbed == true) {
+                    if (options.resultEmbed === true) {
                         message.channel.send({ embed: winembed })
                     }
                     method = "Blackjack"
@@ -258,16 +258,16 @@ module.exports = function(message, commandName, args, client) {
             }
 
             if (addco != "Soft ") {
-                if (value == 9 || (value == 10 || value == 11 && dealerdeck[1].value < 10)) {
+                if (value === 9 || (value === 10 || value === 11 && dealerdeck[1].value < 10)) {
                     content = doubledown
                     filter = filter2
-                } else if (yourdeck[0].rank == yourdeck[1].rank) {
+                } else if (yourdeck[0].rank === yourdeck[1].rank) {
                     content = split
                     filter = filter3
                 }
             }
 
-            if (RESULTS == "Unknown") {
+            if (RESULTS === "Unknown") {
                 let ori = message.channel.send({ content: content, embed: normalembed })
                 normalembed.fields[0].value = normalembed.fields[0].value.replace(copiedEmbed.value, `{yvalue}`)
                 await message.channel.awaitMessages(filter, { max: 1, time: 30000 }).then(
@@ -279,7 +279,7 @@ module.exports = function(message, commandName, args, client) {
                             if (["h", "hit", "hi"].includes(theanswer)) {
                                 let dealCard = NEWDECKS[startAt - 1]
                                 yourdeck.push(dealCard)
-                                if (dealCard.rank == "A") {
+                                if (dealCard.rank === "A") {
                                     if (yourrank.includes("A")) {
                                         dealCard.value = 1
                                     } else {
@@ -293,10 +293,10 @@ module.exports = function(message, commandName, args, client) {
                                 youremoji.push(dealCard.emoji)
                                 let endtrue = false
                                 if (value >= 21) {
-                                    if (addco == "Soft ") {
+                                    if (addco === "Soft ") {
                                         addco = ""
                                         for (let e = 0; e < yourdeck.length; e++) {
-                                            if (yourdeck[e].rank == "A") {
+                                            if (yourdeck[e].rank === "A") {
                                                 yourdeck[e].value = 1
                                                 value = value - 10
                                             }
@@ -312,7 +312,7 @@ module.exports = function(message, commandName, args, client) {
 
                                 }
 
-                                if (endtrue == false) {
+                                if (endtrue === false) {
                                     if (value >= 21) {
                                         responsenow = "s"
                                     } else {
@@ -321,7 +321,7 @@ module.exports = function(message, commandName, args, client) {
                                 }
 
                                 if (responsenow != "s") {
-                                    if (options.normalEmbed == true) {
+                                    if (options.normalEmbed === true) {
                                         normalembed.fields[0].value = `Cards: [\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${addco}${value}\``
                                     } else {
                                         normalembed.fields[0].value = normalembed.fields[0].value.replace(copiedEmbed.content, `[\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)`).replace(`{yvalue}`, `${addco}${value}`)
@@ -346,11 +346,11 @@ module.exports = function(message, commandName, args, client) {
                 )
             }
 
-            while (responsenow == "dd") {
+            while (responsenow === "dd") {
                 doubledtrue = true
                 let dealCard = NEWDECKS[startAt - 1]
                 yourdeck.push(dealCard)
-                if (dealCard.rank == "A") {
+                if (dealCard.rank === "A") {
                     if (yourrank.includes("A")) {
                         dealCard.value = 1
                     } else {
@@ -364,13 +364,13 @@ module.exports = function(message, commandName, args, client) {
                 responsenow = "s"
             }
 
-            while (responsenow == "split") {
+            while (responsenow === "split") {
                 let deletedi = yourdeck.pop()
                 value = value - deletedi.value
                 yourrank.pop()
                 youremoji.pop()
                 yourcontent.pop()
-                if (options.normalEmbed == true) {
+                if (options.normalEmbed === true) {
                     normalembed.fields[0].value = `Cards: [\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${addco}${value}\``
                 } else {
                     normalembed.fields[0].value = normalembed.fields[0].value.replace(copiedEmbed.content, `[\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)`).replace(`{yvalue}`, `${addco}${value}`)
@@ -382,7 +382,7 @@ module.exports = function(message, commandName, args, client) {
                 responsenow = "h"
             }
 
-            while (responsenow == "h") {
+            while (responsenow === "h") {
 
                 await message.channel.awaitMessages(filter1, { max: 1, time: 30000 }).then(async allresponses => {
                     if (!allresponses.size) {
@@ -392,7 +392,7 @@ module.exports = function(message, commandName, args, client) {
                         if (["h", "hi", "hit"].includes(theanswer)) {
                             let dealCard = NEWDECKS[startAt - 1]
                             yourdeck.push(dealCard)
-                            if (dealCard.rank == "A") {
+                            if (dealCard.rank === "A") {
                                 if (yourrank.includes("A")) {
                                     dealCard.value = 1
                                 } else {
@@ -406,10 +406,10 @@ module.exports = function(message, commandName, args, client) {
                             youremoji.push(dealCard.emoji)
                             let endtrue = false
                             if (value >= 21) {
-                                if (addco == "Soft ") {
+                                if (addco === "Soft ") {
                                     addco = ""
                                     for (let usu = 0; usu < yourdeck.length; usu++) {
-                                        if (yourdeck[usu].rank == "A") {
+                                        if (yourdeck[usu].rank === "A") {
                                             yourdeck[usu].value = 1
                                             value = value - 10
                                         }
@@ -424,7 +424,7 @@ module.exports = function(message, commandName, args, client) {
                                     }
                                 }
                             }
-                            if (endtrue == false) {
+                            if (endtrue === false) {
                                 if (value >= 21) {
                                     responsenow = "s"
                                 } else {
@@ -433,7 +433,7 @@ module.exports = function(message, commandName, args, client) {
                             }
 
                             if (responsenow != "s") {
-                                if (options.normalEmbed == true) {
+                                if (options.normalEmbed === true) {
                                     normalembed.fields[0].value = `Cards: [\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${addco}${value}\``
                                 } else {
                                     normalembed.fields[0].value = normalembed.fields[0].value.replace(copiedEmbed.content, `[\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)`).replace(`{yvalue}`, `${addco}${value}`)
@@ -454,14 +454,14 @@ module.exports = function(message, commandName, args, client) {
 
             }
 
-            while (responsenow == "s") {
+            while (responsenow === "s") {
                 games.delete(message.author.id)
                 while (dvalue < 17) {
                     let newcard = dealerdeck.push(NEWDECKS[startAt - 1])
                     dealercontent.push(`${NEWDECKS[startAt - 1].emoji} ${NEWDECKS[startAt - 1].rank}`)
                     dealerrank.push(NEWDECKS[startAt - 1].rank)
                     dealeremoji.push(NEWDECKS[startAt - 1].emoji)
-                    if (newcard.rank == "A") {
+                    if (newcard.rank === "A") {
                         if (dealerrank.includes("A")) {
                             NEWDECKS[startAt - 1].value = 1
                         } else {
@@ -472,7 +472,7 @@ module.exports = function(message, commandName, args, client) {
                     if (dvalue > 21 && dealerrank.includes("A")) {
                         let unu = 0
                         dealerdeck.forEach(e => {
-                            if (e.rank == "A") {
+                            if (e.rank === "A") {
                                 dealerdeck[unu].value = 1
                             }
                             unu++
@@ -485,22 +485,22 @@ module.exports = function(message, commandName, args, client) {
                 if (value > 21 || (dvalue <= 21 && value < dvalue)) {
                     if (value > 21) {
                         method = "Busted"
-                    } else if (dvalue == 21) {
+                    } else if (dvalue === 21) {
                         method = "Dealer reached 21"
                     } else {
                         method = "Dealer had more"
                     }
                     loseembed.fields[0].value = `Cards: [\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${addco}${value}\``
                     loseembed.fields[1].value = `Cards: [\`${dealercontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${dvalue}\``
-                    if (options.resultEmbed == true) {
+                    if (options.resultEmbed === true) {
                         message.channel.send({ embed: loseembed })
                     }
                     RESULTS = "Lose"
-                    if (doubledtrue == true) {
+                    if (doubledtrue === true) {
                         RESULTS = "Double Lose"
                     }
-                } else if (value == 21 || value > dvalue || dvalue > 21) {
-                    if (value == 21) {
+                } else if (value === 21 || value > dvalue || dvalue > 21) {
+                    if (value === 21) {
                         method = "Blackjack"
                     } else if (dvalue > 21) {
                         method = "Dealer Bust"
@@ -509,18 +509,18 @@ module.exports = function(message, commandName, args, client) {
                     }
                     winembed.fields[0].value = `Cards: [\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${addco}${value}\``
                     winembed.fields[1].value = `Cards: [\`${dealercontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${dvalue}\``
-                    if (options.resultEmbed == true) {
+                    if (options.resultEmbed === true) {
                         message.channel.send({ embed: winembed })
                     }
                     RESULTS = "Win"
-                    if (doubledtrue == true) {
+                    if (doubledtrue === true) {
                         RESULTS = "Double Win"
                     }
-                } else if (value == dvalue) {
+                } else if (value === dvalue) {
                     method = "Tie"
                     tieembed.fields[0].value = `Cards: [\`${yourcontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${addco}${value}\``
                     tieembed.fields[1].value = `Cards: [\`${dealercontent.join("`](https://google.com)   [`")}\`](https://google.com)\nTotal: \`${dvalue}\``
-                    if (options.resultEmbed == true) {
+                    if (options.resultEmbed === true) {
                         message.channel.send({ embed: tieembed })
                     }
                     RESULTS = "Tie"
@@ -531,7 +531,7 @@ module.exports = function(message, commandName, args, client) {
                         .setDescription("Uh oh! An error occured! Please join our server by clicking [here](https://discord.gg/DcC4xFfTnB)")
                         .setFooter("Oops")
                         .setColor("#FF0000")
-                    if (options.resultEmbed == true) {
+                    if (options.resultEmbed === true) {
                         message.channel.send({ embed: errEmbed })
                     }
                     RESULTS = "ERROR"
@@ -539,18 +539,18 @@ module.exports = function(message, commandName, args, client) {
             }
 
 
-            while (responsenow == "cancel") {
+            while (responsenow === "cancel") {
                 games.delete(message.author.id)
-                if (options.resultEmbed == true) {
+                if (options.resultEmbed === true) {
                     message.channel.send({ embed: cancelembed })
                 }
                 responsenow = "INVALID"
                 RESULTS = "Cancel"
             }
 
-            while (responsenow == "timeout") {
+            while (responsenow === "timeout") {
                 games.delete(message.author.id)
-                if (options.resultEmbed == true) {
+                if (options.resultEmbed === true) {
                     message.channel.send({ embed: noResEmbed })
                 }
                 RESULTS = "Timeout"

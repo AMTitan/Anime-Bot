@@ -45,7 +45,7 @@ module.exports = function(message, commandName, args, client) {
                 } else if (reaction.emoji.name === '3️⃣') {
                     nsfw = true;
                 }
-                if (nsfw == true) {
+                if (nsfw === true) {
                     if (message.channel.nsfw === true || message.guild === null) {
                         client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&limit=1000/index.php?page=dapi&s=post&q=index&tags=${client.banlist}${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${args.join(" ")} -loli&json=1`).then(res => res.text()).then(body => {
                             if (body.trim() !== "") {
@@ -215,7 +215,7 @@ module.exports = function(message, commandName, args, client) {
                             embed: Embed
                         });
                     }
-                } else if (questinable == true) {
+                } else if (questinable === true) {
                     if (message.channel.nsfw === true || message.guild === null) {
                         client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&limit=1000/index.php?page=dapi&s=post&q=index&tags=${client.banlist}${client.banlist}-loli -asian -3d -photo_(medium) ${types[2]} ${args.join(" ")}&json=1`).then(res => res.text()).then(body => {
                             if (body.trim() !== "") {
@@ -385,7 +385,7 @@ module.exports = function(message, commandName, args, client) {
                             embed: Embed
                         });
                     }
-                } else if (sfw == true) {
+                } else if (sfw === true) {
                     client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&limit=1000/index.php?page=dapi&s=post&q=index&tags=${client.banlist}${client.banlist}-loli -asian -3d -photo_(medium) ${types[1]} ${args.join(" ")}&json=1`).then(res => res.text()).then(body => {
                         if (body.trim() !== "") {
                             var shouldIReturn = false;

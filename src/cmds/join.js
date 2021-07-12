@@ -41,7 +41,6 @@ module.exports = function(message, commandName, args, client) {
             if (oldMember.guild.channels.cache.get(oldMember.channelID)) {
                 if (oldMember.guild.channels.cache.get(oldMember.channelID).members.size === 1) {
                     oldMember.guild.channels.cache.get(oldMember.channelID).leave();
-                    return;
                 }
             }
         })

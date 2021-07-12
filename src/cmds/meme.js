@@ -3,7 +3,7 @@ module.exports = function(message, commandName, args, client) {
         if (error) throw new Error(error);
         var jsonParsed = JSON.parse(body);
         jsonParsed = jsonParsed.data.children[Math.round(Math.random() * 100) - (jsonParsed.data.dist - 100)].data;
-        if (jsonParsed.thumbnail != "nsfw") {
+        if (jsonParsed.thumbnail !== "nsfw") {
             const Embed = {
                 color: '#00ff00',
                 title: jsonParsed.title,
@@ -116,8 +116,6 @@ module.exports = function(message, commandName, args, client) {
                         }
                     }
                 })
-                .catch((err) => {});
-
         }
     })
 }
