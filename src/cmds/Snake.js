@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     const SnakeGame = require('snakecord');
     const snakeGame = new SnakeGame({
         title: 'Snake Game',

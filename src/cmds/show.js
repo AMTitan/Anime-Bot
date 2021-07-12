@@ -1,6 +1,6 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     var shownum = Math.round(Math.random() * 16292);
-    request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`).then(res => res.text()).then(body => {
+    client.request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`).then(res => res.text()).then(body => {
         if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             const Embed = {

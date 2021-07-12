@@ -1,7 +1,7 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
         if (args[0] === "gif") {
-            request(`https://api.nekos.dev/api/v3/images/nsfw/gif/pussy_wank/`).then(res => res.text()).then(body => {
+            client.request(`https://api.nekos.dev/api/v3/images/nsfw/gif/pussy_wank/`).then(res => res.text()).then(body => {
                 if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
@@ -31,7 +31,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 }
             })
         } else {
-            request(`https://akaneko-api.herokuapp.com/api/masturbation`).then(res => res.text()).then(body => {
+            client.request(`https://akaneko-api.herokuapp.com/api/masturbation`).then(res => res.text()).then(body => {
                 if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {

@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
         client.search(`asuna_(sao)`).then((jsonParsed) => {
             const Embed = {

@@ -1,7 +1,7 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (args[0] && args[0].toLowerCase() === "nsfw") {
         if (message.channel.nsfw === true || message.guild === null) {
-            request(`https://nekos.life/api/lewd/neko`).then(res => res.text()).then(body => {
+            client.request(`https://nekos.life/api/lewd/neko`).then(res => res.text()).then(body => {
                 if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
@@ -58,7 +58,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
         }
     } else if (args[0] && args[0].toLowerCase() === "gif") {
         if (message.channel.nsfw === true || message.guild === null) {
-            request(`https://api.nekos.dev/api/v3/images/nsfw/gif/neko/`).then(res => res.text()).then(body => {
+            client.request(`https://api.nekos.dev/api/v3/images/nsfw/gif/neko/`).then(res => res.text()).then(body => {
                 if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
@@ -114,7 +114,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             });
         }
     } else {
-        request(`https://nekos.life/api/neko`).then(res => res.text()).then(body => {
+        client.request(`https://nekos.life/api/neko`).then(res => res.text()).then(body => {
             if (body.trim() !== "") {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {

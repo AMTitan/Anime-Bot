@@ -29,11 +29,14 @@ try {
     console.error(err);
 }
 
-const request = require('node-fetch');
+
+const Discord = require('discord.js');
+const client = new Discord.Client();
+client.request = require('node-fetch');
 const config = JSON.parse(fs.readFileSync("Config.json"));
-const owner = "585604715128291328";
-const Levels = require("discord-xp");
-Levels.setURL(config.mongodb);
+client.owner = "585604715128291328";
+client.Levels = require("discord-xp");
+client.Levels.setURL(config.mongodb);
 const mongoose = require("mongoose");
 const { Octokit } = require("@octokit/core");
 
@@ -55,7 +58,7 @@ const UsageSchema = new mongoose.Schema({
     }
 });
 
-request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`).then(res => res.text()).then(body => {
+client.request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`).then(res => res.text()).then(body => {
     client.banlist = "-"+body.split("\n").join("-")+"+";
 })
 
@@ -65,13 +68,11 @@ mongoose.connect(config.mongodb, {
     useUnifiedTopology: true,
     useFindAndModify: false
 });
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const Prefix = "a!";
+client.Prefix = "a!";
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`${client.user.tag} bot is on`);
-    client.user.setActivity(`${Prefix}help`, {
+    client.user.setActivity(`${client.Prefix}help`, {
             type: 'WATCHING'
         })
         .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
@@ -90,7 +91,7 @@ const poster = new dbots.Poster({
 poster.startInterval();
 
 setInterval(function() {
-    client.user.setActivity(`${Prefix}help`, {
+    client.user.setActivity(`${client.Prefix}help`, {
         type: 'WATCHING'
     }).catch(console.error);
 }, 1 * 6e5);
@@ -132,7 +133,7 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
 
 client.error = function(err) {
     if (config.GITHUB_PERSONAL_ACCESS_TOKENS) {
-        octokit.request('POST /repos/{owner}/{repo}/issues', {
+        octokit.client.request('POST /repos/{client.owner}/{repo}/issues', {
             owner: config.GITUB_USERNAME,
             repo: config.GITHUB_REPO,
             title: 'Auto',
@@ -252,21 +253,21 @@ client.search = async function(term) {
 }
 
 client.on(`GUILD_MEMBER_REMOVE`, (member) => {
-    Levels.deleteUser(member.id, member.guild.id);
+    client.Levels.deleteUser(member.id, member.guild.id);
 })
 
 client.on(`GUILD_DELETE`, (guild) => {
-    Levels.deleteGuild(guild.id);
+    client.Levels.deleteGuild(guild.id);
 })
 
 client.on('message', (message) => {
     try {
         if (message.guild && !message.author.bot) {
-            Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length / 10) + 1).then((hasLeveledUp) => {
+            client.Levels.appendXp(message.author.id, message.guild.id, Math.round(message.content.length / 10) + 1).then((hasLeveledUp) => {
                 if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("SEND_MESSAGES")) return;
                 if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("EMBED_LINKS")) return;
                 if (hasLeveledUp) {
-                    Levels.fetch(message.author.id, message.guild.id).then((user) => {
+                    client.Levels.fetch(message.author.id, message.guild.id).then((user) => {
                         const Embed = {
                             color: '#00ff00',
                             title: `Hey you leveled up you are now level ${user.level}`,
@@ -306,7 +307,7 @@ client.on('message', (message) => {
         if (message.guild && !message.guild.me.permissionsIn(message.channel.id).any("ADD_REACTIONS")) return;
         const Embed = {
             color: '#00ff00',
-            title: `My help cmd is ${Prefix}help`,
+            title: `My help cmd is ${client.Prefix}help`,
             url: "",
             author: {
                 Name: 'AnimeBot',
@@ -331,16 +332,16 @@ client.on('message', (message) => {
                 });
             }
         }
-        if (!message.content.toLowerCase().startsWith(Prefix.toLowerCase())) return;
+        if (!message.content.toLowerCase().startsWith(client.Prefix.toLowerCase())) return;
         console.log(`[${new Date}]: ${message.content}`);
         var [commandName, ...args] = message.content.toLowerCase()
             .trim()
-            .substring(Prefix.length)
+            .substring(client.Prefix.length)
             .split(/\s+/);
         if (!commandName) {
             var [commandName, ...args] = message.content.toLowerCase()
                 .trim()
-                .substring(Prefix.length + 1)
+                .substring(client.Prefix.length + 1)
                 .split(/\s+/);
         }
         if (!commandName) {
@@ -372,8 +373,8 @@ client.on('message', (message) => {
             }
         });
         let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
-        if (commandfile) require(`./cmds/${commandfile.config.name}`)(Prefix, message, commandName, args, request, client, owner, Levels);
-        else require("./else.js")(Prefix, message, commandName, args, request, client);
+        if (commandfile) require(`./cmds/${commandfile.config.name}`)(message, commandName, args, client);
+        else require("./else.js")(message, commandName, args, client);
     }
     catch (e) {
         client.error(e);

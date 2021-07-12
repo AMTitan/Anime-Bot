@@ -1,16 +1,16 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     Minesweeper = require('discord.js-minesweeper');
     let level = "normal";
     var stop = false;
-    const levels = ['dumb', 'easy', 'normal', 'hard', 'extreme'];
+    client.Levels = ['dumb', 'easy', 'normal', 'hard', 'extreme'];
     if (args[0]) {
-        if (levels.includes(args[0])) {
+        if (client.Levels.includes(args[0])) {
             level = args[0];
         }
         else {
             const Embed = {
                 color: '#00ff00',
-                title: `The differnt types are ${levels.join(", ")}`,
+                title: `The differnt types are ${client.Levels.join(", ")}`,
                 url: "",
                 author: {
                     Name: 'AnimeBot',

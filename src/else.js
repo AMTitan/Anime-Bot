@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     const types = ["", "rating:safe", "rating:questionable", "rating:explicit"];
     var nsfw = false;
     var questinable = false;
@@ -47,7 +47,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 }
                 if (nsfw == true) {
                     if (message.channel.nsfw === true || message.guild === null) {
-                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")} +${client.banlist}&json=1`).then(res => res.text()).then(body => {
+                        client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")} +${client.banlist}&json=1`).then(res => res.text()).then(body => {
                             if (body.trim() !== "") {
                                 var shouldIReturn = false;
                                 if (!body) {
@@ -114,7 +114,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                             icon_url: "",
                                             url: '',
                                         },
-                                        description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName}` + "`",
+                                        description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName}` + "`",
                                         thumbnail: "",
                                         fields: [],
                                         image: {
@@ -168,7 +168,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         icon_url: jsonParsed.file_url,
                                         url: '',
                                     },
-                                    description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
+                                    description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${client.Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
                                     thumbnail: jsonParsed.file_url,
                                     fields: [],
                                     image: {
@@ -199,7 +199,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 icon_url: "",
                                 url: '',
                             },
-                            description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} (what to improve)` + "`",
+                            description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} (what to improve)` + "`",
                             thumbnail: "",
                             fields: [],
                             image: {
@@ -217,7 +217,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     }
                 } else if (questinable == true) {
                     if (message.channel.nsfw === true || message.guild === null) {
-                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
+                        client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
                             if (body.trim() !== "") {
                                 var shouldIReturn = false;
                                 if (!body) {
@@ -284,7 +284,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                             icon_url: "",
                                             url: '',
                                         },
-                                        description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName}` + "`",
+                                        description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName}` + "`",
                                         thumbnail: "",
                                         fields: [],
                                         image: {
@@ -338,7 +338,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         icon_url: jsonParsed.file_url,
                                         url: '',
                                     },
-                                    description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
+                                    description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${client.Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
                                     thumbnail: jsonParsed.file_url,
                                     fields: [],
                                     image: {
@@ -369,7 +369,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 icon_url: "",
                                 url: '',
                             },
-                            description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} (what to improve)` + "`",
+                            description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} (what to improve)` + "`",
                             thumbnail: "",
                             fields: [],
                             image: {
@@ -386,7 +386,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         });
                     }
                 } else if (sfw == true) {
-                    request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[1]} ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
+                    client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[1]} ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
                         if (body.trim() !== "") {
                             var shouldIReturn = false;
                             if (!body) {
@@ -453,7 +453,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         icon_url: "",
                                         url: '',
                                     },
-                                    description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName}` + "`",
+                                    description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName}` + "`",
                                     thumbnail: "",
                                     fields: [],
                                     image: {
@@ -507,7 +507,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                     icon_url: jsonParsed.file_url,
                                     url: '',
                                 },
-                                description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
+                                description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${client.Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
                                 thumbnail: jsonParsed.file_url,
                                 fields: [],
                                 image: {
@@ -530,7 +530,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     })
                 } else {
                     if (message.channel.nsfw === true || message.guild === null) {
-                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
+                        client.request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
                             if (body.trim() !== "") {
                                 var shouldIReturn = false;
                                 if (!body) {
@@ -597,7 +597,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                             icon_url: "",
                                             url: '',
                                         },
-                                        description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName}` + "`",
+                                        description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName}` + "`",
                                         thumbnail: "",
                                         fields: [],
                                         image: {
@@ -651,7 +651,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                         icon_url: jsonParsed.file_url,
                                         url: '',
                                     },
-                                    description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
+                                    description: `(I need to fix this but if you get no img do do this again) If this is not very good it is bc I dont have this cmd coded but to see my offical cmds you can do ` + "`" + `${client.Prefix}help` + "`" + ` But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} ${args.join(" ")} (reason)` + "`\n\n**Tags: **" + "```" + jsonParsed.tags + "```",
                                     thumbnail: jsonParsed.file_url,
                                     fields: [],
                                     image: {
@@ -682,7 +682,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                                 icon_url: "",
                                 url: '',
                             },
-                            description: `maybe do ` + "`" + `${Prefix}help` + "`" + ` or you can do ` + "`" + `${Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${Prefix}improve ${commandName} (what to improve)` + "`",
+                            description: `maybe do ` + "`" + `${client.Prefix}help` + "`" + ` or you can do ` + "`" + `${client.Prefix}search img ${commandName} ${args.join(" ")}` + "`" + `? But if you really want this command you can ` + "`" + `${client.Prefix}improve ${commandName} (what to improve)` + "`",
                             thumbnail: "",
                             fields: [],
                             image: {

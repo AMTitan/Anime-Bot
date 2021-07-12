@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client, owner) {
+module.exports = function(message, commandName, args, client) {
     try {
         message.member.voice.channel.leave();
     } catch (err) {

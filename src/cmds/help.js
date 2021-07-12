@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client, owner, Levels) {
+module.exports = function(message, commandName, args, client) {
     if (args[0]) {
         let commandfile = client.commands.get(args[0]) || client.commands.get(client.aliases.get(args[0]));
         if (commandfile) {
@@ -11,7 +11,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                     icon_url: "",
                     url: '',
                 },
-                description: `**Command name**: ${commandfile.config.usage  || 'None'}\n**Aliases**: ${commandfile.config.aliases.map(a => `\`${a}\``).join(", ")  || 'None'}\n**Description**: ${commandfile.config.description  || 'None'}\n**Type**: ${commandfile.config.type  || 'None'}\n\n**Usage**: ${Prefix + commandfile.config.usage + " " + (commandfile.config.optinal  || '')  || 'None'}`,
+                description: `**Command name**: ${commandfile.config.usage  || 'None'}\n**Aliases**: ${commandfile.config.aliases.map(a => `\`${a}\``).join(", ")  || 'None'}\n**Description**: ${commandfile.config.description  || 'None'}\n**Type**: ${commandfile.config.type  || 'None'}\n\n**Usage**: ${client.Prefix + commandfile.config.usage + " " + (commandfile.config.optinal  || '')  || 'None'}`,
                 thumbnail: "",
                 fields: [],
                 image: {

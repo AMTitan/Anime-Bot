@@ -1,5 +1,5 @@
-module.exports = function(Prefix, message, commandName, args, request, client, owner) {
-    if (message.author.id === owner) {
+module.exports = function(message, commandName, args, client) {
+    if (message.author.id === client.owner) {
         const Embed = {
             color: '#00ff00',
             title: "ANNOUNCEMENT",
@@ -9,7 +9,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 icon_url: "",
                 url: '',
             },
-            description: `\`\`\`${args.join(" ")}\`\`\`if you want to respond you can do so with ${Prefix}issue (reply)`,
+            description: `\`\`\`${args.join(" ")}\`\`\`if you want to respond you can do so with ${client.Prefix}issue (reply)`,
             thumbnail: "",
             fields: [],
             image: {
@@ -47,6 +47,6 @@ module.exports.config = {
     description: "make an announcement",
     usage: `annouce`,
     aliases: [],
-    type: "owner",
+    type: "client.owner",
     optinal: ""
 }

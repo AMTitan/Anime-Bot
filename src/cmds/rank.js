@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client, owner, Levels) {
+module.exports = function(message, commandName, args, client) {
     if (!message.guild.id) {
         const Embed = {
             color: '#00ff00',
@@ -33,7 +33,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
         id = message.mentions.users.first();
 
     }
-    Levels.fetch(id.id, message.guild.id, true).then((user) => {
+    client.Levels.fetch(id.id, message.guild.id, true).then((user) => {
         if (user.xp) {
             const canvacord = require("canvacord");
             const rank = new canvacord.Rank()
@@ -64,7 +64,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                     format: "png"
                 }))
                 .setCurrentXP(0)
-                .setRequiredXP(Levels.xpFor(1))
+                .setRequiredXP(client.Levels.xpFor(1))
                 .setStatus(id.presence.status)
                 .setProgressBar("#00ff00", "COLOR")
                 .setUsername(id.username)

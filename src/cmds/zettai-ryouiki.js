@@ -1,6 +1,6 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        request(`https://akaneko-api.herokuapp.com/api/zettai-ryouiki`).then(res => res.text()).then(body => {
+        client.request(`https://akaneko-api.herokuapp.com/api/zettai-ryouiki`).then(res => res.text()).then(body => {
             if (body.trim() !== "") {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {

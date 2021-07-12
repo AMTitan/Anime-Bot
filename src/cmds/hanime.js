@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     const { HAnimeAPI } = require('hanime');
     const api = new HAnimeAPI();
     api.search(args.join(" ")).then(results => {

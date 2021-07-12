@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
         const NanaAPI = require("nana-api");
         const nana = new NanaAPI();

@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     //start of npm package discrod-blackjack (did this to change colors)
     const Discord = require("discord.js")
     const shuffle = require("shuffle-array")
@@ -13,7 +13,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
      * const Discord = require("discord.js")
      * const blackjack = require("discord-blackjack")
      * const client = new Discord.Client(ws: ["GUILDS", "GUILD_MESSAGES", "GUILD_MESSAGE_REACTIONS"])
-     * const prefix = "-"
+     * const client.Prefix = "-"
      * const token = "TOKEN_GOES_HERE"
      *
      * client.on("ready", () => {
@@ -21,9 +21,9 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
      * })
      *
      * client.on("message", async message => {
-     *   if (message.author.bot || !message.content.startsWith("prefix")) return
+     *   if (message.author.bot || !message.content.startsWith("client.Prefix")) return
      * 
-     *   if (message.content == `${prefix}blackjack` || message.content == `${prefix}bj`) {
+     *   if (message.content == `${client.Prefix}blackjack` || message.content == `${client.Prefix}bj`) {
      *       let game = await blackjack(message, client)
      *       let result = game.result
      *       if (result == "Win") {

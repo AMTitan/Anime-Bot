@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client, owner, Levels) {
+module.exports = function(message, commandName, args, client) {
     if (!message.guild.id) {
         const Embed = {
             color: '#00ff00',
@@ -25,7 +25,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
         });
     }
     if (!message.guild.id) return;
-    Levels.fetchLeaderboard(message.guild.id, 10).then((rawLeaderboard) => {
+    client.Levels.fetchLeaderboard(message.guild.id, 10).then((rawLeaderboard) => {
         if (rawLeaderboard.length < 1) {
             const Embed = {
                 color: '#00ff00',
@@ -51,8 +51,8 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 embed: Embed
             });
         }
-        Levels.computeLeaderboard(client, rawLeaderboard, true).then((leaderboard) => {
-            const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp- Levels.xpFor(e.level)}`);
+        client.Levels.computeLeaderboard(client, rawLeaderboard, true).then((leaderboard) => {
+            const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nLevel: ${e.level}\nXP: ${e.xp- client.Levels.xpFor(e.level)}`);
             const Embed = {
                 color: '#00ff00',
                 title: `Leaderboard`,

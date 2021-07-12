@@ -1,5 +1,5 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
-    request(`https://api.nekos.dev/api/v3/images/sfw/gif/baka/`).then(res => res.text()).then(body => {
+module.exports = function(message, commandName, args, client) {
+    client.request(`https://api.nekos.dev/api/v3/images/sfw/gif/baka/`).then(res => res.text()).then(body => {
         if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             var title = "baka";

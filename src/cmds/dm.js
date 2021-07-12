@@ -1,17 +1,17 @@
-module.exports = function(Prefix, message, commandName, args, request, client, owner) {
-    if (message.author.id === owner && commandName === "dm") {
+module.exports = function(message, commandName, args, client) {
+    if (message.author.id === client.owner && commandName === "dm") {
         var person = args[0];
         args.shift();
         const Embed = {
             color: '#00ff00',
-            title: "Bot Owner: " + args.join(" "),
+            title: "Bot client.owner: " + args.join(" "),
             url: "",
             author: {
                 Name: 'AnimeBot',
                 icon_url: "",
                 url: '',
             },
-            description: `if you want to respond you can do so with ${Prefix}issue (reply)`,
+            description: `if you want to respond you can do so with ${client.Prefix}issue (reply)`,
             thumbnail: "",
             fields: [],
             image: {
@@ -82,7 +82,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
                 icon_url: "",
                 url: '',
             },
-            description: "and if you get a friend request from a account right after you send it that is prob me going to ask you what you mean.",
+            description: "and if you get a friend client.request from a account right after you send it that is prob me going to ask you what you mean.",
             thumbnail: "",
             fields: [],
             image: {
@@ -122,7 +122,7 @@ module.exports = function(Prefix, message, commandName, args, request, client, o
             })
         } else {
             try {
-                client.users.cache.get(owner).send({
+                client.users.cache.get(client.owner).send({
                     embed: Embed
                 });
                 sent = true;

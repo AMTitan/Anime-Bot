@@ -1,7 +1,7 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (args[0] && args[0].toLowerCase() === "nsfw") {
         if (message.channel.nsfw === true || message.guild === null) {
-            request(`https://akaneko-api.herokuapp.com/api/foxgirl`).then(res => res.text()).then(body => {
+            client.request(`https://akaneko-api.herokuapp.com/api/foxgirl`).then(res => res.text()).then(body => {
                 if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
@@ -57,7 +57,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             });
         }
     } else {
-        request(`https://akaneko-api.herokuapp.com/api/sfwfoxes`).then(res => res.text()).then(body => {
+        client.request(`https://akaneko-api.herokuapp.com/api/sfwfoxes`).then(res => res.text()).then(body => {
             if (body.trim() !== "") {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {

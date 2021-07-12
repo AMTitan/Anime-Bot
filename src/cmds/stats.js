@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     const Embed1 = {
         color: '#00ff00',
         title: `Finding stats`,

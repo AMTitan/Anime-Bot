@@ -1,6 +1,6 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        request(`https://hmtai.herokuapp.com/nsfw/elves`).then(res => res.text()).then(body => {
+        client.request(`https://hmtai.herokuapp.com/nsfw/elves`).then(res => res.text()).then(body => {
             if (body.trim() !== "") {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {
