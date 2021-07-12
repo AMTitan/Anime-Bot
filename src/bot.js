@@ -59,7 +59,7 @@ const UsageSchema = new mongoose.Schema({
 });
 
 client.request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`).then(res => res.text()).then(body => {
-    client.banlist = "-"+body.split("\n").join("-")+"+";
+    client.banlist = "-"+body.split("\n").join("-")+"-asian-3d-photo_(medium)+";
 })
 
 const Usage = mongoose.model('Usage', UsageSchema);
