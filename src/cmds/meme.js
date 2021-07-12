@@ -1,6 +1,5 @@
 module.exports = function(message, commandName, args, client) {
-    client.request("https://www.reddit.com/r/GoodAnimemes/hot.json?limit=100&t=month", function(error, response, body) {
-        if (error) throw new Error(error);
+    client.request("https://www.reddit.com/r/GoodAnimemes/hot.json?limit=100&t=month").then(res => res.text()).then(body => {
         var jsonParsed = JSON.parse(body);
         jsonParsed = jsonParsed.data.children[Math.round(Math.random() * 100) - (jsonParsed.data.dist - 100)].data;
         if (jsonParsed.thumbnail !== "nsfw") {

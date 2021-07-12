@@ -1,6 +1,6 @@
 module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        client.request('https://api.waifu.pics/nsfw/waifu', function(error, response, body) {
+        client.request('https://api.waifu.pics/nsfw/waifu').then(res => res.text()).then(body => {
             if (body.trim() !== "") {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {
