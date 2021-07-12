@@ -147,8 +147,6 @@ client.error = function(err) {
     }
 }
 
-const rp = require('request-promise');
-
 const types_save = {"fgo": "/nsfw/r34/?tags=fate/grand_order",
     "azur_lane": "/nsfw/r34/?tags=azur_lane",
     "genshin_impact": "/nsfw/r34/?tags=genshin_impact",
@@ -248,7 +246,8 @@ client.search = async function(term) {
     if (types[term]) {
         term = types[term].split("?tags=")[1];
     }
-    var x = await rp(`https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1000&json=1/index.php?page=dapi&s=post&q=index&tags=${client.banlist}${term}+${client.banlist}`)
+    var x = await client.request(`https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1000&json=1/index.php?page=dapi&s=post&q=index&tags=${client.banlist}${term}+${client.banlist}&json=1`);
+    x = await x.text();
     return JSON.parse(x)[Math.round(Math.random() * (JSON.parse(x).length - 1))];
 }
 
