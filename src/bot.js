@@ -29,7 +29,7 @@ try {
     console.error(err);
 }
 
-const request = require('request');
+const request = require('node-fetch');
 const config = JSON.parse(fs.readFileSync("Config.json"));
 const owner = "585604715128291328";
 const Levels = require("discord-xp");
@@ -55,8 +55,8 @@ const UsageSchema = new mongoose.Schema({
     }
 });
 
-request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`, function(error, response, body) {
-    client.banlist = "-"+body.split("\n").join("+-")+"+";
+request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`).then(res => res.text()).then(body => {
+    client.banlist = "-"+body.split("\n").join("-")+"+";
 })
 
 const Usage = mongoose.model('Usage', UsageSchema);
@@ -129,10 +129,6 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
         fs.writeFileSync("src/cmds.json", `${jsonParsed}]`);
     })
 });
-
-request(`https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt`, function(error, response, body) {
-    client.banlist = "-"+body.split("\n").join("+-")+"+";
-})
 
 client.error = function(err) {
     if (config.GITHUB_PERSONAL_ACCESS_TOKENS) {
@@ -251,7 +247,7 @@ client.search = async function(term) {
     if (types[term]) {
         term = types[term].split("?tags=")[1];
     }
-    var x = await rp(`https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1000&json=1&tags=${term}+${client.banlist}`)
+    var x = await rp(`https://rule34.xxx/index.php?page=dapi&s=post&q=index&limit=1000&json=1/index.php?page=dapi&s=post&q=index&tags=${client.banlist}${term}+${client.banlist}`)
     return JSON.parse(x)[Math.round(Math.random() * (JSON.parse(x).length - 1))];
 }
 

@@ -1,7 +1,7 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     var shownum = Math.round(Math.random() * 16292);
-    request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
+    request(`https://kitsu.io/api/edge/anime?page[limit]=1&page[offset]=${shownum}`).then(res => res.text()).then(body => {
+        if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             const Embed = {
                 color: '#00ff00',

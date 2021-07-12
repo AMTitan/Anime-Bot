@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-    request(`https://api.waifu.pics/sfw/highfive`, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
+    request(`https://api.waifu.pics/sfw/highfive`).then(res => res.text()).then(body => {
+        if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             var title = "HighFive";
             if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} highfives ${message.mentions.users.first().username}`;

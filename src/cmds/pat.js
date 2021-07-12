@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-    request(`https://api.waifu.pics/sfw/pat`, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
+    request(`https://api.waifu.pics/sfw/pat`).then(res => res.text()).then(body => {
+        if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             var title = "pat";
             if (message.mentions.users && message.mentions.users.first()) title = `${message.author.username} pats ${message.mentions.users.first().username}`;

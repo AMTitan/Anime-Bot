@@ -1,8 +1,8 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
         if (args[0] && args[0].toLowerCase() === "gif") {
-            request(`https://api.nekos.dev/api/v3/images/nsfw/gif/girls_solo`, function(error, response, body) {
-                if (!error && response.statusCode == 200) {
+            request(`https://api.nekos.dev/api/v3/images/nsfw/gif/girls_solo`).then(res => res.text()).then(body => {
+                if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
                         color: '#00ff00',
@@ -31,8 +31,8 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 }
             })
         } else {
-            request(`https://api.nekos.dev/api/v3/images/nsfw/img/solo_lewd`, function(error, response, body) {
-                if (!error && response.statusCode == 200) {
+            request(`https://api.nekos.dev/api/v3/images/nsfw/img/solo_lewd`).then(res => res.text()).then(body => {
+                if (body.trim() !== "") {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
                         color: '#00ff00',

@@ -1,7 +1,7 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (args[0] && args[0].toLowerCase() === "nsfw") {
         if (message.channel.nsfw === true || message.guild === null) {
-            request(`https://akaneko-api.herokuapp.com/api/nsfwwallpapers`, function(error, response, body) {
+            request(`https://akaneko-api.herokuapp.com/api/nsfwwallpapers`).then(res => res.text()).then(body => {
                 if (!error && response.statusCode == 200) {
                     var jsonParsed = JSON.parse(body);
                     const Embed = {
@@ -57,7 +57,7 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
             });
         }
     } else {
-        request(`https://akaneko-api.herokuapp.com/api/wallpapers`, function(error, response, body) {
+        request(`https://akaneko-api.herokuapp.com/api/wallpapers`).then(res => res.text()).then(body => {
             if (!error && response.statusCode == 200) {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {

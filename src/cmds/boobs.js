@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
     if (message.channel.nsfw === true || message.guild === null) {
-        request(`https://api.nekos.dev/api/v3/images/nsfw/gif/tits/`, function(error, response, body) {
+        request(`https://api.nekos.dev/api/v3/images/nsfw/gif/tits/`).then(res => res.text()).then(body => {
             if (!error && response.statusCode == 200) {
                 var jsonParsed = JSON.parse(body);
                 const Embed = {

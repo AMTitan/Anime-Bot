@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-    request(`https://api.waifu.pics/sfw/waifu`, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
+    request(`https://api.waifu.pics/sfw/waifu`).then(res => res.text()).then(body => {
+        if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             const Embed = {
                 color: '#00ff00',

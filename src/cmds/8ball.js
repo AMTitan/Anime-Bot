@@ -1,6 +1,6 @@
 module.exports = function(Prefix, message, commandName, args, request, client) {
-    request(`https://api.nekos.dev/api/v3/images/8ball/`, function(error, response, body) {
-        if (!error && response.statusCode == 200) {
+    request(`https://api.nekos.dev/api/v3/images/8ball/`).then(res => res.text()).then(body => {
+        if (body.trim() !== "") {
             var jsonParsed = JSON.parse(body);
             const Embed = {
                 color: '#00ff00',

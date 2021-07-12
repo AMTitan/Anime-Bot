@@ -47,8 +47,8 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                 }
                 if (nsfw == true) {
                     if (message.channel.nsfw === true || message.guild === null) {
-                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
-                            if (!error && response.statusCode == 200) {
+                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")} +${client.banlist}&json=1`).then(res => res.text()).then(body => {
+                            if (body.trim() !== "") {
                                 var shouldIReturn = false;
                                 if (!body) {
                                     const Embed = {
@@ -217,8 +217,8 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     }
                 } else if (questinable == true) {
                     if (message.channel.nsfw === true || message.guild === null) {
-                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
-                            if (!error && response.statusCode == 200) {
+                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[3]} ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
+                            if (body.trim() !== "") {
                                 var shouldIReturn = false;
                                 if (!body) {
                                     const Embed = {
@@ -386,8 +386,8 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                         });
                     }
                 } else if (sfw == true) {
-                    request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian -3d -photo_(medium) ${types[1]} ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
-                        if (!error && response.statusCode == 200) {
+                    request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${types[1]} ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
+                        if (body.trim() !== "") {
                             var shouldIReturn = false;
                             if (!body) {
                                 const Embed = {
@@ -530,8 +530,8 @@ module.exports = function(Prefix, message, commandName, args, request, client) {
                     })
                 } else {
                     if (message.channel.nsfw === true || message.guild === null) {
-                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index&tags=-loli -asian -3d -photo_(medium) ${commandName + " " + args.join(" ")}&json=1`, function(error, response, body) {
-                            if (!error && response.statusCode == 200) {
+                        request(`https://gelbooru.com/index.php?page=dapi&s=post&q=index/index.php?page=dapi&s=post&q=index&tags=${client.banlist}-loli -asian -3d -photo_(medium) ${commandName + " " + args.join(" ")}&json=1`).then(res => res.text()).then(body => {
+                            if (body.trim() !== "") {
                                 var shouldIReturn = false;
                                 if (!body) {
                                     const Embed = {
