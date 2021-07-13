@@ -46,7 +46,7 @@ module.exports = function(message, commandName, args, client) {
                     icon_url: "",
                     url: '',
                 },
-                description: `${video.description.replace("<p>", "").replace("</p>", "").replace("<br>", "\n")}\n\n\`${video.tags.join(" | ")}\``,
+                description: `${video.description.split("<p>").join("").split("</p>").join("").split("<br>").join("\n")}\n\n\`${video.tags.join(" | ")}\``,
                 thumbnail: "",
                 fields: [],
                 image: {
