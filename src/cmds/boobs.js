@@ -1,4 +1,4 @@
-module.exports = function(Prefix, message, commandName, args, request, client) {
+module.exports = function(message, commandName, args, client) {
     if (message.channel.nsfw === true || message.guild === null) {
         request(`https://api.nekos.dev/api/v3/images/nsfw/gif/tits/`).then(res => res.text()).then(body => {
             if (!error && response.statusCode === 200) {

@@ -133,7 +133,7 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
 
 client.error = function(err) {
     if (config.GITHUB_PERSONAL_ACCESS_TOKENS) {
-        octokit.client.request('POST /repos/{client.owner}/{repo}/issues', {
+        octokit.request('POST /repos/{client.owner}/{repo}/issues', {
             owner: config.GITUB_USERNAME,
             repo: config.GITHUB_REPO,
             title: 'Auto',
