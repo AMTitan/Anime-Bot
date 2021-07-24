@@ -31,6 +31,7 @@
         "nodemon": "^2.0.7",
         "scathach-api": "^0.0.8",
         "shuffle-array": "^1.0.1",
-        "snakecord": "^1.0.7"
+        "snakecord": "^1.0.7",
+        "glob-parent": ">=5.1.2"
     }
 }
