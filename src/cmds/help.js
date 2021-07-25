@@ -85,7 +85,7 @@ module.exports = function(message, commandName, args, client) {
 module.exports.config = {
     description: "Gives you the help",
     usage: `help`,
-    aliases: [],
+    aliases: ["commands"],
     type: "other",
     optinal: "(command)"
 }
