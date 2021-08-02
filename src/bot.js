@@ -366,7 +366,24 @@ client.on('message', (message) => {
             }
         });
         let commandfile = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
-        if (commandfile) require(`./cmds/${commandfile.config.name}`)(message, commandName, args, client);
+        if (commandfile) {
+            if (commandfile.config.name === "eval.js" || commandfile.config.name === "dm.js" || commandfile.config.name === "annouce.js") {
+                var [commandName, ...args] = message.content
+                    .trim()
+                    .substring(client.Prefix.length)
+                    .split(/\s+/);
+                if (!commandName) {
+                    [commandName, ...args] = message.content
+                        .trim()
+                        .substring(client.Prefix.length + 1)
+                        .split(/\s+/);
+                }
+                require(`./cmds/${commandfile.config.name}`)(message, commandName, args, client);
+            }
+            else {
+                require(`./cmds/${commandfile.config.name}`)(message, commandName, args, client);
+            }
+        }
         else require("./else.js")(message, commandName, args, client);
     }
     catch (e) {
