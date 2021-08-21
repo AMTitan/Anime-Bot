@@ -14,7 +14,7 @@
     "dependencies": {
         "@discordjs/opus": "^0.5.3",
         "@octokit/core": "^3.5.1",
-        "canvacord": "^5.2.1",
+        "canvacord": "^5.2.2",
         "canvas": "^2.8.0",
         "dbots": "^9.0.0",
         "discord-blackjack": "^2.0.4",
