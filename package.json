@@ -16,7 +16,7 @@
         "@octokit/core": "^3.5.1",
         "canvacord": "^5.2.3",
         "canvas": "^2.8.0",
-        "dbots": "^9.0.0",
+        "dbots": "^9.0.1",
         "discord-blackjack": "^2.0.4",
         "discord-xp": "^1.1.14",
         "discord.js": "^12.5.3",
