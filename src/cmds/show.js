@@ -13,42 +13,42 @@ module.exports = function(message, commandName, args, client) {
                     url: '',
                 },
                 description: jsonParsed.data[0].attributes.description,
-                thumbnail: jsonParsed.data[0].attributes.posterImage.original,
+                thumbnail: jsonParsed.data[0].attributes.posterImage.original || "Null",
                 fields: [{
                     name: `Age Rating`,
-                    value: jsonParsed.data[0].attributes.ageRating,
+                    value: jsonParsed.data[0].attributes.ageRating || "Null",
                     inline: true
                 }, {
                     name: `Popularty Count`,
-                    value: `${jsonParsed.data[0].attributes.popularityRank}/16292`,
+                    value: `${jsonParsed.data[0].attributes.popularityRank || "Null"}/16292`,
                     inline: true
                 }, {
                     name: `Status`,
-                    value: `${jsonParsed.data[0].attributes.status}`,
+                    value: `${jsonParsed.data[0].attributes.status || "Null"}`,
                     inline: true
                 }, {
                     name: `Hentai`,
-                    value: `${jsonParsed.data[0].attributes.nsfw}`,
+                    value: `${jsonParsed.data[0].attributes.nsfw || "Null"}`,
                     inline: true
                 }, {
                     name: `Episode Count`,
-                    value: `${jsonParsed.data[0].attributes.episodeCount}`,
+                    value: `${jsonParsed.data[0].attributes.episodeCount || "Null"}`,
                     inline: true
                 }, {
                     name: `Total Length`,
-                    value: `${jsonParsed.data[0].attributes.totalLength}mins`,
+                    value: `${jsonParsed.data[0].attributes.totalLength || "Null "}mins`,
                     inline: true
                 }, {
                     name: `Subtype`,
-                    value: `${jsonParsed.data[0].attributes.subtype}`,
+                    value: `${jsonParsed.data[0].attributes.subtype || "Null"}`,
                     inline: true
                 }, {
                     name: `Favorites Count`,
-                    value: `${jsonParsed.data[0].attributes.favoritesCount}`,
+                    value: `${jsonParsed.data[0].attributes.favoritesCount || "Null"}`,
                     inline: true
                 }, {
                     name: `Age Rating Guide`,
-                    value: `${jsonParsed.data[0].attributes.ageRatingGuide}`,
+                    value: `${jsonParsed.data[0].attributes.ageRatingGuide || "Null"}`,
                     inline: true
                 }, ],
                 image: {
