@@ -30,7 +30,7 @@
         "node-fetch": "^2.6.1",
         "scathach-api": "^0.0.8",
         "shuffle-array": "^1.0.1",
-        "snakecord": "^1.0.8",
+        "snakecord": "^1.0.9",
         "glob-parent": ">=5.1.2"
     }
 }
