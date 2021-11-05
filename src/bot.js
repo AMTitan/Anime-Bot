@@ -13,7 +13,7 @@ try {
             "  \"mongodb\": \"(something like mongodb+srv://<username>:<password>@<stuff>\",\n" +
             "  \"# If you dont want it to report delete the lines below\": \"null\",\n" +
             "  \"GITHUB_REPO\": \"(the repo)\",\n" +
-            "  \"GITUB_USERNAME\": \"(username)\",\n" +
+            "  \"GITHUB_USERNAME\": \"(username)\",\n" +
             "  \"GITHUB_PERSONAL_ACCESS_TOKENS\": \"(token)\"\n" +
             "}", function(err) {
             if (err) {
@@ -133,8 +133,8 @@ fs.readdir(__dirname + `/cmds/`, (err, files) => {
 
 client.error = function(err) {
     if (config.GITHUB_PERSONAL_ACCESS_TOKENS) {
-        octokit.request('POST /repos/{client.owner}/{repo}/issues', {
-            owner: config.GITUB_USERNAME,
+        octokit.request('POST /repos/{owner}/{repo}/issues', {
+            owner: config.GITHUB_USERNAME,
             repo: config.GITHUB_REPO,
             title: 'Auto',
             body: err.stack.toString(),

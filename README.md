@@ -34,7 +34,7 @@ Make a file called `Config.json` and inside put
   "mongodb": "(something like mongodb+srv://<username>:<password>@<stuff>",
   "# If you dont want it to report delete the lines below": "null",
   "GITHUB_REPO": "(the repo)",
-  "GITUB_USERNAME": "(username)",
+  "GITHUB_USERNAME": "(username)",
   "GITHUB_PERSONAL_ACCESS_TOKENS": "(token)"
 }
 ```
@@ -61,7 +61,7 @@ Make a file called `Config.json` and inside put
   "mongodb": "(something like mongodb+srv://<username>:<password>@<stuff>",
   "# If you dont want it to report delete the lines below": "null",
   "GITHUB_REPO": "(the repo)",
-  "GITUB_USERNAME": "(username)",
+  "GITHUB_USERNAME": "(username)",
   "GITHUB_PERSONAL_ACCESS_TOKENS": "(token)"
 }
 ```
@@ -90,7 +90,7 @@ Make a file called `Config.json` and inside put
   "mongodb": "(something like mongodb+srv://<username>:<password>@<stuff>",
   "# If you dont want it to report delete the lines below": "null",
   "GITHUB_REPO": "(the repo)",
-  "GITUB_USERNAME": "(username)",
+  "GITHUB_USERNAME": "(username)",
   "GITHUB_PERSONAL_ACCESS_TOKENS": "(token)"
 }
 ```
