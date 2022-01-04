@@ -7,7 +7,7 @@ I have spent [![wakatime](https://wakatime.com/badge/github/AMTitan/Anime-Bot.sv
 - [Dependency](https://github.com/AMTitan/Anime-Bot#dependency)
 - [Install](https://github.com/AMTitan/Anime-Bot#install)
 - [Usage](https://github.com/AMTitan/Anime-Bot#usage)
-- [Uptime](https://status.watchbot.app/bot/833682899202080818)
+- [Uptime](https://status.watchbot.app/bot/927745984065314816)
 
 <h3>Dependency</h3>
 
