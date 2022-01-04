@@ -66,7 +66,7 @@ lazy_static! {
     };
     static ref BANLIST: AsyncOnce<String> = AsyncOnce::new(async {
         return format!(
-            "-{}-asian-3d-photo_(medium)",
+            "+-{}+-asian-3d-photo_(medium)",
             request(
                 "https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt"
                     .to_string()
@@ -75,7 +75,7 @@ lazy_static! {
             .unwrap()
             .split('\n')
             .collect::<Vec<&str>>()
-            .join("-")
+            .join("+-")
         );
     });
 }
@@ -353,7 +353,7 @@ impl EventHandler for Handler {
                         let image = get_item(
                             request(
                                 replace_everything(
-                                    format!("https://$booru/index.php?page=dapi&s=post&q=index&limit=1000&json=1/index.php?page=dapi&s=post&q=index&tags=$banlist+{}&json=1", commands.join("+"))
+                                    format!("https://$booru/index.php?page=dapi&s=post&q=index&limit=1000&tags=+{}$banlist&json=1", commands.join("+"))
                                         .to_string()
                                         .trim_matches('\"')
                                         .to_string()
