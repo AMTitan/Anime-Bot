@@ -149,7 +149,7 @@ impl EventHandler for Handler {
                                         m.embed(|e| {
                                             e.title("The help is located here (Click Me)");
                                             e.url("https://amtitan.github.io/Anime-Bot/");
-                                            e.description("➤[Invite](https://discord.com/api/oauth2/authorize?client_id=927745984065314816&permissions=0&scope=bot) ➤[Server](https://discord.gg/sJnVmPZB7Y) ➤[Donate](https://www.patreon.com/AMTItan_Github) ➤[Github](https://github.com/AMTitan/Anime-Bot)");
+                                            e.description("➤[Invite](https://discord.com/api/oauth2/authorize?client_id=927745984065314816&permissions=0&scope=bot%20applications.commands) ➤[Server](https://discord.gg/sJnVmPZB7Y) ➤[Donate](https://www.patreon.com/AMTItan_Github) ➤[Github](https://github.com/AMTitan/Anime-Bot)");
                                             e.colour(0x00ff00);
 
                                             e
@@ -183,7 +183,7 @@ impl EventHandler for Handler {
                                     .send_message(&ctx.http, |m| {
                                         m.embed(|e| {
                                             e.title("Invite link (Click Me)");
-                                            e.url(format!("https://discord.com/oauth2/authorize?client_id={}&permissions=0&scope=bot", CONFIG["Application_id"].as_u64().unwrap()));
+                                            e.url(format!("https://discord.com/oauth2/authorize?client_id={}&permissions=0&scope=bot%20applications.commands", CONFIG["Application_id"].as_u64().unwrap()));
                                             e.colour(0x00ff00);
 
                                             e
