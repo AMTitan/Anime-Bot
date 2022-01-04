@@ -177,6 +177,40 @@ impl EventHandler for Handler {
                                 if let Err(why) = msg {
                                     println!("Error sending message: {:?}", why);
                                 }
+                            } else if commands[0] == "invite" {
+                                let msg = msg
+                                    .channel_id
+                                    .send_message(&ctx.http, |m| {
+                                        m.embed(|e| {
+                                            e.title("Invite link (Click Me)");
+                                            e.url(format!("https://discord.com/oauth2/authorize?client_id={}&permissions=0&scope=bot", CONFIG["Application_id"].as_u64().unwrap()));
+                                            e.colour(0x00ff00);
+
+                                            e
+                                        });
+                                        m
+                                    })
+                                    .await;
+                                if let Err(why) = msg {
+                                    println!("Error sending message: {:?}", why);
+                                }
+                            } else if commands[0] == "server" {
+                                let msg = msg
+                                    .channel_id
+                                    .send_message(&ctx.http, |m| {
+                                        m.embed(|e| {
+                                            e.title("server link (Click Me)");
+                                            e.url("https://discord.gg/sJnVmPZB7Y");
+                                            e.colour(0x00ff00);
+
+                                            e
+                                        });
+                                        m
+                                    })
+                                    .await;
+                                if let Err(why) = msg {
+                                    println!("Error sending message: {:?}", why);
+                                }
                             } else if commands[0] == "dm" {
                                 let user = UserId(commands[1].parse::<u64>().unwrap())
                                     .to_user(ctx.clone().http)
