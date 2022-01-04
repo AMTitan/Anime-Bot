@@ -442,45 +442,83 @@ impl EventHandler for Handler {
             );
             let re = Regex::new(r"\s+").unwrap();
             let commands: Vec<&str> = re
-                .split(command.data.name.as_str()[2..command.data.name.as_str().len()].trim())
+                .split(command.data.name.as_str().trim())
                 .collect();
             if CMDS_HASH.contains_key(commands[0]) {
                 let x = &CMDS_HASH[commands[0]];
-                let image = get_item(
-                    request(x.clone().0).await.unwrap().as_str().to_string(),
-                    x.1,
-                );
-                /*
-                let content = msg
-                    .channel_id
-                    .send_message(&ctx.http, |m| {
-                        m.embed(|e| {
-                            e.title(commands[0]);
-                            e.image(image);
-                            e.colour(0x00ff00);
+                let mut nsfw_error = false;
+                if commands.len() > 1 {
+                    if !(x.3[commands[1]] != Value::Null
+                        && !x.3[commands[1]]["nsfw"].as_bool().unwrap()
+                        || ctx
+                            .http
+                            .get_channel(command.channel_id.0)
+                            .await
+                            .unwrap()
+                            .is_nsfw()
+                        || command.guild_id.is_none())
+                    {
+                        nsfw_error = true;
+                    }
+                } else if !((x.2 != "nsfw" && x.2 != "person")
+                    || ctx
+                        .http
+                        .get_channel(command.channel_id.0)
+                        .await
+                        .unwrap()
+                        .is_nsfw()
+                    || command.guild_id.is_none())
+                {
+                    nsfw_error = true;
+                }
+                if !nsfw_error {
+                    let image = get_item(
+                        request(
+                            replace_everything(
+                                x.0.to_string()
+                                    .trim_matches('\"')
+                                    .to_string()
+                                    .to_string()
+                                    .replace(" ", "%20"),
+                            )
+                            .await,
+                        )
+                        .await
+                        .unwrap(),
+                        x.1,
+                    );
 
-                            e
-                        });
-                        m
-                    })
-                    .await;
-                    */
+                    let _ = command
+                        .create_interaction_response(&ctx.http, |response| {
+                            response
+                                .kind(InteractionResponseType::ChannelMessageWithSource)
+                                .interaction_response_data(|message| {
+                                    message.create_embed(|e| {
+                                        e.title(commands[0]);
+                                        e.image(image);
+                                        e.colour(0x00ff00);
 
-                let _ = command
-                    .create_interaction_response(&ctx.http, |response| {
-                        response
-                            .kind(InteractionResponseType::ChannelMessageWithSource)
-                            .interaction_response_data(|message| {
-                                message.create_embed(|e| {
-                                    e.title(commands[0]);
-                                    e.image(image);
-                                    e.colour(0x00ff00);
-
-                                    e
+                                        e
+                                    })
                                 })
-                            })
-                    })
-                    .await;
+                        })
+                        .await;
+                } else {
+                    let _ = command
+                        .create_interaction_response(&ctx.http, |response| {
+                            response
+                                .kind(InteractionResponseType::ChannelMessageWithSource)
+                                .interaction_response_data(|m| {
+                                    m.create_embed(|e| {
+                                        e.title("sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on) or you can always use the bot in dms!");
+                                        e.colour(0x00ff00);
+                                        e
+                                    });
+                                    m
+                                })
+                        })
+                        .await;
+                }
             }
         }
     }
@@ -491,15 +529,16 @@ impl EventHandler for Handler {
         ctx.set_activity(Activity::watching("a!help")).await;
 
         for i in 0..CMDS.as_array().unwrap().len() {
-            let _ = ApplicationCommand::create_global_application_command(&ctx.http, |command| {
-                command
-                    .name(CMDS[i]["usage"].to_string().trim_matches('\"').to_string())
+            let _ = ApplicationCommand::set_global_application_commands(&ctx.http, |commands| {
+                commands
+                    .create_application_command(|command| {
+                    command.name(CMDS[i]["usage"].to_string().trim_matches('\"').to_string())
                     .description(
                         CMDS[i]["description"]
                             .to_string()
                             .trim_matches('\"')
                             .to_string(),
-                    )
+                    )})
             })
             .await;
         }

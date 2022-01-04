@@ -11,9 +11,7 @@ I have spent [![wakatime](https://wakatime.com/badge/github/AMTitan/Anime-Bot.sv
 
 <h3>Dependency</h3>
 
-- `Git`
-- `Node.js`
-- and just watch this https://www.youtube.com/watch?v=4X2qsZudLNY
+- `Rust`
 
 <h3>Install</h3>
 
