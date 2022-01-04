@@ -149,7 +149,7 @@ impl EventHandler for Handler {
                                         m.embed(|e| {
                                             e.title("The help is located here (Click Me)");
                                             e.url("https://amtitan.github.io/Anime-Bot/");
-                                            e.description("➤[Invite](https://discord.com/api/oauth2/authorize?client_id=833682899202080818&permissions=0&scope=bot) ➤[Server](https://discord.gg/sJnVmPZB7Y) ➤[Donate](https://www.patreon.com/AMTItan_Github) ➤[Github](https://github.com/AMTitan/Anime-Bot)");
+                                            e.description("➤[Invite](https://discord.com/api/oauth2/authorize?client_id=927745984065314816&permissions=0&scope=bot) ➤[Server](https://discord.gg/sJnVmPZB7Y) ➤[Donate](https://www.patreon.com/AMTItan_Github) ➤[Github](https://github.com/AMTitan/Anime-Bot)");
                                             e.colour(0x00ff00);
 
                                             e
