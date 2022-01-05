@@ -423,7 +423,7 @@ impl EventHandler for Handler {
                                 .channel_id
                                 .send_message(&ctx.http, |m| {
                                     m.embed(|e| {
-                                        e.title(format!("Sorry I could not find any img of this you can try doing `a!improve {} (reason)`", commands.join(" ")));
+                                        e.title(format!("Sorry I could not find any img of this you can try doing `a!improve {} (reason)`", commands_clone.join(" ")));
                                         e.colour(0x00ff00);
 
                                         e
