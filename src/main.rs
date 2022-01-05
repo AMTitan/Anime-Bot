@@ -573,7 +573,7 @@ impl EventHandler for Handler {
                                 .to_string(),
                         );
                 }
-        
+
                 command
             })
         })
