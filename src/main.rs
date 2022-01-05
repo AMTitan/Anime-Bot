@@ -66,7 +66,7 @@ lazy_static! {
     };
     static ref BANLIST: AsyncOnce<String> = AsyncOnce::new(async {
         return format!(
-            "+-{}+-asian-3d-photo_(medium)",
+            "+-{}+-asian+-3d+-photo_(medium)",
             request(
                 "https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt"
                     .to_string()
