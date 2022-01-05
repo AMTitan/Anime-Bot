@@ -561,21 +561,23 @@ impl EventHandler for Handler {
 
         ctx.set_activity(Activity::watching("a!help")).await;
 
-        for i in 0..CMDS.as_array().unwrap().len() {
-            let _ = ApplicationCommand::set_global_application_commands(&ctx.http, |commands| {
-                commands.create_application_command(|command| {
+        let _ = ApplicationCommand::set_global_application_commands(&ctx.http, |commands| {
+            commands.create_application_command(|command| {
+                for cmd in CMDS.as_array().unwrap() {
                     command
-                        .name(CMDS[i]["usage"].to_string().trim_matches('\"').to_string())
+                        .name(cmd["usage"].to_string().trim_matches('\"').to_string())
                         .description(
-                            CMDS[i]["description"]
+                            cmd["description"]
                                 .to_string()
                                 .trim_matches('\"')
                                 .to_string(),
-                        )
-                })
+                        );
+                }
+        
+                command
             })
-            .await;
-        }
+        })
+        .await;
     }
 }
 
