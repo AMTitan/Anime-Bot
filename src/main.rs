@@ -376,7 +376,7 @@ impl EventHandler for Handler {
                         let image = get_item(
                             request(
                                 replace_everything(
-                                    format!("https://$booru/index.php?page=dapi&s=post&q=index&limit=1000&tags=+{}$banlist&json=1", commands.join("+"))
+                                    format!("https://$booru/index.php?page=dapi&s=post&q=index&tags=+{}$banlist&json=1", commands.join("+"))
                                         .to_string()
                                         .trim_matches('\"')
                                         .to_string()
