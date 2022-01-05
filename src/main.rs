@@ -365,9 +365,13 @@ impl EventHandler for Handler {
                             serde_json::from_str("[\"random\",\"file_url\"]").unwrap();
                         let commands_clone = commands.clone();
                         for i in 0..commands.len() {
-                            if commands[i] == "safe" {commands[i] = "rating:safe"}
-                            else if commands[i] == "explicit" {commands[i] = "rating:explicit"}
-                            else if commands[i] == "questionable" {commands[i] = "rating:questionable"}
+                            if commands[i] == "safe" {
+                                commands[i] = "rating:safe"
+                            } else if commands[i] == "explicit" {
+                                commands[i] = "rating:explicit"
+                            } else if commands[i] == "questionable" {
+                                commands[i] = "rating:questionable"
+                            }
                         }
                         let image = get_item(
                             request(
