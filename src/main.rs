@@ -117,7 +117,20 @@ impl EventHandler for Handler {
                                 .unwrap())
                     {
                         let mut nsfw_error = false;
-                        if !((x.2 != "nsfw" && x.2 != "person")
+                        if commands.len() > 1 {
+                            if (x.3[commands[1]].to_string() != "null"
+                                && x.3[commands[1]]["nsfw"].as_bool().unwrap())
+                                || ctx
+                                    .http
+                                    .get_channel(msg.channel_id.0)
+                                    .await
+                                    .unwrap()
+                                    .is_nsfw()
+                                || msg.guild_id.is_none()
+                            {
+                                nsfw_error = true;
+                            }
+                        } else if !((x.2 != "nsfw" && x.2 != "person")
                             || ctx
                                 .http
                                 .get_channel(msg.channel_id.0)
