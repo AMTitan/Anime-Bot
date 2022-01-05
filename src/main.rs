@@ -117,20 +117,7 @@ impl EventHandler for Handler {
                                 .unwrap())
                     {
                         let mut nsfw_error = false;
-                        if commands.len() > 1 {
-                            if !(x.3[commands[1]] != Value::Null
-                                && !x.3[commands[1]]["nsfw"].as_bool().unwrap()
-                                || ctx
-                                    .http
-                                    .get_channel(msg.channel_id.0)
-                                    .await
-                                    .unwrap()
-                                    .is_nsfw()
-                                || msg.guild_id.is_none())
-                            {
-                                nsfw_error = true;
-                            }
-                        } else if !((x.2 != "nsfw" && x.2 != "person")
+                        if !((x.2 != "nsfw" && x.2 != "person")
                             || ctx
                                 .http
                                 .get_channel(msg.channel_id.0)
@@ -299,11 +286,19 @@ impl EventHandler for Handler {
                                     .send_message(&ctx.http, |m| {
                                         m.embed(|e| {
                                             e.title(commands.join(" "));
-                                            if image.ends_with(".jpg") || image.ends_with(".jpeg") || image.ends_with(".JPG") || image.ends_with(".JPEG") || image.ends_with(".PNG") || image.ends_with(".png") || image.ends_with(".gif") || image.ends_with(".gifv")  {
+                                            if image.ends_with(".jpg")
+                                                || image.ends_with(".jpeg")
+                                                || image.ends_with(".JPG")
+                                                || image.ends_with(".JPEG")
+                                                || image.ends_with(".PNG")
+                                                || image.ends_with(".png")
+                                                || image.ends_with(".gif")
+                                                || image.ends_with(".gifv")
+                                            {
                                                 e.image(image.replace(" ", "%20"));
                                             }
                                             e.colour(0x00ff00);
-    
+
                                             e
                                         });
                                         m
@@ -312,11 +307,16 @@ impl EventHandler for Handler {
                                 if let Err(why) = msg_ {
                                     println!("Error sending message: {:?}", why);
                                 }
-                                if !(image.ends_with(".jpg") || image.ends_with(".jpeg") || image.ends_with(".JPG") || image.ends_with(".JPEG") || image.ends_with(".PNG") || image.ends_with(".png") || image.ends_with(".gif") || image.ends_with(".gifv"))  {
-                                    let msg = msg
-                                        .channel_id
-                                        .say(&ctx.http, image)
-                                        .await;
+                                if !(image.ends_with(".jpg")
+                                    || image.ends_with(".jpeg")
+                                    || image.ends_with(".JPG")
+                                    || image.ends_with(".JPEG")
+                                    || image.ends_with(".PNG")
+                                    || image.ends_with(".png")
+                                    || image.ends_with(".gif")
+                                    || image.ends_with(".gifv"))
+                                {
+                                    let msg = msg.channel_id.say(&ctx.http, image).await;
                                     if let Err(why) = msg {
                                         println!("Error sending message: {:?}", why);
                                     }
@@ -372,7 +372,15 @@ impl EventHandler for Handler {
                                 .send_message(&ctx.http, |m| {
                                     m.embed(|e| {
                                         e.title(commands.join(" "));
-                                        if image.ends_with(".jpg") || image.ends_with(".jpeg") || image.ends_with(".JPG") || image.ends_with(".JPEG") || image.ends_with(".PNG") || image.ends_with(".png") || image.ends_with(".gif") || image.ends_with(".gifv")  {
+                                        if image.ends_with(".jpg")
+                                            || image.ends_with(".jpeg")
+                                            || image.ends_with(".JPG")
+                                            || image.ends_with(".JPEG")
+                                            || image.ends_with(".PNG")
+                                            || image.ends_with(".png")
+                                            || image.ends_with(".gif")
+                                            || image.ends_with(".gifv")
+                                        {
                                             e.image(image.replace(" ", "%20"));
                                         }
                                         e.colour(0x00ff00);
@@ -385,17 +393,21 @@ impl EventHandler for Handler {
                             if let Err(why) = msg_ {
                                 println!("Error sending message: {:?}", why);
                             }
-                            if !(image.ends_with(".jpg") || image.ends_with(".jpeg") || image.ends_with(".JPG") || image.ends_with(".JPEG") || image.ends_with(".PNG") || image.ends_with(".png") || image.ends_with(".gif") || image.ends_with(".gifv"))  {
-                                let msg = msg
-                                    .channel_id
-                                    .say(&ctx.http, image)
-                                    .await;
+                            if !(image.ends_with(".jpg")
+                                || image.ends_with(".jpeg")
+                                || image.ends_with(".JPG")
+                                || image.ends_with(".JPEG")
+                                || image.ends_with(".PNG")
+                                || image.ends_with(".png")
+                                || image.ends_with(".gif")
+                                || image.ends_with(".gifv"))
+                            {
+                                let msg = msg.channel_id.say(&ctx.http, image).await;
                                 if let Err(why) = msg {
                                     println!("Error sending message: {:?}", why);
                                 }
                             }
-                        }
-                        else {
+                        } else {
                             let msg = msg
                                 .channel_id
                                 .send_message(&ctx.http, |m| {
@@ -441,9 +453,7 @@ impl EventHandler for Handler {
                 command.data.name.as_str()
             );
             let re = Regex::new(r"\s+").unwrap();
-            let commands: Vec<&str> = re
-                .split(command.data.name.as_str().trim())
-                .collect();
+            let commands: Vec<&str> = re.split(command.data.name.as_str().trim()).collect();
             if CMDS_HASH.contains_key(commands[0]) {
                 let x = &CMDS_HASH[commands[0]];
                 let mut nsfw_error = false;
@@ -530,15 +540,16 @@ impl EventHandler for Handler {
 
         for i in 0..CMDS.as_array().unwrap().len() {
             let _ = ApplicationCommand::set_global_application_commands(&ctx.http, |commands| {
-                commands
-                    .create_application_command(|command| {
-                    command.name(CMDS[i]["usage"].to_string().trim_matches('\"').to_string())
-                    .description(
-                        CMDS[i]["description"]
-                            .to_string()
-                            .trim_matches('\"')
-                            .to_string(),
-                    )})
+                commands.create_application_command(|command| {
+                    command
+                        .name(CMDS[i]["usage"].to_string().trim_matches('\"').to_string())
+                        .description(
+                            CMDS[i]["description"]
+                                .to_string()
+                                .trim_matches('\"')
+                                .to_string(),
+                        )
+                })
             })
             .await;
         }
