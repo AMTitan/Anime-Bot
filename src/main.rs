@@ -299,14 +299,11 @@ impl EventHandler for Handler {
                                     .send_message(&ctx.http, |m| {
                                         m.embed(|e| {
                                             e.title(commands.join(" "));
-                                            if image.ends_with(".jpg")
-                                                || image.ends_with(".jpeg")
-                                                || image.ends_with(".JPG")
-                                                || image.ends_with(".JPEG")
-                                                || image.ends_with(".PNG")
-                                                || image.ends_with(".png")
-                                                || image.ends_with(".gif")
-                                                || image.ends_with(".gifv")
+                                            if image.to_ascii_lowercase().ends_with(".jpg")
+                                                || image.to_ascii_lowercase().ends_with(".jpeg")
+                                                || image.to_ascii_lowercase().ends_with(".png")
+                                                || image.to_ascii_lowercase().ends_with(".gif")
+                                                || image.to_ascii_lowercase().ends_with(".gifv")
                                             {
                                                 e.image(image.replace(" ", "%20"));
                                             }
@@ -320,14 +317,11 @@ impl EventHandler for Handler {
                                 if let Err(why) = msg_ {
                                     println!("Error sending message: {:?}", why);
                                 }
-                                if !(image.ends_with(".jpg")
-                                    || image.ends_with(".jpeg")
-                                    || image.ends_with(".JPG")
-                                    || image.ends_with(".JPEG")
-                                    || image.ends_with(".PNG")
-                                    || image.ends_with(".png")
-                                    || image.ends_with(".gif")
-                                    || image.ends_with(".gifv"))
+                                if !(image.to_ascii_lowercase().ends_with(".jpg")
+                                    || image.to_ascii_lowercase().ends_with(".jpeg")
+                                    || image.to_ascii_lowercase().ends_with(".png")
+                                    || image.to_ascii_lowercase().ends_with(".gif")
+                                    || image.to_ascii_lowercase().ends_with(".gifv"))
                                 {
                                     let msg = msg.channel_id.say(&ctx.http, image).await;
                                     if let Err(why) = msg {
@@ -395,14 +389,11 @@ impl EventHandler for Handler {
                                 .send_message(&ctx.http, |m| {
                                     m.embed(|e| {
                                         e.title(commands_clone.join(" "));
-                                        if image.ends_with(".jpg")
-                                            || image.ends_with(".jpeg")
-                                            || image.ends_with(".JPG")
-                                            || image.ends_with(".JPEG")
-                                            || image.ends_with(".PNG")
-                                            || image.ends_with(".png")
-                                            || image.ends_with(".gif")
-                                            || image.ends_with(".gifv")
+                                        if image.to_ascii_lowercase().ends_with(".jpg")
+                                            || image.to_ascii_lowercase().ends_with(".jpeg")
+                                            || image.to_ascii_lowercase().ends_with(".png")
+                                            || image.to_ascii_lowercase().ends_with(".gif")
+                                            || image.to_ascii_lowercase().ends_with(".gifv")
                                         {
                                             e.image(image.replace(" ", "%20"));
                                         }
@@ -416,14 +407,11 @@ impl EventHandler for Handler {
                             if let Err(why) = msg_ {
                                 println!("Error sending message: {:?}", why);
                             }
-                            if !(image.ends_with(".jpg")
-                                || image.ends_with(".jpeg")
-                                || image.ends_with(".JPG")
-                                || image.ends_with(".JPEG")
-                                || image.ends_with(".PNG")
-                                || image.ends_with(".png")
-                                || image.ends_with(".gif")
-                                || image.ends_with(".gifv"))
+                            if !(image.to_ascii_lowercase().ends_with(".jpg")
+                                || image.to_ascii_lowercase().ends_with(".jpeg")
+                                || image.to_ascii_lowercase().ends_with(".png")
+                                || image.to_ascii_lowercase().ends_with(".gif")
+                                || image.to_ascii_lowercase().ends_with(".gifv"))
                             {
                                 let msg = msg.channel_id.say(&ctx.http, image).await;
                                 if let Err(why) = msg {
