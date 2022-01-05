@@ -363,6 +363,12 @@ impl EventHandler for Handler {
                     {
                         let array: Value =
                             serde_json::from_str("[\"random\",\"file_url\"]").unwrap();
+                        let commands_clone = commands.clone();
+                        for i in 0..commands.len() {
+                            if commands[i] == "safe" {commands[i] = "rating:safe"}
+                            else if commands[i] == "explicit" {commands[i] = "rating:explicit"}
+                            else if commands[i] == "questionable" {commands[i] = "rating:questionable"}
+                        }
                         let image = get_item(
                             request(
                                 replace_everything(
@@ -384,7 +390,7 @@ impl EventHandler for Handler {
                                 .channel_id
                                 .send_message(&ctx.http, |m| {
                                     m.embed(|e| {
-                                        e.title(commands.join(" "));
+                                        e.title(commands_clone.join(" "));
                                         if image.ends_with(".jpg")
                                             || image.ends_with(".jpeg")
                                             || image.ends_with(".JPG")
