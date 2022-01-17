@@ -117,20 +117,23 @@ impl EventHandler for Handler {
                                 .unwrap())
                     {
                         let mut nsfw_error = false;
-                        if msg.guild_id.is_some() && !ctx
-                        .http
-                        .get_channel(msg.channel_id.0)
-                        .await
-                        .unwrap()
-                        .is_nsfw() {
+                        if msg.guild_id.is_some()
+                            && !ctx
+                                .http
+                                .get_channel(msg.channel_id.0)
+                                .await
+                                .unwrap()
+                                .is_nsfw()
+                        {
                             if commands.len() > 1 {
                                 if (x.3[commands[1]].to_string() != "null"
-                                    && x.3[commands[1]]["nsfw"].as_bool().unwrap()) || (x.3[commands[1]].to_string() == "null" && (x.2 == "nsfw" || x.2 == "person"))
+                                    && x.3[commands[1]]["nsfw"].as_bool().unwrap())
+                                    || (x.3[commands[1]].to_string() == "null"
+                                        && (x.2 == "nsfw" || x.2 == "person"))
                                 {
                                     nsfw_error = true;
                                 }
-                            } else if x.2 == "nsfw" || x.2 == "person"
-                            {
+                            } else if x.2 == "nsfw" || x.2 == "person" {
                                 nsfw_error = true;
                             }
                         }
