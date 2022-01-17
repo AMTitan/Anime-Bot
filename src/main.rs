@@ -137,7 +137,6 @@ impl EventHandler for Handler {
                                 nsfw_error = true;
                             }
                         }
-                        println!("{}", nsfw_error);
                         if !nsfw_error {
                             if commands[0] == "help" {
                                 let msg = msg
