@@ -117,30 +117,24 @@ impl EventHandler for Handler {
                                 .unwrap())
                     {
                         let mut nsfw_error = false;
-                        if commands.len() > 1 {
-                            if (x.3[commands[1]].to_string() != "null"
-                                && x.3[commands[1]]["nsfw"].as_bool().unwrap())
-                                || ctx
-                                    .http
-                                    .get_channel(msg.channel_id.0)
-                                    .await
-                                    .unwrap()
-                                    .is_nsfw()
-                                || msg.guild_id.is_none()
+                        if msg.guild_id.is_some() && !ctx
+                        .http
+                        .get_channel(msg.channel_id.0)
+                        .await
+                        .unwrap()
+                        .is_nsfw() {
+                            if commands.len() > 1 {
+                                if (x.3[commands[1]].to_string() != "null"
+                                    && x.3[commands[1]]["nsfw"].as_bool().unwrap()) || (x.3[commands[1]].to_string() == "null" && (x.2 == "nsfw" || x.2 == "person"))
+                                {
+                                    nsfw_error = true;
+                                }
+                            } else if x.2 == "nsfw" || x.2 == "person"
                             {
                                 nsfw_error = true;
                             }
-                        } else if !((x.2 != "nsfw" && x.2 != "person")
-                            || ctx
-                                .http
-                                .get_channel(msg.channel_id.0)
-                                .await
-                                .unwrap()
-                                .is_nsfw()
-                            || msg.guild_id.is_none())
-                        {
-                            nsfw_error = true;
                         }
+                        println!("{}", nsfw_error);
                         if !nsfw_error {
                             if commands[0] == "help" {
                                 let msg = msg
@@ -276,7 +270,7 @@ impl EventHandler for Handler {
                                     .unwrap(),
                                     x.1,
                                 );
-                                if commands.len() > 1 && x.3[commands[1]] != Value::Null {
+                                if commands.len() > 1 && x.3[commands[1]].to_string() != "null" {
                                     image = get_item(
                                         request(
                                             replace_everything(
@@ -469,7 +463,7 @@ impl EventHandler for Handler {
                 let x = &CMDS_HASH[commands[0]];
                 let mut nsfw_error = false;
                 if commands.len() > 1 {
-                    if !(x.3[commands[1]] != Value::Null
+                    if !(x.3[commands[1]].to_string() != "null"
                         && !x.3[commands[1]]["nsfw"].as_bool().unwrap()
                         || ctx
                             .http
