@@ -433,6 +433,18 @@
     ]
   },
   {
+    "description": "Gives you a images of a catboy",
+    "usage": "catboy",
+    "aliases": ["cb"],
+    "type": "sfw",
+    "optinal": "",
+    "url": "./Images/catboy/images.txt",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
     "description": "Gives you a images of clothed sex",
     "usage": "clothed_sex",
     "aliases": [

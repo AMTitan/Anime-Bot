@@ -3,6 +3,7 @@ extern crate lazy_static;
 
 use async_once::AsyncOnce;
 use chrono::Utc;
+use rand::prelude::SliceRandom;
 use rand::Rng;
 use regex::Regex;
 use serde_json::Value;
@@ -22,6 +23,8 @@ use serenity::{
 use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
+use std::io::BufRead;
+use std::io::BufReader;
 use std::io::Write;
 
 lazy_static! {
@@ -257,29 +260,27 @@ impl EventHandler for Handler {
                                     println!("Error sending message: {:?}", why);
                                 }
                             } else {
-                                let mut image = get_item(
-                                    request(
-                                        replace_everything(
-                                            x.0.to_string()
-                                                .trim_matches('\"')
-                                                .to_string()
-                                                .to_string()
-                                                .replace(" ", "%20"),
-                                        )
-                                        .await,
-                                    )
-                                    .await
-                                    .unwrap(),
-                                    x.1,
-                                );
-                                if commands.len() > 1 && x.3[commands[1]].to_string() != "null" {
+                                let mut image;
+                                if x.0
+                                    .to_string()
+                                    .trim_matches('\"')
+                                    .to_string()
+                                    .ends_with(".txt")
+                                {
+                                    let reader = BufReader::new(
+                                        File::open(x.0.to_string().trim_matches('\"').to_string())
+                                            .unwrap(),
+                                    );
+                                    let lines: Vec<String> =
+                                        reader.lines().collect::<Result<_, _>>().unwrap();
+                                    image =
+                                        lines.choose(&mut rand::thread_rng()).unwrap().to_string();
+                                } else {
                                     image = get_item(
                                         request(
                                             replace_everything(
-                                                x.clone().3[commands[1]]["url"]
-                                                    .to_string()
+                                                x.0.to_string()
                                                     .trim_matches('\"')
-                                                    .to_string()
                                                     .to_string()
                                                     .replace(" ", "%20"),
                                             )
@@ -287,9 +288,50 @@ impl EventHandler for Handler {
                                         )
                                         .await
                                         .unwrap(),
-                                        x.3[commands[1]]["json_rout"].as_array().unwrap(),
+                                        x.1,
                                     );
                                 }
+                                if commands.len() > 1 && x.3[commands[1]].to_string() != "null" {
+                                    if x.clone().3[commands[1]]["url"]
+                                        .to_string()
+                                        .trim_matches('\"')
+                                        .to_string()
+                                        .ends_with(".txt")
+                                    {
+                                        let reader = BufReader::new(
+                                            File::open(
+                                                x.clone().3[commands[1]]["url"]
+                                                    .to_string()
+                                                    .trim_matches('\"')
+                                                    .to_string(),
+                                            )
+                                            .unwrap(),
+                                        );
+                                        let lines: Vec<String> =
+                                            reader.lines().collect::<Result<_, _>>().unwrap();
+                                        image = lines
+                                            .choose(&mut rand::thread_rng())
+                                            .unwrap()
+                                            .to_string();
+                                    } else {
+                                        image = get_item(
+                                            request(
+                                                replace_everything(
+                                                    x.clone().3[commands[1]]["url"]
+                                                        .to_string()
+                                                        .trim_matches('\"')
+                                                        .to_string()
+                                                        .replace(" ", "%20"),
+                                                )
+                                                .await,
+                                            )
+                                            .await
+                                            .unwrap(),
+                                            x.3[commands[1]]["json_rout"].as_array().unwrap(),
+                                        );
+                                    }
+                                }
+                                image = image.trim().to_string();
                                 let msg_ = msg
                                     .channel_id
                                     .send_message(&ctx.http, |m| {
