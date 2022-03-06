@@ -141,7 +141,7 @@ impl EventHandler for Handler {
                             }
                         }
                         if !nsfw_error {
-                            if commands[0] == "help" {
+                            if commands[0] == "help" || commands[0] == "commands" {
                                 let msg = msg
                                     .channel_id
                                     .send_message(&ctx.http, |m| {
