@@ -385,27 +385,28 @@ impl EventHandler for Handler {
                         }
                     }
                 } else {
-                    if ctx
+                    let array: Value = serde_json::from_str("[\"random\",\"file_url\"]").unwrap();
+                    let commands_clone = commands.clone();
+                    if !ctx
                         .http
                         .get_channel(msg.channel_id.0)
                         .await
                         .unwrap()
                         .is_nsfw()
-                        || msg.guild_id.is_none()
+                        && msg.guild_id.is_some()
                     {
-                        let array: Value =
-                            serde_json::from_str("[\"random\",\"file_url\"]").unwrap();
-                        let commands_clone = commands.clone();
-                        for i in 0..commands.len() {
-                            if commands[i] == "safe" {
-                                commands[i] = "rating:safe"
-                            } else if commands[i] == "explicit" {
-                                commands[i] = "rating:explicit"
-                            } else if commands[i] == "questionable" {
-                                commands[i] = "rating:questionable"
-                            }
+                        commands.push("rating:safe");
+                    }
+                    for i in 0..commands.len() {
+                        if commands[i] == "safe" {
+                            commands[i] = "rating:safe"
+                        } else if commands[i] == "explicit" {
+                            commands[i] = "rating:explicit"
+                        } else if commands[i] == "questionable" {
+                            commands[i] = "rating:questionable"
                         }
-                        let image = get_item(
+                    }
+                    let image = get_item(
                             request(
                                 replace_everything(
                                     format!("https://$booru/index.php?page=dapi&s=post&q=index&tags=+{}$banlist&json=1", commands.join("+"))
@@ -421,70 +422,65 @@ impl EventHandler for Handler {
                             .unwrap(),
                             array.as_array().unwrap(),
                         );
-                        if image != "Null" {
-                            let msg_ = msg
-                                .channel_id
-                                .send_message(&ctx.http, |m| {
-                                    m.embed(|e| {
-                                        e.title(commands_clone.join(" "));
-                                        if image.to_ascii_lowercase().ends_with(".jpg")
-                                            || image.to_ascii_lowercase().ends_with(".jpeg")
-                                            || image.to_ascii_lowercase().ends_with(".png")
-                                            || image.to_ascii_lowercase().ends_with(".gif")
-                                            || image.to_ascii_lowercase().ends_with(".gifv")
-                                        {
-                                            e.image(image.replace(" ", "%20"));
-                                        }
-                                        e.colour(0x00ff00);
-
-                                        e
-                                    });
-                                    m
-                                })
-                                .await;
-                            if let Err(why) = msg_ {
-                                println!("Error sending message: {:?}", why);
-                            }
-                            if !(image.to_ascii_lowercase().ends_with(".jpg")
-                                || image.to_ascii_lowercase().ends_with(".jpeg")
-                                || image.to_ascii_lowercase().ends_with(".png")
-                                || image.to_ascii_lowercase().ends_with(".gif")
-                                || image.to_ascii_lowercase().ends_with(".gifv"))
-                            {
-                                let msg = msg.channel_id.say(&ctx.http, image).await;
-                                if let Err(why) = msg {
-                                    println!("Error sending message: {:?}", why);
-                                }
-                            }
-                        } else {
-                            let msg = msg
-                                .channel_id
-                                .send_message(&ctx.http, |m| {
-                                    m.embed(|e| {
-                                        e.title(format!("Sorry I could not find any img of this you can try doing `a!improve {} (reason)`", commands_clone.join(" ")));
-                                        e.colour(0x00ff00);
-
-                                        e
-                                    });
-                                    m
-                                })
-                                .await;
-                            if let Err(why) = msg {
-                                println!("Error sending message: {:?}", why);
-                            }
-                        }
-                    } else {
-                        let msg = msg
+                    if image != "Null" {
+                        let msg_ = msg
                             .channel_id
                             .send_message(&ctx.http, |m| {
                                 m.embed(|e| {
-                                    e.title("sorry but the channel is not marked as nsfw (to make it nsfw go to the channel settings and make nsfw on) or you can always use the bot in dms!");
+                                    e.title(commands_clone.join(" "));
+                                    if image.to_ascii_lowercase().ends_with(".jpg")
+                                        || image.to_ascii_lowercase().ends_with(".jpeg")
+                                        || image.to_ascii_lowercase().ends_with(".png")
+                                        || image.to_ascii_lowercase().ends_with(".gif")
+                                        || image.to_ascii_lowercase().ends_with(".gifv")
+                                    {
+                                        e.image(image.replace(" ", "%20"));
+                                    }
                                     e.colour(0x00ff00);
+
                                     e
                                 });
                                 m
                             })
                             .await;
+                        if let Err(why) = msg_ {
+                            println!("Error sending message: {:?}", why);
+                        }
+                        if !(image.to_ascii_lowercase().ends_with(".jpg")
+                            || image.to_ascii_lowercase().ends_with(".jpeg")
+                            || image.to_ascii_lowercase().ends_with(".png")
+                            || image.to_ascii_lowercase().ends_with(".gif")
+                            || image.to_ascii_lowercase().ends_with(".gifv"))
+                        {
+                            let msg = msg.channel_id.say(&ctx.http, image).await;
+                            if let Err(why) = msg {
+                                println!("Error sending message: {:?}", why);
+                            }
+                        }
+                    } else {
+                        let mut add = "";
+                        if !ctx
+                        .http
+                        .get_channel(msg.channel_id.0)
+                        .await
+                        .unwrap()
+                        .is_nsfw()
+                        && msg.guild_id.is_some()
+                    {
+                        add = ", but you are not in a nsfw channel so you can try it there to see if you get a different result. If you still think this is an error"
+                    }
+                        let msg = msg
+                                .channel_id
+                                .send_message(&ctx.http, |m| {
+                                    m.embed(|e| {
+                                        e.title(format!("Sorry I could not find any img of this{} you can try doing `a!improve {} (reason)`", add, commands_clone.join(" ")));
+                                        e.colour(0x00ff00);
+
+                                        e
+                                    });
+                                    m
+                                })
+                                .await;
                         if let Err(why) = msg {
                             println!("Error sending message: {:?}", why);
                         }
