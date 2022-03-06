@@ -1,0 +1,20 @@
+on: [push]
+name: build
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: format json
+      run: |-
+        jq ".|=sort_by(.usage)" src/cmds.json > sorted.json; mv sorted.json src/cmds.json
+    - name: Commit and push changes
+      run: |-
+        git diff
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git diff --quiet || (git add -A && git commit -m "Updated with latest")
+        git push
