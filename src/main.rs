@@ -108,8 +108,17 @@ impl EventHandler for Handler {
                 let re = Regex::new(r"\s+").unwrap();
                 let mut commands: Vec<&str> =
                     re.split(content[2..msg.content.len()].trim()).collect();
+                let mut x: Option<&(String, &'static Vec<Value>, String, Value)> = None;
                 if CMDS_HASH.contains_key(commands[0]) {
-                    let x = &CMDS_HASH[commands[0]];
+                    x = Some(&CMDS_HASH[commands[0]]);
+                }
+                if CMDS_HASH.contains_key(commands[0])
+                    && match x {
+                        Some(x) => x.2 != "search".to_string(),
+                        None => true,
+                    }
+                {
+                    let x = x.unwrap();
                     if !(x.2 == "client.owner"
                         && msg.author.id.0
                             != CONFIG["Owner_id"]
@@ -387,6 +396,9 @@ impl EventHandler for Handler {
                 } else {
                     let array: Value = serde_json::from_str("[\"random\",\"file_url\"]").unwrap();
                     let commands_clone = commands.clone();
+                    if x.is_some() {
+                        commands.remove(0);
+                    }
                     if !ctx
                         .http
                         .get_channel(msg.channel_id.0)
@@ -406,23 +418,36 @@ impl EventHandler for Handler {
                             commands[i] = "rating:questionable"
                         }
                     }
-                    let image = get_item(
-                            request(
-                                replace_everything(
-                                    format!("https://$booru/index.php?page=dapi&s=post&q=index&tags=+{}$banlist&json=1", commands.join("+"))
-                                        .to_string()
-                                        .trim_matches('\"')
-                                        .to_string()
-                                        .to_string()
-                                        .replace(" ", "%20"),
-                                )
-                                .await,
-                            )
-                            .await
-                            .unwrap(),
-                            array.as_array().unwrap(),
-                        );
-                    if image != "Null" {
+                    let cont = request(
+                        replace_everything(
+                            format!("https://$booru?page=dapi&s=post&q=index&tags=+{}$banlist&json=1", commands.join("+"))
+                                .to_string()
+                                .trim_matches('\"')
+                                .to_string()
+                                .replace(" ", "%20")
+                                .replace("$booru", match x {
+                                    Some(x) => {let url = &x.0;
+                                        url
+                                    .trim_matches('\"')},
+                                    None => "$booru"
+                                }),
+                        )
+                        .await,
+                    )
+                    .await
+                    .unwrap();
+                    let image = if cont.clone().trim() != "" {
+                        get_item(
+                            cont.clone(),
+                            match x {
+                                Some(x) => x.1,
+                                None => array.as_array().unwrap(),
+                            },
+                        )
+                    } else {
+                        "Null".to_string()
+                    };
+                    if image != "Null" && cont.trim() != "" {
                         let msg_ = msg
                             .channel_id
                             .send_message(&ctx.http, |m| {
@@ -460,15 +485,15 @@ impl EventHandler for Handler {
                     } else {
                         let mut add = "";
                         if !ctx
-                        .http
-                        .get_channel(msg.channel_id.0)
-                        .await
-                        .unwrap()
-                        .is_nsfw()
-                        && msg.guild_id.is_some()
-                    {
-                        add = ", but you are not in a nsfw channel so you can try it there to see if you get a different result. If you still think this is an error"
-                    }
+                            .http
+                            .get_channel(msg.channel_id.0)
+                            .await
+                            .unwrap()
+                            .is_nsfw()
+                            && msg.guild_id.is_some()
+                        {
+                            add = ", but you are not in a nsfw channel so you can try it there to see if you get a different result. If you still think this is an error"
+                        }
                         let msg = msg
                                 .channel_id
                                 .send_message(&ctx.http, |m| {
@@ -635,6 +660,6 @@ async fn request(url: String) -> Result<String, Box<dyn std::error::Error>> {
 async fn replace_everything(start: String) -> String {
     start
         .replace("$banlist", BANLIST.get().await)
-        //.replace("$booru", "rule34.xxx") // has more extreme images but then sometimes they are not as good
-        .replace("$booru", "gelbooru.com") // has softer images but then if you want more hard you dont really get it
+        //.replace("$booru", "rule34.xxx/index.php") // has more extreme images but then sometimes they are not as good
+        .replace("$booru", "gelbooru.com/index.php") // has softer images but then if you want more hard you dont really get it
 }

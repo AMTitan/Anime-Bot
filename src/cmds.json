@@ -25,54 +25,6 @@
     ]
   },
   {
-    "description": "Gives you a images of asuna (sword art online)",
-    "usage": "asuna",
-    "aliases": [],
-    "type": "person",
-    "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asuna_(sao)$banlist&json=1",
-    "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
-    "description": "Gives you a images of ochaco (My hero academia)",
-    "usage": "ochaco",
-    "aliases": [],
-    "type": "person",
-    "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+uraraka_ochako$banlist&json=1",
-    "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
-    "description": "Gives you a images of hitagi (monogatari)",
-    "usage": "hitagi",
-    "aliases": [],
-    "type": "person",
-    "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+senjougahara_hitagi$banlist&json=1",
-    "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
-    "description": "Gives you a images of tsuyu (My hero academia)",
-    "usage": "tsuyu",
-    "aliases": [],
-    "type": "person",
-    "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asui_tsuyu$banlist&json=1",
-    "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
     "description": "Gives you a images of abigail (fate/grand order)",
     "usage": "abigail",
     "aliases": [],
@@ -172,20 +124,6 @@
     ]
   },
   {
-    "description": "Gives you a images of armpit_licking",
-    "usage": "armpit_licking",
-    "aliases": [
-      "armpitlicking"
-    ],
-    "type": "nsfw",
-    "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpit_licking$banlist&json=1",
-    "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
     "description": "Gives you a images of armpits",
     "usage": "armpit",
     "aliases": [
@@ -194,6 +132,20 @@
     "type": "nsfw",
     "optinal": "",
     "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpits$banlist&json=1",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
+    "description": "Gives you a images of armpit_licking",
+    "usage": "armpit_licking",
+    "aliases": [
+      "armpitlicking"
+    ],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpit_licking$banlist&json=1",
     "json_rout": [
       "random",
       "file_url"
@@ -240,6 +192,18 @@
     "type": "person",
     "optinal": "",
     "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+astolfo_(fate)$banlist&json=1",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
+    "description": "Gives you a images of asuna (sword art online)",
+    "usage": "asuna",
+    "aliases": [],
+    "type": "person",
+    "optinal": "",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asuna_(sao)$banlist&json=1",
     "json_rout": [
       "random",
       "file_url"
@@ -435,7 +399,9 @@
   {
     "description": "Gives you a images of a catboy",
     "usage": "catboy",
-    "aliases": ["cb"],
+    "aliases": [
+      "cb"
+    ],
     "type": "sfw",
     "optinal": "",
     "url": "./Images/catboy/images.txt",
@@ -882,22 +848,6 @@
     ]
   },
   {
-    "description": "Gives you a footjob gif",
-    "usage": "footjob",
-    "aliases": [
-      "feetjob",
-      "fj"
-    ],
-    "type": "nsfw",
-    "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/feet/",
-    "json_rout": [
-      "data",
-      "response",
-      "url"
-    ]
-  },
-  {
     "description": "Gives you a female dominance image",
     "usage": "femdom",
     "aliases": [
@@ -940,6 +890,22 @@
     ]
   },
   {
+    "description": "Gives you a footjob gif",
+    "usage": "footjob",
+    "aliases": [
+      "feetjob",
+      "fj"
+    ],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/feet/",
+    "json_rout": [
+      "data",
+      "response",
+      "url"
+    ]
+  },
+  {
     "description": "Gives you a images of formidable (azur_lane)",
     "usage": "formidable",
     "aliases": [],
@@ -977,6 +943,18 @@
       "data",
       "response",
       "url"
+    ]
+  },
+  {
+    "description": "Search gelbooru",
+    "usage": "gelbooru",
+    "aliases": [],
+    "type": "search",
+    "optinal": "(tags)",
+    "url": "gelbooru.com/index.php",
+    "json_rout": [
+      "random",
+      "file_url"
     ]
   },
   {
@@ -1103,6 +1081,18 @@
     "type": "person",
     "optinal": "",
     "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+hinata_hyuuga$banlist&json=1",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
+    "description": "Gives you a images of hitagi (monogatari)",
+    "usage": "hitagi",
+    "aliases": [],
+    "type": "person",
+    "optinal": "",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+senjougahara_hitagi$banlist&json=1",
     "json_rout": [
       "random",
       "file_url"
@@ -1265,6 +1255,22 @@
     ]
   },
   {
+    "description": "Gives you a kemo image",
+    "usage": "kemo",
+    "aliases": [
+      "kemo_lewd",
+      "kemo_nsfw"
+    ],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "https://api.nekos.dev/api/v3/images/nsfw/img/kemonomimi_lewd",
+    "json_rout": [
+      "data",
+      "response",
+      "url"
+    ]
+  },
+  {
     "description": "Gives you a kemonomimi image",
     "usage": "kemonomimi",
     "aliases": [
@@ -1346,6 +1352,20 @@
     ]
   },
   {
+    "description": "Search konachan",
+    "usage": "konachan",
+    "aliases": [
+      "wallpaper"
+    ],
+    "type": "search",
+    "optinal": "(tags)",
+    "url": "konachan.com/post.json",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
     "description": "Gives you a kuni gif",
     "usage": "kuni",
     "aliases": [],
@@ -1391,22 +1411,6 @@
     "optinal": "",
     "url": "",
     "json_rout": []
-  },
-  {
-    "description": "Gives you a kemo image",
-    "usage": "kemo",
-    "aliases": [
-      "kemo_lewd",
-      "kemo_nsfw"
-    ],
-    "type": "nsfw",
-    "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/img/kemonomimi_lewd",
-    "json_rout": [
-      "data",
-      "response",
-      "url"
-    ]
   },
   {
     "description": "Gives you a lick gif",
@@ -1669,6 +1673,18 @@
     ]
   },
   {
+    "description": "Gives you a images of ochaco (My hero academia)",
+    "usage": "ochaco",
+    "aliases": [],
+    "type": "person",
+    "optinal": "",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+uraraka_ochako$banlist&json=1",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
     "description": "Gives you a images of okita (fate_all)",
     "usage": "okita",
     "aliases": [],
@@ -1862,21 +1878,6 @@
     }
   },
   {
-    "description": "Gives you a images of squirt",
-    "usage": "squirt",
-    "aliases": [
-      "pussy_juice",
-      "pussyjuice"
-    ],
-    "type": "nsfw",
-    "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pussy_juice$banlist&json=1",
-    "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
     "description": "Gives you a quote",
     "usage": "quote",
     "aliases": [
@@ -1984,6 +1985,20 @@
     ]
   },
   {
+    "description": "Search rule34",
+    "usage": "rule34",
+    "aliases": [
+      "34"
+    ],
+    "type": "search",
+    "optinal": "(tags)",
+    "url": "api.rule34.xxx/index.php",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
     "description": "Gives you a images of saint_martha (fate/grand order)",
     "usage": "saint_martha",
     "aliases": [
@@ -2036,17 +2051,6 @@
       "random",
       "file_url"
     ]
-  },
-  {
-    "description": "Search for anything you want",
-    "usage": "search",
-    "aliases": [
-      "searchs"
-    ],
-    "type": "sfw",
-    "optinal": "(tags)",
-    "url": "",
-    "json_rout": []
   },
   {
     "description": "Gives you the server invite link",
@@ -2196,6 +2200,21 @@
       "data",
       "response",
       "url"
+    ]
+  },
+  {
+    "description": "Gives you a images of squirt",
+    "usage": "squirt",
+    "aliases": [
+      "pussy_juice",
+      "pussyjuice"
+    ],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pussy_juice$banlist&json=1",
+    "json_rout": [
+      "random",
+      "file_url"
     ]
   },
   {
@@ -2349,6 +2368,18 @@
     ]
   },
   {
+    "description": "Gives you a images of tsuyu (My hero academia)",
+    "usage": "tsuyu",
+    "aliases": [],
+    "type": "person",
+    "optinal": "",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asui_tsuyu$banlist&json=1",
+    "json_rout": [
+      "random",
+      "file_url"
+    ]
+  },
+  {
     "description": "Gives you a images of twintails",
     "usage": "twintails",
     "aliases": [],
@@ -2421,30 +2452,6 @@
     "json_rout": [
       "url"
     ]
-  },
-  {
-    "description": "Gives you a wallpaper",
-    "usage": "wallpaper",
-    "aliases": [
-      "wallpapers"
-    ],
-    "type": "other",
-    "optinal": "(nsfw)",
-    "url": "https://akaneko-api.herokuapp.com/api/wallpapers",
-    "json_rout": [
-      "url"
-    ],
-    "arg": {
-      "nsfw": {
-        "url": "https://akaneko-api.herokuapp.com/api/nsfwwallpapers",
-        "json_rout": [
-          "data",
-          "response",
-          "url"
-        ],
-        "nsfw": true
-      }
-    }
   },
   {
     "description": "Gives you a images of xuanzang (fate/grand order)",

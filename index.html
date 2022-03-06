@@ -72,9 +72,9 @@
     
     <script>
         var lastSelected = "sfw";
+        const types = ["sfw", "nsfw", "games", "person", "other", "search"];
         function load(string) {
             $.getJSON('src/cmds.json', function(data) {
-                const types = ["sfw", "nsfw", "games", "person", "other"];
                 types.forEach(item => {
                     document.getElementById(item).style.color = "#212529";
                 });
@@ -102,7 +102,6 @@
             else {
                 var x = document.getElementById("form1").value.toLowerCase();
                 $.getJSON('src/cmds.json', function(data) {
-                    const types = ["sfw", "nsfw", "games", "person", "other"];
                     types.forEach(item => {
                         document.getElementById(item).style.color = "#212529";
                     });
@@ -149,6 +148,7 @@
             <a id="games" onclick="load('games')" class="btn">Games</a>
             <a id="person" onclick="load('person')" class="btn">People</a>
             <a id="other" onclick="load('other')" class="btn">Other</a>
+            <a id="search" onclick="load('search')" class="btn">Search</a>
             <br>
             <br>
             <div class="form-outline mx-auto" style="max-width: 350px">
