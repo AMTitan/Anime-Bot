@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate lazy_static;
 
+use reqwest::header::USER_AGENT;
 use async_once::AsyncOnce;
 use chrono::Utc;
 use rand::prelude::SliceRandom;
@@ -418,18 +419,24 @@ impl EventHandler for Handler {
                             commands[i] = "rating:questionable"
                         }
                     }
+                    let mut returns;
                     let cont = request(
                         replace_everything(
-                            format!("https://$booru?page=dapi&s=post&q=index&tags=+{}$banlist&json=1", commands.join("+"))
+                            format!("https://$boorus=post&q=index&tags=+{}$banlist&json=1", commands.join("+"))
                                 .to_string()
                                 .trim_matches('\"')
                                 .to_string()
                                 .replace(" ", "%20")
                                 .replace("$booru", match x {
                                     Some(x) => {let url = &x.0;
-                                        url
-                                    .trim_matches('\"')},
-                                    None => "$booru"
+                                        returns = if url.trim_matches('\"').ends_with(".json") {
+                                            format!("{}?",url.trim_matches('\"'))
+                                        }
+                                        else {
+                                            format!("{}?page=dapi&",url.trim_matches('\"'))
+                                        };
+                                    &returns},
+                                    None => "$booru?page=dapi&"
                                 }),
                         )
                         .await,
@@ -653,7 +660,8 @@ fn set_cont(loc: String, cont: String) -> std::io::Result<()> {
 }
 
 async fn request(url: String) -> Result<String, Box<dyn std::error::Error>> {
-    let resp = reqwest::get(&url).await?;
+    let client = reqwest::Client::new();
+    let resp = client.get(&url).header(USER_AGENT, "Anime Bot (github: https://github.com/AMTitan/Anime-Bot)").send().await?;
     Ok(resp.text().await?)
 }
 

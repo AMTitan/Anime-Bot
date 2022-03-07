@@ -958,6 +958,20 @@
     ]
   },
   {
+    "description": "Search e621",
+    "usage": "e621",
+    "aliases": [],
+    "type": "search",
+    "optinal": "(tags)",
+    "url": "e621.net/posts.json",
+    "json_rout": [
+      "posts",
+      "random",
+      "file",
+      "url"
+    ]
+  },
+  {
     "description": "Gives you a genshin image",
     "usage": "genshin",
     "aliases": [
