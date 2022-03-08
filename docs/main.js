@@ -22,6 +22,7 @@ function load(string) {
             }
         }
     })
+    $("#bottom").css("height", `${$("#bottom")[0].parentElement.children[1].offsetHeight+($(window).height()*0.16666666)}px`);
 }
 
 function onKey() {
@@ -52,6 +53,7 @@ function onKey() {
             }
         })
     }
+    $("#bottom").css("height", `${$("#bottom")[0].parentElement.children[1].offsetHeight+($(window).height()*0.16666666)}px`);
 }
 var data;
 $.getJSON('https://raw.githubusercontent.com/AMTitan/Anime-Bot/master/src/cmds.json', function(response) {
@@ -88,6 +90,7 @@ function change_dark_mode() {
 
 window.onresize = function(event) {
     $("#height").css("margin-top", (55+$("#top").height())+"px");
+    $("#bottom").css("height", `${$("#bottom")[0].parentElement.children[1].offsetHeight+($(window).height()*0.16666666)}px`);
 };
 
 function clicked(item) {
@@ -103,6 +106,7 @@ function clicked(item) {
         item.classList.remove("border-slate-200");
         item.classList.add("border-2");
     }
+    $("#bottom").css("height", `${$("#bottom")[0].parentElement.children[1].offsetHeight+($(window).height()*0.16666666)}px`);
 }
 
 update_dark_mode();
