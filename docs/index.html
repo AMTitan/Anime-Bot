@@ -10,12 +10,6 @@
     <meta content="Git,GitHub,Bot,Discrod,DiscordBot,Anime,AnimeBot" name="keywords">
 
     <title>Anime Bot</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js">
-    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript">
     </script><!-- Favicons -->
     <link href="favicon-32x32.ico" rel="icon" sizes="32x32" type="image/png">
@@ -26,136 +20,86 @@
     <meta content="#f8f9fa" name="theme-color">
     <link href="favicon.ico" rel="icon" type="image/x-icon">
     <link rel="shortcut icon" type="image/jpg" href="favicon.ico" />
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
+    <link href="compacted_style.css" rel="stylesheet" type="text/css">
+    <script src="main.js">
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FE9LBDWSYW"></script>
+    < !--Global site tag(gtag.js) - Google Analytics-- >
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-FE9LBDWSYW"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+            window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
+            function gtag() {
+                dataLayer.push(arguments);
         }
 
-        gtag('js', new Date());
+            gtag('js', new Date());
 
-        gtag('config', 'G-FE9LBDWSYW');
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-        const options = {
-            label: "🌓",
-        }
-
-        function addDarkmodeWidget() {
-            const darkmode = new Darkmode(options);
-            //darkmode.toggle();
-            darkmode.showWidget();
-        }
-
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-
-    <script>
-        var lastSelected = "sfw";
-        const types = ["sfw", "nsfw", "games", "person", "other", "search"];
-        function load(string) {
-            types.forEach(item => {
-                document.getElementById(item).style.color = "#212529";
-            });
-            lastSelected = string;
-            document.getElementById(string).style.color = "green";
-            document.getElementById("form1").value = "";
-            document.getElementById("loadone").outerHTML = "<div id=\"loadone\"  class=\"mx-auto row p-3 p-md-5 m-md-3 \">\n<div id=\"load\"></div>\n</div>";
-            $.each(data, function (i, f) {
-                if (f.type === string) {
-                    var text = "";
-                    try {
-                        document.getElementById("load").outerHTML = `<div class="bg-white shadow-sm mx-auto" style="border-radius: 10px; width: 300px; margin-right: 25px; margin-left: 25px; margin-bottom: 50px"><h1 class="display-8 fw-normal text-center" style="margin: 30px;">${f.usage.charAt(0).toUpperCase() + f.usage.slice(1)}</h1><br><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px">Aliases: ${f.aliases.join(", ") || "None"}</h1><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px">Description: ${f.description}</h1><br><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px; margin-bottom: 30px">Usage: a!${f.usage} ${f.optinal}</h1><div style="height: 1px"></div></div>` + document.getElementById("load").outerHTML;
-                    }
-                    catch (e) {
-                        console.error(e);
-                    }
-                }
-            })
-        }
-        function onKey() {
-            if (document.getElementById("form1").value === "") {
-                load(lastSelected);
-            }
-            else {
-                var x = document.getElementById("form1").value.toLowerCase();
-                types.forEach(item => {
-                    document.getElementById(item).style.color = "#212529";
-                });
-                document.getElementById("loadone").outerHTML = "<div id=\"loadone\"  class=\"mx-auto row p-3 p-md-5 m-md-3 \">\n<div id=\"load\"></div>\n</div>";
-                $.each(data, function (i, f) {
-                    var allowed = false;
-                    if (f.usage.toLowerCase().includes(x)) allowed = true;
-                    if (f.description.toLowerCase().includes(x)) allowed = true;
-                    f.aliases.forEach(String => {
-                        if (String.toLowerCase().includes(x)) allowed = true;
-                    })
-                    if (allowed) {
-                        var text = "";
-                        try {
-                            document.getElementById("load").outerHTML = `<div class="bg-white shadow-sm mx-auto" style="border-radius: 10px; width: 300px; margin-right: 25px; margin-left: 25px; margin-bottom: 50px"><h1 class="display-8 fw-normal text-center" style="margin: 30px;">${f.usage.charAt(0).toUpperCase() + f.usage.slice(1)}</h1><br><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px">Aliases: ${f.aliases.join(", ") || "None"}</h1><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px">Description: ${f.description}</h1><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px">Type: ${f.type}</h1><br><h1 class="" style="margin-top: 30px; font-size: 20px; margin: 15px; margin-bottom: 30px">Usage: a!${f.usage} ${f.optinal}</h1><div style="height: 1px"></div></div>` + document.getElementById("load").outerHTML;
-                        }
-                        catch (e) {
-                            console.error(e);
-                        }
-                    }
-                })
-            }
-        }
-        var data;
-        $.getJSON('https://raw.githubusercontent.com/AMTitan/Anime-Bot/master/src/cmds.json', function (response) {
-            data = response;
-            load('sfw');
-        })
+            gtag('config', 'G-FE9LBDWSYW');
     </script>
 
 </head>
 
 <body>
-    <main>
-        <div class="p-3 p-md-5 m-md-3 bg-light shadow-sm">
-            <div class="col-md-3 mx-auto text-center bg-white shadow-sm" style="min-height: 50px; border-radius: 5px;">
-                <img class="align-middle" src="https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png" style="width: 40px; height: 40px; margin: 5px;">
-                <a class="btn" href="https://github.com/AMTitan/Anime-Bot" style="margin: 5px">GitHub</a>
-                <a class="btn"
-                    href="https://discord.com/api/oauth2/authorize?client_id=927745984065314816&permissions=0&scope=bot%20applications.commands"
-                    style="margin: 5px">Invite</a>
-                <a class="btn" href="https://discord.gg/sJnVmPZB7Y" style="margin: 5px">Server</a>
-                <a class="btn" href="https://www.patreon.com/AMTItan_Github" style="margin: 5px">Donate</a>
+    <div class="dark:text-gray-200 text-gray-900">
+        <div
+            class="-z-10 fixed w-[100%] h-[100%] bg-gradient-to-br from-slate-100 to-slate-200 dark:from-[#283548] dark:to-slate-700 top-0 ">
+        </div>
+        <div
+            class="absolute rounded-xl w-5/6 dark:bg-[#283548] bg-slate-50 top-[8.3333333%] left-[8.333333%] shadow-lg">
+            <div class="text-center bg-white dark:bg-slate-700 shadow-sm overflow-hidden min-h-[50px] rounded-t-xl">
+                <img class="absolute align-middle w-[40px] h-[40px] m-[5px] hcenter rounded-full"
+                    src="https://github.com/AMTitan/Anime-Bot/raw/master/AnimeBot.png">
+                <div class="text-center mt-[50px] flex hcenter absolute flex-wrap align-middle justify-center" id="top">
+                    <a href="https://github.com/AMTitan/Anime-Bot"
+                        class="m-3  bg-slate-50 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">GitHub</a>
+                    <a href="https://discord.com/api/oauth2/authorize?client_id=927745984065314816&permissions=0&scope=bot%20applications.commands"
+                        class="m-3  bg-slate-50 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">Invite</a>
+                    <a href="https://discord.gg/sJnVmPZB7Y"
+                        class="m-3  bg-slate-50 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">Server</a>
+                    <a href="https://www.patreon.com/AMTItan_Github"
+                        class="m-3 bg-slate-50 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">Donate</a>
+                    <div onclick="change_dark_mode();" class="m-3 w-[52px] py-2 px-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">
+                        <div class="absolute moon w-[24px] h-[24px] fill-gray-200 hidden dark:block"><svg
+                                class="svg-icon" viewBox="0 0 20 20">
+                                <path class="w-full h-full"
+                                    d="M10.544,8.717l1.166-0.855l1.166,0.855l-0.467-1.399l1.012-0.778h-1.244L11.71,5.297l-0.466,1.244H10l1.011,0.778L10.544,8.717z M15.986,9.572l-0.467,1.244h-1.244l1.011,0.777l-0.467,1.4l1.167-0.855l1.165,0.855l-0.466-1.4l1.011-0.777h-1.244L15.986,9.572z M7.007,6.552c0-2.259,0.795-4.33,2.117-5.955C4.34,1.042,0.594,5.07,0.594,9.98c0,5.207,4.211,9.426,9.406,9.426c2.94,0,5.972-1.354,7.696-3.472c-0.289,0.026-0.987,0.044-1.283,0.044C11.219,15.979,7.007,11.759,7.007,6.552 M10,18.55c-4.715,0-8.551-3.845-8.551-8.57c0-3.783,2.407-6.999,5.842-8.131C6.549,3.295,6.152,4.911,6.152,6.552c0,5.368,4.125,9.788,9.365,10.245C13.972,17.893,11.973,18.55,10,18.55 M19.406,2.304h-1.71l-0.642-1.71l-0.642,1.71h-1.71l1.39,1.069l-0.642,1.924l1.604-1.176l1.604,1.176l-0.642-1.924L19.406,2.304z">
+                                </path>
+                            </svg></div>
+                        <div class="absolute sun w-[24px] h-[24px] fill-gray-900 dark:hidden block"><svg
+                                class="svg-icon" viewBox="0 0 20 20">
+                                <path class="w-full h-full"
+                                    d="M5.114,5.726c0.169,0.168,0.442,0.168,0.611,0c0.168-0.169,0.168-0.442,0-0.61L3.893,3.282c-0.168-0.168-0.442-0.168-0.61,0c-0.169,0.169-0.169,0.442,0,0.611L5.114,5.726z M3.955,10c0-0.239-0.193-0.432-0.432-0.432H0.932C0.693,9.568,0.5,9.761,0.5,10s0.193,0.432,0.432,0.432h2.591C3.761,10.432,3.955,10.239,3.955,10 M10,3.955c0.238,0,0.432-0.193,0.432-0.432v-2.59C10.432,0.693,10.238,0.5,10,0.5S9.568,0.693,9.568,0.932v2.59C9.568,3.762,9.762,3.955,10,3.955 M14.886,5.726l1.832-1.833c0.169-0.168,0.169-0.442,0-0.611c-0.169-0.168-0.442-0.168-0.61,0l-1.833,1.833c-0.169,0.168-0.169,0.441,0,0.61C14.443,5.894,14.717,5.894,14.886,5.726 M5.114,14.274l-1.832,1.833c-0.169,0.168-0.169,0.441,0,0.61c0.168,0.169,0.442,0.169,0.61,0l1.833-1.832c0.168-0.169,0.168-0.442,0-0.611C5.557,14.106,5.283,14.106,5.114,14.274 M19.068,9.568h-2.591c-0.238,0-0.433,0.193-0.433,0.432s0.194,0.432,0.433,0.432h2.591c0.238,0,0.432-0.193,0.432-0.432S19.307,9.568,19.068,9.568 M14.886,14.274c-0.169-0.168-0.442-0.168-0.611,0c-0.169,0.169-0.169,0.442,0,0.611l1.833,1.832c0.168,0.169,0.441,0.169,0.61,0s0.169-0.442,0-0.61L14.886,14.274z M10,4.818c-2.861,0-5.182,2.32-5.182,5.182c0,2.862,2.321,5.182,5.182,5.182s5.182-2.319,5.182-5.182C15.182,7.139,12.861,4.818,10,4.818M10,14.318c-2.385,0-4.318-1.934-4.318-4.318c0-2.385,1.933-4.318,4.318-4.318c2.386,0,4.318,1.933,4.318,4.318C14.318,12.385,12.386,14.318,10,14.318 M10,16.045c-0.238,0-0.432,0.193-0.432,0.433v2.591c0,0.238,0.194,0.432,0.432,0.432s0.432-0.193,0.432-0.432v-2.591C10.432,16.238,10.238,16.045,10,16.045">
+                                </path>
+                            </svg></div>
+                    </div>
+                </div>
+                <div id="height"></div>
             </div>
-            <div class="col-md-9 p-lg-5 mx-auto my-5 shadow-sm text-center">
-                <h1 class="display-4 fw-normal"><br>Commands</h1>
-                <a id="sfw" onclick="load('sfw')" class="btn">SFW</a>
-                <a id="nsfw" onclick="load('nsfw')" class="btn">NSFW</a>
-                <a id="games" onclick="load('games')" class="btn">Games</a>
-                <a id="person" onclick="load('person')" class="btn">People</a>
-                <a id="other" onclick="load('other')" class="btn">Other</a>
-                <a id="search" onclick="load('search')" class="btn">Search</a>
+            <div class="absolute top-[]"></div>
+            <div class="mx-auto my-5 shadow-sm">
+                <div class="text-center">
+                    <h1 class="text-2xl"><br>Commands</h1>
+                    <br>
+                    <div class="flex flex-wrap  align-middle justify-center">
+                        <a id="sfw" onclick="load('sfw')"
+                            class=" text-center cursor-pointer m-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">SFW</a>
+                        <a id="nsfw" onclick="load('nsfw')"
+                            class=" text-center cursor-pointer m-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">NSFW</a>
+                        <a id="games" onclick="load('games')"
+                            class=" text-center cursor-pointer m-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">Games</a>
+                        <a id="person" onclick="load('person')"
+                            class=" text-center cursor-pointer m-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">People</a>
+                        <a id="search" onclick="load('search')"
+                            class=" text-center cursor-pointer m-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">Search</a>
+                        <a id="other" onclick="load('other')"
+                            class=" text-center cursor-pointer m-3 bg-slate-100 hover:bg-slate-200 dark:bg-slate-600 dark:hover:bg-slate-800 font-bold py-2 px-4 rounded">Other</a>
+                    </div>
+                </div>
                 <br>
                 <br>
-                <div class="form-outline mx-auto" style="max-width: 350px">
-                    <input type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search"
-                        oninput="onKey()" />
+                <div class="mx-auto text-center max-w-[350px]">
+                    <input class="rounded-md dark:bg-slate-600" type="search" id="form1" class="form-control"
+                        placeholder=" Search" aria-label="Search" oninput="onKey()" />
                 </div>
                 <br>
                 <br>
@@ -171,14 +115,14 @@
                         <div style="text-align: center;">
                             <small class="d-block mb-3 text-muted">©
                                 <script language="javascript" type="text/javascript">
-                                    var today = new Date(); var year = today.getFullYear(); document.write(year);
+            var today = new Date(); var year = today.getFullYear(); document.write(year);
                                 </script> All Rights Reserved
                             </small>
                         </div>
                     </div>
                 </div>
             </footer>
-    </main>
+        </div>
 </body>
 
 </html>
