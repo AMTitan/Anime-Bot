@@ -7,7 +7,7 @@ function load(string) {
         document.getElementById(item).style.removeProperty("color");
     });
     lastSelected = string;
-    document.getElementById(string).style.color = "green";
+    document.getElementById(string).style.color = "blue";
     document.getElementById("form1").value = "";
     document.getElementById("loadone").outerHTML = "<div id=\"loadone\"  class=\"mx-auto row p-3 p-md-5 m-md-3 \">\n<div id=\"load\"></div>\n</div>";
     $.each(data, function(i, f) {
