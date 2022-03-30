@@ -69,18 +69,7 @@ lazy_static! {
         }
     };
     static ref BANLIST: AsyncOnce<String> = AsyncOnce::new(async {
-        return format!(
-            "+-{}+-asian+-3d+-photo_(medium)",
-            request(
-                "https://raw.githubusercontent.com/ScathachGrip/Spell/main/data/tags.txt"
-                    .to_string()
-            )
-            .await
-            .unwrap()
-            .split('\n')
-            .collect::<Vec<&str>>()
-            .join("+-")
-        );
+        "+-loli+-shotacon+-lolicon+-cub+-shota+-death+-corpse+-cannibalism+-guro+-quadruple_amputee+-amputee+-decapitated+-amputation+-asian+-3d+-photo_(medium)".to_string()
     });
 }
 
