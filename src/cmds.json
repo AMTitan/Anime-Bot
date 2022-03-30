@@ -17,7 +17,7 @@
     "aliases": [],
     "type": "games",
     "optional": "(your question)",
-    "url": "https://api.nekos.dev/api/v3/images/8ball",
+    "url": "./Images/8ball/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -44,7 +44,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/img/ahegao_avatar",
+    "url": "./Images/ahegao_avatar/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -70,8 +70,8 @@
       "oral"
     ],
     "type": "nsfw",
-    "optinal": "(gif)",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/anal",
+    "optinal": "",
+    "url": "./Images/anal/images.txt",
     "json_rout": [
       "data",
       "response",
