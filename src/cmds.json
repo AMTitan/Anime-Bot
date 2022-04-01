@@ -5,9 +5,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pod_(nier_automata)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pod_(nier_automata)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -30,9 +29,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+abigail_williams_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+abigail_williams_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -57,9 +55,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+amber_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+amber_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -84,9 +81,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+anastasia_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+anastasia_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -105,9 +101,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+attack_on_titan$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+attack_on_titan$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -117,9 +112,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+aqua_(konosuba)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+aqua_(konosuba)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -131,9 +125,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpits$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpits$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -145,9 +138,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpit_licking$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+armpit_licking$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -157,9 +149,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+artoria_pendragon_(all)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+artoria_pendragon_(all)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -191,9 +182,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+astolfo_(fate)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+astolfo_(fate)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -203,9 +193,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asuna_(sao)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asuna_(sao)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -215,9 +204,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+atago_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+atago_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -240,9 +228,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+azur_lane$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+azur_lane$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -265,9 +252,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+barbara_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+barbara_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -277,9 +263,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+bb_(fate)_(all)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+bb_(fate)_(all)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -302,9 +287,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+beidou_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+beidou_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -314,9 +298,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+belfast_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+belfast_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -326,9 +309,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+bikini$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+bikini$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -390,9 +372,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+bremerton_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+bremerton_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -419,9 +400,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+clothed_sex$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+clothed_sex$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -444,9 +424,8 @@
     ],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+consort_yu_(fate)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+consort_yu_(fate)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -471,9 +450,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+cowgirl_position$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+cowgirl_position$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -559,9 +537,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dark_skin$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dark_skin$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -571,9 +548,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+leonardo_da_vinci_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+leonardo_da_vinci_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -583,9 +559,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dido_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dido_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -595,9 +570,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dildo$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dildo$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -619,9 +593,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+doggystyle$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+doggystyle$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -643,9 +616,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+double_penetration$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+double_penetration$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -658,9 +630,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dragon_ball$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+dragon_ball$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -672,7 +643,6 @@
     "optinal": "(tags)",
     "url": "e621.net/posts.json",
     "json_rout": [
-      "posts",
       "random",
       "file",
       "url"
@@ -697,9 +667,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+emilia_(re:zero)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+emilia_(re:zero)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -709,9 +678,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+enterprise_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+enterprise_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -721,9 +689,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+ereshkigal_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+ereshkigal_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -897,9 +864,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+foot_licking$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+foot_licking$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -925,9 +891,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+formidable_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+formidable_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -967,7 +932,6 @@
     "optinal": "(tags)",
     "url": "gelbooru.com/index.php",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -979,9 +943,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+genshin_impact$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+genshin_impact$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1007,9 +970,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+girls_frontline$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+girls_frontline$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1030,9 +992,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+fujimaru_ritsuka_(female)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+fujimaru_ritsuka_(female)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1082,9 +1043,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+himiko_(fate)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+himiko_(fate)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1094,9 +1054,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+hinata_hyuuga$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+hinata_hyuuga$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1106,9 +1065,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+senjougahara_hitagi$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+senjougahara_hitagi$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1129,9 +1087,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+holo$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+holo$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1171,9 +1128,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+hood_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+hood_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1183,9 +1139,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+housewife$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+housewife$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1217,9 +1172,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+jean_gunnhildr$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+jean_gunnhildr$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1229,9 +1183,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+jeanne_d'arc_(fate)_(all)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+jeanne_d'arc_(fate)_(all)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1250,9 +1203,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+kama_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+kama_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1262,9 +1214,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+kanna_kamui$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+kanna_kamui$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1306,9 +1257,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+keqing$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+keqing$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1334,9 +1284,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sesshouin_kiara$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sesshouin_kiara$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1359,23 +1308,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+klee_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+klee_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
-      "file_url"
-    ]
-  },
-  {
-    "description": "Search konachan",
-    "usage": "konachan",
-    "aliases": [
-      "wallpaper"
-    ],
-    "type": "search",
-    "optinal": "(tags)",
-    "url": "konachan.com/post.json",
-    "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1400,9 +1334,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+large_breasts$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+large_breasts$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1445,9 +1378,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+lisa_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+lisa_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1457,9 +1389,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+lumine_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+lumine_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1469,9 +1400,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sakurajima_mai$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sakurajima_mai$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1492,9 +1422,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+makise_kurisu$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+makise_kurisu$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1504,9 +1433,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+mash_kyrielight$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+mash_kyrielight$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1540,9 +1468,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+megumin$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+megumin$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1569,9 +1496,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+milf$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+milf$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1590,9 +1516,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+mona_(genshin_impact)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+mona_(genshin_impact)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1602,9 +1527,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+mordred_(fate)_(all)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+mordred_(fate)_(all)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1645,9 +1569,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+nero_claudius_(fate)_(all)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+nero_claudius_(fate)_(all)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1657,9 +1580,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+netorare$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+netorare$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1692,9 +1614,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+uraraka_ochako$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+uraraka_ochako$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1704,9 +1625,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+okita_souji_(fate)_(all)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+okita_souji_(fate)_(all)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1783,9 +1703,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pervert$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pervert$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1823,9 +1742,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pout$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pout$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1835,9 +1753,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pregnant$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pregnant$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1850,9 +1767,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pubic_hair$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pubic_hair$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1921,9 +1837,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+minamoto_no_raikou_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+minamoto_no_raikou_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1968,9 +1883,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+rape$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+rape$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1980,9 +1894,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+rem_(re:zero)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+rem_(re:zero)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -1992,9 +1905,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+tohsaka_rin$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+tohsaka_rin$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2008,7 +1920,6 @@
     "optinal": "(tags)",
     "url": "api.rule34.xxx/index.php",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2020,9 +1931,8 @@
     ],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+saint_martha$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+saint_martha$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2032,9 +1942,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+scathach_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+scathach_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2060,9 +1969,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+school_uniform$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+school_uniform$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2092,9 +2000,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+oshino_shinobu$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+oshino_shinobu$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2115,9 +2022,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sirius_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sirius_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2144,9 +2050,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+small_boobs$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+small_boobs$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2156,9 +2061,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+smell$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+smell$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2225,9 +2129,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pussy_juice$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+pussy_juice$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2239,9 +2142,8 @@
     ],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+st._louis_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+st._louis_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2273,9 +2175,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sweat$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+sweat$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2285,9 +2186,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+taihou_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+taihou_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2297,9 +2197,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+takao_(azur_lane)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+takao_(azur_lane)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2322,9 +2221,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+thick_thighs$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+thick_thighs$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2362,9 +2260,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asui_tsuyu$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asui_tsuyu$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2387,9 +2284,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asui_tsuyu$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+asui_tsuyu$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2399,9 +2295,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+twintails$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+twintails$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2413,9 +2308,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+ugly_man$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+ugly_man$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2425,9 +2319,8 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+uncensored$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+uncensored$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2450,9 +2343,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+ushiwakamaru_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+ushiwakamaru_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2473,9 +2365,8 @@
     "aliases": [],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+xuanzang_(fate/grand_order)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+xuanzang_(fate/grand_order)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2487,9 +2378,8 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+yaoi$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+yaoi$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },
@@ -2543,9 +2433,8 @@
     ],
     "type": "person",
     "optinal": "",
-    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+zero_two_(darling_in_the_franxx)$banlist&json=1",
+    "url": "https://$booru/index.php?page=dapi&s=post&q=index&tags=+zero_two_(darling_in_the_franxx)$banlist&limit=1&json=1",
     "json_rout": [
-      "random",
       "file_url"
     ]
   },

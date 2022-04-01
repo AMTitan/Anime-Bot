@@ -69,7 +69,7 @@ lazy_static! {
         }
     };
     static ref BANLIST: AsyncOnce<String> = AsyncOnce::new(async {
-        "+-loli+-shotacon+-lolicon+-cub+-shota+-death+-corpse+-cannibalism+-guro+-quadruple_amputee+-amputee+-decapitated+-amputation+-asian+-3d+-photo_(medium)".to_string()
+        "+-loli+-shotacon+-lolicon+-cub+-shota+-death+-corpse+-cannibalism+-guro+-quadruple_amputee+-amputee+-decapitated+-amputation+-asian+-3d+-photo_(medium)+sort:random".to_string()
     });
 }
 
@@ -384,10 +384,18 @@ impl EventHandler for Handler {
                         }
                     }
                 } else {
-                    let array: Value = serde_json::from_str("[\"random\",\"file_url\"]").unwrap();
+                    let array: Value;
                     let commands_clone = commands.clone();
                     if x.is_some() {
                         commands.remove(0);
+                        match x.unwrap().0.trim_matches('\"') == "e621.net/posts.json" {
+                            true => {
+                                array = serde_json::from_str("[\"random\",\"file_url\"]").unwrap()
+                            }
+                            false => array = serde_json::from_str("[\"file_url\"]").unwrap(),
+                        }
+                    } else {
+                        array = serde_json::from_str("[\"file_url\"]").unwrap();
                     }
                     if !ctx
                         .http
@@ -408,12 +416,34 @@ impl EventHandler for Handler {
                             commands[i] = "rating:questionable"
                         }
                     }
-                    let mut returns;
+                    let returns;
                     let cont = request(
                         replace_everything(
                             format!(
-                                "https://$boorus=post&q=index&tags=+{}$banlist&json=1",
-                                commands.join("+")
+                                "https://$boorus=post&q=index&tags=+{}{}&json=1{}",
+                                commands.join("+"),
+                                match x {
+                                    Some(x) => {
+                                        match &x.0.trim_matches('\"') == &"e621.net/posts.json" {
+                                            true => {
+                                                let mut ban_list: Vec<&str> =
+                                                    BANLIST.get().await.split("+").collect();
+                                                ban_list.pop();
+                                                ban_list.join("+")
+                                            }
+                                            false => BANLIST.get().await.to_string(),
+                                        }
+                                    }
+                                    None => BANLIST.get().await.to_string(),
+                                },
+                                match x {
+                                    Some(x) =>
+                                        match &x.0.trim_matches('\"') != &"e621.net/posts.json" {
+                                            true => "&limit=1",
+                                            false => "",
+                                        },
+                                    None => "&limit=1",
+                                }
                             )
                             .to_string()
                             .trim_matches('\"')
@@ -450,7 +480,7 @@ impl EventHandler for Handler {
                     } else {
                         "Null".to_string()
                     };
-                    if image != "Null" && cont.trim() != "" {
+                    if image.to_string().to_lowercase() != "null" && cont.trim() != "" {
                         let msg_ = msg
                             .channel_id
                             .send_message(&ctx.http, |m| {
@@ -612,8 +642,8 @@ impl EventHandler for Handler {
         ctx.set_activity(Activity::watching("a!help")).await;
 
         let _ = ApplicationCommand::set_global_application_commands(&ctx.http, |commands| {
-            commands.create_application_command(|command| {
-                for cmd in CMDS.as_array().unwrap() {
+            for cmd in CMDS.as_array().unwrap() {
+                commands.create_application_command(|command| {
                     command
                         .name(cmd["usage"].to_string().trim_matches('\"').to_string())
                         .description(
@@ -621,11 +651,10 @@ impl EventHandler for Handler {
                                 .to_string()
                                 .trim_matches('\"')
                                 .to_string(),
-                        );
-                }
-
-                command
-            })
+                        )
+                });
+            }
+            commands
         })
         .await;
     }
@@ -635,10 +664,15 @@ fn get_item(input: String, items: &[Value]) -> String {
     let mut v: Value = serde_json::from_str(&input).unwrap();
     if v["post"] != Value::Null {
         v = v["post"].clone();
+    } else if v["posts"] != Value::Null {
+        v = v["posts"].clone();
+    }
+    if v.is_array() && items[0].to_string().trim_matches('\"') != "random" {
+        v = v[0].clone();
     }
     for x in items {
         if x.to_string().trim_matches('\"') == "random" {
-            if v.as_array().is_none() {
+            if v.as_array().is_none() || v.as_array().unwrap().len() == 0 {
                 return "Null".to_string();
             }
             v = v[rand::thread_rng().gen_range(0..v.as_array().unwrap().len())].clone();
