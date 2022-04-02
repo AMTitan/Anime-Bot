@@ -2,7 +2,6 @@
 extern crate lazy_static;
 
 use async_once::AsyncOnce;
-use chrono::Utc;
 use rand::prelude::SliceRandom;
 use rand::Rng;
 use regex::Regex;
@@ -94,7 +93,6 @@ impl EventHandler for Handler {
         if !msg.author.bot {
             let content = msg.content.to_lowercase();
             if content.starts_with("a!") {
-                println!("[{}]: {}", Utc::now().to_rfc2822(), msg.content);
                 let re = Regex::new(r"\s+").unwrap();
                 let mut commands: Vec<&str> =
                     re.split(content[2..msg.content.len()].trim()).collect();
@@ -550,11 +548,6 @@ impl EventHandler for Handler {
 
     async fn interaction_create(&self, ctx: Context, interaction: Interaction) {
         if let Interaction::ApplicationCommand(command) = interaction {
-            println!(
-                "[{}]: /{}",
-                Utc::now().to_rfc2822(),
-                command.data.name.as_str()
-            );
             let re = Regex::new(r"\s+").unwrap();
             let commands: Vec<&str> = re.split(command.data.name.as_str().trim()).collect();
             if CMDS_HASH.contains_key(commands[0]) {
