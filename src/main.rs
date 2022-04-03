@@ -634,9 +634,9 @@ impl EventHandler for Handler {
 
         ctx.set_activity(Activity::watching("a!help")).await;
 
-        let _ = ApplicationCommand::set_global_application_commands(&ctx.http, |commands| {
+        if let Err(why) = ApplicationCommand::set_global_application_commands(&ctx.http, |mut commands| {
             for cmd in CMDS.as_array().unwrap() {
-                commands.create_application_command(|command| {
+                commands = commands.create_application_command(|command| {
                     command
                         .name(cmd["usage"].to_string().trim_matches('\"').to_string())
                         .description(
@@ -649,7 +649,9 @@ impl EventHandler for Handler {
             }
             commands
         })
-        .await;
+        .await  {
+            println!("Error making slash commands: {:?}", why);
+        }
     }
 }
 
