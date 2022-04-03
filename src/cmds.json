@@ -1340,17 +1340,6 @@
     ]
   },
   {
-    "description": "Gives you there leaderboard",
-    "usage": "leaderboard",
-    "aliases": [
-      "lb"
-    ],
-    "type": "other",
-    "optinal": "",
-    "url": "",
-    "json_rout": []
-  },
-  {
     "description": "Leaves the vc",
     "usage": "leave",
     "aliases": [],
@@ -1865,17 +1854,6 @@
         "nsfw": true
       }
     }
-  },
-  {
-    "description": "Gives you your rank",
-    "usage": "rank",
-    "aliases": [
-      "level"
-    ],
-    "type": "other",
-    "optinal": "(@someone)",
-    "url": "",
-    "json_rout": []
   },
   {
     "description": "Gives you a images of rape",
