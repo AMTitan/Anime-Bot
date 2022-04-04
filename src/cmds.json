@@ -1898,6 +1898,7 @@
     "optinal": "(tags)",
     "url": "api.rule34.xxx/index.php",
     "json_rout": [
+      "random",
       "file_url"
     ]
   },

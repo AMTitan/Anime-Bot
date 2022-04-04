@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate lazy_static;
 
+use songbird::id::GuildId;
 use async_once::AsyncOnce;
 use rand::prelude::SliceRandom;
 use rand::Rng;
@@ -173,6 +174,64 @@ impl EventHandler for Handler {
                                 if let Err(why) = msg {
                                     println!("Error sending message: {:?}", why);
                                 }
+                            } else if commands[0] == "join" && msg.guild_id.is_some()
+                            && !ctx
+                                .http
+                                .get_channel(msg.channel_id.0)
+                                .await
+                                .unwrap()
+                                .is_nsfw() {
+                                    /*let guild = msg.guild_id.unwrap();
+                                    let guild_id = msg.guild_id.unwrap();
+                                
+                                    let channel_id = guild
+                                        .voice_states.get(&msg.author.id)
+                                        .and_then(|voice_state| voice_state.channel_id);
+                                
+                                    let connect_to = match channel_id {
+                                        Some(channel) => channel,
+                                        None => {
+                                            msg.reply(ctx, "Not in a voice channel").await;
+                                            None
+                                        }
+                                    };
+                                
+                                    let manager = songbird::get(&ctx).await
+                                        .expect("Songbird Voice client placed in at initialisation.").clone();
+                                
+                                    let _handler = manager.join(guild_id.0, connect_to.try_into().unwrap()).await;
+
+                                    if let Some(handler_lock) = manager.get(guild_id) {
+                                        let mut handler = handler_lock.lock().await;
+                                
+                                        let source = songbird::ffmpeg("./Images/main/main.mp3").await.unwrap();
+                                
+                                        handler.play_source(source);
+                                
+                                        msg.channel_id.say(&ctx.http, "Playing song").await;
+                                    } else {
+                                        msg.channel_id.say(&ctx.http, "Not in a voice channel to play in").await;
+                                    }
+                                    */
+
+                            } else if commands[0] == "leave" {
+                                /*let guild = msg.guild_id.unwrap();
+                                let guild_id = msg.guild_id.unwrap();
+
+                                let manager = songbird::get(&ctx).await
+                                    .expect("Songbird Voice client placed in at initialisation.").clone();
+                                let has_handler = manager.get(guild_id).is_some();
+
+                                if has_handler {
+                                    if let Err(e) = manager.remove(guild_id).await {
+                                        msg.channel_id.say(&ctx.http, format!("Failed: {:?}", e)).await;
+                                    }
+
+                                    msg.channel_id.say(&ctx.http, "Left voice channel").await;
+                                } else {
+                                    msg.reply(ctx, "Not in a voice channel").await;
+                                }
+                                */
                             } else if commands[0] == "invite" {
                                 let msg = msg
                                     .channel_id
@@ -382,19 +441,11 @@ impl EventHandler for Handler {
                         }
                     }
                 } else {
-                    let array: Value;
-                    let commands_clone = commands.clone();
+                    let array: Value = serde_json::from_str("[\"file_url\"]").unwrap();
                     if x.is_some() {
                         commands.remove(0);
-                        match x.unwrap().0.trim_matches('\"') == "e621.net/posts.json" {
-                            true => {
-                                array = serde_json::from_str("[\"random\",\"file_url\"]").unwrap()
-                            }
-                            false => array = serde_json::from_str("[\"file_url\"]").unwrap(),
-                        }
-                    } else {
-                        array = serde_json::from_str("[\"file_url\"]").unwrap();
                     }
+                    let commands_clone = commands.clone();
                     if !ctx
                         .http
                         .get_channel(msg.channel_id.0)
@@ -418,11 +469,24 @@ impl EventHandler for Handler {
                     let cont = request(
                         replace_everything(
                             format!(
-                                "https://$boorus=post&q=index&tags=+{}{}&json=1{}",
+                                "https://{}s=post&q=index&tags=+{}{}&json=1{}",
+                                match x {
+                                    Some(x) => {
+                                        if x.0.trim_matches('\"') != "e621.net/posts.json" {
+                                            format!("{}?page=dapi&",x.0.trim_matches('\"'))
+                                        }
+                                        else {
+                                            format!("{}?",x.0.trim_matches('\"'))
+                                        }
+                                    },
+                                    None => {
+                                        "$booru?page=dapi&".to_string()
+                                    }
+                                },
                                 commands.join("+"),
                                 match x {
                                     Some(x) => {
-                                        match &x.0.trim_matches('\"') == &"e621.net/posts.json" {
+                                        match &x.0.trim_matches('\"') != &"gelbooru.com/index.php" {
                                             true => {
                                                 let mut ban_list: Vec<&str> =
                                                     BANLIST.get().await.split("+").collect();
@@ -436,7 +500,7 @@ impl EventHandler for Handler {
                                 },
                                 match x {
                                     Some(x) =>
-                                        match &x.0.trim_matches('\"') != &"e621.net/posts.json" {
+                                        match &x.0.trim_matches('\"') == &"gelbooru.com/index.php" {
                                             true => "&limit=1",
                                             false => "",
                                         },
@@ -662,7 +726,7 @@ fn get_item(input: String, items: &[Value]) -> String {
     } else if v["posts"] != Value::Null {
         v = v["posts"].clone();
     }
-    if v.is_array() && items[0].to_string().trim_matches('\"') != "random" {
+    if v.is_array() && items[0].to_string().trim_matches('\"') != "random" && v.as_array().unwrap().len() == 1 {
         v = v[0].clone();
     }
     for x in items {
