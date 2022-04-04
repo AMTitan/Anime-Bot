@@ -1189,15 +1189,6 @@
     ]
   },
   {
-    "description": "Join the vc and moans",
-    "usage": "join",
-    "aliases": [],
-    "type": "other",
-    "optinal": "",
-    "url": "",
-    "json_rout": []
-  },
-  {
     "description": "Gives you a images of kama (fate/grand order)",
     "usage": "kama",
     "aliases": [],
@@ -1338,15 +1329,6 @@
     "json_rout": [
       "file_url"
     ]
-  },
-  {
-    "description": "Leaves the vc",
-    "usage": "leave",
-    "aliases": [],
-    "type": "other",
-    "optinal": "",
-    "url": "",
-    "json_rout": []
   },
   {
     "description": "Gives you a lick gif",
