@@ -1,7 +1,6 @@
 #[macro_use]
 extern crate lazy_static;
 
-use songbird::id::GuildId;
 use async_once::AsyncOnce;
 use rand::prelude::SliceRandom;
 use rand::Rng;
@@ -21,6 +20,7 @@ use serenity::{
     },
     prelude::*,
 };
+use songbird::id::GuildId;
 use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
@@ -174,46 +174,47 @@ impl EventHandler for Handler {
                                 if let Err(why) = msg {
                                     println!("Error sending message: {:?}", why);
                                 }
-                            } else if commands[0] == "join" && msg.guild_id.is_some()
-                            && !ctx
-                                .http
-                                .get_channel(msg.channel_id.0)
-                                .await
-                                .unwrap()
-                                .is_nsfw() {
-                                    /*let guild = msg.guild_id.unwrap();
-                                    let guild_id = msg.guild_id.unwrap();
-                                
-                                    let channel_id = guild
-                                        .voice_states.get(&msg.author.id)
-                                        .and_then(|voice_state| voice_state.channel_id);
-                                
-                                    let connect_to = match channel_id {
-                                        Some(channel) => channel,
-                                        None => {
-                                            msg.reply(ctx, "Not in a voice channel").await;
-                                            None
-                                        }
-                                    };
-                                
-                                    let manager = songbird::get(&ctx).await
-                                        .expect("Songbird Voice client placed in at initialisation.").clone();
-                                
-                                    let _handler = manager.join(guild_id.0, connect_to.try_into().unwrap()).await;
+                            } else if commands[0] == "join"
+                                && msg.guild_id.is_some()
+                                && !ctx
+                                    .http
+                                    .get_channel(msg.channel_id.0)
+                                    .await
+                                    .unwrap()
+                                    .is_nsfw()
+                            {
+                                /*let guild = msg.guild_id.unwrap();
+                                let guild_id = msg.guild_id.unwrap();
 
-                                    if let Some(handler_lock) = manager.get(guild_id) {
-                                        let mut handler = handler_lock.lock().await;
-                                
-                                        let source = songbird::ffmpeg("./Images/main/main.mp3").await.unwrap();
-                                
-                                        handler.play_source(source);
-                                
-                                        msg.channel_id.say(&ctx.http, "Playing song").await;
-                                    } else {
-                                        msg.channel_id.say(&ctx.http, "Not in a voice channel to play in").await;
+                                let channel_id = guild
+                                    .voice_states.get(&msg.author.id)
+                                    .and_then(|voice_state| voice_state.channel_id);
+
+                                let connect_to = match channel_id {
+                                    Some(channel) => channel,
+                                    None => {
+                                        msg.reply(ctx, "Not in a voice channel").await;
+                                        None
                                     }
-                                    */
+                                };
 
+                                let manager = songbird::get(&ctx).await
+                                    .expect("Songbird Voice client placed in at initialisation.").clone();
+
+                                let _handler = manager.join(guild_id.0, connect_to.try_into().unwrap()).await;
+
+                                if let Some(handler_lock) = manager.get(guild_id) {
+                                    let mut handler = handler_lock.lock().await;
+
+                                    let source = songbird::ffmpeg("./Images/main/main.mp3").await.unwrap();
+
+                                    handler.play_source(source);
+
+                                    msg.channel_id.say(&ctx.http, "Playing song").await;
+                                } else {
+                                    msg.channel_id.say(&ctx.http, "Not in a voice channel to play in").await;
+                                }
+                                */
                             } else if commands[0] == "leave" {
                                 /*let guild = msg.guild_id.unwrap();
                                 let guild_id = msg.guild_id.unwrap();
@@ -473,12 +474,11 @@ impl EventHandler for Handler {
                                 match x {
                                     Some(x) => {
                                         if x.0.trim_matches('\"') != "e621.net/posts.json" {
-                                            format!("{}?page=dapi&",x.0.trim_matches('\"'))
+                                            format!("{}?page=dapi&", x.0.trim_matches('\"'))
+                                        } else {
+                                            format!("{}?", x.0.trim_matches('\"'))
                                         }
-                                        else {
-                                            format!("{}?",x.0.trim_matches('\"'))
-                                        }
-                                    },
+                                    }
                                     None => {
                                         "$booru?page=dapi&".to_string()
                                     }
@@ -698,22 +698,24 @@ impl EventHandler for Handler {
 
         ctx.set_activity(Activity::watching("a!help")).await;
 
-        if let Err(why) = ApplicationCommand::set_global_application_commands(&ctx.http, |mut commands| {
-            for cmd in CMDS.as_array().unwrap() {
-                commands = commands.create_application_command(|command| {
-                    command
-                        .name(cmd["usage"].to_string().trim_matches('\"').to_string())
-                        .description(
-                            cmd["description"]
-                                .to_string()
-                                .trim_matches('\"')
-                                .to_string(),
-                        )
-                });
-            }
-            commands
-        })
-        .await  {
+        if let Err(why) =
+            ApplicationCommand::set_global_application_commands(&ctx.http, |mut commands| {
+                for cmd in CMDS.as_array().unwrap() {
+                    commands = commands.create_application_command(|command| {
+                        command
+                            .name(cmd["usage"].to_string().trim_matches('\"').to_string())
+                            .description(
+                                cmd["description"]
+                                    .to_string()
+                                    .trim_matches('\"')
+                                    .to_string(),
+                            )
+                    });
+                }
+                commands
+            })
+            .await
+        {
             println!("Error making slash commands: {:?}", why);
         }
     }
@@ -726,7 +728,10 @@ fn get_item(input: String, items: &[Value]) -> String {
     } else if v["posts"] != Value::Null {
         v = v["posts"].clone();
     }
-    if v.is_array() && items[0].to_string().trim_matches('\"') != "random" && v.as_array().unwrap().len() == 1 {
+    if v.is_array()
+        && items[0].to_string().trim_matches('\"') != "random"
+        && v.as_array().unwrap().len() == 1
+    {
         v = v[0].clone();
     }
     for x in items {
