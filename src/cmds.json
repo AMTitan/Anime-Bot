@@ -1169,6 +1169,17 @@
     ]
   },
   {
+    "description": "Gives you a incest image",
+    "usage": "incest",
+    "aliases": [],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "./Images/incest/images.txt",
+    "json_rout": [
+      "url"
+    ]
+  },
+  {
     "description": "Gives you the invite link",
     "usage": "invite",
     "aliases": [],
@@ -1577,17 +1588,6 @@
     "type": "nsfw",
     "optinal": "",
     "url": "./Images/hentai/images.txt",
-    "json_rout": [
-      "url"
-    ]
-  },
-  {
-    "description": "Gives you a incest image",
-    "usage": "incest",
-    "aliases": [],
-    "type": "nsfw",
-    "optinal": "",
-    "url": "./Images/incest/images.txt",
     "json_rout": [
       "url"
     ]
