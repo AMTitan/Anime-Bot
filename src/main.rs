@@ -80,8 +80,8 @@ async fn main() {
         .await
         .expect("Error creating client");
 
-    if let Err(why) = client.start().await {
-        println!("Client error: {:?}", why);
+    if let Err(why) = client.start_autosharded().await {
+        println!("Err with client: {:?}", why);
     }
 }
 
