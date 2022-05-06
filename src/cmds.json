@@ -171,7 +171,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/ass",
+    "url": "./Images/ass/images.txt",
     "json_rout": [
       "url"
     ]
@@ -276,7 +276,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/bdsm",
+    "url": "./Images/bdsm/images.txt",
     "json_rout": [
       "url"
     ]
@@ -322,7 +322,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.waifu.pics/nsfw/blowjob",
+    "url": "./Images/blowjob/images.txt",
     "json_rout": [
       "url"
     ]
@@ -346,7 +346,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://nekobot.xyz/api/image?type=paizuri",
+    "url": "./Images/boobjob/images.txt",
     "json_rout": [
       "message"
     ]
@@ -461,7 +461,7 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://hmtai.herokuapp.com/nsfw/creampie",
+    "url": "./Images/creampie/images.txt",
     "json_rout": [
       "url"
     ]
@@ -473,6 +473,17 @@
     "type": "sfw",
     "optinal": "(@someone)",
     "url": "https://api.waifu.pics/sfw/cry",
+    "json_rout": [
+      "url"
+    ]
+  },
+  {
+    "description": "Gives you a cuckold image",
+    "usage": "cuckold",
+    "aliases": [],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "./Images/cuckold/images.txt",
     "json_rout": [
       "url"
     ]
@@ -496,7 +507,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/cum",
+    "url": "./Images/cum/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -656,7 +667,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://hmtai.herokuapp.com/nsfw/elves",
+    "url": "./Images/elves/images.txt",
     "json_rout": [
       "url"
     ]
@@ -700,7 +711,7 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/img/all_tags_ero",
+    "url": "./Images/ero/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -838,7 +849,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/img/femdom_lewd/",
+    "url": "./Images/femdom/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -878,7 +889,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/feet/",
+    "url": "./Images/foot/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -981,7 +992,7 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/glasses",
+    "url": "./Images/glasses/images.txt",
     "json_rout": [
       "url"
     ]
@@ -1338,7 +1349,7 @@
     ],
     "type": "sfw",
     "optinal": "(@someone)",
-    "url": "https://api.waifu.pics/sfw/lick",
+    "url": "./Images/lick/images.txt",
     "json_rout": [
       "message"
     ]
@@ -1417,7 +1428,7 @@
     ],
     "type": "nsfw",
     "optinal": "(gif)",
-    "url": "https://akaneko-api.herokuapp.com/api/masturbation",
+    "url": "./Images/masturbation/images.txt",
     "json_rout": [
       "url"
     ],
@@ -1511,24 +1522,15 @@
     ],
     "type": "sfw",
     "optinal": "(gif or nsfw)",
-    "url": "https://nekos.life/api/neko",
+    "url": "./Images/sfwNeko/images.txt",
     "json_rout": [
       "neko"
     ],
     "arg": {
       "nsfw": {
-        "url": "https://nekos.life/api/lewd/neko",
+        "url": "./Images/nsfwNeko/images.txt",
         "json_rout": [
           "neko"
-        ],
-        "nsfw": true
-      },
-      "gif": {
-        "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/neko/",
-        "json_rout": [
-          "data",
-          "response",
-          "url"
         ],
         "nsfw": true
       }
@@ -1574,7 +1576,18 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://api.waifu.pics/nsfw/waifu",
+    "url": "./Images/hentai/images.txt",
+    "json_rout": [
+      "url"
+    ]
+  },
+  {
+    "description": "Gives you a incest image",
+    "usage": "incest",
+    "aliases": [],
+    "type": "nsfw",
+    "optinal": "",
+    "url": "./Images/incest/images.txt",
     "json_rout": [
       "url"
     ]
@@ -1609,7 +1622,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/orgy",
+    "url": "./Images/orgy/images.txt",
     "json_rout": [
       "url"
     ]
@@ -1620,7 +1633,7 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/panties",
+    "url": "./Images/panties/images.txt",
     "json_rout": [
       "url"
     ]
@@ -1749,7 +1762,7 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://hmtai.herokuapp.com/nsfw/public",
+    "url": "./Images/public/images.txt",
     "json_rout": [
       "url"
     ]
@@ -1760,23 +1773,12 @@
     "aliases": [],
     "type": "nsfw",
     "optinal": "(gif)",
-    "url": "https://api.nekos.dev/api/v3/images/nsfw/img/pussy_lewd",
+    "url": "./Images/pussy/images.txt",
     "json_rout": [
       "data",
       "response",
       "url"
-    ],
-    "arg": {
-      "gif": {
-        "url": "https://api.nekos.dev/api/v3/images/nsfw/gif/pussy",
-        "json_rout": [
-          "data",
-          "response",
-          "url"
-        ],
-        "nsfw": true
-      }
-    }
+    ]
   },
   {
     "description": "Gives you a quote",
@@ -1996,7 +1998,7 @@
     ],
     "type": "sfw",
     "optinal": "(@someone)",
-    "url": "https://api.nekos.dev/api/v3/images/sfw/gif/slap/",
+    "url": "./Images/slap/images.txt",
     "json_rout": [
       "data",
       "response",
@@ -2171,7 +2173,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/tentacles",
+    "url": "./Images/tentacles/images.txt",
     "json_rout": [
       "url"
     ]
@@ -2195,7 +2197,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/thighs",
+    "url": "./Images/thighs/images.txt",
     "json_rout": [
       "url"
     ]
@@ -2293,7 +2295,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/uniform",
+    "url": "./Images/uniform/images.txt",
     "json_rout": [
       "url"
     ]
@@ -2407,7 +2409,7 @@
     ],
     "type": "nsfw",
     "optinal": "",
-    "url": "https://akaneko-api.herokuapp.com/api/zettai-ryouiki",
+    "url": "./Images/zettaiRyouiki/images.txt",
     "json_rout": [
       "url"
     ]
